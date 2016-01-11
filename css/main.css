@@ -67,7 +67,7 @@ a:hover {
   padding: 140px 0;
 }
 .navbar-default .navbar-nav > li > a:hover {
-  color: #02bdd5;
+  color: #522D80;
 }
 .navbar.navbar-default {
   border: 0;
@@ -123,7 +123,7 @@ a:hover {
   text-transform: uppercase;
 }
 #top-bar .main-menu li a:hover {
-  color: #02bdd5;
+  color: #522D80;
 }
 .navbar-custom .nav li > a {
   position: relative;
@@ -194,7 +194,7 @@ a:hover {
   border-radius: 0;
 }
 #call-to-action {
-  background: #02bdd5;
+  background: #522D80;
   background-size: cover;
   background-attachment: fixed;
   padding: 80px 0;
@@ -220,7 +220,7 @@ a:hover {
 #call-to-action .block .btn-contact {
   background: #fff;
   border: none;
-  color: #02bdd5;
+  color: #522D80;
   padding: 16px 35px;
   margin-top: 20px;
   font-size: 12px;
@@ -369,7 +369,7 @@ figure figcaption h4 {
   margin: 0;
 }
 figure figcaption h4 a {
-  color: #02bdd5;
+  color: #522D80;
 }
 figure figcaption p {
   font-size: 14px;
@@ -402,7 +402,7 @@ figure figcaption p {
 #feature .icon {
   text-decoration: none;
   color: #fff;
-  background-color: #02bdd5;
+  background-color: #522D80;
   height: 100px;
   text-align: center;
   width: 100px;
@@ -425,10 +425,10 @@ figure figcaption p {
   margin-top: 35px;
   color: #fff;
   outline: none;
-  background: #02bdd5;
+  background: #522D80;
 }
 #contact-section .contact-form .btn-send:hover {
-  border: 1px solid #02bdd5;
+  border: 1px solid #522D80;
 }
 #contact-section input {
   display: block;
@@ -478,7 +478,7 @@ figure figcaption p {
 #contact-section .email i,
 #contact-section .phone i {
   font-size: 45px;
-  color: #02bdd5;
+  color: #522D80;
 }
 #contact-section .address h5,
 #contact-section .email h5,
@@ -505,7 +505,7 @@ figure figcaption p {
   margin-top: 10px;
 }
 #footer .copyright a {
-  color: #02bdd5;
+  color: #522D80;
 }
 #footer .social {
   text-align: right;
@@ -517,10 +517,10 @@ figure figcaption p {
 }
 #footer .social li a {
   font-size: 22px;
-  color: #02bdd5;
+  color: #522D80;
 }
 .cd-headline.slide .cd-words-wrapper {
-  color: #02bdd5;
+  color: #522D80;
 }
 ul.social-icons {
   height: auto;
@@ -546,7 +546,7 @@ ul.social-icons li {
   background-size: cover;
   padding: 120px 0 25px 0;
   position: relative;
-  background: #02bdd5;
+  background: #522D80;
   color: #fff;
 }
 .global-page-header h2 {
@@ -579,7 +579,7 @@ ul.social-icons li {
 }
 #product-showcase-banner .block h2 {
   font-size: 40px;
-  color: #02bdd5;
+  color: #522D80;
   margin-bottom: 20px;
   margin-top: 0;
 }
@@ -697,7 +697,7 @@ ul.social-icons li {
 }
 #related-items .block h4 span {
   float: right;
-  color: #02bdd5;
+  color: #522D80;
 }
 #related-items .block .img-overly {
   position: relative;
@@ -733,7 +733,7 @@ ul.social-icons li {
 }
 .service-page .service-parts .block i {
   font-size: 35px;
-  color: #02bdd5;
+  color: #522D80;
 }
 .service-page .service-parts .block p {
   padding: 0 8px;
@@ -791,7 +791,7 @@ ul.social-icons li {
 }
 .wrapper_404 h1 {
   font-size: 200px;
-  color: #02bdd5;
+  color: #522D80;
   line-height: 1;
 }
 .wrapper_404 h2 {
@@ -839,7 +839,7 @@ ul.social-icons li {
   font-size: 13px;
 }
 .team-member h3 {
-  color: #02bdd5;
+  color: #522D80;
   margin-bottom: 0;
   font-size: 20px;
 }
@@ -847,7 +847,7 @@ ul.social-icons li {
   font-size: 14px;
 }
 .team-member .social-icons a {
-  background: #02bdd5;
+  background: #522D80;
   color: #fff;
   padding: 4px 8px;
   display: inline-block;
@@ -869,13 +869,13 @@ ul.social-icons li {
   font-weight: 300;
 }
 .about-feature .about-feature-1 {
-  background: #02bdd5;
+  background: #522D80;
 }
 .about-feature .about-feature-2 {
-  background: #00B0C7;
+  background: #492871;
 }
 .about-feature .about-feature-3 {
-  background: #00A6BB;
+  background: #3c225e;
 }
 #blog-full-width {
   padding: 40px 0 80px;
@@ -907,15 +907,15 @@ article {
   margin-top: 20px;
 }
 .blog-content .btn-details {
-  color: #02bdd5;
+  color: #522D80;
   padding: 0;
-  background: #02bdd5;
+  background: #522D80;
   color: #fff;
   padding: 8px 18px;
   border-radius: 0;
   margin-top: 15px;
   border: 1px solid #fff;
-  box-shadow: 0px 0px 0px 1px #02bdd5;
+  box-shadow: 0px 0px 0px 1px #522D80;
 }
 .blog-post-image {
   margin-top: 30px;
@@ -978,7 +978,7 @@ article {
   font-size: 15px;
 }
 .sidebar .recent-post ul li a:hover {
-  color: #02bdd5;
+  color: #522D80;
 }
 .sidebar .recent-post time {
   font-weight: 300;
@@ -1019,7 +1019,7 @@ article {
   padding: 30px 20px;
 }
 .single-post .media .media-body a {
-  color: #02bdd5;
+  color: #522D80;
   font-size: 12px;
 }
 .single-post .media .media {
@@ -1039,7 +1039,7 @@ article {
   border-radius: 0;
 }
 .single-post .post-comment .btn-send {
-  background: #02bdd5;
+  background: #522D80;
   color: #fff;
   border-radius: 0;
 }
@@ -1050,7 +1050,7 @@ article {
 .social-share a {
   font-size: 20px;
   color: #fff;
-  background: #02bdd5;
+  background: #522D80;
   padding: 4px 10px;
   display: inline-block;
 }

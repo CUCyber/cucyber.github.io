@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> #!/bin/powershell
+</title>
+
+		<link rel="stylesheet" href="/presentations/css/reveal.css">
+		<link rel="stylesheet" href="/presentations/css/theme/blood.css">
+
+		<!-- theme for code highlighting -->
+		<link rel="stylesheet" href="/presentations/lib/css/zenburn.css">
+
+		<!-- printing from pdf -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? '/presentations/css/print/pdf.css' : '/presentations/css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+
+		<!--[if lt IE 9]>
+			<script src="/presentations/lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<!-- make h1 font size a little smaller -->
+		<style>
+			.reveal h1 {
+				font-size: 3.44em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- source markdown file -->
+				<section data-markdown="powershell.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+			</div>
+		</div>
+
+		<!-- source and configure reveal.js -->
+		<script src="/presentations/lib/js/head.min.js"></script>
+		<script src="/presentations/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					// classList shim
+					{ src: '/presentations/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+					// markdown
+					{ src: '/presentations/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+					{ src: '/presentations/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+
+					// syntax highlight for <code> elements
+					{ src: '/presentations/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+					// zoom in and out with alt+click
+					{ src: '/presentations/plugin/zoom-js/zoom.js', async: true },
+
+					// speaker notes
+					{ src: '/presentations/plugin/notes/notes.js', async: true },
+
+					// MathJax
+					{ src: '/presentations/plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

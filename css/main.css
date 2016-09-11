@@ -24,6 +24,11 @@ ul {
 ul li {
   list-style: none;
 }
+
+ul.bulleted li {
+  list-style: initial;
+}
+
 h2 {
   font-size: 26px;
 }

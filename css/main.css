@@ -86,9 +86,10 @@ a:hover {
   padding: 5px 0;
 }
 .navbar-header .navbar-brand a {
+  color: #444;
   height: auto;
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle {

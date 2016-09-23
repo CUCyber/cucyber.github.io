@@ -33,7 +33,7 @@ var RevealNotes = (function() {
 				notesPopup.postMessage( JSON.stringify( {
 					namespace: 'reveal-notes',
 					type: 'connect',
-					url: window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search,
+					url: window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.hash,
 					state: Reveal.getState()
 				} ), '*' );
 			}, 500 );

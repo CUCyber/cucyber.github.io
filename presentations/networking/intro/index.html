@@ -111,6 +111,8 @@
 			// determine multiplex information
 			if (multiplex['enabled'] && multiplex['secret'] === 'prompt') {
 				multiplex['secret'] = prompt('Enter the secret token to control this presentation.');
+				if (multiplex['secret'] === '')
+					multiplex['secret'] = null;
 			}
 
 			if (multiplex['enabled'] && multiplex['id'] === 'load') {

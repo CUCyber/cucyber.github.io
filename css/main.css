@@ -362,9 +362,8 @@ figure .overlay:hover a {
   transform: scale3d(1, 1, 1);
 }
 figure .buttons {
-  position: absolute;
-  top: 45%;
-  left: 24%;
+  position: relative;
+  top: 40%;
 }
 figure figcaption {
   padding: 20px 25px;
@@ -992,10 +991,7 @@ article {
   font-size: 12px;
 }
 .gallery {
-  padding: 100px;
-}
-.gallery figure .buttons {
-  left: 40%;
+  padding-top: 50px;
 }
 .portfolio-meta span {
   margin: 5px 10px;
@@ -1091,3 +1087,8 @@ article {
   color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.iframe-presentation {
+  display: block;
+  width: 100%;
+  height: auto;
+}

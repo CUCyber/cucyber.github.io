@@ -146,7 +146,7 @@ a:hover {
   opacity: 0;
 }
 #hero-area {
-  background: url('../images/paw.png') no-repeat 50%;
+  background: url('../images/shield.png') no-repeat 50%;
   background-size: contain;
   background-attachment: fixed;
   padding: 230px 0;

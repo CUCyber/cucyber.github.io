@@ -114,7 +114,7 @@ Note:
 * managed switches can signal to routers the virtual network to which packets belong
 
 Note:
-* Manage switches port rules can range from ip's to MAC addresses
+* Manage switches port rules can range from IP's to MAC addresses
 
 
 

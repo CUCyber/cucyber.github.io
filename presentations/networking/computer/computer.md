@@ -118,6 +118,8 @@ Note:
 
 
 
+
+
 # Network Security
 
 
@@ -151,7 +153,7 @@ Note:
 ## Domain Name System (DNS)
 
 * translates names to IP addresses
-* essentially a phone book for the internet
+* essentially a phone book for the Internet
 
 
 ## RADIUS

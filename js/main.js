@@ -35,9 +35,14 @@ $(document).ready(function() {
     new WOW().init();
 
     jQuery('.smooth-scroll').scrollingTo();
-});
 
-$(document).ready(function(){
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 50)
+            $('#top-bar').removeClass('animated-header');
+        else
+            $('#top-bar').addClass('animated-header');
+    });
+
     $('#clients-logo').owlCarousel({
         itemsCustom : false,
         pagination : false,
@@ -62,7 +67,7 @@ $('.fancybox').fancybox({
         },
         overlay : {
             css : {
-                'background' : 'rgba(0,0,0,0.8)'
+                'background' : 'rgba(0, 0, 0, 0.8)'
             }
         }
     }

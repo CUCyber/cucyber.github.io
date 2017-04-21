@@ -148,15 +148,12 @@
 			};
 
 			// determine multiplex information
-			if (multiplex['enabled'] && multiplex['secret'] === 'request') {
+			if (multiplex['enabled'] && multiplex['secret'] === 'request')
 				get_secret();
-			}
-			else if (multiplex['enabled'] && multiplex['id'] === 'request') {
+			else if (multiplex['enabled'] && multiplex['id'] === 'request')
 				get_id();
-			}
-			else {
+			else
 				init();
-			}
 		</script>
 	</body>
 </html>

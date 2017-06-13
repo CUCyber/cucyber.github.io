@@ -1109,6 +1109,12 @@ article {
   text-align: right;
 }
 
+@media (max-width: 1025px) {
+  .sidebar {
+    text-align: left;
+  }
+}
+
 .sidebar .widget {
   margin-bottom: 40px;
   padding: 15px;

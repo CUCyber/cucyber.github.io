@@ -1108,6 +1108,29 @@ article {
   padding-top: 30px;
 }
 
+.wide {
+  text-align: right;
+}
+
+.mobile {
+  text-align: left;
+
+  display: none;
+  width: 0%;
+}
+
+@media (max-width: 1025px) {
+  .wide {
+    display: none;
+    width: 0%;
+  }
+
+  .mobile {
+    display: inline-block;
+    width: initial;
+  }
+}
+
 .sidebar .widget {
   margin-bottom: 40px;
   padding: 15px;

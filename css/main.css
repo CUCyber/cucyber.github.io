@@ -96,13 +96,19 @@ a:hover {
 
 .navbar-header .navbar-brand {
   padding: 5px 0;
+  position: relative;
 }
 
 .navbar-header .navbar-brand a {
   color: #444;
   height: auto;
-  display: inline-block;
-  margin-top: 10px;
+  position: absolute;
+  width: 150px;
+  top: 0%;
+}
+
+.navbar-header .navbar-brand img {
+  height: 3em;
 }
 
 .navbar-inverse .navbar-toggle:focus
@@ -171,7 +177,7 @@ a:hover {
 }
 
 #hero-area {
-  background: url('../images/shield.png') no-repeat 50%;
+  background: url('/images/shield.png') no-repeat 50%;
   background-size: contain;
   background-attachment: fixed;
   padding: 230px 0;
@@ -908,7 +914,7 @@ ul.social-icons li {
 }
 
 .fancybox-close {
-  background: url('../images/icons/close.png') no-repeat scroll 0 0 transparent;
+  background: url('/images/icons/close.png') no-repeat scroll 0 0 transparent;
   height: 50px;
   right: 0;
   top: 0;
@@ -916,14 +922,14 @@ ul.social-icons li {
 }
 
 .fancybox-next span {
-  background: url('../images/icons/right.png') no-repeat scroll center center #009ee3;
+  background: url('/images/icons/right.png') no-repeat scroll center center #009ee3;
   height: 50px;
   width: 50px;
   right: 0;
 }
 
 .fancybox-prev span {
-  background: url('../images/icons/left.png') no-repeat scroll center center #009ee3;
+  background: url('/images/icons/left.png') no-repeat scroll center center #009ee3;
   height: 50px;
   width: 50px;
   left: 0;

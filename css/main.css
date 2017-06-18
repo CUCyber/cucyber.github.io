@@ -94,6 +94,10 @@ a:hover {
   margin-top: 32px;
 }
 
+.navbar-header {
+  padding: 20px 0;
+}
+
 .navbar-header .navbar-brand {
   padding: 5px 0;
   height: 50px;
@@ -131,9 +135,10 @@ a:hover {
 }
 
 #top-bar.animated-header {
-  padding: 20px 0;
   background: #ffffff;
   box-shadow: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 #top-bar .main-menu li > a {
@@ -158,12 +163,29 @@ a:hover {
   color: #522D80;
 }
 
+.navbar-collapse {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-fixed-top .navbar-collapse {
+  max-height: 480px;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-collapse {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
 .navbar-custom .nav li > a {
   position: relative;
   color: #000;
 }
 
 .navbar-right .dropdown-menu {
+  padding: 0px;
   right: auto;
   left: 0;
 }

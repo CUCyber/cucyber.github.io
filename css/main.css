@@ -995,6 +995,10 @@ ul.social-icons li {
   margin-top: 80px;
 }
 
+.company-description .large-logo {
+  padding-bottom: 40px;
+}
+
 .company-description .block h3 {
   margin-top: 0;
 }
@@ -1053,11 +1057,14 @@ ul.social-icons li {
   margin-top: 50px;
 }
 
+.about-feature .col-sm-4 {
+  padding: 0px;
+}
+
 .about-feature .block {
   color: #fff;
-  width: 33.33%;
   padding: 5%;
-  float: left;
+  height: 18em;
 }
 
 .about-feature .block p {

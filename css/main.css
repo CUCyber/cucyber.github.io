@@ -96,15 +96,14 @@ a:hover {
 
 .navbar-header .navbar-brand {
   padding: 5px 0;
-  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-header .navbar-brand a {
   color: #444;
   height: auto;
-  position: absolute;
-  width: 150px;
-  top: 0%;
 }
 
 .navbar-header .navbar-brand img {

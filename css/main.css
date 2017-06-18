@@ -420,6 +420,8 @@ figure .overlay {
   bottom: 0;
   padding: 10px;
   text-align: center;
+  display: flex;
+  align-items: center;
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   -webkit-transition: opacity 400ms;
@@ -450,8 +452,7 @@ figure .overlay:hover a {
 }
 
 figure .buttons {
-  position: relative;
-  top: 40%;
+  width: 100%;
 }
 
 figure figcaption {

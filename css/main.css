@@ -1134,6 +1134,7 @@ article {
 
 .blog-post-image {
   margin-top: 20px;
+  margin-bottom: 20px;
   float: right;
   width: 200px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 2px 10px 0 rgba(0, 0, 0, 0.06);

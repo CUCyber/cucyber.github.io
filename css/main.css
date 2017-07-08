@@ -172,13 +172,6 @@ a:hover {
   max-height: 480px;
 }
 
-@media only screen and (max-width: 767px) {
-  .navbar-collapse {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-}
-
 .navbar-custom .nav li > a {
   position: relative;
   color: #000;
@@ -1153,18 +1146,6 @@ article {
 
   display: none;
   width: 0%;
-}
-
-@media (max-width: 1025px) {
-  .wide {
-    display: none;
-    width: 0%;
-  }
-
-  .mobile {
-    display: inline-block;
-    width: initial;
-  }
 }
 
 .sidebar .widget {

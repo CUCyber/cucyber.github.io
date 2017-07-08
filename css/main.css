@@ -94,15 +94,24 @@ a:hover {
   margin-top: 32px;
 }
 
+.navbar-header {
+  padding: 20px 0;
+}
+
 .navbar-header .navbar-brand {
   padding: 5px 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-header .navbar-brand a {
   color: #444;
   height: auto;
-  display: inline-block;
-  margin-top: 10px;
+}
+
+.navbar-header .navbar-brand img {
+  height: 3em;
 }
 
 .navbar-inverse .navbar-toggle:focus
@@ -126,9 +135,10 @@ a:hover {
 }
 
 #top-bar.animated-header {
-  padding: 20px 0;
   background: #ffffff;
   box-shadow: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 #top-bar .main-menu li > a {
@@ -153,12 +163,22 @@ a:hover {
   color: #522D80;
 }
 
+.navbar-collapse {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar-fixed-top .navbar-collapse {
+  max-height: 480px;
+}
+
 .navbar-custom .nav li > a {
   position: relative;
   color: #000;
 }
 
 .navbar-right .dropdown-menu {
+  padding: 0px;
   right: auto;
   left: 0;
 }
@@ -171,7 +191,7 @@ a:hover {
 }
 
 #hero-area {
-  background: url('../images/shield.png') no-repeat 50%;
+  background: url('/images/shield.png') no-repeat 50%;
   background-size: contain;
   background-attachment: fixed;
   padding: 230px 0;
@@ -393,6 +413,8 @@ figure .overlay {
   bottom: 0;
   padding: 10px;
   text-align: center;
+  display: flex;
+  align-items: center;
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   -webkit-transition: opacity 400ms;
@@ -423,8 +445,7 @@ figure .overlay:hover a {
 }
 
 figure .buttons {
-  position: relative;
-  top: 40%;
+  width: 100%;
 }
 
 figure figcaption {
@@ -908,7 +929,7 @@ ul.social-icons li {
 }
 
 .fancybox-close {
-  background: url('../images/icons/close.png') no-repeat scroll 0 0 transparent;
+  background: url('/images/icons/close.png') no-repeat scroll 0 0 transparent;
   height: 50px;
   right: 0;
   top: 0;
@@ -916,14 +937,14 @@ ul.social-icons li {
 }
 
 .fancybox-next span {
-  background: url('../images/icons/right.png') no-repeat scroll center center #009ee3;
+  background: url('/images/icons/right.png') no-repeat scroll center center #009ee3;
   height: 50px;
   width: 50px;
   right: 0;
 }
 
 .fancybox-prev span {
-  background: url('../images/icons/left.png') no-repeat scroll center center #009ee3;
+  background: url('/images/icons/left.png') no-repeat scroll center center #009ee3;
   height: 50px;
   width: 50px;
   left: 0;
@@ -965,6 +986,10 @@ ul.social-icons li {
 
 .company-description {
   margin-top: 80px;
+}
+
+.company-description .large-logo {
+  padding-bottom: 40px;
 }
 
 .company-description .block h3 {
@@ -1025,11 +1050,14 @@ ul.social-icons li {
   margin-top: 50px;
 }
 
+.about-feature .col-sm-4 {
+  padding: 0px;
+}
+
 .about-feature .block {
   color: #fff;
-  width: 33.33%;
   padding: 5%;
-  float: left;
+  height: 18em;
 }
 
 .about-feature .block p {
@@ -1118,18 +1146,6 @@ article {
 
   display: none;
   width: 0%;
-}
-
-@media (max-width: 1025px) {
-  .wide {
-    display: none;
-    width: 0%;
-  }
-
-  .mobile {
-    display: inline-block;
-    width: initial;
-  }
 }
 
 .sidebar .widget {

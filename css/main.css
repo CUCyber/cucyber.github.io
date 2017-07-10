@@ -17,16 +17,12 @@ p {
   font-weight: 300;
 }
 
-ul {
+ul.flat {
   padding-left: 0;
 }
 
-ul li {
+ul.flat li {
   list-style: none;
-}
-
-ul.bulleted li {
-  list-style: initial;
 }
 
 h2 {

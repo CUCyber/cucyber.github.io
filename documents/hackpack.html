@@ -2355,7 +2355,7 @@ ClientAliveCountMax 0</code></pre>
 <ul>
 <li>Ensure the following lines are in logging.properties <code>handlers=org.apache.juli.FileHandler, java.util.logging.ConsoleHandler</code></li>
 <li>Ensure the following lines are in logging.properties <code>org.apache.juli.FileHandler.level=FINEST</code></li>
-<li>Ensure that className is set to org.apache.catalina.valves.FastCommonAccessLogValve in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
+<li>Ensure that <code>className</code> is set to <code>org.apache.catalina.valves.FastCommonAccessLogValve</code> in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
 <li>Ensure that directory is set to <code>$CATALINA_HOME/logs</code> |in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
 <li>Ensure that pattern is set to <code>&quot;%t % U %a %A %m %p %q %s&quot;</code> in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
 </ul></li>

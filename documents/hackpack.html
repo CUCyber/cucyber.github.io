@@ -217,193 +217,195 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
         <section class="single-post">
             <div class="container">
                 <div class="row">
-                    <p>You can download a PDF of this hackpack <a href="/documents/hackpack.pdf">here</a> and find the Markdown sources of this hackpack on <a href="https://github.com/CUCyber/Hackpack">GitHub</a>.</p>
+                    <div class="col-md-12">
+                                                                        <header>
+                            <h1 class="title">Cyber Defense Hackpack</h1>
+                                                                                    <p class="author">CU Cyber</p>
+                                                                                </header>
+                        
+                        <p>You can download a PDF of this hackpack <a href="/documents/hackpack.pdf">here</a> and find the Markdown sources of this hackpack on <a href="https://github.com/CUCyber/Hackpack">GitHub</a>.</p>
 
-                                                            <header>
-                        <h1 class="title">Cyber Defense Hackpack</h1>
-                                                                        <p class="author">CU Cyber</p>
-                                                                    </header>
-                                                            <nav id="TOC">
-                        <ul>
-                        <li><a href="#general-information-concerning-the-hackpack">General Information Concerning the Hackpack</a><ul>
-                        <li><a href="#the-ten-commandments-of-cyber-defense">The Ten Commandments of Cyber Defense</a></li>
-                        </ul></li>
-                        <li><a href="#competition-starting-checklists">Competition Starting Checklists</a><ul>
-                        <li><a href="#linux-checklist">Linux Checklist</a><ul>
-                        <li><a href="#in-depth-hardening">In-Depth Hardening</a></li>
-                        </ul></li>
-                        <li><a href="#windows-checklist">Windows Checklist</a></li>
-                        </ul></li>
-                        <li><a href="#administrative-correspondence">Administrative Correspondence</a><ul>
-                        <li><a href="#incident-response-and-report">Incident Response and Report</a></li>
-                        <li><a href="#handling-business-injects">Handling Business Injects</a></li>
-                        </ul></li>
-                        <li><a href="#authentication-modules-and-network-protocols">Authentication Modules and Network Protocols</a><ul>
-                        <li><a href="#kerberos">Kerberos</a><ul>
-                        <li><a href="#installation">Installation</a></li>
-                        </ul></li>
-                        <li><a href="#login.defs">login.defs</a><ul>
-                        <li><a href="#best-practices">Best Practices</a></li>
-                        </ul></li>
-                        <li><a href="#pam">PAM</a><ul>
-                        <li><a href="#configuration">Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#sudo">Sudo</a><ul>
-                        <li><a href="#configuration-1">Configuration</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#backups-and-restoration">Backups and Restoration</a><ul>
-                        <li><a href="#rsnapshot">rsnapshot</a><ul>
-                        <li><a href="#summary">Summary</a></li>
-                        <li><a href="#configuration-2">Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#simple-backups">Simple Backups</a><ul>
-                        <li><a href="#summary-1">Summary</a></li>
-                        <li><a href="#commands">Commands</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#disaster-recovery">Disaster Recovery</a><ul>
-                        <li><a href="#linux">Linux</a><ul>
-                        <li><a href="#invalid-password">Invalid Password</a></li>
-                        <li><a href="#chmod-not-executable">Chmod Not Executable</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#filesystem-layout-and-locations">Filesystem Layout and Locations</a><ul>
-                        <li><a href="#linux-filesystem-hierarchy">Linux Filesystem Hierarchy</a></li>
-                        </ul></li>
-                        <li><a href="#dedicated-firewalls-system-firewalls-and-packet-filters">Dedicated Firewalls, System Firewalls, and Packet Filters</a><ul>
-                        <li><a href="#firewall-basics">Firewall Basics</a></li>
-                        <li><a href="#firewalld">FirewallD</a><ul>
-                        <li><a href="#config-files">Config Files</a></li>
-                        <li><a href="#commands-1">Commands</a></li>
-                        <li><a href="#filtering">Filtering</a></li>
-                        <li><a href="#example-configuration">Example Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#iptables">iptables</a><ul>
-                        <li><a href="#config-files-1">Config Files</a></li>
-                        <li><a href="#commands-2">Commands</a></li>
-                        <li><a href="#filtering-1">Filtering</a></li>
-                        <li><a href="#example-configuration-1">Example Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#palo-alto">Palo Alto</a><ul>
-                        <li><a href="#lights-out">Lights Out</a></li>
-                        <li><a href="#basic-commands">Basic Commands</a></li>
-                        <li><a href="#rules">Rules</a></li>
-                        </ul></li>
-                        <li><a href="#pf">pf</a><ul>
-                        <li><a href="#config-files-2">Config Files</a></li>
-                        <li><a href="#commands-3">Commands</a></li>
-                        <li><a href="#filtering-2">Filtering</a></li>
-                        <li><a href="#example-configuration-2">Example Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#uncomplicated-firewall">Uncomplicated Firewall</a><ul>
-                        <li><a href="#config-files-3">Config Files</a></li>
-                        <li><a href="#commands-4">Commands</a></li>
-                        <li><a href="#sample-usage">Sample Usage</a></li>
-                        <li><a href="#filtering-3">Filtering</a></li>
-                        <li><a href="#example-configuration-3">Example Configuration</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#logging-investigation-and-auditing">Logging, Investigation, and Auditing</a><ul>
-                        <li><a href="#auditd">auditd</a><ul>
-                        <li><a href="#installation-1">Installation</a></li>
-                        <li><a href="#config-files-4">Config Files</a></li>
-                        <li><a href="#commands-5">Commands</a></li>
-                        <li><a href="#example-configuration-4">Example Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#rsyslog">Rsyslog</a><ul>
-                        <li><a href="#config-files-5">Config Files</a></li>
-                        </ul></li>
-                        <li><a href="#script">Script</a><ul>
-                        <li><a href="#usage">Usage</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#operating-system-utilities">Operating System Utilities</a><ul>
-                        <li><a href="#advanced-packaging-tool-apt">Advanced Packaging Tool (apt)</a><ul>
-                        <li><a href="#archive-mirrors">Archive Mirrors</a></li>
-                        </ul></li>
-                        <li><a href="#sh">sh</a><ul>
-                        <li><a href="#backgrounding">Backgrounding</a></li>
-                        <li><a href="#scripting">Scripting</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#filesystem-and-access-control-permissions">Filesystem and Access Control Permissions</a><ul>
-                        <li><a href="#dev">/dev</a></li>
-                        <li><a href="#home">/home</a></li>
-                        <li><a href="#varwww">/var/www</a></li>
-                        </ul></li>
-                        <li><a href="#provisioners">Provisioners</a><ul>
-                        <li><a href="#ansible">Ansible</a><ul>
-                        <li><a href="#setting-it-up">Setting it Up</a></li>
-                        <li><a href="#inventory-management">Inventory Management</a></li>
-                        <li><a href="#sample-playbooks">Sample Playbooks</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#scripts-and-other-useful-snippets">Scripts and Other Useful Snippets</a><ul>
-                        <li><a href="#add-group">Add Group</a></li>
-                        <li><a href="#bulk-users">Bulk Users</a></li>
-                        <li><a href="#parallel">Parallel</a></li>
-                        </ul></li>
-                        <li><a href="#system-services-and-network-applications">System Services and Network Applications</a><ul>
-                        <li><a href="#apache">Apache</a><ul>
-                        <li><a href="#installation-2">Installation</a></li>
-                        <li><a href="#remove-override-functionality">Remove Override Functionality</a></li>
-                        <li><a href="#chrooting">Chrooting</a></li>
-                        <li><a href="#configuring-ssl">Configuring SSL</a></li>
-                        <li><a href="#prevent-leaking-web-application-data">Prevent Leaking Web Application Data</a></li>
-                        </ul></li>
-                        <li><a href="#bind">BIND</a><ul>
-                        <li><a href="#config-files-6">Config Files</a></li>
-                        <li><a href="#example-configuration-5">Example Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#mysql">MySQL</a><ul>
-                        <li><a href="#installation-3">Installation</a></li>
-                        <li><a href="#common-tasks">Common Tasks</a></li>
-                        </ul></li>
-                        <li><a href="#openssl">OpenSSL</a><ul>
-                        <li><a href="#generate-tls-certificates">Generate TLS Certificates</a></li>
-                        </ul></li>
-                        <li><a href="#postfix">Postfix</a><ul>
-                        <li><a href="#full-mta">Full MTA</a></li>
-                        <li><a href="#send-only">Send Only</a></li>
-                        </ul></li>
-                        <li><a href="#samba">Samba</a><ul>
-                        <li><a href="#example-configuration-6">Example Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#openssh">OpenSSH</a><ul>
-                        <li><a href="#best-practices-1">Best Practices</a></li>
-                        <li><a href="#config-files-7">Config Files</a></li>
-                        <li><a href="#configuration-3">Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#apache-tomcat">Apache Tomcat</a><ul>
-                        <li><a href="#installation-4">Installation</a></li>
-                        <li><a href="#configuration-4">Configuration</a></li>
-                        </ul></li>
-                        <li><a href="#vsftpd">VSFTPD</a></li>
-                        <li><a href="#wordpress">Wordpress</a><ul>
-                        <li><a href="#setup">Setup</a></li>
-                        <li><a href="#securing-1">Securing</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#sniffers-and-information-gathering">Sniffers and Information Gathering</a><ul>
-                        <li><a href="#nmap">Nmap</a><ul>
-                        <li><a href="#common-options">Common Options</a></li>
-                        </ul></li>
-                        <li><a href="#wireshark">Wireshark</a><ul>
-                        <li><a href="#color-scheme">Color Scheme</a></li>
-                        <li><a href="#filters">Filters</a></li>
-                        </ul></li>
-                        </ul></li>
-                        <li><a href="#appendix">Appendix</a><ul>
-                        <li><a href="#copyright">Copyright</a><ul>
-                        <li><a href="#creative-commons-attribution-sharealike-4.0-international-public-license">Creative Commons Attribution-ShareAlike 4.0 International Public License</a></li>
-                        <li><a href="#bsd-2-clause">BSD 2-Clause</a></li>
-                        <li><a href="#the-mit-license">The MIT License</a></li>
-                        </ul></li>
-                        </ul></li>
-                        </ul>
-                    </nav>
-                                        <h1 id="general-information-concerning-the-hackpack">General Information Concerning the Hackpack</h1>
+                                                <nav id="TOC">
+                            <ul>
+                            <li><a href="#general-information-concerning-the-hackpack">General Information Concerning the Hackpack</a><ul>
+                            <li><a href="#the-ten-commandments-of-cyber-defense">The Ten Commandments of Cyber Defense</a></li>
+                            </ul></li>
+                            <li><a href="#competition-starting-checklists">Competition Starting Checklists</a><ul>
+                            <li><a href="#linux-checklist">Linux Checklist</a><ul>
+                            <li><a href="#in-depth-hardening">In-Depth Hardening</a></li>
+                            </ul></li>
+                            <li><a href="#windows-checklist">Windows Checklist</a></li>
+                            </ul></li>
+                            <li><a href="#administrative-correspondence">Administrative Correspondence</a><ul>
+                            <li><a href="#incident-response-and-report">Incident Response and Report</a></li>
+                            <li><a href="#handling-business-injects">Handling Business Injects</a></li>
+                            </ul></li>
+                            <li><a href="#authentication-modules-and-network-protocols">Authentication Modules and Network Protocols</a><ul>
+                            <li><a href="#kerberos">Kerberos</a><ul>
+                            <li><a href="#installation">Installation</a></li>
+                            </ul></li>
+                            <li><a href="#login.defs">login.defs</a><ul>
+                            <li><a href="#best-practices">Best Practices</a></li>
+                            </ul></li>
+                            <li><a href="#pam">PAM</a><ul>
+                            <li><a href="#configuration">Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#sudo">Sudo</a><ul>
+                            <li><a href="#configuration-1">Configuration</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#backups-and-restoration">Backups and Restoration</a><ul>
+                            <li><a href="#rsnapshot">rsnapshot</a><ul>
+                            <li><a href="#summary">Summary</a></li>
+                            <li><a href="#configuration-2">Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#simple-backups">Simple Backups</a><ul>
+                            <li><a href="#summary-1">Summary</a></li>
+                            <li><a href="#commands">Commands</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#disaster-recovery">Disaster Recovery</a><ul>
+                            <li><a href="#linux">Linux</a><ul>
+                            <li><a href="#invalid-password">Invalid Password</a></li>
+                            <li><a href="#chmod-not-executable">Chmod Not Executable</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#filesystem-layout-and-locations">Filesystem Layout and Locations</a><ul>
+                            <li><a href="#linux-filesystem-hierarchy">Linux Filesystem Hierarchy</a></li>
+                            </ul></li>
+                            <li><a href="#dedicated-firewalls-system-firewalls-and-packet-filters">Dedicated Firewalls, System Firewalls, and Packet Filters</a><ul>
+                            <li><a href="#firewall-basics">Firewall Basics</a></li>
+                            <li><a href="#firewalld">FirewallD</a><ul>
+                            <li><a href="#config-files">Config Files</a></li>
+                            <li><a href="#commands-1">Commands</a></li>
+                            <li><a href="#filtering">Filtering</a></li>
+                            <li><a href="#example-configuration">Example Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#iptables">iptables</a><ul>
+                            <li><a href="#config-files-1">Config Files</a></li>
+                            <li><a href="#commands-2">Commands</a></li>
+                            <li><a href="#filtering-1">Filtering</a></li>
+                            <li><a href="#example-configuration-1">Example Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#palo-alto">Palo Alto</a><ul>
+                            <li><a href="#lights-out">Lights Out</a></li>
+                            <li><a href="#basic-commands">Basic Commands</a></li>
+                            <li><a href="#rules">Rules</a></li>
+                            </ul></li>
+                            <li><a href="#pf">pf</a><ul>
+                            <li><a href="#config-files-2">Config Files</a></li>
+                            <li><a href="#commands-3">Commands</a></li>
+                            <li><a href="#filtering-2">Filtering</a></li>
+                            <li><a href="#example-configuration-2">Example Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#uncomplicated-firewall">Uncomplicated Firewall</a><ul>
+                            <li><a href="#config-files-3">Config Files</a></li>
+                            <li><a href="#commands-4">Commands</a></li>
+                            <li><a href="#sample-usage">Sample Usage</a></li>
+                            <li><a href="#filtering-3">Filtering</a></li>
+                            <li><a href="#example-configuration-3">Example Configuration</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#logging-investigation-and-auditing">Logging, Investigation, and Auditing</a><ul>
+                            <li><a href="#auditd">auditd</a><ul>
+                            <li><a href="#installation-1">Installation</a></li>
+                            <li><a href="#config-files-4">Config Files</a></li>
+                            <li><a href="#commands-5">Commands</a></li>
+                            <li><a href="#example-configuration-4">Example Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#rsyslog">Rsyslog</a><ul>
+                            <li><a href="#config-files-5">Config Files</a></li>
+                            </ul></li>
+                            <li><a href="#script">Script</a><ul>
+                            <li><a href="#usage">Usage</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#operating-system-utilities">Operating System Utilities</a><ul>
+                            <li><a href="#advanced-packaging-tool-apt">Advanced Packaging Tool (apt)</a><ul>
+                            <li><a href="#archive-mirrors">Archive Mirrors</a></li>
+                            </ul></li>
+                            <li><a href="#sh">sh</a><ul>
+                            <li><a href="#backgrounding">Backgrounding</a></li>
+                            <li><a href="#scripting">Scripting</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#filesystem-and-access-control-permissions">Filesystem and Access Control Permissions</a><ul>
+                            <li><a href="#dev">/dev</a></li>
+                            <li><a href="#home">/home</a></li>
+                            <li><a href="#varwww">/var/www</a></li>
+                            </ul></li>
+                            <li><a href="#provisioners">Provisioners</a><ul>
+                            <li><a href="#ansible">Ansible</a><ul>
+                            <li><a href="#setting-it-up">Setting it Up</a></li>
+                            <li><a href="#inventory-management">Inventory Management</a></li>
+                            <li><a href="#sample-playbooks">Sample Playbooks</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#scripts-and-other-useful-snippets">Scripts and Other Useful Snippets</a><ul>
+                            <li><a href="#add-group">Add Group</a></li>
+                            <li><a href="#bulk-users">Bulk Users</a></li>
+                            <li><a href="#parallel">Parallel</a></li>
+                            </ul></li>
+                            <li><a href="#system-services-and-network-applications">System Services and Network Applications</a><ul>
+                            <li><a href="#apache">Apache</a><ul>
+                            <li><a href="#installation-2">Installation</a></li>
+                            <li><a href="#remove-override-functionality">Remove Override Functionality</a></li>
+                            <li><a href="#chrooting">Chrooting</a></li>
+                            <li><a href="#configuring-ssl">Configuring SSL</a></li>
+                            <li><a href="#prevent-leaking-web-application-data">Prevent Leaking Web Application Data</a></li>
+                            </ul></li>
+                            <li><a href="#bind">BIND</a><ul>
+                            <li><a href="#config-files-6">Config Files</a></li>
+                            <li><a href="#example-configuration-5">Example Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#mysql">MySQL</a><ul>
+                            <li><a href="#installation-3">Installation</a></li>
+                            <li><a href="#common-tasks">Common Tasks</a></li>
+                            </ul></li>
+                            <li><a href="#openssl">OpenSSL</a><ul>
+                            <li><a href="#generate-tls-certificates">Generate TLS Certificates</a></li>
+                            </ul></li>
+                            <li><a href="#postfix">Postfix</a><ul>
+                            <li><a href="#full-mta">Full MTA</a></li>
+                            <li><a href="#send-only">Send Only</a></li>
+                            </ul></li>
+                            <li><a href="#samba">Samba</a><ul>
+                            <li><a href="#example-configuration-6">Example Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#openssh">OpenSSH</a><ul>
+                            <li><a href="#best-practices-1">Best Practices</a></li>
+                            <li><a href="#config-files-7">Config Files</a></li>
+                            <li><a href="#configuration-3">Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#apache-tomcat">Apache Tomcat</a><ul>
+                            <li><a href="#installation-4">Installation</a></li>
+                            <li><a href="#configuration-4">Configuration</a></li>
+                            </ul></li>
+                            <li><a href="#vsftpd">VSFTPD</a></li>
+                            <li><a href="#wordpress">Wordpress</a><ul>
+                            <li><a href="#setup">Setup</a></li>
+                            <li><a href="#securing-1">Securing</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#sniffers-and-information-gathering">Sniffers and Information Gathering</a><ul>
+                            <li><a href="#nmap">Nmap</a><ul>
+                            <li><a href="#common-options">Common Options</a></li>
+                            </ul></li>
+                            <li><a href="#wireshark">Wireshark</a><ul>
+                            <li><a href="#color-scheme">Color Scheme</a></li>
+                            <li><a href="#filters">Filters</a></li>
+                            </ul></li>
+                            </ul></li>
+                            <li><a href="#appendix">Appendix</a><ul>
+                            <li><a href="#copyright">Copyright</a><ul>
+                            <li><a href="#creative-commons-attribution-sharealike-4.0-international-public-license">Creative Commons Attribution-ShareAlike 4.0 International Public License</a></li>
+                            <li><a href="#bsd-2-clause">BSD 2-Clause</a></li>
+                            <li><a href="#the-mit-license">The MIT License</a></li>
+                            </ul></li>
+                            </ul></li>
+                            </ul>
+                        </nav>
+                                                <h1 id="general-information-concerning-the-hackpack">General Information Concerning the Hackpack</h1>
 <h2 id="the-ten-commandments-of-cyber-defense">The Ten Commandments of Cyber Defense</h2>
 <ol style="list-style-type: decimal">
 <li>Thou shalt NEVER trust the red team</li>
@@ -2705,7 +2707,8 @@ For the avoidance of doubt, this <a href="#Section-6-2">Section 6-2</a> does not
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <p><a href="#TOC" title="top">Jump to Top</a></p>
-                                    </div>
+                                            </div>
+                </div>
             </div>
         </section>
         <!--

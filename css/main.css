@@ -1117,6 +1117,7 @@ article {
   padding: 8px 18px;
   border-radius: 0;
   margin-top: 15px;
+  display: inline-block;
   border: 1px solid #fff;
   box-shadow: 0px 0px 0px 1px #522D80;
 }
@@ -1142,6 +1143,10 @@ article {
 
   display: none;
   width: 0%;
+}
+
+.mobile .sidebar {
+  padding-top: 0px;
 }
 
 .sidebar .widget {

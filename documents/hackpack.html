@@ -62,6 +62,14 @@
                 word-wrap: break-word;
             }
 
+            #TOC:before {
+                display: block;
+                content: " ";
+                margin-top: -80px;
+                height: 80px;
+                visibility: hidden;
+            }
+
             @media (min-width: 768px) {
                 *[id]:before {
                     display: block;

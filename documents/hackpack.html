@@ -401,7 +401,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <li>Thou shalt log everything</li>
 <li>Thou shalt get your injects done on time</li>
 </ol>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="competition-starting-checklists">Competition Starting Checklists</h1>
 <h2 id="linux-checklist">Linux Checklist</h2>
 <p>This checklist is designed for the first 30 minutes of competition.</p>
@@ -621,7 +621,7 @@ install tipc /bin/true</code></pre>
 <h5 id="etcntp.conf">/etc/ntp.conf</h5>
 <pre class="conf"><code>restrict -4 default kod nomodify notrap nopeer noquery
 restrict -6 default kod nomodify notrap nopeer noquery</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="windows-checklist">Windows Checklist</h2>
 <p>This checklist is designed for the first 30 minutes of competition.</p>
 <p>For each System:</p>
@@ -635,12 +635,12 @@ restrict -6 default kod nomodify notrap nopeer noquery</code></pre>
 <li>Install Windows service packages</li>
 <li>Run a full backup of the system</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="administrative-correspondence">Administrative Correspondence</h1>
 <h2 id="incident-response-and-report">Incident Response and Report</h2>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="handling-business-injects">Handling Business Injects</h2>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="authentication-modules-and-network-protocols">Authentication Modules and Network Protocols</h1>
 <h2 id="kerberos">Kerberos</h2>
 <p>Kerberos is a remote login service that allows a set of Linux and Windows servers to share users and groups. The current version of the protocol is version 5, and version 4 is deprecated and should not be used due to weak cryptography.</p>
@@ -756,7 +756,7 @@ session   optional  pam_permit.so</code></pre>
 
 <span class="kw">[logging]</span>
 <span class="dt">    default </span><span class="ot">=</span><span class="st"> FILE:/var/log/krb5libs.log</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="login.defs">login.defs</h2>
 <p>'/etc/login.defs' is a configuration file that controls login functionality on Linux machines using encrypted password files. It is one of 3 tools that can control this process (login.defs, pam, systemd-logind).</p>
 <h3 id="best-practices">Best Practices</h3>
@@ -778,7 +778,7 @@ tty3
 tty4
 tty5
 tty6</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="pam">PAM</h2>
 <p>PAM is short for Pluggable Authentication Module. It controls the authentication on Linux machines. By default, it reads the '/etc/shadow' file. It can also be configured to use LDAP or Kerberos for remote authentication.</p>
 <p>In general the following should be configured:</p>
@@ -801,7 +801,7 @@ password required pam_unix.so try_first_pass use_authtok sha512 shadow
 session required pam_limits.so
 session required pam_env.so
 session required pam_unix.so</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="sudo">Sudo</h2>
 <p>Sudo is short for super user do. It allows for non-root users to request elevated privileges on linux systems. Sudo has a variety of options that can be configured.</p>
 <p>Here are some basic suggestions for managing systems that use sudo:</p>
@@ -826,7 +826,7 @@ chmod 600 /etc/sudoers
 
 # be sure to add administrators back to &#39;wheel&#39; and
 # merge stuff from &#39;/etc/sudoers~&#39; and &#39;/etc/sudoers.d~/&#39;</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="backups-and-restoration">Backups and Restoration</h1>
 <h2 id="rsnapshot">rsnapshot</h2>
 <h3 id="summary">Summary</h3>
@@ -837,7 +837,7 @@ chmod 600 /etc/sudoers
 <li>rsync</li>
 <li>openssh</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="configuration-2">Configuration</h3>
 <h4 id="etcrsnapshot.dsystem">/etc/rsnapshot.d/system</h4>
 <pre class="rsnapshot"><code>config_version  1.2
@@ -908,7 +908,7 @@ backup      root@example.local:/var/    example.local/</code></pre>
 <h4 id="etccron.drsnapshot">/etc/cron.d/rsnapshot</h4>
 <pre class="crontab"><code>0,15,30,45 * * * * root rsnapshot -c /etc/rsnapshot.d/application application
 8 * * * * root rsnapshot -c /etc/rsnapshot.d/system system</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="simple-backups">Simple Backups</h2>
 <h3 id="summary-1">Summary</h3>
 <p>To create simple archive backups, use the tar command. These backups should be created as the initial backups during the beginning period of the competition.</p>
@@ -916,7 +916,7 @@ backup      root@example.local:/var/    example.local/</code></pre>
 <ul>
 <li>tar</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="commands">Commands</h3>
 <h4 id="backup">Backup</h4>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
@@ -934,7 +934,7 @@ backup      root@example.local:/var/    example.local/</code></pre>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="bu">cd</span> /
 <span class="fu">tar</span> xjpf /home/flynn/kevin</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="disaster-recovery">Disaster Recovery</h1>
 <h2 id="linux">Linux</h2>
 <p>Here are some of the worst things that they can do, and how to hopefully recover.</p>
@@ -950,7 +950,7 @@ backup      root@example.local:/var/    example.local/</code></pre>
 <li>Use 'passwd' to create a new root password</li>
 <li>Reboot</li>
 </ol>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="chmod-not-executable">Chmod Not Executable</h3>
 <p>While this initially might not seem like it is too bad, there is a problem where bash does not provide a built-in to fix this. This can be particularly devious if the entire root directory is marked not executable. If the entire file system is not executable, you are looking at a live CD or a slave mounted drive.</p>
 <p>There are a few options here roughly sorted by time to fix:</p>
@@ -977,7 +977,7 @@ backup      root@example.local:/var/    example.local/</code></pre>
 <h5 id="python">Python</h5>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> os
 os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</span>)</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="filesystem-layout-and-locations">Filesystem Layout and Locations</h1>
 <h2 id="linux-filesystem-hierarchy">Linux Filesystem Hierarchy</h2>
 <ul>
@@ -1081,7 +1081,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li>A core system feature of Linux</li>
 </ul></li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="dedicated-firewalls-system-firewalls-and-packet-filters">Dedicated Firewalls, System Firewalls, and Packet Filters</h1>
 <h2 id="firewall-basics">Firewall Basics</h2>
 <p>Firewalls are essentially sets of rules that allow network traffic in and out of a machine. In general, firewalls should be configured to allow the minimum required access. For Windows, the firewall is called Windows Firewall. For Linux, iptables is the built-in low-level firewall and ufw and firewalld are the most common high-level firewalls. For BSD, pf, the base of the pfSense enterprise firewall, is the default. For dedicated equipment, such as the Cisco ASA, custom firewalls or firewalls based on Linux and on occasion BSD are common.</p>
@@ -1091,7 +1091,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li>Open only the required ports to make the services to work.</li>
 <li>Log any unusual traffic that hits the firewall.</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="firewalld">FirewallD</h2>
 <h3 id="config-files">Config Files</h3>
 <p>FirewallD references the following directories of files:</p>
@@ -1099,10 +1099,10 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li>'/usr/lib/firewalld' - where package default rules reside</li>
 <li>'/etc/firewalld' - where user overrides rules reside</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="commands-1">Commands</h3>
 <p>FirewallD uses only the <code>firewall-cmd</code> binary.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="filtering">Filtering</h3>
 <p>FirewallD is the new Linux firewall from RedHat. It provides a usability layer on top of iptables by focusing on zones and services. FirewallD therefore inherits iptables's first match rule.</p>
 <h4 id="zones">Zones</h4>
@@ -1132,7 +1132,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
     <span class="kw">&lt;port</span><span class="ot"> protocol=</span><span class="st">&quot;tcp&quot;</span><span class="ot"> port=</span><span class="st">&quot;21&quot;</span><span class="kw">/&gt;</span>
     <span class="kw">&lt;module</span><span class="ot"> name=</span><span class="st">&quot;nf_conntrack_foo&quot;</span><span class="kw">/&gt;</span>
 <span class="kw">&lt;/service&gt;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="example-configuration">Example Configuration</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
@@ -1178,7 +1178,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
     --seconds 30 --hitcount 6 -j REJECT --reject-with tcp-reset
 
 <span class="ex">firewall-cmd</span> --runtime-to-permanent</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="iptables">iptables</h2>
 <h3 id="config-files-1">Config Files</h3>
 <p>iptables stores the majority of its configuration in a series of files:</p>
@@ -1187,7 +1187,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li>'/etc/iptables' - iptables configuration (Debian-based distributions)</li>
 <li>'/etc/services' - an optional file that maps service names to port numbers</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="commands-2">Commands</h3>
 <p>iptables uses the following binaries:</p>
 <ul>
@@ -1196,10 +1196,10 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li><code>iptables-restore</code> - reads a file and sets the firewall configuration</li>
 </ul>
 <p>While a save format exists, iptables is normally configured via shell commands to avoid inconsistencies between save file versions.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="filtering-1">Filtering</h3>
 <p>iptables will stop processing a packet when it matches the first rule. The only exception to this is the LOG target. When the LOG target is matched, matching will continue; but the traffic will be logged in the kernel log.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="example-configuration-1">Example Configuration</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
@@ -1257,7 +1257,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 
 <span class="co"># drop all other traffic</span>
 <span class="ex">iptables</span> -A INPUT -j DROP</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="palo-alto">Palo Alto</h2>
 <p>The Palo Alto firewall is a common and relatively user friendly hardware firewall solution.</p>
 <h3 id="lights-out">Lights Out</h3>
@@ -1265,10 +1265,10 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <pre class="paloalto"><code>configure
 set network interface ethernet &lt;interface&gt; link-state down
 commit</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="basic-commands">Basic Commands</h3>
 <p>The Palo Alto firewall works similar to Cisco systems in that the command line has various contexts it can be in. The default context gives access to basic network tools, such as ping or traceroute. To configure the firewall, use the <code>configure</code> context. While in the <code>configure</code> context, you can open various <code>edit</code> contexts that follow the hierarchical nature of the firewall configuration. For each <code>edit</code> context, it scopes the <code>set</code> command to those contexts so that the full path does not need to be specific for several set statements in a row. The <code>up</code> and <code>top</code> commands can travel up the hierarchy back to base contexts. Settings are not live until the <code>commit</code> command is run. You can use tab completion or the question mark key to complete written values and find potential options. The sections below will assume you are in the appropriate <code>edit</code> context given at the beginning of the section.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="rules">Rules</h3>
 <p>To edit security rules, such as traffic barriers between interfaces, enter the <code>edit rulebase security</code> context. Rules between zones are default deny and rules within zones are default allow.</p>
 <h4 id="firewall-connections">Firewall Connections</h4>
@@ -1289,7 +1289,7 @@ up
 edit rules dns
 set from any to public destination &lt;dns server&gt; application dns
 up</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="pf">pf</h2>
 <h3 id="config-files-2">Config Files</h3>
 <p>pf references the following files:</p>
@@ -1297,7 +1297,7 @@ up</code></pre>
 <li>'/etc/rc.conf' - as with all servies, pf must be enabled here</li>
 <li>'/etc/pf.conf' - pf configuration file</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="commands-3">Commands</h3>
 <p>pf uses the following binaries:</p>
 <ul>
@@ -1305,10 +1305,10 @@ up</code></pre>
 <li><code>pfctl -sa</code> - see the current configuration status</li>
 <li><code>kldload pf</code> - load the pf kernel module</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="filtering-2">Filtering</h3>
 <p>All of the configuration for pf is stored in '/etc/pf.conf'. There is no way to modify the running configuration except to overwrite the running configuration with the saved configuration. Unlike other firewalls, the last rule to match will be the rule that is applied. This behavior can be overridden by using the <code>quick</code> keyword.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="example-configuration-2">Example Configuration</h3>
 <pre class="pf"><code># adapted from bsdnow tutorial
 
@@ -1355,7 +1355,7 @@ pass inet proto icmp icmp-type echoreq
 
 # adapted from the http://www.bsdnow.tv/tutorials/pf
 # which is distrusted under CC-BY-SA</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="uncomplicated-firewall">Uncomplicated Firewall</h2>
 <h3 id="config-files-3">Config Files</h3>
 <p>Uncomplicated Firewall references mainly the following files:</p>
@@ -1363,7 +1363,7 @@ pass inet proto icmp icmp-type echoreq
 <li>'/etc/default/ufw' - high level configuration</li>
 <li>'/etc/ufw/sysctl.conf' - kernel tunables</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="commands-4">Commands</h3>
 <ul>
 <li>ufw enable - enables and reloads the firewall</li>
@@ -1373,23 +1373,23 @@ pass inet proto icmp icmp-type echoreq
 <li>ufw limit - allows with connection rate limiting</li>
 <li>ufw status verbose - display the current firewall rules (if active)</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="sample-usage">Sample Usage</h3>
 <ul>
 <li>ufw allow 8080/tcp - adds a rule that allows incoming traffic on tcp port 22</li>
 <li>ufw delete allow 8080/tcp - deletes the previous rule</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="filtering-3">Filtering</h3>
 <p>Uncomplicated Firewall is based on iptables and therefore inherits iptables's first match rule.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="example-configuration-3">Example Configuration</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="ex">ufw</span> default deny
 <span class="ex">ufw</span> allow ssh/tcp
 <span class="ex">ufw</span> logging on
 <span class="ex">ufw</span> enable</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="logging-investigation-and-auditing">Logging, Investigation, and Auditing</h1>
 <h2 id="auditd">auditd</h2>
 <p>Linux has a built-in auditing framework that acts in kernel space. This portion of the kernel communicates with the userspace auditd server. It can be configured to monitor files and syscalls.</p>
@@ -1397,10 +1397,10 @@ pass inet proto icmp icmp-type echoreq
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="ex">dnf</span> install audit
 <span class="ex">systemctl</span> start auditd</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="config-files-4">Config Files</h3>
 <p>The userspace auditing commands, can be used to configure logs. Audit can stores its rules in '/etc/audit/audit.rules' or in files inside '/etc/audit/audit.d/'. The syntax for these files is the same as the userspace commands.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="commands-5">Commands</h3>
 <p>Viewing the auditlog can be done in a few ways:</p>
 <ul>
@@ -1408,7 +1408,7 @@ pass inet proto icmp icmp-type echoreq
 <li><code>ausearch</code> - view a summary of recent events</li>
 <li><code>syslog</code> - view logs typically stored in '/var/log/audit/audit.log'</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="example-configuration-4">Example Configuration</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="co"># remove all rules</span>
@@ -1438,7 +1438,7 @@ pass inet proto icmp icmp-type echoreq
 
 <span class="co"># lock audit rules so that they cannot be edited until reboot</span>
 <span class="ex">auditctl</span> -e 2</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="rsyslog">Rsyslog</h2>
 <p>Rsyslog is a client and server that conforms to the syslog protocol. On systems with systemd (i.e. RedHat and newer Debian distributions), journald is typically used instead, but both programs can be used to compliment each other.</p>
 <h3 id="config-files-5">Config Files</h3>
@@ -1454,7 +1454,7 @@ cron.info                               /var/log/cron.log
 news,kern,lpr,daemon,ftp,mail.info      /var/log/daemon.log
 *.err;user.none                         root
 *.emerg;user.none                       *</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="script">Script</h2>
 <p>The <code>script</code> command can be used to record commands run for audit logs.</p>
 <h3 id="usage">Usage</h3>
@@ -1464,7 +1464,7 @@ news,kern,lpr,daemon,ftp,mail.info      /var/log/daemon.log
 
 <span class="co"># use specified interactive interpreter</span>
 <span class="ex">script</span> -c bash <span class="op">&lt;</span>file<span class="op">&gt;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="operating-system-utilities">Operating System Utilities</h1>
 <h2 id="advanced-packaging-tool-apt">Advanced Packaging Tool (apt)</h2>
 <h3 id="archive-mirrors">Archive Mirrors</h3>
@@ -1473,7 +1473,7 @@ news,kern,lpr,daemon,ftp,mail.info      /var/log/daemon.log
 <pre class="apt"><code>deb http://archive.debian.org/debian/ [version]/main
 deb http://archive.debian.org/debian-security/ [version]/updates
 deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="sh">sh</h2>
 <h3 id="backgrounding">Backgrounding</h3>
 <p>Often you will want to be able to run processes in the background during the contest. There are a few ways to do this:</p>
@@ -1497,7 +1497,7 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
 
 <span class="co"># disown a process after you start it</span>
 <span class="bu">disown</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="scripting">Scripting</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="co"># for loop that outputs 1 2 3 4 5 6 7 8 9 10 a b c</span>
@@ -1527,14 +1527,14 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
     <span class="bu">echo</span> <span class="va">$1</span>
 <span class="kw">}</span>
 <span class="ex">foobar</span> <span class="st">&quot;this echos this statement&quot;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="filesystem-and-access-control-permissions">Filesystem and Access Control Permissions</h1>
 <h2 id="dev">/dev</h2>
 <p>The following command will fix permissions for all device files to reasonable defaults:</p>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="co"># find devices with execute permissions and remove the execute permissions</span>
 <span class="fu">find</span> /dev <span class="dt">\(</span> -type c -or -type b -or -type f <span class="dt">\)</span> -perm -+x -exec chmod -x <span class="dt">{}</span> <span class="dt">\;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="home">/home</h2>
 <p>The following command will fix permissions for all home files to reasonable defaults:</p>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
@@ -1557,7 +1557,7 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
         <span class="fu">chmod</span> 640 <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span>
     <span class="kw">fi</span>
 <span class="kw">done</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="varwww">/var/www</h2>
 <p>The following command will fix permissions for all www files to reasonable defaults:</p>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
@@ -1565,7 +1565,7 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
 <span class="fu">find</span> /var/www -type f -exec chmod 640 <span class="dt">{}</span> <span class="dt">\;</span>
 <span class="fu">chown</span> -R root:apache /var/www
 <span class="fu">chmod</span> 770 /var/www/[any directories that need to be writable by the web application]</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="provisioners">Provisioners</h1>
 <h2 id="ansible">Ansible</h2>
 <p>Ansible is a lightweight agent-less provisioner that uses Python 2.x and OpenSSH as a backend. It is configured using Playbooks which are files written in a dialect of YAML.</p>
@@ -1614,7 +1614,7 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
 <span class="co"># To manage Windows machines</span>
 <span class="ex">pip</span> install https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm
 <span class="ex">pip</span> install kerberos</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="inventory-management">Inventory Management</h3>
 <p>The collections of machines that are managed via Ansible are called the inventory. Here is an example inventory file:</p>
 <pre class="ansible"><code>[web:children]
@@ -1644,7 +1644,7 @@ localhost ansible_connection=local</code></pre>
 <li>A group of groups called web that contains all the hosts in webservers and databases.</li>
 </ul>
 <p>NOTE, group variables and host variables can also be specified in the hosts file as shown with the <code>ansible_connection</code> example, but this format is discouraged because it does not follow a separation of concerns.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="sample-playbooks">Sample Playbooks</h3>
 <p>Repositories containing Ansible playbooks are generally arranged out as follows:</p>
 <ul>
@@ -1790,7 +1790,7 @@ if __name__ == &#39;__main__&#39;:
 <h4 id="documentation">Documentation</h4>
 <p>For each of the ansible modules, there is documentation that is installed. It can be viewed using the <code>ansible-doc</code> command. Use <code>ansible-doc -l</code> to get a list of all the available modules and a short description.</p>
 <p>Ansible uses Jinja2 for Templates. To access the list of filters as well as extensive examples, run <code>pydoc jinja2.filters</code>. These templates can also be used for variables, see <code>ansible all -m setup</code> for a list of available facts.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="scripts-and-other-useful-snippets">Scripts and Other Useful Snippets</h1>
 <h2 id="add-group">Add Group</h2>
 <p>The following scripts takes an accounts.csv file with headers 'Firstname,Lastname,SAM,Email' and adds them to the current Active Directory 'Administrators' group.</p>
@@ -1799,7 +1799,7 @@ if __name__ == &#39;__main__&#39;:
 ForEach($user in $Users){
     Add-ADGroupMember -Identity Administrators -Member $user.SAM
 }</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="bulk-users">Bulk Users</h2>
 <p>The following scripts takes an accounts.csv file with headers 'Firstname,Lastname,SAM,Email' and adds them to the current Active Directory.</p>
 <pre class="powershell"><code>$Users = Import-Csv -Path &quot;accounts.csv&quot;
@@ -1816,7 +1816,7 @@ foreach ($User in $Users)
         -AccountPassword (ConvertTo-SecureString $Password -AsPlainText -Force) `
         -Enabled $true -ChangePasswordAtLogon $true
 }</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="parallel">Parallel</h2>
 <p>The following script takes in a file then command parameter in and for every server in the file, it runs the command on that server.</p>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
@@ -1826,7 +1826,7 @@ foreach ($User in $Users)
   <span class="kw">(</span><span class="fu">ssh</span> <span class="va">$server</span> <span class="va">$cmd</span><span class="kw">)</span> <span class="kw">&amp;</span>
 <span class="kw">done</span> <span class="op">&lt;</span><span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span>
 <span class="bu">wait</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="system-services-and-network-applications">System Services and Network Applications</h1>
 <h2 id="apache">Apache</h2>
 <p>Apache is a one of the most popular web servers with a large variety of features.</p>
@@ -1887,13 +1887,13 @@ foreach ($User in $Users)
 <li>mod_cgi</li>
 </ul></li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="remove-override-functionality">Remove Override Functionality</h3>
 <p>Web application override functionality should be disabled as they are a major security flaw in the Apache system. The functionality is easy to disable, <code>AllowOverride None</code> everywhere it is referenced, but the '.htaccess' files should be merged into a global configuration file. This can be done using the following snippet.</p>
 <div class="sourceCode"><pre class="sourceCode apache"><code class="sourceCode apache"><span class="fu">&lt;Location</span><span class="at"> &quot;[absolute directory of .htaccess file]&quot;</span><span class="fu">&gt;</span>
     [contents of .htaccess file]
 <span class="fu">&lt;/Location&gt;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="chrooting">Chrooting</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
 <span class="fu">mkdir</span> -p /jail/apache/usr/local
@@ -1902,7 +1902,7 @@ foreach ($User in $Users)
 
 <span class="bu">echo</span> <span class="st">&quot;SecChrootDir /jail/apache&quot;</span> <span class="op">&gt;&gt;</span> <span class="va">$HTTPD_CONF</span>
 <span class="ex">/usr/local/apache/bin/apachectl</span> startssl</code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="configuring-ssl">Configuring SSL</h3>
 <p>Modify the below snippet to your site's needs and add it to your configuration file.</p>
 <div class="sourceCode"><pre class="sourceCode apache"><code class="sourceCode apache">LoadModule<span class="st"> ssl_module modules/mod_ssl.so</span>
@@ -1914,13 +1914,13 @@ Listen<span class="st"> 443</span>
     SSLCertificateFile<span class="st"> &quot;/path/to/www.example.com.cert&quot;</span>
     SSLCertificateKeyFile<span class="st"> &quot;/path/to/www.example.com.key&quot;</span>
 <span class="fu">&lt;/VirtualHost&gt;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="prevent-leaking-web-application-data">Prevent Leaking Web Application Data</h3>
 <p>The following files should be edited to prevent common ways web applications leak data.</p>
 <h4 id="robots.txt">robots.txt</h4>
 <pre class="txt"><code>User-agent: *
 Disallow: /</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="bind">BIND</h2>
 <p>BIND is a common, featured DNS server. To make it more secure and less vulnerable to attacks, it is recommended to only run BIND as an authoritative nameserver and not as a recursive nameserver.</p>
 <h3 id="config-files-6">Config Files</h3>
@@ -1932,7 +1932,7 @@ Disallow: /</code></pre>
 <li>'/var/named/' (RedHat-based distributions)</li>
 </ul>
 <p>Utilize the named-checkconf utility to check configuration before applying it.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="example-configuration-5">Example Configuration</h3>
 <p>Below is a set of example configuration files for securely configuring BIND as an authoritative nameserver with forward and reverse records.</p>
 <h4 id="etcnamed.conf">/etc/named.conf</h4>
@@ -2029,12 +2029,12 @@ $TTL    600
 101     IN      PTR     ns1         ; 10.0.0.101
 102     IN      PTR     mail        ; 10.0.0.102
 103     IN      PTR     www         ; 10.0.0.103</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="mysql">MySQL</h2>
 <p>MariaDB, and its predecessor MySQL, is a quick database for small to medium size organizations.</p>
 <h3 id="installation-3">Installation</h3>
 <p>Install from the repositories then use the command <code>mysql_secure_installation</code>.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="common-tasks">Common Tasks</h3>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="co">-----------------------------</span>
 <span class="co">-- Listing Databases and Tables:</span>
@@ -2151,7 +2151,7 @@ SHOW GRANTS <span class="kw">FOR</span> <span class="st">&#39;user&#39;</span>@<
 <li>Disable the <code>LOCAL INFILE</code> queries, which allows someone (i.e. red team) to upload files from their computers into your database, by adding <code>local-infile = 0</code> to the <code>[mysqld]</code> section of the config file</li>
 <li>Restart MySQL after making any configuration changes</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="openssl">OpenSSL</h2>
 <p>OpenSSL is a toolkit for the TLS protocol and a general purpose cryptography library.</p>
 <h3 id="generate-tls-certificates">Generate TLS Certificates</h3>
@@ -2160,20 +2160,20 @@ SHOW GRANTS <span class="kw">FOR</span> <span class="st">&#39;user&#39;</span>@<
 <span class="ex">openssl</span> req -x509 -newkey rsa:2048 -nodes -sha256 -days 365 \
     -keyout example.pem -out example.crt \
     -subj <span class="st">&#39;/O=Example, Inc./CN=example.com&#39;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="postfix">Postfix</h2>
 <p>Postfix is a secure replacement for Sendmail. It features very strong process and privilege separation while keeping an interface roughly consistent with Sendmail. It should work out of the box for local mail delivery and relaying given the mail hostname.</p>
 <h3 id="full-mta">Full MTA</h3>
 <h4 id="etcpostfixmain.cf">/etc/postfix/main.cf</h4>
 <pre class="postfix"><code>myhostname = [hostname]</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="send-only">Send Only</h3>
 <p>Postfix should be used in place of Sendmail for the case of sending emails. It is easy to install and for send-only has minimal required configuration.</p>
 <h4 id="etcpostfixmain.cf-1">/etc/postfix/main.cf</h4>
 <p>Apply the below configuration where the original options are in the main configuration file. These will only allow connections from localhost and disable local delivery.</p>
 <pre class="postfix"><code>inet_interfaces = loopback-only
 local_transport = error:local delivery is disabled</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="samba">Samba</h2>
 <p>Samba is reimplementation of the Serial Message Block Protocol from Windows.</p>
 <h3 id="example-configuration-6">Example Configuration</h3>
@@ -2228,7 +2228,7 @@ local_transport = error:local delivery is disabled</code></pre>
 <span class="dt">  read only </span><span class="ot">=</span><span class="st"> </span><span class="kw">no</span>
 <span class="dt">  browseable </span><span class="ot">=</span><span class="st"> </span><span class="kw">yes</span>
 <span class="dt">  valid users </span><span class="ot">=</span><span class="st"> @NETWORK+&quot;Domain Admins&quot; NETWORK+test.user</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="openssh">OpenSSH</h2>
 <p>SSH or Secure Shell is a remote administration protocol. It allows the user to send remote commands to Linux machines (and soon to versions of Windows 10 or later). It can be a vary powerful tool for system administration, but can also be a powerful exploit target if not secured. It is used with a variety of tools, including the provisioning tool Ansible and back up tool rsnapshot for secure connections. In general there are a few best practices to follow for using ssh.</p>
 <h3 id="best-practices-1">Best Practices</h3>
@@ -2244,7 +2244,7 @@ local_transport = error:local delivery is disabled</code></pre>
 <li>Block excessive connections to ssh at the firewall.</li>
 <li>Do not forward the SSH Agent to untrusted/compromised servers.</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="config-files-7">Config Files</h3>
 <p>Important system level configuration directories and files:</p>
 <ul>
@@ -2266,7 +2266,7 @@ local_transport = error:local delivery is disabled</code></pre>
 <li>'~/.ssh/id*.pub' - public key for the user</li>
 <li>'~/.ssh/id*' - private key for the user</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="configuration-3">Configuration</h3>
 <h4 id="etcsshsshd_config">/etc/ssh/sshd_config</h4>
 <pre class="sshconf"><code>PermitRootLogin no
@@ -2291,7 +2291,7 @@ ClientAliveCountMax 0</code></pre>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">test</span> -f /etc/hosts.equiv <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> /etc/hosts.equiv /etc/hosts.equiv~ <span class="op">&amp;&gt;</span> /dev/null
 <span class="bu">test</span> -f /etc/shosts.equiv <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> /etc/shosts.equiv /etc/shosts.equiv~ <span class="op">&amp;&gt;</span> /dev/null</code></pre></div>
 <p>Do not forget to restart sshd after configuration.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="apache-tomcat">Apache Tomcat</h2>
 <p>Apache Tomcat is a web server designed to serve Java Server Page (JSP) web applications.</p>
 <h3 id="installation-4">Installation</h3>
@@ -2370,7 +2370,7 @@ ClientAliveCountMax 0</code></pre>
 <li>Do not allow cross context requests in context.xml by setting <code>crossContext=&quot;false&quot;</code></li>
 <li>Do not allow resolving hosts on logging Valves by setting <code>resolveHosts=&quot;false&quot;</code></li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="configuration-4">Configuration</h3>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co"># remove sample resources</span>
 <span class="fu">rm</span> -rf <span class="va">$CATALINA_HOME</span>/webapps/<span class="dt">{js-examples,servlet-example,webdav,tomcat-docs,balancer}</span>
@@ -2417,12 +2417,12 @@ ClientAliveCountMax 0</code></pre>
 <span class="co">#      &lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;</span>
 <span class="co">#   &lt;/user-data-constraint&gt;</span>
 <span class="co"># &lt;/security-contraint&gt;</span></code></pre></div>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="vsftpd">VSFTPD</h2>
 <p>When an FTP server needs to be created or migrating to a more secure box, the FTP server of choice is vsftpd. Apply the following changes to the configuration file to reduce privileges and spoof the banner as the Windows FTP server. If migrating the server, copy all of the FTP files from the old server to '/home/ftp' using the <code>ftp</code> command.</p>
 <h5 id="etcvsftpd.conf">/etc/vsftpd.conf</h5>
 <p>```conf nopriv_user=ftp ftpd-banner=Windows FTP Server</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="wordpress">Wordpress</h2>
 <p>Wordpress is a PHP content management system. It has reasonable security in a new default install, but has a poor track record for remote execution exploits. The best way to secure Wordpress is to update it if possible and remove all unnecessary or old plugins.</p>
 <h3 id="setup">Setup</h3>
@@ -2432,7 +2432,7 @@ ClientAliveCountMax 0</code></pre>
 <span class="kw">GRANT</span> <span class="kw">SELECT</span>,<span class="kw">INSERT</span>,<span class="kw">UPDATE</span>,<span class="kw">DELETE</span> <span class="kw">ON</span> wordpress.* <span class="kw">TO</span> wordpress@localhost;
 <span class="kw">FLUSH</span> <span class="kw">PRIVILEGES</span>;</code></pre></div>
 <p>Navigate to the setup page at 'http://localhost/wordpress/' and follow the setup instructions. Proceed below with how to add a few extra layers of security to a Wordpress installation.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="securing-1">Securing</h3>
 <ul>
 <li>Make sure file permissions are restrictive
@@ -2454,7 +2454,7 @@ ClientAliveCountMax 0</code></pre>
 <li>Move 'wp-config.php' to the directory above the Wordpress root</li>
 <li>Add 'AskApache Password Protect' which enables HTTP authentication preventing wp-admin from being exploited</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="sniffers-and-information-gathering">Sniffers and Information Gathering</h1>
 <h2 id="nmap">Nmap</h2>
 <p>Nmap is a network exploration tool, port scanner, and service scanner. It is useful for preforming host enumeration on IPv4 networks and auditing ports and services on specific hosts on IPv4 and IPv6 networks.</p>
@@ -2504,7 +2504,7 @@ ClientAliveCountMax 0</code></pre>
 <li><code>-oG &lt;file_name&gt;</code> will send grep-able output to a file</li>
 <li><code>-oX &lt;file_name&gt;</code> will output XML to a file</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h2 id="wireshark">Wireshark</h2>
 <p>Wireshark is a GUI and command line tool for network monitoring and analysis. You can use it to record and later analyze or recreate network traffic. You can also use it to find malicous traffic on the network. It can run with promiscuous mode, where all network traffic on the interface is recorded, or without it, where only network traffic originating from or going to the monitoring computer is recorded. It must be run as an administrator to capture traffic (<code>sudo -E wireshark-gtk</code> on Linux systems).</p>
 <h3 id="color-scheme">Color Scheme</h3>
@@ -2515,7 +2515,7 @@ ClientAliveCountMax 0</code></pre>
 <li>Light Blue - UDP traffic</li>
 <li>Black - TCP packets with problems</li>
 </ul>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="filters">Filters</h3>
 <pre class="wireshark"><code># bidirection capture
 # capture IPv4 or IPv6 packets to and from a specific host
@@ -2557,7 +2557,7 @@ not broadcast and not multicast
 
 # capture heartbleed attempts
 tcp src port 443 and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4] = 0x18) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 1] = 0x03) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 2] &lt; 0x04) and ((ip[2:2] - 4 * (ip[0] &amp; 0x0F)  - 4 * ((tcp[12] &amp; 0xF0) &gt;&gt; 4) &gt; 69)rc port 443 and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4] = 0x18) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 1] = 0x03) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 2] &lt; 0x04) and ((ip[2:2] - 4 * (ip[0] &amp; 0x0F)  - 4 * ((tcp[12] &amp; 0xF0) &gt;&gt; 4) &gt; 69))</code></pre>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h1 id="appendix">Appendix</h1>
 <h2 id="copyright">Copyright</h2>
 <p>All documentation is licensed under the Creative Commons Attribution-ShareAlike 4.0 license. All code examples, unless otherwise specified, are licensed under the BSD 2-Clause license. The build system is licensed under the MIT license.</p>
@@ -2672,7 +2672,7 @@ For the avoidance of doubt, this <a href="#Section-6-2">Section 6-2</a> does not
 <li>No term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.</li>
 <li>Nothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.</li>
 </ol>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="bsd-2-clause">BSD 2-Clause</h3>
 <p>Copyright (c) 2017, CU Cyber <a href="mailto:cyber@clemson.edu">cyber@clemson.edu</a></p>
 <p>All rights reserved.</p>
@@ -2682,13 +2682,13 @@ For the avoidance of doubt, this <a href="#Section-6-2">Section 6-2</a> does not
 <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
 </ol>
 <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
 <h3 id="the-mit-license">The MIT License</h3>
 <p>Copyright (c) 2017, CU Cyber <a href="mailto:cyber@clemson.edu">cyber@clemson.edu</a></p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-<p><a href="#" title="top">Jump to Top</a></p>
+<p><a href="#TOC" title="top">Jump to Top</a></p>
                                     </div>
             </div>
         </section>

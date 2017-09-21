@@ -1,0 +1,192 @@
+# Bettercap
+
+By: Nick Bulischeck and Foster McLane
+
+CU Cyber
+
+
+## You Can Find These Presentations Online
+
+Visit [cucyber.net](https://cucyber.net/) to find these presentations and more online!
+
+
+
+# What is Bettercap?
+
+
+## What is Bettercap?
+
+BetterCAP is a powerful, flexible and portable tool
+
+* perform various types of MITM attacks against a network
+
+* manipulate HTTP, HTTPS and TCP traffic in realtime 
+
+* sniff for credentials and much more.
+
+
+## Man-In-The-Middle
+
+* Someone is between you and the resources you're requesting
+
+* They can see your traffic
+
+
+## Man-In-The-Middle
+
+![img](mitm.jpg)
+
+
+## Starbucks Example
+
+Note:
+The router/switch is responsible for forwarding all of your packets to the correct destination
+
+
+## Why not Ettercap?
+
+* Unstable on large networks (host discovery)
+
+* Not easily extended unless you dev in C/C++
+
+* Filters are outdated and don't always work
+
+* No modular HTTP(S) and TCP transparent proxies
+
+* No credential sniffer
+
+
+## Dependencies
+
+* Comes as a Ruby gem
+
+* Ruby (>= 1.9)
+
+* RubyGems environment
+
+* Fully compatible with GNU/Linux, Mac OS X and OpenBSD platforms.
+
+
+## Installation
+
+Ubuntu
+
+```Bash
+sudo apt install build-essential ruby-dev libpcap-dev
+gem install bettercap
+```
+
+Kali
+
+```Bash
+sudo apt update
+sudo apt install bettercap
+```
+
+BlackArch
+
+```Bash
+sudo pacman -S bettercap
+```
+
+
+## Installation
+
+Source
+
+```Bash
+git clone https://github.com/evilsocket/bettercap
+cd bettercap
+bundle install
+gem build bettercap.gemspec
+sudo gem install bettercap*.gem
+```
+
+
+
+## Usage
+
+```Bash
+Usage: bettercap [options]
+```
+
+
+### Generic Usage
+
+
+#### Specific Targets by IP Addr
+
+```Bash
+sudo bettercap -T 192.168.1.10, 192.168.1.11
+```
+
+
+#### Specific Targets by MAC Addr
+
+```Bash
+sudo bettercap -T 01:23:45:67:89:10
+```
+
+
+#### Range of Targets
+
+```Bash
+sudo bettercap -T 192.168.1.1-30
+```
+
+
+#### Attacking a Subnet
+
+```Bash
+sudo bettercap -T 192.168.1.1/24
+```
+
+
+#### Randomize YOUR MAC
+
+```Bash
+sudo bettercap --random-mac
+```
+
+Note:
+We talked about the option of MAC changing last presentation
+
+
+### Options
+
+```Bash
+-I, --interface IFACE  | Specify your interface
+-T, --target ADDRESS   | Specify the target address
+-G, --gateway ADDRESS  | Specify the gateway address
+-X                     | Enable sniffing
+--use-mac ADDRESS      | Specify your MAC address
+--ignore ADDRESS       | Specify the address to ignore
+-h                     | Help
+```
+
+Note:
+Bettercap automatically detects your default network interface, but it can use another interface if it's specified
+
+
+### Fun Options
+
+```Bash
+sudo bettercap -T 192.168.1.2 --kill
+sudo bettercap --ignore [your ip] --kill
+sudo bettercap --proxy -P POST
+```
+
+
+For examples & docs please visit https://bettercap.org/
+
+
+
+# Demo
+
+
+
+# Questions?
+
+
+
+# Competitions

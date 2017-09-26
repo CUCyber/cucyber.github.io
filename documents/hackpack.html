@@ -516,7 +516,7 @@
 <h4 id="modprobe">Modprobe</h4>
 <h5 id="etcmodprobe.dsecure.conf">/etc/modprobe.d/secure.conf</h5>
 <pre class="conf"><code>install cramfs /bin/true
-install freevxfs  /bin/true
+install freevxfs /bin/true
 install jffs2 /bin/true
 install hfs /bin/true
 install hfsplus /bin/true
@@ -529,10 +529,10 @@ install tipc /bin/true</code></pre>
 <h4 id="sysctl">Sysctl</h4>
 <ul>
 <li>Enable ASLR <code>/sbin/sysctl kernel.randomize_va_space = 2</code></li>
-<li>Disable network forwarding <code>/sbin/sysctl -w net.ipv4.ip_forward  0</code></li>
-<li>Disable packet redirects <code>/sbin/sysctl -w net.conf.default.send_redirects  0</code></li>
-<li>Flush packet redirects <code>/sbin/sysctl -w net.ipv4.conf.all.send_redirects  0</code></li>
-<li>Flush packet redirects <code>/sbin/sysctl -w net.ipv4.conf.all.send_redirects  0</code></li>
+<li>Disable network forwarding <code>/sbin/sysctl -w net.ipv4.ip_forward 0</code></li>
+<li>Disable packet redirects <code>/sbin/sysctl -w net.conf.default.send_redirects 0</code></li>
+<li>Flush packet redirects <code>/sbin/sysctl -w net.ipv4.conf.all.send_redirects 0</code></li>
+<li>Flush packet redirects <code>/sbin/sysctl -w net.ipv4.conf.all.send_redirects 0</code></li>
 <li>Disable source routed packets <code>/sbin/sysctl -w net.ipv4.conf.all.accept_source_route 0</code></li>
 <li>Disable source routed packets <code>/sbin/sysctl -w net.ipv4.conf.default.accept_source_route 0</code></li>
 <li>Disable ICMP redirect acceptance <code>/sbin/sysctl -w net.ipv4.conf.all.accept_redirects 0</code></li>
@@ -546,7 +546,7 @@ install tipc /bin/true</code></pre>
 <li>Use tcp syncookies <code>/sbin/sysctl -w net.ipv4.tcp_syncookies 1</code></li>
 <li>Log suspicious packets <code>/sbin/sysctl -w net.ipv4.conf.all.log_martians 1</code></li>
 <li>Log suspicious packets <code>/sbin/sysctl -w net.ipv4.conf.default.log_martians 1</code></li>
-<li>Flush routing tables <code>/sbin/sysctl -w net.ipv4.route.flush  1</code></li>
+<li>Flush routing tables <code>/sbin/sysctl -w net.ipv4.route.flush 1</code></li>
 <li>Disable IPv6 router advertisements <code>/sbin/sysctl -w net.ipv6.conf.all.accept_ra 0</code></li>
 <li>Disable IPv6 router advertisements <code>/sbin/sysctl -w net.ipv6.conf.default.accept_ra 0</code></li>
 <li>Disable IPv6 redirect acceptance <code>/sbin/sysctl -w net.ipv5.confi.all.accept_redirects 0</code></li>

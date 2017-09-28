@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Replay Attacks</title>
+		<title>Information Gathering Foundations</title>
 
 		<link rel="stylesheet" href="/presentations/reveal/css/reveal.css">
 		<link rel="stylesheet" href="/presentations/reveal/css/theme/blood.css">
@@ -50,7 +50,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- source markdown file -->
-				<section data-markdown="replayattack.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+				<section data-markdown="intro2info.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -131,7 +131,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=pentesting%2Freplayattack', function(response) {
+				request(multiplex['server'] + '/id?presentation=recon%2Fintro2info', function(response) {
 					multiplex['id'] = response;
 
 					if (response === null)
@@ -144,7 +144,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=pentesting%2Freplayattack', function(response) {
+				request(multiplex['server'] + '/token?presentation=recon%2Fintro2info', function(response) {
 					multiplex['secret'] = response;
 
 					get_id();

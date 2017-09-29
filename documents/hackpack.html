@@ -2571,7 +2571,7 @@ ip
 not broadcast and not multicast
 
 # capture heartbleed attempts
-tcp src port 443 and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4] = 0x18) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 1] = 0x03) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 2] &lt; 0x04) and ((ip[2:2] - 4 * (ip[0] &amp; 0x0F)  - 4 * ((tcp[12] &amp; 0xF0) &gt;&gt; 4) &gt; 69)rc port 443 and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4] = 0x18) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 1] = 0x03) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 2] &lt; 0x04) and ((ip[2:2] - 4 * (ip[0] &amp; 0x0F)  - 4 * ((tcp[12] &amp; 0xF0) &gt;&gt; 4) &gt; 69))</code></pre>
+tcp src port 443 and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4] = 0x18) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 1] = 0x03) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 2] &lt; 0x04) and ((ip[2:2] - 4 * (ip[0] &amp; 0x0F) - 4 * ((tcp[12] &amp; 0xF0) &gt;&gt; 4) &gt; 69)rc port 443 and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4] = 0x18) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 1] = 0x03) and (tcp[((tcp[12] &amp; 0xF0) &gt;&gt; 4 ) * 4 + 2] &lt; 0x04) and ((ip[2:2] - 4 * (ip[0] &amp; 0x0F) - 4 * ((tcp[12] &amp; 0xF0) &gt;&gt; 4) &gt; 69))</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h1 id="appendix">Appendix</h1>
 <h2 id="copyright">Copyright</h2>

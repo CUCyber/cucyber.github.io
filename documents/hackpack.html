@@ -996,63 +996,63 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <h1 id="filesystem-layout-and-locations">Filesystem Layout and Locations</h1>
 <h2 id="linux-filesystem-hierarchy">Linux Filesystem Hierarchy</h2>
 <ul>
-<li>'/etc'
+<li><code>/etc</code>
 <ul>
 <li>Should be backed up</li>
 <li>Contains configuration files</li>
 <li>Notable system files and directories
 <ul>
-<li>'passwd' - user table</li>
-<li>'shadow' - password hash table</li>
-<li>'group' - group table</li>
-<li>'pam.d' - PAM configuration</li>
-<li>'sudoers' - sudo configuration</li>
-<li>'crontab' and 'cron.*' - cron configuration</li>
+<li><code>passwd</code> - user table</li>
+<li><code>shadow</code> - password hash table</li>
+<li><code>group</code> - group table</li>
+<li><code>pam.d</code> - PAM configuration</li>
+<li><code>sudoers</code> - sudo configuration</li>
+<li><code>crontab</code> and <code>cron.*</code> - cron configuration</li>
 </ul></li>
 <li>Notable service files and directories
 <ul>
-<li>'sshd' - OpenSSH</li>
-<li>'httpd' or 'apache2' - Apache</li>
-<li>'nginx' - NGINX</li>
-<li>'named' or 'bind' - BIND</li>
+<li><code>sshd</code> - OpenSSH</li>
+<li><code>httpd</code> or <code>apache2</code> - Apache</li>
+<li><code>nginx</code> - NGINX</li>
+<li><code>named</code> or <code>bind</code> - BIND</li>
 </ul></li>
 </ul></li>
-<li>'/var'
+<li><code>/var</code>
 <ul>
 <li>Should be backed up</li>
 <li>Contains changing permanent data (i.e. databases, logs, disk images, other service data)</li>
 <li>Contains service home directories</li>
 <li>Notable directories
 <ul>
-<li>'db' - databases</li>
-<li>'lib' - service data</li>
-<li>'log' - logs</li>
-<li>'spool' - mail</li>
-<li>'www' - web server files</li>
-<li>'tmp' - temporary files that need to survive reboot</li>
+<li><code>db</code> - databases</li>
+<li><code>lib</code> - service data</li>
+<li><code>log</code> - logs</li>
+<li><code>spool</code> - mail</li>
+<li><code>www</code> - web server files</li>
+<li><code>tmp</code> - temporary files that need to survive reboot</li>
 </ul></li>
 </ul></li>
-<li>'/tmp'
+<li><code>/tmp</code>
 <ul>
-<li>Temporary file that do not need to survive reboots</li>
+<li>Temporary files that do not need to survive reboots</li>
 <li>Sockets are often found here
 <ul>
-<li>'.X11-unix' and '.ICE-unix' - places for X11 sockets and sessions (not found and should be deleted on a headless server!)</li>
+<li><code>.X11-unix</code> and <code>.ICE-unix</code> - places for X11 sockets and sessions (not found and should be deleted on a headless server!)</li>
 </ul></li>
 </ul></li>
-<li>'/home'
+<li><code>/home</code>
 <ul>
 <li>User data files</li>
 </ul></li>
-<li>'/root'
+<li><code>/root</code>
 <ul>
 <li>Root user data files</li>
 </ul></li>
-<li>'/bin'
+<li><code>/bin</code>
 <ul>
-<li>Contains core executables for running the system (e.g. 'init', 'cp', 'ls', 'rm')</li>
+<li>Contains core executables for running the system (e.g. <code>init</code>, <code>cp</code>, <code>ls</code>, <code>rm</code>)</li>
 </ul></li>
-<li>'/opt'
+<li><code>/opt</code>
 <ul>
 <li>Contains special programs and services</li>
 <li>Usually for locally compiled programs</li>
@@ -1060,15 +1060,15 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li><code>/usr</code>
 <ul>
 <li>Contains non-critical system programs</li>
-<li>Has its own 'bin', 'lib', and 'libexec'</li>
+<li>Has its own <code>bin</code>, <code>lib</code>, and <code>libexec</code></li>
 <li>Notable directories
 <ul>
-<li>'share' - place for static program files that do not go in '/etc' or '/var'</li>
+<li><code>share</code> - place for static program files that do not go in <code>/etc</code> or <code>/var</code></li>
 </ul></li>
 </ul></li>
 <li><code>/lib</code>
 <ul>
-<li>Core library files for running programs in 'bin'</li>
+<li>Core library files for running programs in <code>bin</code></li>
 <li>Executables should not be here</li>
 </ul></li>
 <li><code>/libexec</code>

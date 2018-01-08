@@ -832,16 +832,16 @@ session required pam_unix.so</code></pre>
 <span class="fu">cp</span> -Ra /etc/sudoers.d /etc/sudoers.d~
 <span class="ex">groupdel</span> wheel <span class="kw">&amp;&amp;</span> <span class="ex">groupadd</span> wheel
 <span class="fu">cp</span> -a /etc/sudoers /etc/sudoers~
-<span class="fu">cat</span> <span class="op">&gt;</span>/etc/sudoers <span class="op">&lt;&lt;- EOF</span>
+<span class="fu">cat</span> <span class="op">&gt;</span>/etc/sudoers &lt;&lt;- EOF
 root ALL=(ALL) ALL
 %wheel ALL=(ALL) ALL
 EOF
 
-chown root:root /etc/sudoers
-chmod 600 /etc/sudoers
+chown root:root /etc/<span class="op">s</span><span class="ex">udoers</span>
+chmod 600 /etc/<span class="op">s</span><span class="ex">udoers</span>
 
-# be sure to add administrators back to &#39;wheel&#39; and
-# merge stuff from &#39;/etc/sudoers~&#39; and &#39;/etc/sudoers.d~/&#39;</code></pre></div>
+# be <span class="op">s</span><span class="ex">ure</span> to add administrators back to <span class="st">&#39;wheel&#39;</span> and
+# m<span class="op">e</span><span class="ex">rge</span> stuff from <span class="st">&#39;/etc/sudoers~&#39;</span> and <span class="st">&#39;/etc/sudoers.d~/&#39;</span></code></pre></div>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h1 id="backups-and-restoration">Backups and Restoration</h1>
 <h2 id="rsnapshot">rsnapshot</h2>
@@ -1156,9 +1156,9 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <span class="va">ext_if=$(</span><span class="ex">ip</span> route <span class="kw">|</span> <span class="fu">head</span> -n 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $5}&#39;</span><span class="va">)</span>
 
 <span class="co"># list of devices that should be blocked on the external interface</span>
-<span class="co"># </span><span class="al">WARNING</span><span class="co">! assumes that there are separate interfaces</span>
+<span class="co"># WARNING! assumes that there are separate interfaces</span>
 <span class="co">#          for the external network</span>
-<span class="co"># </span><span class="al">NOTE</span><span class="co"> the 192.168.0.0/16 subnet should be excluded</span>
+<span class="co"># NOTE the 192.168.0.0/16 subnet should be excluded</span>
 <span class="co">#      if there is only one interface</span>
 <span class="va">broken=</span><span class="st">&quot;224.0.0.22 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, \</span>
 <span class="st">        10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, \</span>
@@ -1229,7 +1229,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <span class="va">ext_if=$(</span><span class="ex">ip</span> route <span class="kw">|</span> <span class="fu">head</span> -n 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $5}&#39;</span><span class="va">)</span>
 
 <span class="co"># broken is a list of address that should be blocked on the external interface</span>
-<span class="co"># </span><span class="al">WARNING</span><span class="co">! Assumes that there is an internal and an external interface</span>
+<span class="co"># WARNING! Assumes that there is an internal and an external interface</span>
 <span class="co"># note that 192.168.0.0/16 should not be blocked if there is only one interface</span>
 <span class="va">broken=</span><span class="st">&quot;224.0.0.22 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, \</span>
 <span class="st">        10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, \</span>
@@ -1594,10 +1594,10 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
 <span class="co"># Will use AD if user name is like username@realm and you are signed into kerberos</span>
 <span class="co"># If you are using Ansible 1.x, the ansible_{user,pass,port} were called</span>
 <span class="co"># ansible_ssh_{user,pass,port}</span>
-<span class="fu">ansible_user:</span><span class="at"> WindowsAdministratorUsername</span>
-<span class="fu">ansible_pass:</span><span class="at"> WindowsAdministratorPassword</span>
-<span class="fu">ansible_port:</span><span class="at"> 5986</span>
-<span class="fu">ansible_connection:</span><span class="at"> winrm</span></code></pre></div>
+<span class="fu">ansible_user:</span> WindowsAdministratorUsername
+<span class="fu">ansible_pass:</span> WindowsAdministratorPassword
+<span class="fu">ansible_port:</span> 5986
+<span class="fu">ansible_connection:</span> winrm</code></pre></div>
 <p>It is also required to run the 'ConfigureRemotingForAnsible.ps1' from the Ansible source code script on the Windows machines that will be managed.</p>
 <h4 id="managed-linux-machines">Managed Linux Machines</h4>
 <p>Ansible is agent-less, this means that only one machine must have Ansible installed on it. For Linux or BSD managed machines, all you have to have is OpenSSH and Python 2.x. For some Linux distributions where Python 3.x is the default or python is installed in an non-standard location, you may need to set <code>ansible_python_interpetor = /usr/bin/python2</code>. For best performance, SFTP must be enabled in '/etc/ssh/sshd_config' as a subsystem with the path to the 'sftp-server' binary</p>
@@ -1672,49 +1672,49 @@ localhost ansible_connection=local</code></pre>
 </ul>
 <p>Here is an example playbook:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
-<span class="kw">-</span> <span class="fu">host:</span><span class="at"> webservers </span><span class="co"># run this on the webserver group</span>
-  <span class="fu">become:</span><span class="at"> yes </span><span class="co"># escalate this play from remote user to super user</span>
+<span class="kw">-</span> <span class="fu">host:</span> webservers <span class="co"># run this on the webserver group</span>
+  <span class="fu">become:</span> yes <span class="co"># escalate this play from remote user to super user</span>
               <span class="co"># A user can also be specified via &quot;become_user:&quot;</span>
 
   <span class="co"># varibles needed in the httpd.conf template</span>
   <span class="fu">vars:</span>
-    <span class="fu">http_port:</span><span class="at"> 80</span>
-    <span class="fu">max_clients:</span><span class="at"> 200</span>
+    <span class="fu">http_port:</span> 80
+    <span class="fu">max_clients:</span> 200
 
   <span class="co"># tasks that will be run run on the server</span>
   <span class="fu">tasks:</span>
 
     <span class="co"># demonstrates iteration</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> create admins</span>
-      <span class="fu">user:</span><span class="at"> name={{item.name}} shell={{item.shell}} groups=wheel append=yes</span>
+    <span class="kw">-</span> <span class="fu">name:</span> create admins
+      <span class="fu">user:</span> name={{item.name}} shell={{item.shell}} groups=wheel append=yes
       <span class="fu">with_items:</span>
-          <span class="kw">-</span> <span class="kw">{</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&#39;matthew&#39;</span><span class="kw">, </span><span class="fu">shell:</span><span class="at"> </span><span class="st">&#39;/bin/bash&#39;</span><span class="kw">}</span>
-          <span class="kw">-</span> <span class="kw">{</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&#39;mark&#39;</span><span class="kw">, </span><span class="fu">shell:</span><span class="at"> </span><span class="st">&#39;/bin/zsh&#39;</span><span class="kw">}</span>
-          <span class="kw">-</span> <span class="kw">{</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&#39;luke&#39;</span><span class="kw">, </span><span class="fu">shell:</span><span class="st">&#39;/bin/fish&#39;</span><span class="kw">}</span>
+          <span class="kw">-</span> <span class="kw">{</span> <span class="fu">name:</span> <span class="st">&#39;matthew&#39;</span><span class="kw">, </span><span class="fu">shell:</span> <span class="st">&#39;/bin/bash&#39;</span><span class="kw">}</span>
+          <span class="kw">-</span> <span class="kw">{</span> <span class="fu">name:</span> <span class="st">&#39;mark&#39;</span><span class="kw">, </span><span class="fu">shell:</span> <span class="st">&#39;/bin/zsh&#39;</span><span class="kw">}</span>
+          <span class="kw">-</span> <span class="kw">{</span> <span class="fu">name:</span> <span class="st">&#39;luke&#39;</span><span class="kw">, </span><span class="fu">shell:</span><span class="st">&#39;/bin/fish&#39;</span><span class="kw">}</span>
 
     <span class="co"># demonstrates conditionals</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> install apache for CentOS</span>
-      <span class="fu">yum:</span><span class="at"> name=httpd state=latest</span>
-      <span class="fu">when:</span><span class="at"> ansible_distribution == &#39;CentOS&#39;</span>
+    <span class="kw">-</span> <span class="fu">name:</span> install apache for CentOS
+      <span class="fu">yum:</span> name=httpd state=latest
+      <span class="fu">when:</span> ansible_distribution == &#39;CentOS&#39;
 
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> install apache for Debian</span>
-      <span class="fu">apt:</span><span class="at"> name=lighttpd state=latest</span>
-      <span class="fu">when:</span><span class="at"> ansible_os_family == &#39;Debian&#39;</span>
+    <span class="kw">-</span> <span class="fu">name:</span> install apache for Debian
+      <span class="fu">apt:</span> name=lighttpd state=latest
+      <span class="fu">when:</span> ansible_os_family == &#39;Debian&#39;
 
     <span class="co"># demonstrates handlers and templates</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> update the apache config file</span>
-      <span class="fu">template:</span><span class="at"> src=httpd.j2 dest=/etc/httpd.conf</span>
+    <span class="kw">-</span> <span class="fu">name:</span> update the apache config file
+      <span class="fu">template:</span> src=httpd.j2 dest=/etc/httpd.conf
       <span class="fu">notify:</span>
         <span class="kw">-</span> restart apache
 
     <span class="co"># demonstrates starting a service</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> ensure apache is running</span>
-      <span class="fu">service:</span><span class="at"> name=httpd state=started enabled=yes</span>
+    <span class="kw">-</span> <span class="fu">name:</span> ensure apache is running
+      <span class="fu">service:</span> name=httpd state=started enabled=yes
 
   <span class="co"># tasks that need to be run when other tasks are run</span>
   <span class="fu">handlers:</span>
-      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> restart apache</span>
-        <span class="fu">service:</span><span class="at"> name=httpd state=restarted</span></code></pre></div>
+      <span class="kw">-</span> <span class="fu">name:</span> restart apache
+        <span class="fu">service:</span> name=httpd state=restarted</code></pre></div>
 <p>These playbooks can also be split into separate sections in what are called roles. Here is how a sample role, in this case a webserver are stored:</p>
 <ul>
 <li>'roles/webserver' - directory where the webserver role is stored.</li>
@@ -2209,7 +2209,7 @@ local_transport = error:local delivery is disabled</code></pre>
 <span class="dt">    encrypt passwords </span><span class="ot">=</span><span class="st"> </span><span class="kw">yes</span>
 <span class="dt">    password server </span><span class="ot">=</span><span class="st"> ad_server.example.com</span>
 <span class="dt">    idmap config * : backend </span><span class="ot">=</span><span class="st"> rid</span>
-<span class="dt">    idmap config * : range </span><span class="ot">=</span><span class="st"> </span><span class="dv">10000</span><span class="st">-</span><span class="dv">20000</span>
+<span class="dt">    idmap config * : range </span><span class="ot">=</span><span class="st"> </span><span class="dv">10000-20000</span>
 
 <span class="dt">    </span><span class="co">#Windows domain authentication</span>
 <span class="dt">    winbind use default domain </span><span class="ot">=</span><span class="st"> </span><span class="kw">Yes</span>

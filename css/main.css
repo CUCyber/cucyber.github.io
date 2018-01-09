@@ -1137,8 +1137,7 @@ article {
 .wiki-heading a {
   float: right;
 
-  height: 39.6px;
-  line-height: 39.6px;
+  line-height: 2.8;
 }
 
 .table-of-contents {

@@ -1140,7 +1140,7 @@ article {
   line-height: 2.8;
 }
 
-.table-of-contents {
+.wiki .table-of-contents {
   float: right;
 
   padding: 20px;
@@ -1150,13 +1150,21 @@ article {
   box-shadow: 0 2px 0.09px rgba(0, 0, 0, 0.15);
 }
 
-.table-of-contents .btn {
+.wiki .table-of-contents .btn {
   float: right;
   margin-left: 20px;
   margin-top: -2px;
 
   background-color: rgba(0, 0, 0, 0.80);
   color: #fff;
+}
+
+.table-of-contents h1 > .btn {
+  margin-top: -6px;
+}
+
+.table-of-contents h2 > .btn {
+  margin-top: -2px;
 }
 
 .sidebar {

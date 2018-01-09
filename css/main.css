@@ -1159,6 +1159,10 @@ article {
   color: #fff;
 }
 
+.wiki .table-of-contents h2 {
+  margin-top: 10px;
+}
+
 .table-of-contents h1 > .btn {
   margin-top: -6px;
 }

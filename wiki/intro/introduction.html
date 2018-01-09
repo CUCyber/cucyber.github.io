@@ -61,6 +61,16 @@
                 white-space: pre-wrap;
                 word-wrap: break-word;
             }
+
+            @media (min-width: 768px) {
+                *[id]:before {
+                    display: block;
+                    content: " ";
+                    margin-top: -141px;
+                    height: 141px;
+                    visibility: hidden;
+                }
+            }
         </style>
                         <style type="text/css">
             div.sourceCode { overflow-x: auto; }

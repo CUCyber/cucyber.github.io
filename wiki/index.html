@@ -61,6 +61,16 @@
                 white-space: pre-wrap;
                 word-wrap: break-word;
             }
+
+            @media (min-width: 768px) {
+                *[id]:before {
+                    display: block;
+                    content: " ";
+                    margin-top: -141px;
+                    height: 141px;
+                    visibility: hidden;
+                }
+            }
         </style>
                                         <!--[if lt IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>

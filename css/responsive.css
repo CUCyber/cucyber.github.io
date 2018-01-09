@@ -155,6 +155,11 @@ px      68    160    252    */
     background: #333333;
   }
 
+
+  .table-of-contents {
+    float: none;
+  }
+
   #top-bar {
     position: relative;
     box-shadow: none;

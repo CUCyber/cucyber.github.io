@@ -1151,6 +1151,10 @@ article {
 }
 
 .table-of-contents .btn {
+  float: right;
+  margin-left: 20px;
+  margin-top: -2px;
+
   background-color: rgba(0, 0, 0, 0.80);
   color: #fff;
 }

@@ -37,10 +37,12 @@
 
         <!-- Template Javascript Files
         ================================================== -->
+        <!-- html5shiv js -->
+        <script src="/js/vendor/html5shiv-printshiv.min.js"></script>
         <!-- modernizr js -->
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- jquery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
         <!-- owl carouserl js -->
         <script src="/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
@@ -109,10 +111,7 @@
             code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
             code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
         </style>
-                                <!--[if lt IE 9]>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-        <![endif]-->
-        
+                                
         <!-- HTTPS JavaScript Redirect -->
         <script>
             if (window.location.hostname != 'localhost' && window.location.hostname != '127.0.0.1' && window.location.protocol != 'https:')
@@ -364,6 +363,9 @@
                                 </ul></li>
                                 <li><a href="#openssl">OpenSSL</a><ul>
                                 <li><a href="#generate-tls-certificates">Generate TLS Certificates</a></li>
+                                </ul></li>
+                                <li><a href="#php">PHP</a><ul>
+                                <li><a href="#eval">Eval</a></li>
                                 </ul></li>
                                 <li><a href="#postfix">Postfix</a><ul>
                                 <li><a href="#full-mta">Full MTA</a></li>
@@ -2180,6 +2182,13 @@ SHOW GRANTS <span class="kw">FOR</span> <span class="st">&#39;user&#39;</span>@<
     -keyout example.pem -out example.crt \
     -subj <span class="st">&#39;/O=Example, Inc./CN=example.com&#39;</span></code></pre></div>
 <p><a href="#top" title="top">Jump to Top</a></p>
+<h2 id="php">PHP</h2>
+<p>TODO</p>
+<h3 id="eval">Eval</h3>
+<p>Some web applications allow web requests to include data which gets sent to <code>eval()</code>, generally to allow the front-end to execute back-end commands. Doing this is very bad for security as it allows clients to execute potentially arbitrary code. This sort of problem can often be found with the following command:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
+<span class="fu">grep</span> -r <span class="st">&quot;eval(&quot;</span> /var/www <span class="co"># replace /var/www with the web root</span></code></pre></div>
+<p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="postfix">Postfix</h2>
 <p>Postfix is a secure replacement for Sendmail. It features very strong process and privilege separation while keeping an interface roughly consistent with Sendmail. It should work out of the box for local mail delivery and relaying given the mail hostname.</p>
 <h3 id="full-mta">Full MTA</h3>
@@ -2440,10 +2449,12 @@ ClientAliveCountMax 0</code></pre>
 <h2 id="vsftpd">VSFTPD</h2>
 <p>When an FTP server needs to be created or migrating to a more secure box, the FTP server of choice is vsftpd. Apply the following changes to the configuration file to reduce privileges and spoof the banner as the Windows FTP server. If migrating the server, copy all of the FTP files from the old server to '/home/ftp' using the <code>ftp</code> command.</p>
 <h5 id="etcvsftpd.conf">/etc/vsftpd.conf</h5>
-<p>```conf nopriv_user=ftp ftpd-banner=Windows FTP Server</p>
+<pre class="conf"><code>nopriv_user=ftp
+ftpd-banner=Windows FTP Server</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="wordpress">Wordpress</h2>
 <p>Wordpress is a PHP content management system. It has reasonable security in a new default install, but has a poor track record for remote execution exploits. The best way to secure Wordpress is to update it if possible and remove all unnecessary or old plugins.</p>
+<p>See the <a href="#php">PHP</a> section for more details of general PHP hardening.</p>
 <h3 id="setup">Setup</h3>
 <p>Download the latest tarball available at 'https://wordpress.org/latest.tar.gz' and untar it into the document root (i.e. '/var/www'). Create and configure the necessary using the following SQL commands.</p>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="fu">USER</span> wordpress@localhost <span class="kw">IDENTIFIED</span> <span class="kw">BY</span> <span class="st">&#39;password&#39;</span>;

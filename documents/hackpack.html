@@ -1322,26 +1322,24 @@ up</code></pre>
 <p>To edit security rules, such as traffic barriers between interfaces, enter the <code>edit rulebase security</code> context. Rules between zones are default deny and rules within zones are default allow.</p>
 <h4 id="firewall-connections">Firewall Connections</h4>
 <p>The following rule prevents any connections to the firewall itself.</p>
-<pre class="paloalto"><code>edit rulebase security banhammer
-set from any to any destination &lt;management address&gt; action deny
+<pre class="paloalto"><code>edit rulebase security
+set rules banhammer from any to any destination &lt;management address&gt; action deny
 up</code></pre>
 <h4 id="dmz-and-lan-interaction">DMZ and LAN Interaction</h4>
 <p>The following rule enables a connection between the DMZ and LAN under specific circumstances, here a MySQL connection from webapps to database.</p>
-<pre class="paloalto"><code>edit rulebase security database
-set from dmz to lan source &lt;webapps&gt; destination &lt;database&gt; application mysql service application-default action allow
+<pre class="paloalto"><code>edit rulebase security
+set rules database from dmz to lan source &lt;webapps&gt; destination &lt;database&gt; application mysql service application-default action allow
 up</code></pre>
 <h4 id="incoming-traffic">Incoming Traffic</h4>
 <p>The following rule enables a connection between the public interface and LAN under specific circumstances, here an HTTP connection to webapps.</p>
-<pre class="paloalto"><code>edit rulebase security package
-set from public to lan destination &lt;webapps&gt; application web-browsing service application-default allow
+<pre class="paloalto"><code>edit rulebase security
+set rules package from public to lan destination &lt;webapps&gt; application web-browsing service application-default allow
 up</code></pre>
 <h4 id="outgoing-traffic">Outgoing Traffic</h4>
 <p>The following rule enables outgoing communication to specific websites for package management and for DNS lookups.</p>
-<pre class="paloalto"><code>edit rulebase security package
-set from any to public destination [ &lt;centos archive&gt; &lt;debian archive&gt; ] application web-browsing
-up
-edit rulebase security dns
-set from any to public destination &lt;dns server&gt; application dns
+<pre class="paloalto"><code>edit rulebase security
+set rules package from any to public destination [ &lt;centos archive&gt; &lt;debian archive&gt; ] application web-browsing
+set dns from any to public destination &lt;dns server&gt; application dns
 up</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="pf">pf</h2>

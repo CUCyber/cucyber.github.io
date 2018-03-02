@@ -265,6 +265,7 @@
                                 </ul></li>
                                 <li><a href="#disaster-recovery">Disaster Recovery</a><ul>
                                 <li><a href="#linux">Linux</a><ul>
+                                <li><a href="#empty-running-executable">Empty Running Executable</a></li>
                                 <li><a href="#invalid-password">Invalid Password</a></li>
                                 <li><a href="#chmod-not-executable">Chmod Not Executable</a></li>
                                 </ul></li>
@@ -962,7 +963,14 @@ backup      root@example.local:/var/    example.local/</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h1 id="disaster-recovery">Disaster Recovery</h1>
 <h2 id="linux">Linux</h2>
-<p>Here are some of the worst things that they can do, and how to hopefully recover.</p>
+<p>Here are some of the worst things that the red team can do and how to hopefully recover.</p>
+<h3 id="empty-running-executable">Empty Running Executable</h3>
+<p>If your interpreter or other running executable is an empty file, you can grab the binary from memory.</p>
+<ol style="list-style-type: decimal">
+<li>Find a PID of the process (e.g. <code>bash</code>) - <code>pgrep &lt;process name&gt;</code></li>
+<li>Copy the EXE to the location (e.g. <code>/bin/bash</code>) - <code>cp -f /proc/&lt;pid&gt;/exe &lt;location&gt;</code></li>
+</ol>
+<p><a href="#top" title="top">Jump to Top</a></p>
 <h3 id="invalid-password">Invalid Password</h3>
 <p>The red team has changed the password to the root account.</p>
 <ol style="list-style-type: decimal">

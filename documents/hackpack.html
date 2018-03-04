@@ -1986,12 +1986,22 @@ local_transport = error:local delivery is disabled</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h3 id="configuration-3">Configuration</h3>
 <h4 id="etcsshsshd_config">/etc/ssh/sshd_config</h4>
-<pre class="sshconf"><code>PermitRootLogin no
+<pre class="sshconf"><code>Protocol 2
+PermitRootLogin no
+PermitEmptyPasswords no
+IgnoreRhosts yes
+RhostsAuthentication no
+RhostsRSAAuthentication no
+HostbasedAuthentication no
 UsePAM yes
 UsePrivilegeSeparation sandbox
 AcceptEnv LANG LC_*
+LoginGraceTime 15s
+SyslogFacility AUTH
 ClientAliveInterval 300
-ClientAliveCountMax 0</code></pre>
+ClientAliveCountMax 0
+AllowUsers &lt;user1&gt; &lt;user2&gt; ...
+MaxAuthTries 1</code></pre>
 <h4 id="purge-user-keys">Purge User Keys</h4>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">key_dir</span> in <span class="va">$(</span><span class="fu">awk</span> <span class="st">&#39;BEGIN { FS=&quot;:&quot;} {print $6}&#39;</span> /etc/passwd<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span>
     <span class="kw">if</span><span class="bu"> [</span> <span class="ot">-d</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh&quot;</span><span class="bu"> ]</span>; <span class="kw">then</span>

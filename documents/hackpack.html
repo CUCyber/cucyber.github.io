@@ -230,9 +230,7 @@
                                 <li><a href="#the-ten-commandments-of-cyber-defense">The Ten Commandments of Cyber Defense</a></li>
                                 </ul></li>
                                 <li><a href="#competition-starting-checklists">Competition Starting Checklists</a><ul>
-                                <li><a href="#linux-checklist">Linux Checklist</a><ul>
-                                <li><a href="#in-depth-hardening">In-Depth Hardening</a></li>
-                                </ul></li>
+                                <li><a href="#linux-checklist">Linux Checklist</a></li>
                                 <li><a href="#windows-checklist">Windows Checklist</a></li>
                                 </ul></li>
                                 <li><a href="#administrative-correspondence">Administrative Correspondence</a><ul>
@@ -433,34 +431,39 @@
 <p>This checklist is designed for the first 30 minutes of competition.</p>
 <p>For each system:</p>
 <ul>
-<li>Check for users
+<li>Download toolset:
 <ul>
-<li><code>cat /etc/passwd</code></li>
+<li><code>wget -qO- http://bit.ly/2GqAfTb | tar -xzv</code></li>
 </ul></li>
 <li>Change the password for the root account
 <ul>
-<li><code>type passwd</code></li>
-<li><code>cat &lt;path to passwd&gt;</code></li>
+<li>find path to 'passwd': <code>type passwd</code></li>
+<li>ensure passwd is not a script: <code>cat &lt;path to passwd&gt;</code></li>
 <li><code>passwd &lt;user&gt;</code></li>
 </ul></li>
-<li>Check for improper ssh config
+<li>Audit users and groups for invalid entries
 <ul>
-<li><code>ls ~/.ssh</code></li>
-</ul></li>
-<li>Check for improper sshd config
-<ul>
-<li><code>/etc/ssh/sshd_config</code></li>
+<li><code>cat /etc/passwd</code></li>
+<li><code>cat /etc/shadow</code></li>
+<li><code>cat /etc/group</code></li>
+<li>'/etc/fstab' - owned by 'root:root' - has permission '0644'</li>
+<li>'/etc/passwd', '/etc/shadow', &amp; '/etc/group' are all owned by 'root:root'</li>
+<li>'/etc/passwd' &amp; '/etc/group' - has permission 644</li>
+<li>'/etc/shadow' - has permission 400</li>
 </ul></li>
 <li>Check the crontab(s) for running tasks
 <ul>
 <li><code>crontab -l</code></li>
 <li><code>crontab -e</code></li>
-<li>not much should be there</li>
-</ul></li>
-<li>Check for files with wide permissions and setuid
+<li>Limit cron to root
 <ul>
-<li>setuid bit: <code>find &lt;dir&gt; -perm -u=s</code></li>
-<li>world writable: <code>find &lt;dir&gt; -perm -o=w</code></li>
+<li><code>cd /etc/</code></li>
+<li><code>/bin/rm -f cron.deny at.deny</code></li>
+<li><code>echo root &gt;cron.allow</code></li>
+<li><code>echo root &gt;at.allow</code></li>
+<li><code>/bin/chown root:root cron.allow at.allow</code></li>
+<li><code>/bin/chmod 400 cron.allow at.allow</code></li>
+</ul></li>
 </ul></li>
 <li>Create a report of running processes
 <ul>
@@ -468,14 +471,13 @@
 </ul></li>
 <li>Create a report of running services
 <ul>
-<li><code>ss -tlnp</code></li>
-<li><code>ss -ulnp</code></li>
+<li><code>ss -tulpn</code></li>
 </ul></li>
-<li>Audit users and groups for invalid entries
+<li>Check for files with wide permissions and setuid
 <ul>
-<li><code>cat /etc/passwd</code></li>
-<li><code>cat /etc/shadow</code></li>
-<li><code>cat /etc/group</code></li>
+<li>setuid bit: <code>find &lt;dir&gt; -perm -u=s</code></li>
+<li>world writable: <code>find &lt;dir&gt; -perm -o=w</code></li>
+<li>See 'Filesystem and Access Control Permissions' -&gt; '/home' and '/var/www'</li>
 </ul></li>
 <li>Check mounted filesystems
 <ul>
@@ -483,12 +485,7 @@
 </ul></li>
 <li>Install important system and security updates
 <ul>
-<li>OpenSSL</li>
-<li>OpenSSH</li>
-<li>web server</li>
-<li>file server</li>
-<li>mail server</li>
-<li>DNS server</li>
+<li>OpenSSL, OpenSSH, Apache, FTP, SMTP, DNS</li>
 <li>Linux kernel (not necessarily to latest major version but to latest security update) - requires reboot</li>
 </ul></li>
 <li>Run a full system backup
@@ -499,154 +496,13 @@
 <li>Harden the service(s) for your machine
 <ul>
 <li>Check for misconfigured files</li>
-</ul></li>
-<li>Install and configure a firewall</li>
-<li>Check filesystem for proper layout and for any odd files
+<li>Install and configure a firewall
 <ul>
-<li>See 'Filesystem Layout and Locations' -&gt; 'Linux Filesystem Hierarchy'</li>
+<li>'ufw' or 'firewalld'</li>
+</ul></li>
 </ul></li>
 <li>Write an audit report containing changes made</li>
 </ul>
-<p>For all systems:</p>
-<ul>
-<li>Scan the subnet for running servers</li>
-</ul>
-<h3 id="in-depth-hardening">In-Depth Hardening</h3>
-<ul>
-<li>Ensure '/tmp' is a seperate partition with nodev,nosuid</li>
-<li>Ensure '/var' is a seperate partition</li>
-<li>Ensure '/var/log' is a separate partition</li>
-<li>Ensure '/var/log/audit' is a separate partition</li>
-<li>Ensure '/home' is a seperate partition with nodev</li>
-<li>Ensure '/run/shm' is <code>nodev,nosuid,noexec</code></li>
-<li>Bind mount '/var/tmp' to '/tmp'</li>
-<li>Require a password for root</li>
-<li>Set hard core limit to <code>0</code> in '/etc/security/limits.conf'</li>
-<li>Disable rarely used filesystems and protocols</li>
-</ul>
-<h4 id="modprobe">Modprobe</h4>
-<h5 id="etcmodprobe.dsecure.conf">/etc/modprobe.d/secure.conf</h5>
-<pre class="conf"><code>install cramfs /bin/true
-install freevxfs /bin/true
-install jffs2 /bin/true
-install hfs /bin/true
-install hfsplus /bin/true
-install squashfs /bin/true
-install udf /bin/true
-
-install dccp /bin/true
-install sctp /bin/true
-install tipc /bin/true</code></pre>
-<h4 id="sysctl">Sysctl</h4>
-<ul>
-<li>Enable ASLR <code>/sbin/sysctl kernel.randomize_va_space = 2</code></li>
-<li>Disable network forwarding <code>/sbin/sysctl -w net.ipv4.ip_forward 0</code></li>
-<li>Disable packet redirects <code>/sbin/sysctl -w net.conf.default.send_redirects 0</code></li>
-<li>Flush packet redirects <code>/sbin/sysctl -w net.ipv4.conf.all.send_redirects 0</code></li>
-<li>Flush packet redirects <code>/sbin/sysctl -w net.ipv4.conf.all.send_redirects 0</code></li>
-<li>Disable source routed packets <code>/sbin/sysctl -w net.ipv4.conf.all.accept_source_route 0</code></li>
-<li>Disable source routed packets <code>/sbin/sysctl -w net.ipv4.conf.default.accept_source_route 0</code></li>
-<li>Disable ICMP redirect acceptance <code>/sbin/sysctl -w net.ipv4.conf.all.accept_redirects 0</code></li>
-<li>Disable ICMP redirect acceptance <code>/sbin/sysctl -w net.ipv4.conf.default.accept_redirects 0</code></li>
-<li>Disable secure ICMP redirect acceptance <code>/sbin/sysctl -w net.ipv4.conf.default.secure_redirects 0</code></li>
-<li>Disable secure ICMP redirect acceptance <code>/sbin/sysctl -w net.ipv4.conf.default.secure_redirects 0</code></li>
-<li>Disable ICMP broadcast requests <code>/sbin/sysctl -w net.ipv4.icmp_echo_ignore_broadcasts 1</code></li>
-<li>Disable ICMP bad error message protection <code>/sbin/sysctl -w net.ipv4.icmp_ignore_bogus_error_responces 1</code></li>
-<li>Force source route validation <code>/sbin/sysctl -w net.ipv4.conf.all.rp_filter 1</code></li>
-<li>Force source route validation <code>/sbin/sysctl -w net.ipv4.conf.default.rp_filter 1</code></li>
-<li>Use tcp syncookies <code>/sbin/sysctl -w net.ipv4.tcp_syncookies 1</code></li>
-<li>Log suspicious packets <code>/sbin/sysctl -w net.ipv4.conf.all.log_martians 1</code></li>
-<li>Log suspicious packets <code>/sbin/sysctl -w net.ipv4.conf.default.log_martians 1</code></li>
-<li>Flush routing tables <code>/sbin/sysctl -w net.ipv4.route.flush 1</code></li>
-<li>Disable IPv6 router advertisements <code>/sbin/sysctl -w net.ipv6.conf.all.accept_ra 0</code></li>
-<li>Disable IPv6 router advertisements <code>/sbin/sysctl -w net.ipv6.conf.default.accept_ra 0</code></li>
-<li>Disable IPv6 redirect acceptance <code>/sbin/sysctl -w net.ipv5.confi.all.accept_redirects 0</code></li>
-<li>Disable IPv6 redirect acceptance <code>/sbin/sysctl -w net.ipv5.confi.default.accept_redirects 0</code></li>
-</ul>
-<h4 id="authentication">Authentication</h4>
-<ul>
-<li>Do not allow '.' to be in root's <code>PATH</code> environment variable (check in '/etc/login.defs', '/etc/profile', and '/etc/profile.d')</li>
-<li>Set the shell on unused users to '/bin/nologin'</li>
-<li>Ensure '/etc/passwd' is <code>root:root</code> <code>0600</code> and contains no lines of +</li>
-<li>Ensure '/etc/group' is <code>root:root</code> <code>0600</code> and contains no lines of +</li>
-<li>Ensure '/etc/shadow' is <code>root:root</code> <code>0600</code> and contains no lines of +</li>
-<li>Ensure users own thier home directories with sane permissions</li>
-<li>Use PAM
-<ul>
-<li>Configure <code>pam_cracklib retry=3 minlen=14 dcredit=-1 ucredit=-1 ocredit=-1 lcredit=-1</code></li>
-<li>Configure <code>pam_unix obscure sha512 remember=5</code></li>
-<li>No empty passwords</li>
-</ul></li>
-<li>Restrict access to su
-<ul>
-<li><code>echo &quot;auth required pam_wheel.so use_uid&quot; &gt;&gt; /etc/pam.d/su</code></li>
-</ul></li>
-<li>Use '/etc/login.defs'
-<ul>
-<li>Set <code>PASS_MAX_DAYS</code>, <code>PASS_MIN_DAYS</code>, <code>PASS_WARN_DAYS</code></li>
-</ul></li>
-<li>Verify root is the only uid <code>0</code> account</li>
-<li>Verify root, sync, shutdown, halt, and operator are the only gid <code>0</code> accounts</li>
-<li>Verify no duplicate gid</li>
-<li>Verify no duplicate usernames or group names</li>
-<li>Delete all '.forward' files</li>
-<li>Ensure 'shadow' group is empty</li>
-<li>Check for '.rhosts' and '.netrc'</li>
-</ul>
-<h4 id="permissions">Permissions</h4>
-<ul>
-<li>No world writable files
-<ul>
-<li><code>find / -perm -o=w</code></li>
-</ul></li>
-<li>Find un-owned files
-<ul>
-<li><code>find / -nouser -o -nogroup</code></li>
-</ul></li>
-<li>Find suid binaries
-<ul>
-<li><code>find / -perm -u=s</code></li>
-</ul></li>
-<li>Find sgid binaries
-<ul>
-<li><code>find / -perm -g=s</code></li>
-</ul></li>
-<li>Use a umask of 077 to prohibit users from reading files that are not theirs (see '/etc/profile')</li>
-<li>Ensure bootloader config, '/boot/grub/grub.cfg', is owned by <code>root:root</code> and has permissions <code>0600</code></li>
-</ul>
-<h4 id="programs">Programs</h4>
-<ul>
-<li>If <code>prelink</code> is installed, run <code>/usr/sbin/prelink -ua</code> and uninstall it</li>
-<li>Where possible, uninstall Xorg</li>
-<li>Ensure rshd, rlogind, rexecd, talk, telnet, tftp, xinetd, chargen, daytime, echo, discard, avahi, cupsd, isc-dhcp-server, ldap, nfs, rpc, bind, vsftpd, apache, dovecot, smbd, squid3, snmp, rsyncd are disabled, and preferably uninstalled, where possible</li>
-<li>Configure ntp</li>
-<li>Create '/etc/hosts.{allow,deny}' files with permissions 0644</li>
-<li>Disable wireless on wired devices</li>
-<li>Ensure a firewall is running</li>
-<li>Use install and use auditd
-<ul>
-<li>Set <code>max_log_file = &lt;megabytes&gt;</code></li>
-<li>Use audit to detect time changes, user and group changes, network changes, AppArmor/SELinux, login/logout, sessions, changes to file permissions, unautorized access attempts, priviliged commands, successful mounts, file deletion events, sudoers, kernel module changes</li>
-</ul></li>
-<li>Use and install rsyslog and configure it to save logs to '/var/log' with appropriate permissions, usually <code>root:root</code> <code>0600</code>
-<ul>
-<li>Consolidate logs if possible with remote logging</li>
-</ul></li>
-<li>Use AIDE/Tripwire</li>
-<li>Use cron where necessary with <code>root:root</code> <code>0600</code> permissions</li>
-<li>Setup SSH
-<ul>
-<li>Set enviroment options No</li>
-<li>Prohibit inactive sessions
-<ul>
-<li>ClientAliveInterval 300</li>
-<li>ClientAliveCountMax 0</li>
-</ul></li>
-</ul></li>
-</ul>
-<h5 id="etcntp.conf">/etc/ntp.conf</h5>
-<pre class="conf"><code>restrict -4 default kod nomodify notrap nopeer noquery
-restrict -6 default kod nomodify notrap nopeer noquery</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="windows-checklist">Windows Checklist</h2>
 <p>This checklist is designed for the first 30 minutes of competition.</p>

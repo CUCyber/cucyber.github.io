@@ -272,7 +272,12 @@
                                 <li><a href="#linux-filesystem-hierarchy">Linux Filesystem Hierarchy</a></li>
                                 </ul></li>
                                 <li><a href="#dedicated-firewalls-system-firewalls-and-packet-filters">Dedicated Firewalls, System Firewalls, and Packet Filters</a><ul>
-                                <li><a href="#firewall-basics">Firewall Basics</a></li>
+                                <li><a href="#firewall-basics">Firewall Basics</a><ul>
+                                <li><a href="#zones">Zones</a></li>
+                                <li><a href="#rules">Rules</a></li>
+                                <li><a href="#routes">Routes</a></li>
+                                </ul></li>
+                                <li><a href="#nat">NAT</a></li>
                                 <li><a href="#firewalld">FirewallD</a><ul>
                                 <li><a href="#config-files">Config Files</a></li>
                                 <li><a href="#commands-1">Commands</a></li>
@@ -291,8 +296,8 @@
                                 <li><a href="#basic-commands">Basic Commands</a></li>
                                 <li><a href="#interfaces">Interfaces</a></li>
                                 <li><a href="#routers">Routers</a></li>
-                                <li><a href="#zones-1">Zones</a></li>
-                                <li><a href="#rules">Rules</a></li>
+                                <li><a href="#zones-2">Zones</a></li>
+                                <li><a href="#rules-1">Rules</a></li>
                                 </ul></li>
                                 <li><a href="#pf">pf</a><ul>
                                 <li><a href="#config-files-2">Config Files</a></li>
@@ -997,6 +1002,23 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <li>Open only the required ports to make the services to work.</li>
 <li>Log any unusual traffic that hits the firewall.</li>
 </ul>
+<h3 id="zones">Zones</h3>
+<p>Zones are distinct and physically or virtually separated portions of the network. A class example is the difference between LAN and WAN. Generally these are connected to ports on the firewall, but sometimes Virtual LANs or VLANs allow connecting multiple segregated zones to one port via hardware that supports it.</p>
+<h4 id="common-zones">Common Zones</h4>
+<ul>
+<li>DMZ (Demilitarized Zone) - separated zone that has no access to internal network</li>
+<li>WAN (Wide Area Network) - zone representing your upstream network connection, generally has your internet connection</li>
+<li>LAN (Local Area Network) - internal network that needs strict separation and access controls</li>
+</ul>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h3 id="rules">Rules</h3>
+<p>TODO</p>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h3 id="routes">Routes</h3>
+<p>TODO</p>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h2 id="nat">NAT</h2>
+<p>TODO</p>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="firewalld">FirewallD</h2>
 <h3 id="config-files">Config Files</h3>
@@ -1011,7 +1033,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h3 id="filtering">Filtering</h3>
 <p>FirewallD is the new Linux firewall from RedHat. It provides a usability layer on top of iptables by focusing on zones and services. FirewallD therefore inherits iptables's first match rule.</p>
-<h4 id="zones">Zones</h4>
+<h4 id="zones-1">Zones</h4>
 <p>Zones are affiliated with source addresses or interfaces. Zones have short names they are referenced by.</p>
 <p>The following zone example affects all incoming traffic on the enp0s3 interface. It allows HTTPS traffic defined in the '/usr/lib/firewalld/services/https.xml' or overridden in '/etc/firewalld/services/https.xml'. It also blocks traffic on the 10.0.0.0/8 subnet by dropping and logging the packets.</p>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;utf-8&quot;<span class="kw">?&gt;</span>
@@ -1197,7 +1219,7 @@ up</code></pre>
 set interface &lt;interface&gt;
 up</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
-<h3 id="zones-1">Zones</h3>
+<h3 id="zones-2">Zones</h3>
 <p>To edit security zones, such as the LAN and DMZ, enter the <code>top</code> context.</p>
 <h4 id="edit-zone-network">Edit Zone Network</h4>
 <p>Use the following to set the interface for the named zone.</p>
@@ -1206,7 +1228,7 @@ set layer3 &lt;interface&gt;
 up
 up</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
-<h3 id="rules">Rules</h3>
+<h3 id="rules-1">Rules</h3>
 <p>To edit security rules, such as traffic barriers between interfaces, enter the <code>edit rulebase security</code> context. Rules between zones are default deny and rules within zones are default allow.</p>
 <h4 id="dmz-and-lan-interaction">DMZ and LAN Interaction</h4>
 <p>The following rule enables a connection between the DMZ and LAN under specific circumstances, here a MySQL connection from webapps to database.</p>

@@ -1248,7 +1248,8 @@ up</code></pre>
 set rules package from any to public source any
   destination [ &lt;centos archive&gt; &lt;debian archive&gt; ]
   application web-browsing service application-default action allow
-set dns from any to public source any destination &lt;dns server&gt; application dns service application-default action allow
+set dns from any to public source any destination &lt;dns server&gt;
+  application dns service application-default action allow
 up</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="pf">pf</h2>
@@ -2030,15 +2031,15 @@ AllowUsers &lt;user1&gt; &lt;user2&gt; ...
 MaxAuthTries 1</code></pre>
 <h4 id="purge-user-keys">Purge User Keys</h4>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">key_dir</span> in <span class="va">$(</span><span class="fu">awk</span> <span class="st">&#39;BEGIN { FS=&quot;:&quot;} {print $6}&#39;</span> /etc/passwd<span class="va">)</span><span class="kw">;</span> <span class="kw">do</span>
-    <span class="kw">if</span><span class="bu"> [</span> <span class="ot">-d</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh&quot;</span><span class="bu"> ]</span>; <span class="kw">then</span>
-        <span class="bu">test</span> -f <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/authorized_keys&quot;</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span>
-            <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/authorized_keys&quot;</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/authorized_keys~&quot;</span> <span class="op">&amp;&gt;</span>/dev/null
-        <span class="bu">test</span> -f <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/rhosts&quot;</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span>
-            <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/rhosts&quot;</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/rhosts~&quot;</span> <span class="op">&amp;&gt;</span>/dev/null
-        <span class="bu">test</span> -f <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/shosts&quot;</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span>
-            <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/shosts&quot;</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/shosts~&quot;</span> <span class="op">&amp;&gt;</span>/dev/null
-        <span class="fu">ls</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/id*&quot;</span> <span class="op">&amp;&gt;</span> /dev/null <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;found keys at </span><span class="va">$key_dir</span><span class="st">/.ssh&quot;</span>
-    <span class="kw">fi</span>
+  <span class="kw">if</span><span class="bu"> [</span> <span class="ot">-d</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh&quot;</span><span class="bu"> ]</span>; <span class="kw">then</span>
+    <span class="bu">test</span> -f <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/authorized_keys&quot;</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span>
+      <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/authorized_keys&quot;</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/authorized_keys~&quot;</span> <span class="op">&amp;&gt;</span>/dev/null
+    <span class="bu">test</span> -f <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/rhosts&quot;</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span>
+      <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/rhosts&quot;</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/rhosts~&quot;</span> <span class="op">&amp;&gt;</span>/dev/null
+    <span class="bu">test</span> -f <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/shosts&quot;</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span>
+      <span class="fu">mv</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/shosts&quot;</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/shosts~&quot;</span> <span class="op">&amp;&gt;</span>/dev/null
+    <span class="fu">ls</span> <span class="st">&quot;</span><span class="va">$key_dir</span><span class="st">/.ssh/id*&quot;</span> <span class="op">&amp;&gt;</span> /dev/null <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;found keys at </span><span class="va">$key_dir</span><span class="st">/.ssh&quot;</span>
+  <span class="kw">fi</span>
 <span class="kw">done</span></code></pre></div>
 <h4 id="purge-system-keys">Purge System Keys</h4>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">test</span> -f /etc/hosts.equiv <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> /etc/hosts.equiv /etc/hosts.equiv~ <span class="op">&amp;&gt;</span> /dev/null
@@ -2093,12 +2094,12 @@ MaxAuthTries 1</code></pre>
 <li>Ensure the following lines are in logging.properties <code>handlers=org.apache.juli.FileHandler, java.util.logging.ConsoleHandler</code></li>
 <li>Ensure the following lines are in logging.properties <code>org.apache.juli.FileHandler.level=FINEST</code></li>
 <li>Ensure that <code>className</code> is set to <code>org.apache.catalina.valves.FastCommonAccessLogValve</code> in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
-<li>Ensure that directory is set to <code>$CATALINA_HOME/logs</code> |in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
+<li>Ensure that directory is set to <code>$CATALINA_HOME/logs</code> in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
 <li>Ensure that pattern is set to <code>&quot;%t % U %a %A %m %p %q %s&quot;</code> in <code>$CATALINA_BASE/&lt;app name&gt;/META-INF/context.xml</code></li>
 </ul></li>
 <li>Prevent unexpected code execution
 <ul>
-<li>Set package.access = <code>sun.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper</code> in conf/catalina.properties</li>
+<li>Set <code>package.access</code> to <code>sun., org.apache.catalina., org.apache.coyote., org.apache.tomcat., org.apache.jasper.</code> in conf/catalina.properties</li>
 <li>Ensure that Tomcat is started with <code>-security</code></li>
 <li>Ensure that <code>autoDeploy=&quot;false&quot;</code> in server.xml</li>
 <li>Ensure that <code>deployOnStartup=&quot;false&quot;</code> in server.xml</li>

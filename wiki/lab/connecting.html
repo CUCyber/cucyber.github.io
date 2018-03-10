@@ -193,7 +193,7 @@
 
                             <nav id="TOC" class="collapse in">
                                 <ul>
-                                <li><a href="#request-vpn-access">Request VPN Access</a></li>
+                                <li><a href="#requesting-vpn-access">Requesting VPN Access</a></li>
                                 <li><a href="#installing-the-openvpn-client">Installing the OpenVPN Client</a><ul>
                                 <li><a href="#linux-instructions">Linux Instructions</a></li>
                                 <li><a href="#windows-instructions">Windows Instructions</a></li>
@@ -207,25 +207,29 @@
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="request-vpn-access">Request VPN Access</h2>
+                                                <h2 id="requesting-vpn-access">Requesting VPN Access</h2>
 <ul>
-<li><strong>TODO</strong></li>
+<li><em>TODO</em></li>
 <li>You will be given a personal OpenVPN config file that ends with the extension .ovpn. This is your ticket into the server.</li>
 </ul>
 <h2 id="installing-the-openvpn-client">Installing the OpenVPN Client</h2>
 <h3 id="linux-instructions">Linux Instructions</h3>
-<p>Fedora</p>
+<p><strong>Fedora</strong></p>
 <pre><code>sudo dnf install openvpn</code></pre>
-<p>Ubuntu</p>
+<p><strong>Ubuntu</strong></p>
 <pre><code>sudo apt install openvpn</code></pre>
-<p>Arch</p>
+<p><strong>Arch</strong></p>
 <pre><code>sudo pacman -S openvpn</code></pre>
 <h3 id="windows-instructions">Windows Instructions</h3>
-<p><strong>TODO</strong></p>
+<ul>
+<li><em>TODO</em></li>
+</ul>
 <h3 id="macos-instructions">MacOS Instructions</h3>
-<p><strong>TODO</strong></p>
+<ul>
+<li><em>TODO</em></li>
+</ul>
 <h2 id="connecting-to-the-lab-vpn">Connecting to the Lab VPN</h2>
-<p>Note:</p>
+<p><strong>Note:</strong></p>
 <p>The lab can only be accessed from Clemson's network. If you're off campus you will have to connect to the Clemson VPN first before attempting to connect to the lab VPN. Instructions for connecting to the Clemson VPN can be found <a href="https://hdkb.clemson.edu/phpkb/article.php?id=64">here.</a></p>
 <h3 id="linux-instructions-1">Linux Instructions</h3>
 <h4 id="connect-to-the-openvpn-server">Connect to the OpenVPN Server</h4>
@@ -240,11 +244,11 @@
 <p>First we are going to determine the network interface that is connected to the VPN. In a terminal execute the following command.</p>
 <pre><code>ip addr</code></pre>
 <p>Search through your interfaces for something that looks like <code>tapX</code> where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.</p>
-<p>Ubuntu/Fedora:</p>
+<p><strong>Ubuntu/Fedora:</strong></p>
 <pre><code>dhclient -r tapX
 
 dhclient tapX</code></pre>
-<p>Arch:</p>
+<p><strong>Arch:</strong></p>
 <pre><code>dhcpcd tapX</code></pre>
 <h3 id="windows-instructions-1">Windows Instructions</h3>
 <h3 id="macos-instructions-1">MacOS Instructions</h3>

@@ -244,11 +244,11 @@
 <p>First we are going to determine the network interface that is connected to the VPN. In a terminal execute the following command.</p>
 <pre><code>ip addr</code></pre>
 <p>Search through your interfaces for something that looks like <code>tapX</code> where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.</p>
-<p><strong>Ubuntu/Fedora:</strong></p>
+<p><strong>Ubuntu/Fedora</strong></p>
 <pre><code>dhclient -r tapX
 
 dhclient tapX</code></pre>
-<p><strong>Arch:</strong></p>
+<p><strong>Arch</strong></p>
 <pre><code>dhcpcd tapX</code></pre>
 <h3 id="windows-instructions-1">Windows Instructions</h3>
 <h3 id="macos-instructions-1">MacOS Instructions</h3>

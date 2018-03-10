@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="/images/shield-small.png">
-        <title>CU Cyber - Wiki - Getting Started</title>
+        <title>CU Cyber - Wiki - Connecting to the Lab</title>
         <link rel="shortcut icon" href="/images/shield-small.png">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -160,7 +160,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Getting Started</h2>
+                            <h2>Connecting to the Lab</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/index.html">
@@ -169,7 +169,7 @@
                                     </a>
                                 </li>
                                 <li><a href="/wiki/index.html">Wiki</a></li>
-                                <li class="active"><a href="/wiki/lab/getting-started.html">Getting Started</a></li>
+                                <li class="active"><a href="/wiki/lab/connecting.html">Connecting to the Lab</a></li>
                             </ol>
                         </div>
                     </div>
@@ -183,12 +183,71 @@
                     <div class="col-md-12">
                                                                         <header id="top">
                             <div class="wiki-heading">
-                                <h1>Getting Started</h1>
-                                <a href="https://github.com/CUCyber/wiki/edit/master/lab/getting-started.md">Edit This Page</a>
+                                <h1>Connecting to the Lab</h1>
+                                <a href="https://github.com/CUCyber/wiki/edit/master/lab/connecting.md">Edit This Page</a>
                             </div>
                                                                                 </header>
                         
-                                                
+                                                <div class="table-of-contents">
+                            <h2>Table of Contents <button data-toggle="collapse" data-target="#TOC" class="btn">Hide</button></h2>
+
+                            <nav id="TOC" class="collapse in">
+                                <ul>
+                                <li><a href="#request-vpn-access">Request VPN Access</a></li>
+                                <li><a href="#installing-the-openvpn-client">Installing the OpenVPN Client</a><ul>
+                                <li><a href="#linux-instructions">Linux Instructions</a></li>
+                                <li><a href="#windows-instructions">Windows Instructions</a></li>
+                                <li><a href="#macos-instructions">MacOS Instructions</a></li>
+                                </ul></li>
+                                <li><a href="#connecting-to-the-lab-vpn">Connecting to the Lab VPN</a><ul>
+                                <li><a href="#linux-instructions-1">Linux Instructions</a></li>
+                                <li><a href="#windows-instructions-1">Windows Instructions</a></li>
+                                <li><a href="#macos-instructions-1">MacOS Instructions</a></li>
+                                </ul></li>
+                                </ul>
+                            </nav>
+                        </div>
+                                                <h2 id="request-vpn-access">Request VPN Access</h2>
+<ul>
+<li><strong>TODO</strong></li>
+<li>You will be given a personal OpenVPN config file that ends with the extension .ovpn. This is your ticket into the server.</li>
+</ul>
+<h2 id="installing-the-openvpn-client">Installing the OpenVPN Client</h2>
+<h3 id="linux-instructions">Linux Instructions</h3>
+<p>Fedora</p>
+<pre><code>sudo dnf install openvpn</code></pre>
+<p>Ubuntu</p>
+<pre><code>sudo apt install openvpn</code></pre>
+<p>Arch</p>
+<pre><code>sudo pacman -S openvpn</code></pre>
+<h3 id="windows-instructions">Windows Instructions</h3>
+<p><strong>TODO</strong></p>
+<h3 id="macos-instructions">MacOS Instructions</h3>
+<p><strong>TODO</strong></p>
+<h2 id="connecting-to-the-lab-vpn">Connecting to the Lab VPN</h2>
+<p>Note:</p>
+<p>The lab can only be accessed from Clemson's network. If you're off campus you will have to connect to the Clemson VPN first before attempting to connect to the lab VPN. Instructions for connecting to the Clemson VPN can be found <a href="https://hdkb.clemson.edu/phpkb/article.php?id=64">here.</a></p>
+<h3 id="linux-instructions-1">Linux Instructions</h3>
+<h4 id="connect-to-the-openvpn-server">Connect to the OpenVPN Server</h4>
+<p>Open a terminal and navigate to the folder with your personal OpenVPN config file ending in .ovpn.</p>
+<pre><code>openvpn --config &lt;yourname&gt;.ovpn</code></pre>
+<p>This will connect you to the lab VPN.</p>
+<h4 id="testing-connection-to-the-lab">Testing Connection to the Lab</h4>
+<p>At this point you should be connected to the lab VPN, but you may not be able to access the machines. To test your connectivity execute the following command in a terminal.</p>
+<pre><code>ping -c 5 architect.lab.cucyber.net</code></pre>
+<p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended! However, if the ping fails then continue to the next section on troubleshooting DNS.</p>
+<h4 id="troubleshooting-dns-issues">Troubleshooting: DNS Issues</h4>
+<p>First we are going to determine the network interface that is connected to the VPN. In a terminal execute the following command.</p>
+<pre><code>ip addr</code></pre>
+<p>Search through your interfaces for something that looks like <code>tapX</code> where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.</p>
+<p>Ubuntu/Fedora:</p>
+<pre><code>dhclient -r tapX
+
+dhclient tapX</code></pre>
+<p>Arch:</p>
+<pre><code>dhcpcd tapX</code></pre>
+<h3 id="windows-instructions-1">Windows Instructions</h3>
+<h3 id="macos-instructions-1">MacOS Instructions</h3>
                                             </div>
                 </div>
             </div>

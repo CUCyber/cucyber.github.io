@@ -234,7 +234,7 @@
 <h3 id="linux-instructions-1">Linux Instructions</h3>
 <h4 id="connect-to-the-openvpn-server">Connect to the OpenVPN Server</h4>
 <p>Open a terminal and navigate to the folder with your personal OpenVPN config file ending in .ovpn.</p>
-<pre><code>openvpn --config &lt;yourname&gt;.ovpn</code></pre>
+<pre><code>sudo openvpn --config &lt;yourname&gt;.ovpn</code></pre>
 <p>This will connect you to the lab VPN.</p>
 <h4 id="testing-connection-to-the-lab">Testing Connection to the Lab</h4>
 <p>At this point you should be connected to the lab VPN, but you may not be able to access the machines. To test your connectivity execute the following command in a terminal.</p>
@@ -245,13 +245,13 @@
 <pre><code>ip addr</code></pre>
 <p>Search through your interfaces for something that looks like <code>tapX</code> where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.</p>
 <p><strong>Ubuntu/Fedora</strong></p>
-<pre><code>dhclient -r tapX
+<pre><code>sudo dhclient -r tapX
 
-dhclient tapX</code></pre>
+sudo dhclient tapX</code></pre>
 <p><strong>Arch</strong></p>
-<pre><code>dhcpcd -k tapX
+<pre><code>sudo dhcpcd -k tapX
 
-dhcpcd tapX</code></pre>
+sudo dhcpcd tapX</code></pre>
 <h3 id="windows-instructions-1">Windows Instructions</h3>
 <h3 id="macos-instructions-1">MacOS Instructions</h3>
                                             </div>

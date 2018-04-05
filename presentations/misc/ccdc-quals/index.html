@@ -53,7 +53,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- source markdown file -->
-				<section data-markdown="ccdc-recap.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+				<section data-markdown="ccdc-quals.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -133,7 +133,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=misc%2Fccdc-recap', function(response) {
+				request(multiplex['server'] + '/id?presentation=misc%2Fccdc-quals', function(response) {
 					multiplex['id'] = response;
 
 					if (!response)
@@ -146,7 +146,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=misc%2Fccdc-recap', function(response) {
+				request(multiplex['server'] + '/token?presentation=misc%2Fccdc-quals', function(response) {
 					multiplex['secret'] = response;
 
 					if (!response)

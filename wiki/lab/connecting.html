@@ -200,8 +200,6 @@
                                 </ul></li>
                                 <li><a href="#connecting-to-the-lab-vpn">Connecting to the Lab VPN</a><ul>
                                 <li><a href="#linux-instructions-1">Linux Instructions</a></li>
-                                <li><a href="#windows-instructions-1">Windows Instructions</a></li>
-                                <li><a href="#macos-instructions-1">MacOS Instructions</a></li>
                                 </ul></li>
                                 </ul>
                             </nav>
@@ -231,23 +229,9 @@
 <pre><code>sudo openvpn --config &lt;yourname&gt;.ovpn</code></pre>
 <p>This will connect you to the lab VPN.</p>
 <h4 id="testing-connection-to-the-lab">Testing Connection to the Lab</h4>
-<p>At this point you should be connected to the lab VPN, but you may not be able to access the machines. To test your connectivity execute the following command in a terminal.</p>
+<p>At this point you should be connected to the lab VPN. To test your connectivity execute the following command in a terminal.</p>
 <pre><code>ping -c 5 architect.lab.cucyber.net</code></pre>
 <p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended! However, if the ping fails then continue to the next section on troubleshooting DNS.</p>
-<h4 id="troubleshooting-dns-issues">Troubleshooting: DNS Issues</h4>
-<p>First we are going to determine the network interface that is connected to the VPN. In a terminal execute the following command.</p>
-<pre><code>ip addr</code></pre>
-<p>Search through your interfaces for something that looks like <code>tapX</code> where X is a number (Usually 0). This is probably the interface that you are connected over. Now force dhcp to release its current lease and get a new one over that interface we found.</p>
-<p><strong>Ubuntu/Fedora</strong></p>
-<pre><code>sudo dhclient -r tapX
-
-sudo dhclient tapX</code></pre>
-<p><strong>Arch</strong></p>
-<pre><code>sudo dhcpcd -k tapX
-
-sudo dhcpcd tapX</code></pre>
-<h3 id="windows-instructions-1">Windows Instructions</h3>
-<h3 id="macos-instructions-1">MacOS Instructions</h3>
                                             </div>
                 </div>
             </div>

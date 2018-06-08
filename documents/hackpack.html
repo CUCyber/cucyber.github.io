@@ -339,6 +339,7 @@
                                 <li><a href="#filesystem-and-access-control-permissions">Filesystem and Access Control Permissions</a><ul>
                                 <li><a href="#dev">/dev</a></li>
                                 <li><a href="#home">/home</a></li>
+                                <li><a href="#tmp">/tmp</a></li>
                                 <li><a href="#varwww">/var/www</a></li>
                                 </ul></li>
                                 <li><a href="#scripts-and-other-useful-snippets">Scripts and Other Useful Snippets</a><ul>
@@ -480,6 +481,12 @@
 <li>Check mounted filesystems
 <ul>
 <li><code>lsblk</code></li>
+</ul></li>
+<li>Prevent device files, setuid files, and executables in globally writable directories
+<ul>
+<li><code>mount -o remount,nodev,nosuid,noexec /tmp</code></li>
+<li><code>mount -o remount,nodev,nosuid,noexec /var/tmp</code></li>
+<li><code>mount -o remount,nodev,nosuid,noexec /dev/shm</code></li>
 </ul></li>
 <li>Install important system and security updates
 <ul>
@@ -1519,6 +1526,14 @@ deb http://archive.debian.org/debian-volatile/ [version]/volatile</code></pre>
         <span class="fu">chmod</span> 640 <span class="st">&quot;</span><span class="va">$file</span><span class="st">&quot;</span>
     <span class="kw">fi</span>
 <span class="kw">done</span></code></pre></div>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h2 id="tmp">/tmp</h2>
+<p>Remount '/tmp', '/var/tmp', and '/dev/shm' with <code>nodev</code>, <code>nosuid</code>, and <code>noexec</code> to prevent executables or device files from being dropped into a globally writable directory and used maliciously.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/sh</span>
+<span class="co"># remount with nodev, nosuid, and noexec</span>
+<span class="fu">mount</span> -o remount,nodev,nosuid,noexec /tmp
+<span class="fu">mount</span> -o remount,nodev,nosuid,noexec /var/tmp
+<span class="fu">mount</span> -o remount,nodev,nosuid,noexec /dev/shm</code></pre></div>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="varwww">/var/www</h2>
 <p>The following command will fix permissions for all www files to reasonable defaults:</p>

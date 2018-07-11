@@ -1130,6 +1130,11 @@ article {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 2px 10px 0 rgba(0, 0, 0, 0.06);
 }
 
+.wiki-header {
+  position: relative;
+  z-index: 1;
+}
+
 .wiki-heading h1 {
   display: inline;
 }

@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="/images/shield-small.png">
-        <title>CU Cyber - Wiki - Boundaries within the Lab</title>
+        <title>CU Cyber - Wiki - Cyber Warfare Space Agreement</title>
         <link rel="shortcut icon" href="/images/shield-small.png">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -160,7 +160,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Boundaries within the Lab</h2>
+                            <h2>Cyber Warfare Space Agreement</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/index.html">
@@ -169,7 +169,7 @@
                                     </a>
                                 </li>
                                 <li><a href="/wiki/index.html">Wiki</a></li>
-                                <li class="active"><a href="/wiki/lab/boundaries.html">Boundaries within the Lab</a></li>
+                                <li class="active"><a href="/wiki/lab/agreement.html">Cyber Warfare Space Agreement</a></li>
                             </ol>
                         </div>
                     </div>
@@ -183,8 +183,8 @@
                     <div class="col-md-12">
                                                                         <header id="top" class="wiki-header">
                             <div class="wiki-heading">
-                                <h1>Boundaries within the Lab</h1>
-                                <a href="https://github.com/CUCyber/wiki/edit/master/lab/boundaries.md">Edit This Page</a>
+                                <h1>Cyber Warfare Space Agreement</h1>
+                                <a href="https://github.com/CUCyber/wiki/edit/master/lab/agreement.md">Edit This Page</a>
                             </div>
                                                                                 </header>
                         
@@ -193,43 +193,28 @@
 
                             <nav id="tocnav" class="collapse in">
                                 <ul>
-                                <li><a href="#networks-always-off-limits">Networks always off-limits</a></li>
-                                <li><a href="#networks-you-are-permitted-to-access-but-not-permitted-to-attack">Networks you are permitted to access but not permitted to attack</a></li>
-                                <li><a href="#networks-you-are-permitted-to-attack">Networks you are permitted to attack</a></li>
-                                <li><a href="#logical-network-diagram">Logical Network Diagram</a></li>
+                                <li><a href="#introduction-and-ethics">Introduction and Ethics</a></li>
+                                <li><a href="#activities">Activities</a></li>
+                                <li><a href="#boundaries">Boundaries</a></li>
+                                <li><a href="#incidents">Incidents</a></li>
+                                <li><a href="#approval">Approval</a></li>
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="networks-always-off-limits">Networks always off-limits</h2>
-<p>These are networks that you are never permitted to communicate with under any circumstances.</p>
-<ul>
-<li>Clemson's Network</li>
-<li>The Management VLAN within the lab network</li>
-<li>Someone else's VLAN within the lab network<sup>[1]</sup></li>
-</ul>
-<p><sup>[1]</sup> Unless you are given permission to do so</p>
-<h2 id="networks-you-are-permitted-to-access-but-not-permitted-to-attack">Networks you are permitted to access but not permitted to attack</h2>
-<ul>
-<li>The publicly routable internet</li>
-<li>The VPN VLAN you are automatically added to when log in via the VPN</li>
-<li>The oVirt web interface for creating and managing VMs</li>
-</ul>
-<h2 id="networks-you-are-permitted-to-attack">Networks you are permitted to attack</h2>
-<ul>
-<li>VLANS within the lab of which you are the owner or given permission to perform attacks on</li>
-</ul>
-<h2 id="logical-network-diagram">Logical Network Diagram</h2>
-<p>Here is a rough logical network diagram of the lab. Hopefully this may help clarify things.</p>
-<hr />
-<div class="figure">
-<img src="logical-lab-legend.png" alt="Cyber Warfare Space logical network digram - legend" style="width:100.0%" />
-<p class="caption">Cyber Warfare Space logical network digram - legend</p>
-</div>
-<hr />
-<div class="figure">
-<img src="logical-lab.png" alt="Cyber Warfare Space logical network digram" style="width:100.0%" />
-<p class="caption">Cyber Warfare Space logical network digram</p>
-</div>
+                                                <h2 id="introduction-and-ethics">Introduction and Ethics</h2>
+<p>The Cyber Warfare Space is a virtual lab and penetration testing environment hosted by CU Cyber and the Watt Family Innovation Center. Many of the scans and attacks you may perform inside of the lab are <strong>illegal</strong> to perform on networks you are not <strong>explicitly</strong> authorized to perform them on. Examples of networks where these scans and attacks would be <strong>illegal</strong> are public networks such as coffee houses, Clemson's network, and the open internet. If you do not have explicit written consent to perform these tasks, or you wander outside the scope of your agreement, then you may find yourself subject to legislation such as the Computer Fraud and Abuse Act of 1986 and others.</p>
+<p>The following article exists as an agreement between a user of the Cyber Warfare Space and CU Cyber on appropriate and legal use of the Cyber Warfare Space.</p>
+<h2 id="activities">Activities</h2>
+<p>Activities between VLANs are regulated based on the boundaries outlined below. Within confines of the law, there is no activity within a <strong>single personal VLAN</strong> that we do not allow.</p>
+<h2 id="boundaries">Boundaries</h2>
+<p>No communication is allowed between the lab environment and any of Clemson's networks. Only traffic internal to the lab and between the public internet is allowed.</p>
+<p>Networks and services in the lab that cannot be attacked are any computer on any management network, <code>10.0.0.0-10.0.63.255</code> and <code>10.255.0.0-10.255.255.255</code>, or any VPN network, <code>10.0.64.0-10.0.127.255</code>. This includes but is not limited to the virtual machine management interface, the user identity management interface, and the VPN server.</p>
+<p>You are not allowed to access any VLAN except for those of the management networks <code>10.0.0.0-10.0.63.255</code>, VLANs you are assigned, and VLANs for which you have explicit written approval to access.</p>
+<p>The lab is a fully contained environment and no malicious activity, including but not limited to scans, denial of service attacks, exfiltration, exploitation, and distribution of malware, is allowed across the border of the lab environment. Non-malicious traffic, such as software downloads, is allowed to cross the border of the lab environment. The border of the lab environment is defined as the point at which traffic is NATed from the local <code>10.0.0.0/8</code> network to Clemson's <code>130.127.0.0/16</code> network.</p>
+<h2 id="incidents">Incidents</h2>
+<p>Any attempt to circumvent the barriers we have in place to protect both you and networks you are not permitted to access will result in immediate suspension of access to the lab and lab network while the incident is being investigated. In addition, details of the incident will be elevated to the <a href="https://ccit.clemson.edu/about/departments/information-security-privacy/security-operations-center/">Security Operations Center at Clemson University</a> where it will be handled per university policy and if necessary, elevated to the appropriate authorities.</p>
+<h2 id="approval">Approval</h2>
+<p>Approval to use the lab will be handled on a case-by-case basis by the officers of CU Cyber and those officers reserve the right to deny and revoke access for any reason.</p>
                                             </div>
                 </div>
             </div>

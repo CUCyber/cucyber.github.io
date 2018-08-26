@@ -133,7 +133,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=course-intro%2Fcourse-intro', function(response) {
+				request(multiplex['server'] + '/id?presentation=course-intro', function(response) {
 					multiplex['id'] = response;
 
 					if (!response)
@@ -146,7 +146,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=course-intro%2Fcourse-intro', function(response) {
+				request(multiplex['server'] + '/token?presentation=course-intro', function(response) {
 					multiplex['secret'] = response;
 
 					if (!response)

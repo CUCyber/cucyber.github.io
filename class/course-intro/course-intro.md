@@ -39,10 +39,11 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 	- in job interviews.
 
 
-### Syllabus
+
+## Syllabus
 
 
-#### Topics
+### Topics
 
 1. Week 1: Course Introduction
 2. Week 2: Intro to Linux & Linux Security
@@ -52,7 +53,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 6. Week 6: Intro to Docker and Secure Service Setup
 
 
-#### Topics (cont.)
+### Topics (cont.)
 
 7. Week 7: Red vs. Blue: Network from the 2018 SECCDC Qualifier
 8. Week 8: Exercise Review and Case Study: DirtyCoW
@@ -62,7 +63,60 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 12. Week 12: In-depth Windows Security
 
 
-#### Topics (cont.)
+### Topics (cont.)
 
 13. Week 13: Red vs. Blue: Network from the 2018 PCDC competition
 14. Week 14: Exercise Review and Course Wrap-up
+
+
+### Grading
+
+* 55% - Lecture Attendance and Participation
+* 45% - Red vs. Blue Competition and Review (3)
+
+
+### Grading Scale
+
+| Scale |
+|:-----:|
+| A - 90-100 |
+| B - 80-89.99 |
+| C - 70-79.99 |
+| D - 60-69.99 |
+| F - below 60 |
+||
+
+
+### Attendance
+
+* Attendance is critical
+* Roll will be taken for each lecture
+* It's a massive part of your grade
+
+
+### Red vs. Blue Competitions
+
+* Participation
+* Documentation
+
+
+
+## Thank you
+
+* Max - TA #2
+* CU Cyber Officers
+* Dr. Feaster
+* CPSC Department
+
+
+## Icebreaker
+
+1. Name
+2. Experience with sysadmin or competitions
+3. What do you hope to get out of this class
+
+
+## Our History
+
+* PCDC
+* CCDC

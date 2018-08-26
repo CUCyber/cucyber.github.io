@@ -109,11 +109,13 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 * CPSC Department
 
 
+
 ## Icebreaker
 
 1. Name
 2. Experience with sysadmin or competitions
 3. What do you hope to get out of this class
+
 
 
 ## Our History

@@ -30,7 +30,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ### Reasons for Staying Enrolled
 
-* You're Interested in competing in CDCs
+* You're interested in competing in CDCs
 * You want to learn more about cybersecurity
 * You want to learn more beyond Clemson's cybersecurity curriculum
 * You want to improve your ability to:

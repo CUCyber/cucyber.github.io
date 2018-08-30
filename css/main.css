@@ -1139,10 +1139,14 @@ article {
   display: inline;
 }
 
-.wiki-heading a {
+.wiki-heading div {
   float: right;
 
   line-height: 2.8;
+}
+
+.wiki-heading a {
+  padding-left: 10px;
 }
 
 .wiki .table-of-contents {

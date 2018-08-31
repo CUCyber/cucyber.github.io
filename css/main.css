@@ -1140,6 +1140,7 @@ article {
 }
 
 .wiki-heading div {
+  display: inline;
   float: right;
 
   line-height: 2.8;

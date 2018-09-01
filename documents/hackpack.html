@@ -727,16 +727,16 @@ session required pam_unix.so</code></pre>
 <span class="fu">cp</span> -Ra /etc/sudoers.d /etc/sudoers.d~
 <span class="ex">groupdel</span> wheel <span class="kw">&amp;&amp;</span> <span class="ex">groupadd</span> wheel
 <span class="fu">cp</span> -a /etc/sudoers /etc/sudoers~
-<span class="fu">cat</span> <span class="op">&gt;</span>/etc/sudoers &lt;&lt;- EOF
+<span class="fu">cat</span> <span class="op">&gt;</span>/etc/sudoers <span class="op">&lt;&lt;- EOF</span>
 root ALL=(ALL) ALL
 %wheel ALL=(ALL) ALL
 EOF
 
-chown root:root /etc/<span class="op">s</span><span class="ex">udoers</span>
-chmod 600 /etc/<span class="op">s</span><span class="ex">udoers</span>
+chown root:root /etc/sudoers
+chmod 600 /etc/sudoers
 
-# be <span class="op">s</span><span class="ex">ure</span> to add administrators back to <span class="st">&#39;wheel&#39;</span> and
-# m<span class="op">e</span><span class="ex">rge</span> stuff from <span class="st">&#39;/etc/sudoers~&#39;</span> and <span class="st">&#39;/etc/sudoers.d~/&#39;</span></code></pre></div>
+# be sure to add administrators back to &#39;wheel&#39; and
+# merge stuff from &#39;/etc/sudoers~&#39; and &#39;/etc/sudoers.d~/&#39;</code></pre></div>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h1 id="backups-and-restoration">Backups and Restoration</h1>
 <h2 id="rsnapshot">rsnapshot</h2>
@@ -1075,9 +1075,9 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <span class="va">ext_if=$(</span><span class="ex">ip</span> route <span class="kw">|</span> <span class="fu">head</span> -n 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $5}&#39;</span><span class="va">)</span>
 
 <span class="co"># list of devices that should be blocked on the external interface</span>
-<span class="co"># WARNING! assumes that there are separate interfaces</span>
+<span class="co"># </span><span class="al">WARNING</span><span class="co">! assumes that there are separate interfaces</span>
 <span class="co">#          for the external network</span>
-<span class="co"># NOTE the 192.168.0.0/16 subnet should be excluded</span>
+<span class="co"># </span><span class="al">NOTE</span><span class="co"> the 192.168.0.0/16 subnet should be excluded</span>
 <span class="co">#      if there is only one interface</span>
 <span class="va">broken=</span><span class="st">&quot;224.0.0.22 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, \</span>
 <span class="st">        10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, \</span>
@@ -1148,7 +1148,7 @@ os.chmod(<span class="st">&#39;/bin/chmod&#39;</span>, <span class="dv">0755</sp
 <span class="va">ext_if=$(</span><span class="ex">ip</span> route <span class="kw">|</span> <span class="fu">head</span> -n 1 <span class="kw">|</span> <span class="fu">awk</span> <span class="st">&#39;{print $5}&#39;</span><span class="va">)</span>
 
 <span class="co"># broken is a list of address that should be blocked on the external interface</span>
-<span class="co"># WARNING! Assumes that there is an internal and an external interface</span>
+<span class="co"># </span><span class="al">WARNING</span><span class="co">! Assumes that there is an internal and an external interface</span>
 <span class="co"># note that 192.168.0.0/16 should not be blocked if there is only one interface</span>
 <span class="va">broken=</span><span class="st">&quot;224.0.0.22 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, \</span>
 <span class="st">        10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, \</span>

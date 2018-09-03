@@ -19,7 +19,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ## Learning Objectives
 
-* Review basic command line tools: ls, cd, top, ss, grep
+* Review basic command line tools: `ls`, `cd`, `top`, `ss`, `grep`
 * Learn the basics of file permissions, users, and groups
 * Know basic services (SSH, FTP, SMTP, HTTP)
 
@@ -37,15 +37,15 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ### Command Review
 
-* ls - list directory contents
-	- ls -la
-* cd - change directory
-	- cd dir
-* top/htop - display linux processes
-* ss - socket statistics
-	- ss -tlpn
-* grep - print lines matching a pattern
-	- grep -rnw "pattern"
+* `ls` - list directory contents
+	- `ls -la`
+* `cd` - change directory
+	- `cd dir`
+* `top`/`htop` - display linux processes
+* `ss` - socket statistics
+	- `ss -tlpn`
+* `grep` - print lines matching a pattern
+	- `grep -rnw "pattern"`
 
 
 
@@ -54,7 +54,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ![s](file_permissions.png)
 
 Note:
-On Linux, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program).
+On Linux, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). Executable permissions on a directory allows one to `cd` to it.
 
 
 |num|         perm           |mode|bits|
@@ -69,20 +69,20 @@ On Linux, each file and directory is assigned access rights for the owner of the
 |0  |none                    |--- |000 |
 
 Note:
-You will often here of the phrase “chmod 777”. The change mode command alters a file’s mode bits. It does so using octal numbers. The first number indicates the 3 bit number associated with the owner of the file, the second number indicates the group related to the file, and lastly the third indicates all other users.
+You will often here of the phrase “`chmod 777`”. The change mode command alters a file’s mode bits. It does so using octal numbers. The first number indicates the 3 bit number associated with the owner of the file, the second number indicates the group related to the file, and lastly the third indicates all other users.
 
 
 
 ### Linux Users and Groups
 
-* su - run a command with substitute UID & GID
-	- su - user
-* sudo - temporarily become the superuser
-	- sudo apt update
-* chmod - modify file access rights
-	- chmod +x file.sh
-* chown - change file ownership
-	- chown user:group file.txt
+* `su` - run a command with substitute UID & GID
+	- `su - user`
+* `sudo` - temporarily become the superuser
+	- `sudo apt update`
+* `chmod` - modify file access rights
+	- `chmod +x file.sh`
+* `chown` - change file ownership
+	- `chown user:group file.txt`
 
 Note:
 As you just learned, you can use chmod to change the mode bits of a file. Chown is used to change the user and/or group of a file. This can be useful when restricting untrusted users from potentially sensitive files. su and sudo can be used to alter your current sessions uid (user id) and gid (group id).
@@ -96,7 +96,7 @@ As you just learned, you can use chmod to change the mode bits of a file. Chown 
 
 #### UID
 
-* UIDs are stored in /etc/passwd.
+* UIDs are stored in "/etc/passwd".
 * UID 0 is **always** root.
 * `cat /etc/passwd`
 
@@ -104,7 +104,11 @@ As you just learned, you can use chmod to change the mode bits of a file. Chown 
 #### GID
 
 * A group ID (GID) is a unique positive integer assigned by a Unix-like operating system to each group.
-* Valid group numbers are given in /etc/group, and in the GID field of /etc/passwd file.
+* Valid group numbers are given in "/etc/group", and in the GID field of "/etc/passwd" file.
+* For each UID added, there is a corresponding GID
+
+Note:
+There is a corresponding GID so that you can assign the group field of a file to only that user.
 
 
 #### Common UIDs
@@ -154,33 +158,35 @@ The most common services present during a competition are HTTP, FTP, SSH, and SM
 #### firewalld
 
 * Enable and start firewalld:
-	- sudo systemctl enable --now firewalld
+	- `sudo systemctl enable --now firewalld`
 * Check the status of firewalld:
-	- sudo firewall-cmd --state
+	- `sudo firewall-cmd --state`
 * List all configurations for all zones:
-	- sudo firewall-cmd --list-all-zones
-* Add HTTP to the public zone
-	- sudo firewall-cmd --zone=public --add-service=http --permanent
+	- `sudo firewall-cmd --list-all-zones`
+* Add HTTP to the default zone
+	- `sudo firewall-cmd --add-service=http --permanent`
+* Add FTP to the public zone
+	- `sudo firewall-cmd --zone=public --add-service=ftp --permanent`
 
 
 #### firewalld
 
 * Reload the firewalld configuration:
-	- sudo firewall-cmd --reload
+	- `sudo firewall-cmd --reload`
 * Add an arbitrary port:
-	- sudo firewall-cmd --zone=public --add-port=1234/tcp --permanent
+	- `sudo firewall-cmd --zone=public --add-port=1234/tcp --permanent`
 * Remove an arbitrary port:
-	- sudo firewall-cmd --zone=public --remove-port=1234/tcp --permanent
+	- `sudo firewall-cmd --zone=public --remove-port=1234/tcp --permanent`
 
 
 #### UFW
 
 * Enable UFW:
-	- sudo ufw enable
+	- `sudo ufw enable`
 * Disable UFW:
-	- sudo ufw disable
+	- `sudo ufw disable`
 * Check the status of UFW:
-	- sudo ufw status verbose
+	- `sudo ufw status verbose`
 
 Note:
 UFW (uncomplicated firewall) is another very popular option when managing your local firewall. UFW is the default firewall for Ubuntu. Developed to ease iptables firewall configuration, ufw provides a user friendly way to create an IPv4 or IPv6 host-based firewall. **By default UFW is disabled.**
@@ -189,8 +195,12 @@ UFW (uncomplicated firewall) is another very popular option when managing your l
 #### UFW
 
 * Allow HTTP:
-	- sudo ufw allow http
+	- `sudo ufw allow http`
 * Allow an arbitrary port (TCP and UDP):
-	- sudo ufw allow 1234
+	- `sudo ufw allow 1234`
 * Allow an arbitrary port on a specific protocol:
-	- sudo ufw allow 1234/tcp
+	- `sudo ufw allow 1234/tcp`
+
+
+
+# Questions?

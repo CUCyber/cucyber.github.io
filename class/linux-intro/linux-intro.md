@@ -199,7 +199,32 @@ UFW (uncomplicated firewall) is another very popular option when managing your l
 * Allow an arbitrary port (TCP and UDP):
 	- `sudo ufw allow 1234`
 * Allow an arbitrary port on a specific protocol:
-	- `sudo ufw allow 1234/tcp`
+	- sudo ufw allow 1234/tcp
+
+
+#### iptables
+
+* Three default chains:
+	- INPUT: Manages incoming packets
+	- OUTPUT: Manages outgoing packets
+	- FORWARD: Manages packets that need to be delivered elsewhere
+
+* Match first
+	- iptables starts at the beginning of a chain and stops as soon as it finds a rule that matches
+	- If we reach the end of a chain then the default policy is applied
+
+
+#### iptables
+
+* List rules
+	- sudo iptables -L
+
+* Change the default policy for a chain
+	- sudo iptables -P INPUT DROP
+	- sudo iptables -P OUTPUT ACCEPT
+
+* Allow SSH traffic (22/tcp)
+	- sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 
 
 

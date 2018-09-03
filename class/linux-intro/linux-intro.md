@@ -143,6 +143,7 @@ Note:
 The most common services present during a competition are HTTP, FTP, SSH, and SMTP. It’s almost guaranteed that every single one of these shows up. If HTTP is present, then a server has a web server set up and it is serving a specific web page. If FTP is present, then there is likely a requirement for outside users to upload documents. If SSH is present, the scenario calls for users to remotely connect and perform actions on a linux server. Lastly, if SMTP is present, there is a mail server that must send and receive emails correctly. This can be used for receiving injects/deliverables/business tasks and is typically important.
 
 
+
 ### Local Firewalls
 
 * iptables

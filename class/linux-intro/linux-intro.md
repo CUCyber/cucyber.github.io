@@ -155,53 +155,6 @@ The most common services present during a competition are HTTP, FTP, SSH, and SM
 * UFW
 
 
-#### firewalld
-
-* Enable and start firewalld:
-	- `sudo systemctl enable --now firewalld`
-* Check the status of firewalld:
-	- `sudo firewall-cmd --state`
-* List all configurations for all zones:
-	- `sudo firewall-cmd --list-all-zones`
-* Add HTTP to the default zone
-	- `sudo firewall-cmd --add-service=http --permanent`
-* Add FTP to the public zone
-	- `sudo firewall-cmd --zone=public --add-service=ftp --permanent`
-
-
-#### firewalld
-
-* Reload the firewalld configuration:
-	- `sudo firewall-cmd --reload`
-* Add an arbitrary port:
-	- `sudo firewall-cmd --zone=public --add-port=1234/tcp --permanent`
-* Remove an arbitrary port:
-	- `sudo firewall-cmd --zone=public --remove-port=1234/tcp --permanent`
-
-
-#### UFW
-
-* Enable UFW:
-	- `sudo ufw enable`
-* Disable UFW:
-	- `sudo ufw disable`
-* Check the status of UFW:
-	- `sudo ufw status verbose`
-
-Note:
-UFW (uncomplicated firewall) is another very popular option when managing your local firewall. UFW is the default firewall for Ubuntu. Developed to ease iptables firewall configuration, ufw provides a user friendly way to create an IPv4 or IPv6 host-based firewall. **By default UFW is disabled.**
-
-
-#### UFW
-
-* Allow HTTP:
-	- `sudo ufw allow http`
-* Allow an arbitrary port (TCP and UDP):
-	- `sudo ufw allow 1234`
-* Allow an arbitrary port on a specific protocol:
-	- sudo ufw allow 1234/tcp
-
-
 #### iptables
 
 * Three default chains:
@@ -225,6 +178,57 @@ UFW (uncomplicated firewall) is another very popular option when managing your l
 
 * Allow SSH traffic (22/tcp)
 	- sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+
+#### firewalld
+
+* Enable and start firewalld:
+	- `sudo systemctl enable --now firewalld`
+* Check the status of firewalld:
+	- `sudo firewall-cmd --state`
+* List all configurations for all zones:
+	- `sudo firewall-cmd --list-all-zones`
+
+
+#### firewalld
+
+* Add HTTP to the default zone
+	- `sudo firewall-cmd --add-service=http --permanent`
+* Add FTP to the public zone
+	- `sudo firewall-cmd --zone=public --add-service=ftp --permanent`
+
+
+#### firewalld
+
+* Add an arbitrary port:
+	- `sudo firewall-cmd --zone=public --add-port=1234/tcp --permanent`
+* Remove an arbitrary port:
+	- `sudo firewall-cmd --zone=public --remove-port=1234/tcp --permanent`
+* Reload the firewalld configuration:
+	- `sudo firewall-cmd --reload`
+
+
+#### UFW
+
+* Enable UFW:
+	- `sudo ufw enable`
+* Disable UFW:
+	- `sudo ufw disable`
+* Check the status of UFW:
+	- `sudo ufw status verbose`
+
+Note:
+UFW (uncomplicated firewall) is another very popular option when managing your local firewall. UFW is the default firewall for Ubuntu. Developed to ease iptables firewall configuration, ufw provides a user friendly way to create an IPv4 or IPv6 host-based firewall. **By default UFW is disabled.**
+
+
+#### UFW
+
+* Allow HTTP:
+	- `sudo ufw allow http`
+* Allow an arbitrary port (TCP and UDP):
+	- `sudo ufw allow 1234`
+* Allow an arbitrary port on a specific protocol:
+	- sudo ufw allow 1234/tcp
 
 
 

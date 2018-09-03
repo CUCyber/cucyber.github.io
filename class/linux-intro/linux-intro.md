@@ -19,13 +19,10 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ## Learning Objectives
 
+
 * Review basic command line tools: `ls`, `cd`, `top`, `ss`, `grep`
 * Learn the basics of file permissions, users, and groups
 * Know basic services (SSH, FTP, SMTP, HTTP)
-
-
-## Learning Objectives
-
 * Understand the separation of privilege in a Linux system via UIDs specific to services and users
 * Know how to start and configure a firewall using either ufw, firewalld, or iptables
 
@@ -54,7 +51,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ![s](file_permissions.png)
 
 Note:
-On Linux, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). Executable permissions on a directory allows one to `cd` to it.
+On Linux, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). Executable permissions on a directory allows one to "cd" to it.
 
 
 |num|         perm           |mode|bits|
@@ -69,7 +66,7 @@ On Linux, each file and directory is assigned access rights for the owner of the
 |0  |none                    |--- |000 |
 
 Note:
-You will often here of the phrase “`chmod 777`”. The change mode command alters a file’s mode bits. It does so using octal numbers. The first number indicates the 3 bit number associated with the owner of the file, the second number indicates the group related to the file, and lastly the third indicates all other users.
+You will often here of the phrase "chmod 777". The change mode command alters a file’s mode bits. It does so using octal numbers. The first number indicates the 3 bit number associated with the owner of the file, the second number indicates the group related to the file, and lastly the third indicates all other users.
 
 
 

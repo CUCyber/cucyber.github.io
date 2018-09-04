@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="/images/shield-small.png">
-        <title>CU Cyber - Wiki - Boundaries within the Lab</title>
+        <title>CU Cyber - Wiki - Accessing VM Console</title>
         <link rel="shortcut icon" href="/images/shield-small.png">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -160,7 +160,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Boundaries within the Lab</h2>
+                            <h2>Accessing VM Console</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/index.html">
@@ -169,7 +169,7 @@
                                     </a>
                                 </li>
                                 <li><a href="/wiki/index.html">Wiki</a></li>
-                                <li class="active"><a href="/wiki/lab.html">Boundaries within the Lab</a></li>
+                                <li class="active"><a href="/wiki/lab.html">Accessing VM Console</a></li>
                             </ol>
                         </div>
                     </div>
@@ -183,9 +183,9 @@
                     <div class="col-md-12">
                                                                         <header id="top" class="wiki-header">
                             <div class="wiki-heading">
-                                <h1>Boundaries within the Lab</h1>
+                                <h1>Accessing VM Console</h1>
                                 <div>
-                                    <a href="https://github.com/CUCyber/wiki/edit/master/lab/boundaries.md">Edit This Page</a>
+                                    <a href="https://github.com/CUCyber/wiki/edit/master/lab/console.md">Edit This Page</a>
                                     <a href="https://github.com/CUCyber/wiki/new/master/lab">New Page</a>
                                 </div>
                             </div>
@@ -196,42 +196,52 @@
 
                             <nav id="tocnav" class="collapse in">
                                 <ul>
-                                <li><a href="#networks-always-off-limits">Networks always off-limits</a></li>
-                                <li><a href="#networks-you-are-permitted-to-access-but-not-permitted-to-attack">Networks you are permitted to access but not permitted to attack</a></li>
-                                <li><a href="#networks-you-are-permitted-to-attack">Networks you are permitted to attack</a></li>
-                                <li><a href="#logical-network-diagram">Logical Network Diagram</a></li>
+                                <li><a href="#install-remote-viewer">Install Remote Viewer</a><ul>
+                                <li><a href="#linux-instructions">Linux Instructions</a></li>
+                                <li><a href="#windows-instructions">Windows Instructions</a></li>
+                                <li><a href="#macos-instructions">MacOS Instructions</a></li>
+                                </ul></li>
+                                <li><a href="#navigate-to-ovirt-web-interface">Navigate to oVirt Web Interface</a></li>
+                                <li><a href="#set-profile-and-login">Set Profile and Login</a></li>
+                                <li><a href="#open-console">Open Console</a></li>
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="networks-always-off-limits">Networks always off-limits</h2>
-<p>These are networks that you are never permitted to communicate with under any circumstances.</p>
+                                                <h2 id="install-remote-viewer">Install Remote Viewer</h2>
+<h3 id="linux-instructions">Linux Instructions</h3>
+<p><strong>Fedora</strong></p>
+<pre><code>sudo dnf install virt-viewer</code></pre>
+<p><strong>Ubuntu</strong></p>
+<pre><code>sudo apt install virt-viewer</code></pre>
+<p><strong>Arch</strong></p>
+<pre><code>sudo pacman -S virt-viewer</code></pre>
+<h3 id="windows-instructions">Windows Instructions</h3>
 <ul>
-<li>Clemson's Network</li>
-<li>The Management VLAN within the lab network</li>
-<li>Someone else's VLAN within the lab network<sup>[1]</sup></li>
+<li>Download and install the installer file at <a href="https://architect.lab.cucyber.net/ovirt-engine-files/spice/virt-viewer-x64.msi" class="uri">https://architect.lab.cucyber.net/ovirt-engine-files/spice/virt-viewer-x64.msi</a>.</li>
 </ul>
-<p><sup>[1]</sup> Unless you are given permission to do so</p>
-<h2 id="networks-you-are-permitted-to-access-but-not-permitted-to-attack">Networks you are permitted to access but not permitted to attack</h2>
+<h3 id="macos-instructions">MacOS Instructions</h3>
 <ul>
-<li>The publicly routable internet</li>
-<li>The VPN VLAN you are automatically added to when log in via the VPN</li>
-<li>The oVirt web interface for creating and managing VMs</li>
+<li>Download and install <a href="https://brew.sh/">Homebrew</a> then run the following commands.</li>
 </ul>
-<h2 id="networks-you-are-permitted-to-attack">Networks you are permitted to attack</h2>
-<ul>
-<li>VLANS within the lab of which you are the owner or given permission to perform attacks on</li>
-</ul>
-<h2 id="logical-network-diagram">Logical Network Diagram</h2>
-<p>Here is a rough logical network diagram of the lab. Hopefully this may help clarify things.</p>
-<hr />
+<pre><code>brew tap jeffreywildman/homebrew-virt-manager
+brew install virt-viewer</code></pre>
+<h2 id="navigate-to-ovirt-web-interface">Navigate to oVirt Web Interface</h2>
+<p>Go to <a href="https://architect.lab.cucyber.net/" class="uri">https://architect.lab.cucyber.net/</a> in your favorite web browser. Click on &quot;VM Portal&quot; as shown below.</p>
 <div class="figure">
-<img src="/wiki/logical-lab-legend.png" alt="Cyber Warfare Space logical network digram - legend" style="width:100.0%" />
-<p class="caption">Cyber Warfare Space logical network digram - legend</p>
+<img src="/wiki/lab/vmportal.png" />
+
 </div>
-<hr />
+<h2 id="set-profile-and-login">Set Profile and Login</h2>
+<p>Select the &quot;lab.cucyber.net&quot; profile from the dropdown as shown below and enter your lab credentials.</p>
 <div class="figure">
-<img src="/wiki/logical-lab.png" alt="Cyber Warfare Space logical network digram" style="width:100.0%" />
-<p class="caption">Cyber Warfare Space logical network digram</p>
+<img src="/wiki/lab/profile.png" />
+
+</div>
+<h2 id="open-console">Open Console</h2>
+<p>Open the console by clicking the console icon as shown below. This will download a file called &quot;console.vv&quot;. Open this in the Remote Viewer application either by double clicking the file or from the command line in macOS <code>remote-viewer ~/Downloads/console.vv</code>.</p>
+<div class="figure">
+<img src="/wiki/lab/vm.png" />
+
 </div>
                                             </div>
                 </div>

@@ -1153,6 +1153,8 @@ article {
 .wiki .table-of-contents {
   float: right;
 
+  margin-left: 20px;
+  margin-bottom: 20px;
   padding: 20px;
 
   background: #fff;

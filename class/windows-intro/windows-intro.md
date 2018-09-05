@@ -1,4 +1,4 @@
-# Intro to Windows and Windows Security
+## Intro to Windows and Windows Security
 
 CPSC 2810 - Section 2
 

@@ -1,6 +1,6 @@
-# Windows and Windows Security
+# Intro to Windows and Windows Security
 
-CU Cyber
+CPSC 2810 - Section 2
 
 
 ## You Can Find These Presentations Online

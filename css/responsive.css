@@ -155,6 +155,22 @@ px      68    160    252    */
     background: #333333;
   }
 
+  .wiki-heading h1 {
+    display: block;
+  }
+
+  .wiki-heading div {
+    display: block;
+    float: none;
+
+    line-height: 2.8;
+  }
+
+  .wiki-heading a {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+
   .wiki .table-of-contents {
     float: none;
 

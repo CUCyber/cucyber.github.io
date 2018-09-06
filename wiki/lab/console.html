@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="/images/shield-small.png">
-        <title>CU Cyber - Contact</title>
+        <title>CU Cyber - Wiki - Accessing VM Console</title>
         <link rel="shortcut icon" href="/images/shield-small.png">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -42,7 +42,7 @@
         <!-- modernizr js -->
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- jquery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
         <!-- owl carouserl js -->
         <script src="/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
@@ -56,10 +56,44 @@
         <!-- template main js -->
         <script src="/js/main.js"></script>
 
+        <!-- Pandoc Styling
+        ================================================== -->
+        <style type="text/css">
+            code {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+            @media (min-width: 768px) {
+                *[id]:before {
+                    display: block;
+                    content: " ";
+                    margin-top: -141px;
+                    height: 141px;
+                    visibility: hidden;
+                }
+            }
+        </style>
+                                        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <![endif]-->
+        
         <!-- HTTPS JavaScript Redirect -->
         <script>
-			if (window.location.hostname != 'localhost' && window.location.hostname != '127.0.0.1' && window.location.protocol != 'https:')
-				window.location.protocol = 'https';
+            if (window.location.hostname != 'localhost' && window.location.hostname != '127.0.0.1' && window.location.protocol != 'https:')
+                window.location.protocol = 'https';
+        </script>
+
+        <!-- TOC Button JavaScript -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.table-of-contents .btn').click(function() {
+                    if ($(this).text() === 'Show')
+                        $(this).text('Hide');
+                    else
+                        $(this).text('Show');
+                });
+            });
         </script>
     </head>
     <body>
@@ -78,11 +112,10 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- /responsive nav button -->
-
                     <!-- logo -->
                     <div class="navbar-brand">
                         <a href="/index.html" class="stop-theme">
-                            <img src="/images/shield-small.png" alt="">
+                            <img src="/images/shield-small.png" alt="CU Cyber">
                             CU Cyber
                         </a>
                     </div>
@@ -118,7 +151,6 @@
                 <!-- /main nav -->
             </div>
         </header>
-
         <!--
         ==================================================
             Global Page Section Start
@@ -128,7 +160,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Contact</h2>
+                            <h2>Accessing VM Console</h2>
                             <ol class="breadcrumb">
                                 <li>
                                     <a href="/index.html">
@@ -136,103 +168,88 @@
                                         Home
                                     </a>
                                 </li>
-                                <li class="active">Contact</li>
+                                <li><a href="/wiki/index.html">Wiki</a></li>
+                                <li class="active"><a href="/wiki/lab.html">Accessing VM Console</a></li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!--/#page-header-->
-
-
-        <!--
-        ==================================================
-            Contact Section Start
-        ================================================== -->
-        <section id="contact-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s"><center>meet the officers</center></h2>
-                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-                            <center>Feel free to contact us at <a href="mailto:cyber@clemson.edu">cyber@clemson.edu</a> if you have any questions. We'd be glad to give you more information or add you to our mailing list!</center></p><br>
-                    <div class="col-md-4">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="/images/team/nick.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Nick Bulischeck</h3>
-                            <p class="team_designation">President</p>
-                            <p class="team_text"><a href="mailto:nbulisc@g.clemson.edu">nbulisc@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
-                            <div class="team-img">
-                                <img src="/images/team/max.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Max Harley</h3>
-                            <p class="team_designation">Vice President</p>
-                            <p class="team_text"><a href="mailto:mpharle@g.clemson.edu">mpharle@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
-                            <div class="team-img">
-                                <img src="/images/team/weston.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Weston Belk</h3>
-                            <p class="team_designation">System Architect</p>
-                            <p class="team_text"><a href="mailto:westonb@g.clemson.edu">westonb@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
-                            <div class="team-img">
-                                <img src="/images/team/kyle.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Kyle Wolfe</h3>
-                            <p class="team_designation">Treasurer</p>
-                            <p class="team_text"><a href="mailto:kwolfe3@g.clemson.edu">kwolfe3@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
-                            <div class="team-img">
-                                <img src="/images/team/cameron.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Cameron Ogle</h3>
-                            <p class="team_designation">Secretary</p>
-                            <p class="team_text"><a href="mailto:cmogle@g.clemson.edu">cmogle@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
-                            <div class="team-img">
-                                <img src="/images/team/kenneth.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Kenneth Simpson</h3>
-                            <p class="team_designation">Webmaster</p>
-                            <p class="team_text"><a href="mailto:klsimps@g.clemson.edu">klsimps@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-md-6">
-                         <div class="map-area">
-                            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s"><center>Find us in The Watt Center room 106</center></h2>
-                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-                                <center> Our first meeting is Thursday August 30th at 7:00 PM in The Watt Center room 106, so come check us out!</center></p><br>
-                            <div class="map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1640.5817852664861!2d-82.83738650733035!3d34.6758209805779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x88585e6c9bf4ef91%3A0x6ac5cda68e85ebf8!2sWatt+Family+Innovation+Center%2C+Clemson%2C+SC!3m2!1d34.6759451!2d-82.8367853!5e0!3m2!1sen!2sus!4v1453409418371" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
         </section>
 
+        <section class="single-post wiki">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                                                                        <header id="top" class="wiki-header">
+                            <div class="wiki-heading">
+                                <h1>Accessing VM Console</h1>
+                                <div>
+                                    <a href="https://github.com/CUCyber/wiki/edit/master/lab/console.md">Edit This Page</a>
+                                    <a href="https://github.com/CUCyber/wiki/new/master/lab">New Page</a>
+                                </div>
+                            </div>
+                                                                                </header>
+                        
+                                                <div class="table-of-contents">
+                            <h2 id="toc">Table of Contents <button data-toggle="collapse" data-target="#tocnav" class="btn">Hide</button></h2>
+
+                            <nav id="tocnav" class="collapse in">
+                                <ul>
+                                <li><a href="#install-remote-viewer">Install Remote Viewer</a><ul>
+                                <li><a href="#linux-instructions">Linux Instructions</a></li>
+                                <li><a href="#windows-instructions">Windows Instructions</a></li>
+                                <li><a href="#macos-instructions">MacOS Instructions</a></li>
+                                </ul></li>
+                                <li><a href="#navigate-to-ovirt-web-interface">Navigate to oVirt Web Interface</a></li>
+                                <li><a href="#set-profile-and-login">Set Profile and Login</a></li>
+                                <li><a href="#open-console">Open Console</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                                                <h2 id="install-remote-viewer">Install Remote Viewer</h2>
+<h3 id="linux-instructions">Linux Instructions</h3>
+<p><strong>Fedora</strong></p>
+<pre><code>sudo dnf install virt-viewer</code></pre>
+<p><strong>Ubuntu</strong></p>
+<pre><code>sudo apt install virt-viewer</code></pre>
+<p><strong>Arch</strong></p>
+<pre><code>sudo pacman -S virt-viewer</code></pre>
+<h3 id="windows-instructions">Windows Instructions</h3>
+<ul>
+<li>Download and install the installer file for &quot;virt-viewer&quot; called &quot;Win x64 MSI&quot; at the <a href="https://virt-manager.org/download/">Virtual Machine Manager</a> download page.</li>
+</ul>
+<h3 id="macos-instructions">MacOS Instructions</h3>
+<ul>
+<li>Download and install <a href="https://brew.sh/">Homebrew</a> then run the following commands.</li>
+</ul>
+<pre><code>brew tap jeffreywildman/homebrew-virt-manager
+brew install virt-viewer</code></pre>
+<h2 id="navigate-to-ovirt-web-interface">Navigate to oVirt Web Interface</h2>
+<p>Go to <a href="https://architect.lab.cucyber.net/" class="uri">https://architect.lab.cucyber.net/</a> in your favorite web browser. Click on &quot;VM Portal&quot; as shown below.</p>
+<div class="figure">
+<img src="/wiki/lab/vmportal.png" />
+
+</div>
+<h2 id="set-profile-and-login">Set Profile and Login</h2>
+<p>Select the &quot;lab.cucyber.net&quot; profile from the dropdown as shown below and enter your lab credentials.</p>
+<div class="figure">
+<img src="/wiki/lab/profile.png" />
+
+</div>
+<h2 id="open-console">Open Console</h2>
+<p>Open the console by clicking the console icon as shown below. This will download a file called &quot;console.vv&quot;. Open this in the Remote Viewer application either by double clicking the file or from the command line in Linux/macOS <code>remote-viewer ~/Downloads/console.vv</code>.</p>
+<div class="figure">
+<img src="/wiki/lab/vm.png" />
+
+</div>
+                                            </div>
+                </div>
+            </div>
+        </section>
         <!--
         ==================================================
-            Footer Section Start
+        Footer Section Start
         ================================================== -->
         <footer id="footer">
             <div class="container">

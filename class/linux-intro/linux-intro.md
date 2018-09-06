@@ -19,13 +19,10 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ## Learning Objectives
 
+
 * Review basic command line tools: `ls`, `cd`, `top`, `ss`, `grep`
 * Learn the basics of file permissions, users, and groups
 * Know basic services (SSH, FTP, SMTP, HTTP)
-
-
-## Learning Objectives
-
 * Understand the separation of privilege in a Linux system via UIDs specific to services and users
 * Know how to start and configure a firewall using either ufw, firewalld, or iptables
 
@@ -54,7 +51,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ![s](file_permissions.png)
 
 Note:
-On Linux, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). Executable permissions on a directory allows one to `cd` to it.
+On Linux, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else. Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file as a program). Executable permissions on a directory allows one to "cd" to it.
 
 
 |num|         perm           |mode|bits|
@@ -69,7 +66,7 @@ On Linux, each file and directory is assigned access rights for the owner of the
 |0  |none                    |--- |000 |
 
 Note:
-You will often here of the phrase “`chmod 777`”. The change mode command alters a file’s mode bits. It does so using octal numbers. The first number indicates the 3 bit number associated with the owner of the file, the second number indicates the group related to the file, and lastly the third indicates all other users.
+You will often here of the phrase "chmod 777". The change mode command alters a file’s mode bits. It does so using octal numbers. The first number indicates the 3 bit number associated with the owner of the file, the second number indicates the group related to the file, and lastly the third indicates all other users.
 
 
 
@@ -155,6 +152,31 @@ The most common services present during a competition are HTTP, FTP, SSH, and SM
 * UFW
 
 
+#### iptables
+
+* Three default chains:
+	- INPUT: Manages incoming packets
+	- OUTPUT: Manages outgoing packets
+	- FORWARD: Manages packets that need to be delivered elsewhere
+
+* Match first
+	- iptables starts at the beginning of a chain and stops as soon as it finds a rule that matches
+	- If we reach the end of a chain then the default policy is applied
+
+
+#### iptables
+
+* List rules
+	- sudo iptables -L
+
+* Change the default policy for a chain
+	- sudo iptables -P INPUT DROP
+	- sudo iptables -P OUTPUT ACCEPT
+
+* Allow SSH traffic (22/tcp)
+	- sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+
 #### firewalld
 
 * Enable and start firewalld:
@@ -163,6 +185,10 @@ The most common services present during a competition are HTTP, FTP, SSH, and SM
 	- `sudo firewall-cmd --state`
 * List all configurations for all zones:
 	- `sudo firewall-cmd --list-all-zones`
+
+
+#### firewalld
+
 * Add HTTP to the default zone
 	- `sudo firewall-cmd --add-service=http --permanent`
 * Add FTP to the public zone
@@ -171,12 +197,12 @@ The most common services present during a competition are HTTP, FTP, SSH, and SM
 
 #### firewalld
 
-* Reload the firewalld configuration:
-	- `sudo firewall-cmd --reload`
 * Add an arbitrary port:
 	- `sudo firewall-cmd --zone=public --add-port=1234/tcp --permanent`
 * Remove an arbitrary port:
 	- `sudo firewall-cmd --zone=public --remove-port=1234/tcp --permanent`
+* Reload the firewalld configuration:
+	- `sudo firewall-cmd --reload`
 
 
 #### UFW
@@ -199,7 +225,7 @@ UFW (uncomplicated firewall) is another very popular option when managing your l
 * Allow an arbitrary port (TCP and UDP):
 	- `sudo ufw allow 1234`
 * Allow an arbitrary port on a specific protocol:
-	- `sudo ufw allow 1234/tcp`
+	- sudo ufw allow 1234/tcp
 
 
 

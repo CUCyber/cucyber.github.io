@@ -17,6 +17,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ### Objectives
 
 * Windows vs Windows Server
+* Services
 * Basic Windows functions
 	- Users and Groups
 	- GPO
@@ -27,20 +28,76 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ### Windows vs Windows Server
 
-* Personal environment - Install Windows normally
-* Enterprise environment:
-	- Windows Enterprise Edition - User's workstations
-	- Windows Server - used for servers. Needed in enterprise for AD
+* Personal environment
+* Domain environment
+
+Note:
+Most people use the personal environment. Authentication is done locally.
+To make a domain, you must have AD/DS running in a Windows Server instance. Draw Windows server and AD/DS as concentric circles where AD/DS is inside Server to show difference.
 
 
-### Local users vs Domain users
+## Services
 
-* Local users - connect to local box
-* Domain users - connect to any device which is connected to domain
+
+Note:
+What are services?
+
+
+## Services
+
+* Programs that operate in the background
+* Task Manager -> Services
+* svchost.exe
+* Service groups
+
+
+Note:
+A few should be memorized but most can be ignored
+
+
+
+## Windows Server
+
+
+Note:
+Has anyone used Windows server?
+
+
+### Roles
+
+
+* Abstraction of installing programs
+* Windows server "services"
+* AD/DS or Web Server
+* Server Manager
+
+
+### Features
+
+
+* Augments usage of Roles
+* .NET version 3.5
+* HTTP Support
+* RSAT-AD-PowerShell
+
+Note:
+RSAT-AD-PowerShell allows you to manage AD with PowerShell
+
+
+### User Management
+
+
+* Available in AD/DS
+* Active Directory Users and Groups
+* Centralized users, groups, and computer management
+
+Note:
+Why is centralized users, groupus, and computer management useful?
 
 
 ### Group Policy Object (GPO)
 
+* "Group Policy Management"
 * Settings to define how AD acts
 * Describes what domain can (and can't) do
 * Uses inheritance model
@@ -52,25 +109,72 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 * Does not require DC to reauthenticate
 * Tickets
 
+Note:
+We'll talk a lot more about Kerberos later.
+
+
+#### How does Kerberos work?
+
+1. Request TGT from AS
+2. AS responds with
+  1. User ID, TGS ID, session key encrypted w/ *TGS secret key*
+  2. User ID, TGS ID, session key encrypted w/ *client secret key*
+3. Client decrypts 2nd message
+4. Client encrypts 1st message with session key
+5. Client sends message to server
+6. Server authenticates with client
+
+Note:
+Similar process is done in other direction so that user knows server is correct
+
+
+#### Authentication with application server
+
+1. User requests ticket for application
+2. Server responds with server-known encrypted message
+3. User sends message to application
+
 
 ### Powershell
 
-* Like bash, but better
-* Verb-Noun/Verb-AdjNoun Idiom
+* It's like Bash, but better
+* Verb-Noun Idiom
+  * Get-Service, Get-LocalUser
+
+Note:
+Everything today has been in GUI, but it can also be done in PowerShell. PowerShell is wrapper for C#, with easy-to-use API. Windows exposes C# API for most internal tools. Useful because PowerShell commands (shouldn't) change from Windows Server versions.
 
 
-#### Commands
+#### Get-Service + Get-Help
+
+* Get-Service lists all services
+* RTFM
+* Get-Help
+* Get-Help Get-Service
+
+
+#### Process
 
 * Get-Process
-* Get-LocalUser (Get-ADUser -Filter *)
-* Get-Help
+* Stop-Process
+
+
+#### Pipe
+
+* Get-Process | ?{$\_.Id -eq "<Number>"} | Stop-Process
+* Get-Process | Stop-Process
+
+
+#### Windows Server
+
+* Get-ADUser -Filter *
 
 
 ### Event Viewer
 
 * Windows does a good job of logging
 * Searching through logs is the hard part
-* LOL exe to find Event Logs
+* LOLBaS to find Event Logs
 * ELK/Splunk would be easier
 
 

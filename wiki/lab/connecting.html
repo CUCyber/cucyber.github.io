@@ -199,14 +199,17 @@
                                 <li><a href="#installing-the-openvpn-client">Installing the OpenVPN Client</a><ul>
                                 <li><a href="#linux-instructions">Linux Instructions</a></li>
                                 <li><a href="#windows-instructions">Windows Instructions</a></li>
-                                <li><a href="#macos-instructions">MacOS Instructions</a></li>
+                                <li><a href="#macos-instructions">macOS Instructions</a></li>
                                 </ul></li>
                                 <li><a href="#connecting-to-the-lab-vpn">Connecting to the Lab VPN</a><ul>
                                 <li><a href="#linux-instructions-1">Linux Instructions</a></li>
-                                <li><a href="#mac-instructions">Mac Instructions</a></li>
+                                <li><a href="#macos-instructions-1">macOS Instructions</a></li>
                                 <li><a href="#windows-instructions-1">Windows Instructions</a></li>
                                 </ul></li>
-                                <li><a href="#testing-connection-to-the-lab">Testing Connection to the Lab</a></li>
+                                <li><a href="#testing-connection-to-the-lab">Testing Connection to the Lab</a><ul>
+                                <li><a href="#linuxmacos">Linux/macOS</a></li>
+                                <li><a href="#windows">Windows</a></li>
+                                </ul></li>
                                 <li><a href="#change-your-password">Change Your Password</a></li>
                                 </ul>
                             </nav>
@@ -223,7 +226,7 @@
 <ul>
 <li>Download and install the <a href="https://openvpn.net/index.php/open-source/downloads.html">official OpenVPN client</a>.</li>
 </ul>
-<h3 id="macos-instructions">MacOS Instructions</h3>
+<h3 id="macos-instructions">macOS Instructions</h3>
 <ul>
 <li>Download and install the <a href="https://tunnelblick.net/">TunnelBlick</a> OpenVPN client.</li>
 </ul>
@@ -231,17 +234,42 @@
 <p><strong>If and only if you are off campus</strong>, you will need to connect to Clemson's VPN using OpenConnect. Follow the instructions <a href="/wiki/lab/connecting-clemson.html">here</a> if that is the case.</p>
 <h3 id="linux-instructions-1">Linux Instructions</h3>
 <h4 id="connect-to-the-lab">Connect to the Lab</h4>
-<p>In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.</p>
+<p>In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command. The config file is in an email titled &quot;CU Cyber Lab Access&quot; from cyber@clemson.edu. Check your email and download the file.</p>
 <pre><code>sudo openvpn --config &lt;username&gt;.ovpn</code></pre>
-<h3 id="mac-instructions">Mac Instructions</h3>
+<h3 id="macos-instructions-1">macOS Instructions</h3>
 <h4 id="connect-to-the-lab-1">Connect to the Lab</h4>
-<p>Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.</p>
+<p>Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn. The config file is in an email titled &quot;CU Cyber Lab Access&quot; from cyber@clemson.edu. Check your email and download the file.</p>
+<ul>
+<li>Double click your .ovpn file and enter your macOS password into the dialog</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/ovpn-click.png" width="256" />
+
+</div>
+<ul>
+<li>Click the Tunnelblick icon in the menu bar</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/tunnelblick.png" style="width:100.0%" />
+
+</div>
+<ul>
+<li>Click &quot;Connect [username]&quot; in the dropdown menu</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/tunnelblick-username.png" width="256" />
+
+</div>
 <h3 id="windows-instructions-1">Windows Instructions</h3>
 <h4 id="connect-to-the-lab-2">Connect to the Lab</h4>
-<p>Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.</p>
+<p>Use the OpenVPN client to load your OpenVPN config file ending in .ovpn. The config file is in an email titled &quot;CU Cyber Lab Access&quot; from cyber@clemson.edu. Check your email and download the file.</p>
 <h2 id="testing-connection-to-the-lab">Testing Connection to the Lab</h2>
 <p>At this point you should be connected to the lab VPN. To test your connectivity execute the following command.</p>
+<h3 id="linuxmacos">Linux/macOS</h3>
 <pre><code>ping -c 4 oracle.lab.cucyber.net</code></pre>
+<p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!</p>
+<h3 id="windows">Windows</h3>
+<pre><code>ping oracle.lab.cucyber.net</code></pre>
 <p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!</p>
 <h2 id="change-your-password">Change Your Password</h2>
 <p>After successfully connecting to the lab environment, you will need to <a href="/wiki/lab/changing-password.html">change your password</a>.</p>

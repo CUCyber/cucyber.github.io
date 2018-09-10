@@ -18,13 +18,18 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 * Windows vs Windows Server
 * Services
-* Basic Windows functions
+* Basic Windows Server functions
 	- Users and Groups
 	- GPO
-	- Kerberos
+	- Authentication (Kerberos)
 * Powershell
 * Event Logs
 
+### Windows vs Windows Server
+
+Note:
+Has anybody used Windows Server?
+How is Windows server different from Windows Home?
 
 ### Windows vs Windows Server
 
@@ -40,7 +45,7 @@ To make a domain, you must have AD/DS running in a Windows Server instance. Draw
 
 
 Note:
-What are services?
+Can anybody summarize what a service is?
 
 
 ## Services
@@ -52,6 +57,7 @@ What are services?
 
 
 Note:
+taskmgr.exe
 A few should be memorized but most can be ignored
 
 
@@ -178,5 +184,7 @@ Everything today has been in GUI, but it can also be done in PowerShell. PowerSh
 * ELK/Splunk would be easier
 
 
-
 # In-class game
+
+1. Identify malicious event
+2. Draw a timeline of events that occured

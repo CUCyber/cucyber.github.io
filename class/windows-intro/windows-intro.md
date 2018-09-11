@@ -3,6 +3,7 @@
 CPSC 2810 - Section 2
 
 
+
 ## You Can Find These Presentations Online
 
 Visit [cucyber.net](https://cucyber.net/) to find these presentations and more online!
@@ -11,25 +12,27 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 
 
-## Intro to Windows
-
-
 ### Objectives
 
 * Windows vs Windows Server
 * Services
 * Basic Windows Server functions
-	- Users and Groups
-	- GPO
-	- Authentication (Kerberos)
+  - Users and Groups
+  - DNS
+  - GPO
+  - Authentication (Kerberos)
 * Powershell
 * Event Logs
+
+
 
 ### Windows vs Windows Server
 
 Note:
 Has anybody used Windows Server?
 How is Windows server different from Windows Home?
+
+
 
 ### Windows vs Windows Server
 
@@ -41,11 +44,12 @@ Most people use the personal environment. Authentication is done locally.
 To make a domain, you must have AD/DS running in a Windows Server instance. Draw Windows server and AD/DS as concentric circles where AD/DS is inside Server to show difference.
 
 
-## Services
 
+## Services
 
 Note:
 Can anybody summarize what a service is?
+
 
 
 ## Services
@@ -55,7 +59,6 @@ Can anybody summarize what a service is?
 * svchost.exe
 * Service groups
 
-
 Note:
 taskmgr.exe
 A few should be memorized but most can be ignored
@@ -64,13 +67,12 @@ A few should be memorized but most can be ignored
 
 ## Windows Server
 
-
 Note:
 Has anyone used Windows server?
 
 
-### Roles
 
+### Roles
 
 * Abstraction of installing programs
 * Windows server "services"
@@ -78,8 +80,8 @@ Has anyone used Windows server?
 * Server Manager
 
 
-### Features
 
+### Features
 
 * Augments usage of Roles
 * .NET version 3.5
@@ -90,8 +92,8 @@ Note:
 RSAT-AD-PowerShell allows you to manage AD with PowerShell
 
 
-### User Management
 
+### User Management
 
 * Available in AD/DS
 * Active Directory Users and Groups
@@ -99,6 +101,18 @@ RSAT-AD-PowerShell allows you to manage AD with PowerShell
 
 Note:
 Why is centralized users, groupus, and computer management useful?
+
+
+
+### Domain Name System(DNS)
+
+* Comes with AD/DS
+* New computers on domain get record with computer name
+* Edit DNS records with "DNS Manager"
+
+Note:
+DNS will probably come up later (unless we want to talk about it now)
+
 
 
 ### Group Policy Object (GPO)
@@ -109,6 +123,7 @@ Why is centralized users, groupus, and computer management useful?
 * Uses inheritance model
 
 
+
 ### Kerberos
 
 * Authentication to Windows
@@ -117,6 +132,7 @@ Why is centralized users, groupus, and computer management useful?
 
 Note:
 We'll talk a lot more about Kerberos later.
+
 
 
 #### How does Kerberos work?
@@ -134,11 +150,13 @@ Note:
 Similar process is done in other direction so that user knows server is correct
 
 
+
 #### Authentication with application server
 
 1. User requests ticket for application
 2. Server responds with server-known encrypted message
 3. User sends message to application
+
 
 
 ### Powershell
@@ -151,12 +169,14 @@ Note:
 Everything today has been in GUI, but it can also be done in PowerShell. PowerShell is wrapper for C#, with easy-to-use API. Windows exposes C# API for most internal tools. Useful because PowerShell commands (shouldn't) change from Windows Server versions.
 
 
+
 #### Get-Service + Get-Help
 
 * Get-Service lists all services
 * RTFM
-* Get-Help
+* Get-Help / Update-Help
 * Get-Help Get-Service
+
 
 
 #### Process
@@ -165,15 +185,18 @@ Everything today has been in GUI, but it can also be done in PowerShell. PowerSh
 * Stop-Process
 
 
+
 #### Pipe
 
 * Get-Process | ?{$\_.Id -eq "<Number>"} | Stop-Process
 * Get-Process | Stop-Process
 
 
+
 #### Windows Server
 
 * Get-ADUser -Filter *
+
 
 
 ### Event Viewer
@@ -182,6 +205,7 @@ Everything today has been in GUI, but it can also be done in PowerShell. PowerSh
 * Searching through logs is the hard part
 * LOLBaS to find Event Logs
 * ELK/Splunk would be easier
+
 
 
 # In-class game

@@ -103,6 +103,15 @@ Stress Management - Stress can slow you down
 * Actively listen to the customer
 * Do **NOT** interrupt them
 
+Note:
+Positive statements:
+* "I really appreciate your patience."
+* "Thank you for bringing this to our attention."
+You're part of customer service now. Use phrases like:
+* "I understand how frustrating that must be".
+* "I've passed this on to our team."
+* "Thank you for being our customer."
+
 
 ### Why is this relevant to a Cyber Security Competition?
 

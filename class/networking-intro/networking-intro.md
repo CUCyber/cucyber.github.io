@@ -300,7 +300,7 @@ Any service that is being provided to users on the external network can be place
 * The internal zone is the one that generally hosts internal company systems and services.
 * Any service that should be only allowed to users on the internal network is placed in the internal network. The most common of these services are:
 	- HR web application servers
-	- CIFS/NFS/ZFS servers
+	- SMB/NFS/ZFS servers
 * User endpoints are on this network.
 
 

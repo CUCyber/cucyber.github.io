@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Information Gathering Foundations</title>
+		<title>Sitting Duck CTF</title>
 
 		<meta charset="utf-8">
 
@@ -47,7 +47,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- source markdown file -->
-				<section data-markdown="info_gathering.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+				<section data-markdown="sd-info.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -127,7 +127,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=recon%2Finfo_gathering', function(response) {
+				request(multiplex['server'] + '/id?presentation=misc%2Fsd-info', function(response) {
 					multiplex['id'] = response;
 
 					if (!response)
@@ -140,7 +140,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=recon%2Finfo_gathering', function(response) {
+				request(multiplex['server'] + '/token?presentation=misc%2Fsd-info', function(response) {
 					multiplex['secret'] = response;
 
 					if (!response)

@@ -9,6 +9,6 @@ Add comments explaining **why** the nginx server is more secure than it previous
 
 **Without comments you will lose 25% of your grade.**
 
-Turn the Dockerfile in on Canvas under .
+Turn the Dockerfile in on Canvas under Week 6 Participation and Quiz.
 
 **Due Date:** Tuesday, October 9th, 5:59 PM on Canvas

@@ -1708,7 +1708,10 @@ Disallow: /</code></pre>
 #forwarders {
 #    8.8.8.8;
 #    8.8.4.4;
-#};</code></pre>
+#};
+
+#include the zone settings file
+include &quot;/var/named/example.com.conf&quot;;</code></pre>
 <h4 id="varnamedexample.com.conf">/var/named/example.com.conf</h4>
 <pre class="bindconf"><code># replace example.com with the actual domain
 zone &quot;example.com&quot; {

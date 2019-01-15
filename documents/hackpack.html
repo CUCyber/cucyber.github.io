@@ -299,6 +299,12 @@
                                 <li><a href="#filtering-2">Filtering</a></li>
                                 <li><a href="#example-configuration-2">Example Configuration</a></li>
                                 </ul></li>
+                                <li><a href="#pfsense">pfSense</a><ul>
+                                <li><a href="#lights-out-1">Lights Out</a></li>
+                                <li><a href="#recording">Recording</a></li>
+                                <li><a href="#viewing-configuration">Viewing Configuration</a></li>
+                                <li><a href="#creating-rules">Creating Rules</a></li>
+                                </ul></li>
                                 <li><a href="#uncomplicated-firewall">Uncomplicated Firewall</a><ul>
                                 <li><a href="#config-files-3">Config Files</a></li>
                                 <li><a href="#commands-4">Commands</a></li>
@@ -1235,12 +1241,6 @@ up</code></pre>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h3 id="rules-1">Rules</h3>
 <p>To edit security rules, such as traffic barriers between interfaces, enter the <code>edit rulebase security</code> context. Rules between zones are default deny and rules within zones are default allow.</p>
-<h4 id="dmz-and-lan-interaction">DMZ and LAN Interaction</h4>
-<p>The following rule enables a connection between the DMZ and LAN under specific circumstances, here a MySQL connection from webapps to database.</p>
-<pre class="paloalto"><code>edit rulebase security
-set rules database from dmz to lan source &lt;webapps&gt; destination &lt;database&gt;
-  application mysql service application-default action allow
-up</code></pre>
 <h4 id="incoming-traffic">Incoming Traffic</h4>
 <p>The following rule enables a connection between the public interface and LAN under specific circumstances, here an HTTP connection to webapps. Replace <code>application-default</code> with a port number if different from default.</p>
 <pre class="paloalto"><code>edit rulebase security
@@ -1322,6 +1322,58 @@ pass inet proto icmp icmp-type echoreq
 
 # adapted from the http://www.bsdnow.tv/tutorials/pf
 # which is distrusted under CC-BY-SA</code></pre>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h2 id="pfsense">pfSense</h2>
+<p>pfSense is a free firewall and routing software.</p>
+<h3 id="lights-out-1">Lights Out</h3>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php">parse_config<span class="ot">(</span><span class="kw">true</span><span class="ot">);</span>
+<span class="kw">$config</span><span class="ot">[</span><span class="st">&#39;interfaces&#39;</span><span class="ot">][</span><span class="st">&#39;wan&#39;</span><span class="ot">][</span><span class="st">&#39;enable&#39;</span><span class="ot">]</span> = <span class="kw">false</span><span class="ot">;</span>
+write_config<span class="ot">();</span>
+<span class="fu">exec</span></code></pre></div>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h3 id="recording">Recording</h3>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php">record &lt;filename&gt;
+&lt;commands&gt;
+stoprecording
+showrecordings</code></pre></div>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h3 id="viewing-configuration">Viewing Configuration</h3>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php">parse_config<span class="ot">(</span><span class="kw">true</span><span class="ot">);</span>
+<span class="fu">print_r</span><span class="ot">(</span><span class="kw">$config</span><span class="ot">);</span>
+<span class="fu">exec</span></code></pre></div>
+<p><a href="#top" title="top">Jump to Top</a></p>
+<h3 id="creating-rules">Creating Rules</h3>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php">parse_config<span class="ot">(</span><span class="kw">true</span><span class="ot">);</span>
+<span class="kw">$rule</span> = <span class="fu">Array</span><span class="ot">(</span>
+    <span class="st">&quot;type&quot;</span> =&gt; <span class="st">&quot;pass&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;ipprotocol&quot;</span> =&gt; <span class="st">&quot;inet&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;protocol&quot;</span> =&gt; <span class="st">&quot;&lt;tcp|udp|icmp|any&gt;&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;descr&quot;</span> =&gt; <span class="st">&quot;&lt;DESCRIPTION&gt;&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;interface&quot;</span> =&gt; <span class="st">&quot;&lt;wan|lan|INTERFACE&gt;&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;tracker&quot;</span> =&gt; &lt;<span class="kw">UNIQUE_ID</span>&gt;<span class="ot">,</span>
+    <span class="st">&quot;source&quot;</span> =&gt; <span class="fu">Array</span><span class="ot">(</span><span class="st">&quot;&lt;address|network|any&gt;&quot;</span> =&gt; <span class="st">&quot;&lt;IP|CIDR|NONE&gt;&quot;</span><span class="ot">,</span> <span class="st">&quot;port&quot;</span> =&gt; <span class="st">&quot;&lt;PORT&gt;&quot;</span><span class="ot">),</span>
+    <span class="st">&quot;destination&quot;</span> =&gt; <span class="fu">Array</span><span class="ot">(</span><span class="st">&quot;&lt;address|network|any&gt;&quot;</span> =&gt; <span class="st">&quot;&lt;IP|CIDR|NONE&gt;&quot;</span><span class="ot">,</span> <span class="st">&quot;port&quot;</span> =&gt; <span class="st">&quot;&lt;PORT&gt;&quot;</span><span class="ot">),</span>
+<span class="ot">);</span>
+<span class="fu">array_push</span><span class="ot">(</span><span class="kw">$config</span><span class="ot">[</span><span class="st">&#39;filter&#39;</span><span class="ot">][</span><span class="st">&#39;rule&#39;</span><span class="ot">],</span> <span class="kw">$rule</span><span class="ot">);</span>
+<span class="fu">print_r</span><span class="ot">(</span><span class="kw">$config</span><span class="ot">);</span>
+write_config<span class="ot">();</span>
+<span class="fu">exec</span></code></pre></div>
+<h4 id="example">Example</h4>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php">parse_config<span class="ot">(</span><span class="kw">true</span><span class="ot">);</span>
+<span class="kw">$rule</span> = <span class="fu">Array</span><span class="ot">(</span>
+    <span class="st">&quot;type&quot;</span> =&gt; <span class="st">&quot;pass&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;ipprotocol&quot;</span> =&gt; <span class="st">&quot;inet&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;protocol&quot;</span> =&gt; <span class="st">&quot;tcp&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;descr&quot;</span> =&gt; <span class="st">&quot;Allow 22 to 192.168.0.2&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;interface&quot;</span> =&gt; <span class="st">&quot;wan&quot;</span><span class="ot">,</span>
+    <span class="st">&quot;tracker&quot;</span> =&gt; <span class="dv">01283912</span><span class="ot">,</span>
+    <span class="st">&quot;source&quot;</span> =&gt; <span class="fu">Array</span><span class="ot">(</span><span class="st">&quot;any&quot;</span> =&gt; <span class="st">&quot;&quot;</span><span class="ot">),</span>
+    <span class="st">&quot;destination&quot;</span> =&gt; <span class="fu">Array</span><span class="ot">(</span><span class="st">&quot;address&quot;</span> =&gt; <span class="st">&quot;192.168.0.2&quot;</span><span class="ot">,</span> <span class="st">&quot;port&quot;</span> =&gt; <span class="st">&quot;22&quot;</span><span class="ot">),</span>
+<span class="ot">);</span>
+<span class="fu">array_push</span><span class="ot">(</span><span class="kw">$config</span><span class="ot">[</span><span class="st">&#39;filter&#39;</span><span class="ot">][</span><span class="st">&#39;rule&#39;</span><span class="ot">],</span> <span class="kw">$rule</span><span class="ot">);</span>
+<span class="fu">print_r</span><span class="ot">(</span><span class="kw">$config</span><span class="ot">);</span>
+write_config<span class="ot">();</span>
+<span class="fu">exec</span></code></pre></div>
 <p><a href="#top" title="top">Jump to Top</a></p>
 <h2 id="uncomplicated-firewall">Uncomplicated Firewall</h2>
 <h3 id="config-files-3">Config Files</h3>

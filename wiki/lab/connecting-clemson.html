@@ -190,28 +190,37 @@
 
                             <nav id="tocnav" class="collapse in">
                                 <ul>
-                                <li><a href="#installing-the-openconnect-client">Installing the OpenConnect Client</a><ul>
-                                <li><a href="#linux-instructions">Linux Instructions</a></li>
-                                <li><a href="#windows-instructions">Windows Instructions</a></li>
-                                <li><a href="#macos-instructions">MacOS Instructions</a></li>
+                                <li><a href="#before-you-begin">Before You Begin</a></li>
+                                <li><a href="#linux-instructions">Linux Instructions</a><ul>
+                                <li><a href="#installing-the-openconnect-client">Installing the OpenConnect Client</a></li>
+                                <li><a href="#connecting-to-cuvpn">Connecting to CUVPN</a></li>
                                 </ul></li>
-                                <li><a href="#connecting-to-the-cuvpn">Connecting to the CUVPN</a><ul>
-                                <li><a href="#linux-instructions-1">Linux Instructions</a></li>
-                                <li><a href="#mac-instructions">Mac Instructions</a></li>
-                                <li><a href="#windows-instructions-1">Windows Instructions</a></li>
+                                <li><a href="#windows-instructions">Windows Instructions</a><ul>
+                                <li><a href="#installing-the-openconnect-client-1">Installing the OpenConnect Client</a></li>
+                                <li><a href="#connecting-to-cuvpn-1">Connecting to CUVPN</a></li>
+                                </ul></li>
+                                <li><a href="#macos-instructions">MacOS Instructions</a><ul>
+                                <li><a href="#installing-the-openconnect-client-2">Installing the OpenConnect Client</a></li>
+                                <li><a href="#connecting-to-cuvpn-2">Connecting to CUVPN</a></li>
                                 </ul></li>
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="installing-the-openconnect-client">Installing the OpenConnect Client</h2>
-<h3 id="linux-instructions">Linux Instructions</h3>
+                                                <h2 id="before-you-begin">Before You Begin</h2>
+<p>See the table of contents on the right for links to connecting from your platform.</p>
+<h2 id="linux-instructions">Linux Instructions</h2>
+<h3 id="installing-the-openconnect-client">Installing the OpenConnect Client</h3>
 <p><strong>Fedora</strong></p>
 <pre><code>sudo dnf install openconnect</code></pre>
 <p><strong>Ubuntu</strong></p>
 <pre><code>sudo apt install openconnect</code></pre>
 <p><strong>Arch</strong></p>
 <pre><code>sudo pacman -S openconnect</code></pre>
-<h3 id="windows-instructions">Windows Instructions</h3>
+<h3 id="connecting-to-cuvpn">Connecting to CUVPN</h3>
+<p>In a terminal, run the following command. Enter your username, password, and your second password is &quot;push&quot;.</p>
+<pre><code>sudo openconnect https://cuvpn.clemson.edu/</code></pre>
+<h2 id="windows-instructions">Windows Instructions</h2>
+<h3 id="installing-the-openconnect-client-1">Installing the OpenConnect Client</h3>
 <ul>
 <li>Download and install the <a href="https://github.com/openconnect/openconnect-gui/releases">OpenConnect GUI</a>.</li>
 </ul>
@@ -219,20 +228,17 @@
 <img src="/wiki/lab/openconnect-win32-download.png" width="512" />
 
 </div>
-<h3 id="macos-instructions">MacOS Instructions</h3>
+<h3 id="connecting-to-cuvpn-1">Connecting to CUVPN</h3>
+<p>Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is &quot;push&quot;.</p>
+<h2 id="macos-instructions">MacOS Instructions</h2>
+<h3 id="installing-the-openconnect-client-2">Installing the OpenConnect Client</h3>
 <ul>
 <li>Download and install <a href="https://brew.sh/">Homebrew</a> then run the following commands.</li>
 </ul>
 <pre><code>brew tap horar/openconnect-gui
 brew install openconnect-gui
 ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/OpenConnect-GUI.app</code></pre>
-<h2 id="connecting-to-the-cuvpn">Connecting to the CUVPN</h2>
-<h3 id="linux-instructions-1">Linux Instructions</h3>
-<h4 id="connecting-to-clemson">Connecting to Clemson</h4>
-<p>In a terminal, run the following command. Enter your username, password, and your second password is &quot;push&quot;.</p>
-<pre><code>sudo openconnect https://cuvpn.clemson.edu/</code></pre>
-<h3 id="mac-instructions">Mac Instructions</h3>
-<h4 id="connecting-to-clemson-1">Connecting to Clemson</h4>
+<h3 id="connecting-to-cuvpn-2">Connecting to CUVPN</h3>
 <p>Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is &quot;push&quot;.</p>
 <ul>
 <li>Click the cog dropdown</li>
@@ -277,7 +283,7 @@ ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/Open
 
 </div>
 <ul>
-<li>EnterClemson password</li>
+<li>Enter Clemson password</li>
 </ul>
 <div class="figure">
 <img src="/wiki/lab/openconnect-password.png" width="256" />
@@ -293,9 +299,6 @@ ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/Open
 <ul>
 <li>Accept the Duo push on your mobile phone</li>
 </ul>
-<h3 id="windows-instructions-1">Windows Instructions</h3>
-<h4 id="connecting-to-clemson-2">Connecting to Clemson</h4>
-<p>Use the OpenConnect GUI with 'https://cuvpn.clemson.edu/' as the gateway. Enter your username, password, and your second password is &quot;push&quot;.</p>
                                             </div>
                 </div>
             </div>

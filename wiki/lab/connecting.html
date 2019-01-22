@@ -190,33 +190,51 @@
 
                             <nav id="tocnav" class="collapse in">
                                 <ul>
-                                <li><a href="#installing-the-openvpn-client">Installing the OpenVPN Client</a><ul>
-                                <li><a href="#linux-instructions">Linux Instructions</a></li>
-                                <li><a href="#windows-instructions">Windows Instructions</a></li>
-                                <li><a href="#macos-instructions">macOS Instructions</a></li>
-                                </ul></li>
-                                <li><a href="#connecting-to-the-lab-vpn">Connecting to the Lab VPN</a><ul>
-                                <li><a href="#linux-instructions-1">Linux Instructions</a></li>
-                                <li><a href="#macos-instructions-1">macOS Instructions</a></li>
-                                <li><a href="#windows-instructions-1">Windows Instructions</a></li>
-                                </ul></li>
-                                <li><a href="#testing-connection-to-the-lab">Testing Connection to the Lab</a><ul>
-                                <li><a href="#linuxmacos">Linux/macOS</a></li>
-                                <li><a href="#windows">Windows</a></li>
-                                </ul></li>
+                                <li><a href="#before-you-begin">Before You Begin</a></li>
+                                <li><a href="#linux-instructions">Linux Instructions</a><ul>
+                                <li><a href="#installing-the-openvpn-client">Installing the OpenVPN Client</a></li>
+                                <li><a href="#connecting-to-the-lab-vpn">Connecting to the Lab VPN</a></li>
+                                <li><a href="#testing-connection-to-the-lab">Testing Connection to the Lab</a></li>
                                 <li><a href="#change-your-password">Change Your Password</a></li>
+                                </ul></li>
+                                <li><a href="#windows-instructions">Windows Instructions</a><ul>
+                                <li><a href="#installing-the-openvpn-client-1">Installing the OpenVPN Client</a></li>
+                                <li><a href="#connect-to-the-lab-vpn">Connect to the Lab VPN</a></li>
+                                <li><a href="#testing-connection-to-the-lab-1">Testing Connection to the Lab</a></li>
+                                <li><a href="#change-your-password-1">Change Your Password</a></li>
+                                </ul></li>
+                                <li><a href="#macos-instructions">macOS Instructions</a><ul>
+                                <li><a href="#installing-the-openvpn-client-2">Installing the OpenVPN Client</a></li>
+                                <li><a href="#connect-to-the-lab-vpn-1">Connect to the Lab VPN</a></li>
+                                <li><a href="#testing-connection-to-the-lab-2">Testing Connection to the Lab</a></li>
+                                <li><a href="#change-your-password-2">Change Your Password</a></li>
+                                </ul></li>
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="installing-the-openvpn-client">Installing the OpenVPN Client</h2>
-<h3 id="linux-instructions">Linux Instructions</h3>
+                                                <h2 id="before-you-begin">Before You Begin</h2>
+<p>See the table of contents on the right for links to connecting from your platform.</p>
+<h2 id="linux-instructions">Linux Instructions</h2>
+<h3 id="installing-the-openvpn-client">Installing the OpenVPN Client</h3>
 <p><strong>Fedora</strong></p>
 <pre><code>sudo dnf install openvpn</code></pre>
 <p><strong>Ubuntu</strong></p>
 <pre><code>sudo apt install openvpn</code></pre>
 <p><strong>Arch</strong></p>
 <pre><code>sudo pacman -S openvpn</code></pre>
-<h3 id="windows-instructions">Windows Instructions</h3>
+<h3 id="connecting-to-the-lab-vpn">Connecting to the Lab VPN</h3>
+<p><strong>If and only if you are off campus</strong>, you will need to connect to Clemson's VPN using OpenConnect. Follow the instructions <a href="/wiki/lab/connecting-clemson.html">here</a> if that is the case.</p>
+<p>First you must download the OpenVPN config file for your account. The config file is in an email titled &quot;CU Cyber Lab Access&quot; from cyber@clemson.edu. Check your email and download the file.</p>
+<p>In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.</p>
+<pre><code>sudo openvpn --config &lt;username&gt;.ovpn</code></pre>
+<h3 id="testing-connection-to-the-lab">Testing Connection to the Lab</h3>
+<p>At this point you should be connected to the lab VPN. To test your connectivity execute the following command.</p>
+<pre><code>ping -c 4 oracle.lab.cucyber.net</code></pre>
+<p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!</p>
+<h3 id="change-your-password">Change Your Password</h3>
+<p>After successfully connecting to the lab environment, you will need to <a href="/wiki/lab/changing-password.html">change your password</a>.</p>
+<h2 id="windows-instructions">Windows Instructions</h2>
+<h3 id="installing-the-openvpn-client-1">Installing the OpenVPN Client</h3>
 <ul>
 <li>Download and install the <a href="https://openvpn.net/index.php/open-source/downloads.html">official OpenVPN client</a> named &quot;openvpn-install-[ver].exe&quot;.</li>
 </ul>
@@ -224,49 +242,7 @@
 <img src="/wiki/lab/openvpn-download.png" width="512" />
 
 </div>
-<h3 id="macos-instructions">macOS Instructions</h3>
-<ul>
-<li>Download and install the <a href="https://tunnelblick.net/">TunnelBlick</a> OpenVPN client.</li>
-</ul>
-<div class="figure">
-<img src="/wiki/lab/tunnelblick-download.png" width="512" />
-
-</div>
-<h2 id="connecting-to-the-lab-vpn">Connecting to the Lab VPN</h2>
-<p><strong>If and only if you are off campus</strong>, you will need to connect to Clemson's VPN using OpenConnect. Follow the instructions <a href="/wiki/lab/connecting-clemson.html">here</a> if that is the case.</p>
-<p>First you must download the OpenVPN config file for your account. The config file is in an email titled &quot;CU Cyber Lab Access&quot; from cyber@clemson.edu. Check your email and download the file.</p>
-<h3 id="linux-instructions-1">Linux Instructions</h3>
-<h4 id="connect-to-the-lab">Connect to the Lab</h4>
-<p>In a terminal, navigate to the folder with your personal OpenVPN config file ending in .ovpn and run the following command.</p>
-<pre><code>sudo openvpn --config &lt;username&gt;.ovpn</code></pre>
-<h3 id="macos-instructions-1">macOS Instructions</h3>
-<h4 id="connect-to-the-lab-1">Connect to the Lab</h4>
-<p>Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.</p>
-<h4 id="first-time">First Time</h4>
-<ul>
-<li>Double click your .ovpn file and enter your macOS password into the dialog</li>
-</ul>
-<div class="figure">
-<img src="/wiki/lab/ovpn-click.png" width="256" />
-
-</div>
-<h4 id="every-time">Every Time</h4>
-<ul>
-<li>Click the Tunnelblick icon in the menu bar</li>
-</ul>
-<div class="figure">
-<img src="/wiki/lab/tunnelblick.png" width="256" />
-
-</div>
-<ul>
-<li>Click &quot;Connect [username]&quot; in the dropdown menu</li>
-</ul>
-<div class="figure">
-<img src="/wiki/lab/tunnelblick-username.png" width="256" />
-
-</div>
-<h3 id="windows-instructions-1">Windows Instructions</h3>
-<h4 id="connect-to-the-lab-2">Connect to the Lab</h4>
+<h3 id="connect-to-the-lab-vpn">Connect to the Lab VPN</h3>
 <p>Use the OpenVPN client to load your OpenVPN config file ending in .ovpn.</p>
 <ul>
 <li>Open the OpenVPN GUI</li>
@@ -275,7 +251,7 @@
 <img src="/wiki/lab/openvpn-gui.png" width="256" />
 
 </div>
-<h4 id="first-time-1">First Time</h4>
+<h4 id="first-time">First Time</h4>
 <ul>
 <li><p><strong>If a dialog pops up about no connection profiles found, click &quot;OK&quot;</strong></p></li>
 <li><p>Right click on the OpenVPN client in the system tray</p></li>
@@ -298,7 +274,7 @@
 <img src="/wiki/lab/ovpn-windows.png" width="256" />
 
 </div>
-<h4 id="every-time-1">Every Time</h4>
+<h4 id="every-time">Every Time</h4>
 <ul>
 <li>Right click on the OpenVPN client in the system tray</li>
 </ul>
@@ -313,15 +289,50 @@
 <img src="/wiki/lab/openvpn-connect.png" width="256" />
 
 </div>
-<h2 id="testing-connection-to-the-lab">Testing Connection to the Lab</h2>
-<p>At this point you should be connected to the lab VPN. To test your connectivity execute the following command.</p>
-<h3 id="linuxmacos">Linux/macOS</h3>
-<pre><code>ping -c 4 oracle.lab.cucyber.net</code></pre>
-<p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!</p>
-<h3 id="windows">Windows</h3>
+<h3 id="testing-connection-to-the-lab-1">Testing Connection to the Lab</h3>
 <pre><code>ping oracle.lab.cucyber.net</code></pre>
 <p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!</p>
-<h2 id="change-your-password">Change Your Password</h2>
+<h3 id="change-your-password-1">Change Your Password</h3>
+<p>After successfully connecting to the lab environment, you will need to <a href="/wiki/lab/changing-password.html">change your password</a>.</p>
+<h2 id="macos-instructions">macOS Instructions</h2>
+<h3 id="installing-the-openvpn-client-2">Installing the OpenVPN Client</h3>
+<ul>
+<li>Download and install the <a href="https://tunnelblick.net/">TunnelBlick</a> OpenVPN client.</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/tunnelblick-download.png" width="512" />
+
+</div>
+<h3 id="connect-to-the-lab-vpn-1">Connect to the Lab VPN</h3>
+<p>Use the Tunnelblick client to load your OpenVPN config file ending in .ovpn.</p>
+<h4 id="first-time-1">First Time</h4>
+<ul>
+<li>Double click your .ovpn file and enter your macOS password into the dialog</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/ovpn-click.png" width="256" />
+
+</div>
+<h4 id="every-time-1">Every Time</h4>
+<ul>
+<li>Click the Tunnelblick icon in the menu bar</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/tunnelblick.png" width="256" />
+
+</div>
+<ul>
+<li>Click &quot;Connect [username]&quot; in the dropdown menu</li>
+</ul>
+<div class="figure">
+<img src="/wiki/lab/tunnelblick-username.png" width="256" />
+
+</div>
+<h3 id="testing-connection-to-the-lab-2">Testing Connection to the Lab</h3>
+<p>At this point you should be connected to the lab VPN. To test your connectivity execute the following command.</p>
+<pre><code>ping -c 4 oracle.lab.cucyber.net</code></pre>
+<p>If the ping succeeds then you've successfully connected to the VPN and your DNS is working as intended!</p>
+<h3 id="change-your-password-2">Change Your Password</h3>
 <p>After successfully connecting to the lab environment, you will need to <a href="/wiki/lab/changing-password.html">change your password</a>.</p>
                                             </div>
                 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Cybersecurity Competition Training</title>
+		<title>Red vs. Blue 2 Report</title>
 
 		<meta charset="utf-8">
 
@@ -47,7 +47,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- source markdown file -->
-				<section data-markdown="course-intro.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+				<section data-markdown="rvb2.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -127,7 +127,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=course-intro', function(response) {
+				request(multiplex['server'] + '/id?presentation=homework%2Frvb2', function(response) {
 					multiplex['id'] = response;
 
 					if (!response)
@@ -140,7 +140,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=course-intro', function(response) {
+				request(multiplex['server'] + '/token?presentation=homework%2Frvb2', function(response) {
 					multiplex['secret'] = response;
 
 					if (!response)

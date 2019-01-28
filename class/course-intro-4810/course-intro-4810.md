@@ -1,6 +1,6 @@
-## Cybersecurity Competition Training
+## Advanced Cybersecurity Competition Training
 
-CPSC 2810 - Section 2
+CPSC 4810 - Section 4
 
 
 ## You Can Find These Presentations Online
@@ -19,10 +19,10 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 
 
-## CPSC 2810 - Section 2
+## CPSC 4810 - Section 4
 
 * 14 Week Course
-* 2 Credit Hours
+* 3 Credit Hours
 * Lectures, Labs, and Red vs. Blue Exercises
 
 
@@ -44,26 +44,26 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ### Topics
 
 * Week 1: Course Introduction
-* Week 2: Intro to Linux & Linux Security
-* Week 3: Hackpack
-* Week 4: Intro to Networking
-* Week 5: Networking Security
-* Week 6: Red vs. Blue: Network from the 2018 SECCDC Qualifier
+* Week 2: Advanced Linux Security
+* Week 3: Firewalls
+* Week 4: Red vs. Blue: Network from the 2018 SECCDC Qualifier
+* Week 5: Secure Service Setup
+* Week 6: Active Directory Domain Services
 
 
 ### Topics (cont.)
 
-* Week 7: Red vs. Blue Review
-* Week 8: Intro to Windows and Windows Security
-* Week 9: Secure Service Setup
-* Week 10: Intro to Docker
-* Week 11: Red vs. Blue: Network from the 2018 SECCDC Qualifier
-* Week 12: Advanced Techniques
+* Week 7: Windows Security Tools
+* Week 8: Red vs. Blue: Network from the 2018 SECCDC Regionals
+* Week 9: Windows Workstation Hardening
+* Week 10: Threat Hunting
+* Week 11: Red vs. Blue: Network from the 2018 PCDC
+* Week 12: Business Management
 
 
 ### Topics (cont.)
 
-* Week 13: Pentesting Methodology
+* Week 13: Intro to Penetration Testing
 * Week 14: Red vs. Blue: Network from the 2018 SECCDC Qualifier
 
 
@@ -73,17 +73,14 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 * You will be creating your own team hackpack.
 
 
-#### Get Into Groups of 3
-
-
 
 ### Grading
 
-* 30% Red vs. Blue Report (3)
-* 20% Final Hackpack Report
+* 40% Red vs. Blue Report (4)
+* 25% Final Hackpack Report
 * 20% Labs
 * 20% Homework
-* 10% Quizzes
+* 5% Quizzes
 
 
 ### Grading Scale

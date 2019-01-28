@@ -20,19 +20,17 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ## Learning Objectives
 
 
-* Review basic network topology (IP Addresses, Ports, Subnets)
-* Review Transport Layer (TCP/UDP)
-* Know basic Application Network Protocols (DNS, ARP, DHCP)
-* Understand the difference in switches (managed, unmanaged)
-* Understand the basics of firewalls (stateful, stateless, signature based, rules)
-* Understand the uses of network zones (DMZ, internal, external, vlan)
+* Compare and contrast IPv4 and IPv6 IP Addresses.
+* Compare the similarities and differences between TCP and UDP.
+* Identify common ports (21, 22, 25, 80, and 443).
+* Associate the common ports with their protocols.
 
 
 
-## Intro to Networking and Network Security
+## Intro to Networking
 
 
-### IP Addresses, Ports, and Subnets
+### IP Addresses
 
 Note:
 Review basic network topology (IP Addresses, Ports, Subnets)
@@ -81,38 +79,6 @@ Firewalls (eg. UFW and network firewalls) are able to block communications by po
 For example, the service secure shell (SSH) listens on port 22, Apache (a web server) listens on port 80 (the default HTTP port) and possibly 443 (the default HTTPS port), and DNS services listen on port 53 (the default DNS port).
 
 
-##### Sockets
-
-* A process can refer to a socket using a socket descriptor, a type of handle.
-* Unlike ports, sockets are specific to one node; they are local resources and cannot be referred to directly by other nodes.
-* Further, sockets are not necessarily associated with a persistent connection (channel) for communication between two nodes, nor is there necessarily some single other endpoint.
-
-Note:
-For example, a datagram socket can be used for connectionless communication, and a multicast socket can be used to send to multiple nodes.
-
-
-
-#### Subnets
-
-
-##### What is a subnet?
-
-* A subnet is a logical partition of an IP network into multiple, smaller network segments.
-* It is typically used to subdivide large networks into smaller, more efficient subnetworks.
-
-
-##### CIDR Notation
-
-* CIDR notation is a shorthand for discussing blocks of IP address.
-* 192.168.1.1/24
-
-
-##### Subnetting
-
-![subnetting](subnetting.png)
-
-
-
 ### TCP and UDP
 
 
@@ -158,7 +124,7 @@ ordering, or duplicate protection.
 
 Note:
 Connectionless: Connections do not need to be established for UDP packets to be transmitted.
-Message based: “Fire and forget” motto.
+Message based: "Fire and forget" motto.
 Real-time: Time-sensitive applications often use UDP because dropping packets is preferable to waiting for packets delayed due to retransmission, which may not be an option in a real-time system.
 Order-less: It does not matter in what order the packets of a UDP connection arrive.
 

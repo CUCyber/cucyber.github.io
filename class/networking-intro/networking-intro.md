@@ -1,3 +1,16 @@
+## Activity
+
+* Open Wireshark and navigate to a website
+* Discuss with your partner what you think you are seeing
+
+
+## Discussion
+
+
+## Big Picture
+
+
+
 ## Intro to Networking and Network Security
 
 CPSC 2810 - Section 2
@@ -19,21 +32,62 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ## Learning Objectives
 
-
 * Compare and contrast IPv4 and IPv6 IP Addresses.
 * Compare the similarities and differences between TCP and UDP.
 * Identify common ports (21, 22, 25, 80, and 443).
 * Associate the common ports with their protocols.
+* Name the layers of the OSI model.
 
 
 
 ## Intro to Networking
 
 
-### IP Addresses
+## OSI Model
 
 Note:
-Review basic network topology (IP Addresses, Ports, Subnets)
+* Open Systems Interconnection model
+* Conceptual model
+* Describes the functions of a networking or telecommunication system abstractly
+* Does not concern itself with the implementation details
+
+
+![OSI Model](osi-model.jpg)
+
+
+
+### Layer 1 - Physical Layer
+
+* Electricity, Ethernet Cords, Physical devices
+
+
+
+### Layer 2 - Data Link Layer
+
+* Responsibilities
+    - Getting data to/from the physical layer
+    - Error correction from the physical layer
+    - Hardware addressing (i.e. framing)
+* Grouping of data is called frames
+* Uses MAC Addresses to communicate
+
+Note:
+* Ethernet Frames
+
+
+
+### Layer 3 - Network Layer
+
+* Responsibilities
+    - Routing
+* Can send arbitrary data
+* Grouping of data is called packets
+* Uses global addresses to communicate
+
+Note:
+* Route selection finds the "best" path, not necessarily the shortest path.
+* Higher layers (than 3) determine format and further structuring.
+* Where layer 2 uses MAC addressing, layer 3 uses IP addressing. (lead-in to ARP later)
 
 
 #### IP Addresses
@@ -43,8 +97,8 @@ Review basic network topology (IP Addresses, Ports, Subnets)
 
 * An IP address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
 * An IP address serves two principal functions
-	- host or network interface identification
-	- location addressing
+    - host or network interface identification
+    - location addressing
 
 Note:
 In the same way that your mailman needs an address to deliver mail to your house, computers need an address to know where to send data to talk to each other.
@@ -53,30 +107,24 @@ In the same way that your mailman needs an address to deliver mail to your house
 ##### IPv4 and IPv6
 
 * IPv4
-	- 32-bit Addresses
-	- Written in dot-decimal notation
-	- Private and Public Addresses
-		+ Private - 192.168.1.1
-		+ Public - 130.127.151.120
+    - 32-bit Addresses
+    - Written in dot-decimal notation
+    - Private and Public Addresses
+        + Private - 192.168.1.1
+        + Public - 130.127.151.120
 * IPv6
-	- 128-bit Addresses
-	- Written in the form of eight groups of four hexadecimal digits
-	- 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+    - 128-bit Addresses
+    - Written in the form of eight groups of four hexadecimal digits
+    - 2001:0db8:85a3:0000:0000:8a2e:0370:7334
 
 
 
-#### Ports
+### Layer 4 - Transport Layer
 
-
-##### What is a Port?
-
-* A port is a number that designates a communication channel
-* A service is a long running application that listens on a particular address and port
-* Most services have a default port, but can be reassigned if need be.
-
-Note:
-Firewalls (eg. UFW and network firewalls) are able to block communications by port rather than allow all or no traffic.
-For example, the service secure shell (SSH) listens on port 22, Apache (a web server) listens on port 80 (the default HTTP port) and possibly 443 (the default HTTPS port), and DNS services listen on port 53 (the default DNS port).
+* Responsibilities
+    - How much data do we send?
+    - Error detection
+* TCP and UDP
 
 
 ### TCP and UDP
@@ -85,20 +133,25 @@ For example, the service secure shell (SSH) listens on port 22, Apache (a web se
 #### TCP
 
 * Transmission Control Protocol is a standard that defines how to establish and maintain a network conversation via which application programs can exchange data.
-* TCP provides reliable, ordered, and error-checked delivery of a stream of octets (bytes).
+* TCP provides reliable, ordered, and error-checked delivery of a stream of bytes.
 
 
 #### TCP
 
 * TCP is defined as being:
-	- Connection-oriented
-	- Stream-based
-	- Increased network overhead
+    - Connection-oriented
+    - Stream-based
+    - Increased network overhead
 
 Note:
 Connection-oriented: TCP has a three-way handshake that is performed to establish a connection. This is in the form SYN, SYN-ACK, ACK.
-Stream-based: Packets are transmitted in order (“1... 2... 3...”) in a continuous stream. If a packet fails to transmit, it will be retransmitted.
+Stream-based: Packets are transmitted in order ("1... 2... 3...") in a continuous stream. If a packet fails to transmit, it will be retransmitted.
 Increased network overhead: TCP packets have a large header which creates a lot of overhead.
+
+
+##### TCP 3-Way Handshake
+
+![TCP Handshake](tcp-handshake.png)
 
 
 ##### Examples of TCP
@@ -110,17 +163,16 @@ Example uses of TCP are World Wide Web (WWW), E-mail, File Transfer Protocol, Se
 ### UDP
 
 * User Datagram Protocol is an alternative communications protocol to TCP used primarily for establishing low-latency and loss-tolerating connections between applications on the internet.
-* UDP provides checksums for data integrity, no handshake, and no guarantee of delivery,
-ordering, or duplicate protection.
+* UDP provides checksums for data integrity, no handshake, and no guarantee of delivery, ordering, or duplicate protection.
 
 
 ### UDP
 
 * UDP is defined as being:
-	- Connectionless
-	- Message based
-	- Real-time
-	- Order-less
+    - Connectionless
+    - Message based
+    - Real-time
+    - Order-less
 
 Note:
 Connectionless: Connections do not need to be established for UDP packets to be transmitted.
@@ -136,153 +188,90 @@ An example use is VoIP or online gaming.
 
 
 
-### DNS, ARP, and DHCP
+### Layer 5 - Session Layer
+
+
+#### Ports
+
+
+##### What is a Port?
+
+* A port is a number that designates a communication channel
+* A service is a long running application that listens on a particular address and port
+* Most services have a default port, but can be reassigned if need be.
+
+
+#### Protocols
+
+
+##### FTP 21
+
+* What: File Transfer Protocol 
+* Why: Used to transfer files from one computer to another.
+
+
+##### SSH 22
+
+* What: Secure Shell
+* Why: SSH is used to log in to remote computers.
+
+
+##### SMTP 25
+
+* What: Simple Mail Transfer Protocol
+* Why: Used to transfer emails between computers.
+
+
+##### HTTP 80
+
+* What: HyperText Transfer Protocol
+* Why: Web server! Any time you go to a website, HTTP is used.
+
+
+#### Nmap
+
+* Nmap is a tool used to map/explore networks and scan ports
+* We can use nmap to identify any open ports/protocols on our hosts.
 
 Note:
-Know basic application network protocols (DNS, ARP, DHCP)
+Why might we want to know about the open ports or protocols on our system?
 
 
-#### DNS
-
-* DNS or the Domain Name System is the internet equivalent of a phone book.
-* This is your computer’s way of figuring out that google.com can be found at the IP address of 143.215.193.237.
+##### Nmap Demo
 
 Note:
-For example, when you request to go to google.com in your web browser, a DNS request is sent to a DNS server and the DNS server responds with the IP address of google.com.
+* nmap scanme.nmap.org
 
 
-#### ARP
-
-* ARP or Address Resolution Protocol resolves IP addresses into MAC addresses.
-* ARP entries are cached on your local system and any network equipment between the connection in a location called an ARP table.
+#### Common Nmap Scans
 
 Note:
-ARP is used to craft the Ethernet header of an IP packet. An Ethernet header requires the destination MAC address. ARP allows us to look up the destination MAC address in our cached ARP table or if it isn’t found, send an ARP probe to retrieve it.
+Open the CU Cyber hackpack Nmap section: https://cucyber.net/documents/hackpack.html#common-options
 
 
-##### Arp Vulnerabilities
 
-* ARP does not provide methods for authenticating ARP replies on a network
-* Arp Spoofing
-	- ARP probe responses are spoofed by another system causing an incorrect entry to be cached in the victim’s ARP table.
-* Arp Flooding
-	- ARP replies are sent to all systems connected in a network, causing incorrect entries in the ARP cache.
+### Layer 7 - Application Layer
+
+* Responsibilities
+    - Communicating data and metadata between applications
 
 Note:
-Arp Spoofing - A malicious user may use ARP spoofing to perform a man-in-the-middle or denial-of-service attack on other users on the network.
-Arp Flooding - The result is that the affected system is unable to resolve IP and MAC addresses because of the wrong entries in the ARP cache. The affected system is unable to connect to any other system in the network.
+* Sender works from top down; receiver works from bottom up.
+* What kind of processes do you think appear here? Chrome and Word do not live here, but it does include applications that allow Chrome and Word to access networked information.
+
+### Wireshark
+
+* Used for identifying network activity on a computer
 
 
-#### DHCP
-
-* DHCP or Dynamic Host Configuration Protocol provides network information to clients who connect.
-* DHCP is used to get a dynamically assigned IP address along with DNS information when you connect to a network.
-* It is generally not used for servers which have static IP/DNS configurations.
-
-
-
-### Managed and Unmanaged Switches
-
-Note:
-Understand the difference in switches (managed, unmanaged)
-
-
-#### Managed Switches
-
-* Managed switches are those which can be configured with rules for each port.
-* VLANs are handled by a managed switch by functioning as multiple switches, one for each VLAN, thereby segregating the traffic.
-
-
-#### Unmanaged Switches
-
-* Unmanaged switches, also referred to as “dumb switches”, do not have port configurations and merely route traffic based on the MAC address to the appropriate port.
-* Readily vulnerable to ARP spoofing since they do not have port security features such as MAC assignment.
+#### Wireshark Demo
 
 
 
-### Stateful and Stateless Firewalls
-
-Note:
-Understand the basics of firewalls (stateful, stateless, signature based, rules)
+### Questions?
 
 
-#### Stateless Firewalls
-
-* Stateless firewalls are those that do not track connections. They only route at the individual packet level.
-* Stateless firewalls are fast and have virtually no memory requirements since they do not need to maintain a lookup table of connections.
-* Stateless firewalls are an insecure model for most purposes.
-
-Note:
-Stateless firewalls are an insecure model for most purposes because you need both inbound and outbound rules that match all packets instead of matching connections.
+### Homework
 
 
-#### Stateful Firewalls
-
-* Stateful firewalls record packets and track their associating connections (remember the three-way handshake from earlier to establish a connection).
-* Rules are made at a connection level on direction of connection, ports of connection, addresses of connection, and potentially data of connection.
-* Can attempt to track UDP "connections"
-
-
-#### Rules
-
-* Rules specify what connections are allowed and disallowed through zones.
-* These match on:
-	- Direction of the connection
-	- Zones of the endpoints
-	- Addresses of the endpoints
-	- TCP/UDP ports at the endpoints
-	- Potentially the data of the connection
-* Accept, Reject, or Drop packets
-
-
-
-### Zones
-
-Note:
-Understand the uses of network zones (DMZ, VPN, internal, external, vlan)
-
-
-#### DMZ
-
-* Demilitarized Zone is a network zone which is segregated from the internal network.
-* The hosts most vulnerable to attack are those that provide services to users outside of the local area network.
-* Because of the increased potential of these hosts suffering an attack, they are placed into this specific subnetwork in order to protect the rest of the network should any of them become compromised.
-
-
-##### Examples of Services in the DMZ
-
-Note:
-Any service that is being provided to users on the external network can be placed in the DMZ. The most common of these services are: Web servers, DNS Servers, Mail servers, FTP servers, VoIP servers
-
-
-#### VPN
-
-* The VPN zone is generally where virtual endpoints of client-network VPNs are placed.
-* This allows specific rules from different levels of VPN users to different services.
-
-
-#### Internal
-
-* The internal zone is the one that generally hosts internal company systems and services.
-* Any service that should be only allowed to users on the internal network is placed in the internal network. The most common of these services are:
-	- HR web application servers
-	- SMB/NFS/ZFS servers
-* User endpoints are on this network.
-
-
-#### External
-
-* The external zone is the zone that is beyond the border router (the main gateway for your network).
-* This is generally your internet service provider but can also be an out-of-scope encompassing subnet.
-
-
-#### VLAN
-
-* Zones are generally implemented in one of two ways: LANs and VLANs.
-* LANs are separated at the physical port level of the router.
-* VLANs (Virtual LANs) are separated at the virtual layer 2 packet header level.
-* VLANs can be configured for managed switches down the line and all plugged in, eventually, to a single port on the router.
-
-
-
-### Questions? 
+### Lab

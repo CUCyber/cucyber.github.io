@@ -1,6 +1,6 @@
-## Intro to Docker and Secure Service Setup
+## Secure Service Setup
 
-CPSC 2810 - Section 2
+CPSC 4810 - Section 4
 
 
 ## You Can Find These Presentations Online

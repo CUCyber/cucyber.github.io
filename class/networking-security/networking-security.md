@@ -1,10 +1,7 @@
-## Activity
+## Previous Information
 
-* Open Wireshark and navigate to a website
-* Discuss with your partner what you think you are seeing
-
-
-## Discussion
+* Layer 2 is to MAC address as Layer 3 is to ...
+* Homework Review
 
 
 ## Big Picture
@@ -26,7 +23,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ## Overview
 
-* An introduction to networking and basic network security principles.
+* An introduction to basic network security principles.
 
 
 
@@ -40,6 +37,108 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 
 ## Intro to Networking Security
+
+Note:
+What does networking security mean to you?
+
+
+
+## Host-Based and Network-based Firewalls
+
+Note:
+Host-based firewalls are typically run in conjunction with a network-based firewall as all traffic is allowed inside of a zone
+
+
+### Host-Based
+
+* UFW
+* Firewalld
+* IPTables
+
+
+#### UFW
+
+* UFW (uncomplicated firewall) is a very popular option when managing your local firewall
+* UFW is the default host-based firewall for Ubuntu
+* UFW was developed with ease-of-use in mind
+
+
+#####  UFW Commands
+
+* Enable UFW:
+ - sudo ufw enable
+* Disable UFW:
+ - sudo ufw disable
+* Check the status of UFW:
+ - sudo ufw status verbose
+
+
+##### UFW Commands
+
+* Allow HTTP:
+ - sudo ufw allow http
+* Allow an arbitrary port (TCP and UDP):
+ - sudo ufw allow 1000
+* Allow an arbitrary port on a specific protocol:
+ - sudo ufw allow 1000/tcp
+
+
+#### FirewallD
+
+* The standard firewall on CentOS and Fedora
+* Slightly more complicated than UFW, but much better than IPTables
+* Has the concept of zones where UFW does not
+
+
+##### FirewallD Commands
+
+* Enable and start firewalld:
+ - sudo systemctl enable --now firewalld
+* Disable and stop firewalld:
+ - sudo systemctl disable --now firewalld
+* Check the status of firewalld:
+ - sudo firewall-cmd --state
+
+
+##### FirewallD Commands
+
+* Add HTTP to the public zone:
+ - sudo firewall-cmd --zone=public --add-service=http --permanent
+* Add an arbitrary port:
+ - sudo firewall-cmd --zone=public --add-port=1234/tcp --permanent
+
+
+##### FirewallD Commands
+
+* Remove an arbitrary port:
+ - sudo firewall-cmd --zone=public --remove-port=1234/tcp --permanent
+* Reload the firewalld configuration:
+ - sudo firewall-cmd --reload
+
+
+#### IPTables
+
+
+##### IPTables Commands
+
+* Show IPTables rules:
+ - iptables -L --line-numbers
+* Add an arbitrary port:
+ - iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+* Remove an arbitrary port:
+ - iptables -D INPUT $rule_number
+* Saving IPTables rules:
+ - service iptables save
+
+
+### Network-based
+
+* Palo Alto
+* PFSense
+
+Note:
+We don't cover Network-based firewalls in the intro-level class.
+
 
 
 ## Zones
@@ -70,7 +169,7 @@ Equate this to network segmentation based on zones
 
 ### DMZ
 
-* Does not have a way into the internal network
+* Does not have a way into the internal network unless specifically allowed
 * Has the most strict rules (typically no traffic can leave unless specifically allowed)
 
 Note:
@@ -90,38 +189,17 @@ Web servers that communicate with an internal database require access to a datab
 
 ### Internal
 
-* Internal network usually are more dynamic than external networks
-* Typically require dynamic routing
+* The internal zone is the one that generally hosts internal company systems and services.
+* Any service that should be only allowed to users on the internal network is placed in the internal network.
+* This zone generally has no inbound rules and some outbound restrictions in a well set up corporate environment.
 
 Note:
 * What would you put in the internal network?
-    - databases
-    - another firewall
-    - things that do not need to be public
-    - AD / Internal DNS
-
-
-#### DMZ
-
-* DMZ or the Demilitarized Zone is a network zone which is segregated from the internal network.
-* The hosts most vulnerable to attack are those that provide services to users outside of the local area network, such as e-mail, Web and Domain Name System (DNS) servers. Because of the increased potential of these hosts suffering an attack, they are placed into this specific subnetwork in order to protect the rest of the network should any of them become compromised.
-
-
-
-#### Internal
-The internal zone is the one that generally hosts internal company systems and services.
-Any service that should be only allowed to users on the internal network is placed in the internal network. The most common of these services are:
-HR web application servers
-CIFS/NFS/ZFS servers
-User endpoints are on this network.
-This zone generally has no inbound rules and some outbound restrictions in a well set up corporate environment.
-
-
-
-### VLAN
-Zones are generally implemented in one of two ways: LANs and VLANs. LANs are separated at the physical port level of the router. VLANs (Virtual LANs) are separated at the virtual layer 2 packet header level.
-VLANs can be configured for managed switches down the line and all plugged in, eventually, to a single port on the router.
-Ones needs to be careful when implementing these to only allow tagged traffic from trusted sources such as routers, other switches, and hypervisors.
+ - databases
+ - another firewall
+ - things that do not need to be public
+ - AD / Internal DNS
+ - HR Webapp
 
 
 

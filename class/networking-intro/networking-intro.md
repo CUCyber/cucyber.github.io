@@ -11,7 +11,7 @@
 
 
 
-## Intro to Networking and Network Security
+## Intro to Networking
 
 CPSC 2810 - Section 2
 
@@ -26,7 +26,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 ## Overview
 
-* An introduction to networking and basic network security principles.
+* An introduction to networking principles.
 
 
 
@@ -82,7 +82,7 @@ Note:
     - Routing
 * Can send arbitrary data
 * Grouping of data is called packets
-* Uses global addresses to communicate
+* Also uses addresses to communicate (What are these called?)
 
 Note:
 * Route selection finds the "best" path, not necessarily the shortest path.

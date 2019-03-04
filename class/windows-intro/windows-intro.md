@@ -27,8 +27,9 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 Note:
 * Has anybody used Windows Server?
-* How is Windows server different from Windows Home?
-
+* How is Windows Server different from Windows Workstation?
+* Can't set up a domain environment from a Windows Workstation
+* Can join a domain from a Windows Workstation
 
 
 ### Windows vs Windows Server
@@ -42,31 +43,27 @@ Note:
 * Draw Windows server and AD/DS as concentric circles where AD/DS is inside Server to show difference.
 
 
+## Windows Workstation
 
-## Services
+### Services
 
 Note:
-Can anybody summarize what a service is?
+* Can anybody summarize what a service is?
 
 
-
-## Services
+### Services
 
 * Programs that operate in the background
 * Task Manager -> Services
 * svchost.exe
 
 Note:
+* SVCHost spawns services and runs them in a secure contexttask
 * taskmgr.exe
 * A few should be memorized but most can be ignored
 
 
-
 ## Windows Server
-
-Note:
-Has anyone used Windows server?
-
 
 
 ### Roles
@@ -75,7 +72,6 @@ Has anyone used Windows server?
 * Windows server "services"
 * AD/DS or Web Server
 * Server Manager
-
 
 
 ### Features

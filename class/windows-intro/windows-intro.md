@@ -3,7 +3,6 @@
 CPSC 2810 - Section 2
 
 
-
 ## You Can Find These Presentations Online
 
 Visit [cucyber.net](https://cucyber.net/) to find these presentations and more online!
@@ -12,7 +11,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 
 
-### Objectives
+## Objectives
 
 * Windows vs Windows Server
 * Services
@@ -23,7 +22,7 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 
 
 
-### Windows vs Windows Server
+## Windows vs Windows Server
 
 Note:
 * Has anybody used Windows Server?
@@ -43,7 +42,9 @@ Note:
 * Draw Windows server and AD/DS as concentric circles where AD/DS is inside Server to show difference.
 
 
+
 ## Windows Workstation
+
 
 ### Services
 
@@ -63,27 +64,30 @@ Note:
 * A few should be memorized but most can be ignored
 
 
+
 ## Windows Server
 
 
 ### Roles
 
 * Abstraction of installing programs
-* Windows server "services"
-* AD/DS or Web Server
+* Windows Server "services"
 * Server Manager
+
+Note:
+* Roles are usually overarching purposes like "Web" or "Active Directory" or "Exchange Server"
+* Open up Server Manager and show them the role menu
 
 
 ### Features
 
 * Augments usage of Roles
-* .NET version 3.5
-* HTTP Support
-* RSAT-AD-PowerShell
+* Generically adding support for something (Telnet, SMB, ...)
 
 Note:
-RSAT-AD-PowerShell allows you to manage AD with PowerShell
-
+* HyperV is a feature
+* Internet Explorer is a feature
+* RSAT-AD-PowerShell allows you to manage AD with PowerShell
 
 
 ### User Management
@@ -93,22 +97,22 @@ RSAT-AD-PowerShell allows you to manage AD with PowerShell
 * Centralized users, groups, and computer management
 
 Note:
-* Why is centralized users, groupus, and computer management useful?
-* Demo
-
+* Why is centralized users, groups, and computer management useful?
 
 
 ### Domain Name System (DNS)
 
 * Comes with AD/DS
+* AD/DS relies on DNS
 * New computers on domain get record with computer name
 * Edit DNS records with "DNS Manager"
-
 
 
 ### Group Policy Object (GPO)
 
 * "Group Policy Management"
-* Settings to define how AD acts
-* Describes what domain can (and can't) do
-* Uses inheritance model
+* Settings to define what users can and can not do
+* Password Policies, Installed Programs, User Environment (Desktop)
+
+Note:
+* Server Manager -> Tools -> Group Policy Management -> (Domains -> nick.com -> Default Domain Policy -> Settings)

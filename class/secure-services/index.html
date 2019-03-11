@@ -47,7 +47,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- source markdown file -->
-				<section data-markdown="secure-service-setup.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+				<section data-markdown="secure-services.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -127,7 +127,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=secure-service-setup', function(response) {
+				request(multiplex['server'] + '/id?presentation=secure-services', function(response) {
 					multiplex['id'] = response;
 
 					if (!response)
@@ -140,7 +140,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=secure-service-setup', function(response) {
+				request(multiplex['server'] + '/token?presentation=secure-services', function(response) {
 					multiplex['secret'] = response;
 
 					if (!response)

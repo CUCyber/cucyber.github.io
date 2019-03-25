@@ -20,22 +20,28 @@ Visit [cucyber.net](https://cucyber.net/) to find these presentations and more o
 ## Learning Objectives
 
 * Understand what Docker is
-* Understand Docker’s use in a corporate environment
+* Understand Docker's use in a corporate environment
 * Be able to execute basic Docker commands
 * Understand how misconfigurations in a Docker container can impact your security
 
 
 
-## Intro to Docker
+### Intro to Docker
+
+![Docker Whale](docker.png)
 
 * What is Docker?
 * Why would you want to use it?
-* How do you use it?
 * How is it used in the real world?
 * How is it used in a cyberdefense competition?
 
 Note:
 Answer all of these questions for the class
+
+
+### How is Docker different from a VM?
+
+![Docker vs. VM](docker-vs-vm.jpg)
 
 
 ### Installing Docker
@@ -138,3 +144,15 @@ Note:
 
 
 ## Questions?
+
+
+## Lab
+
+
+## Homework
+
+
+## Extra Credit Opportunity
+
+* There will be a talk on IoT infrastructure and security on a global scale in the Watt Family Innovation Center in Room 208.
+* If you attend this talk for the entire duration, you will receive a 10% bonus on the next Red vs. Blue report.

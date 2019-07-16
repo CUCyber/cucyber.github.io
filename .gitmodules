@@ -1,0 +1,6 @@
+[submodule "vendor/reveal.js"]
+	path = vendor/reveal.js
+	url = git@github.com:hakimel/reveal.js.git
+[submodule "_presentations"]
+	path = _presentations
+	url = git@github.com:CUCyber/presentations

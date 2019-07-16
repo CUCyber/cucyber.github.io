@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>{{ page.title }}</title>
+
+		<link rel="stylesheet" href="/vendor/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="/vendor/reveal.js/css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/vendor/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '/vendor/reveal.js/css/print/pdf.css' : '/vendor/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:">
+					<textarea data-template id="slideContent">
+						{% include_relative bettercap.md %}
+					</textarea>	
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="/vendor/reveal.js/lib/js/head.min.js"></script>
+		<script src="/vendor/reveal.js/js/reveal.js"></script>
+
+		<script>
+			/* Fix Markdown to be "web compatible" or something */
+			(function() {
+				let slideContent = document.getElementById("slideContent");
+				let title = "{{ page.slug }}"
+
+				// Remove front matter (because revealjs will try to render it)
+				slideContent.innerHTML = slideContent.innerHTML.replace(/(^[\s]*---[\s\S]*---)?([\s\S]*$)?/gm, '$2');
+				slideContent.innerHTML = slideContent.innerHTML.trimStart();
+				
+				// Point (local) images to local .res folder
+				slideContent.innerHTML = slideContent.innerHTML.replace(/!\[(.*?)\]\(((?!http:\/\/.*$)(?!https:\/\/.*$).*?)\)/gm, '![$1](' + title + '.res/$2)');
+			})();
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: '/vendor/reveal.js/plugin/markdown/marked.js' },
+					{ src: '/vendor/reveal.js/plugin/markdown/markdown.js' },
+					{ src: '/vendor/reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '/vendor/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

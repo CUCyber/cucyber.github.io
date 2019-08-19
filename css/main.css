@@ -187,10 +187,9 @@ a:hover {
 }
 
 #hero-area {
-  background: url('/images/shield.png') no-repeat center -10px;
-  background-size: 1000px 1000px;
+  background: url('/images/shield.png') no-repeat center 95px;
   background-attachment: fixed;
-  padding: 230px 0;
+  padding: 270px 0;
   color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -608,6 +607,7 @@ figure figcaption p {
 #footer .copyright {
   font-size: 13px;
   margin-bottom: 0;
+  text-align: center;
   margin-top: 10px;
 }
 

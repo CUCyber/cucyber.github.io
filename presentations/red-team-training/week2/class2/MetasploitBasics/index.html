@@ -5,18 +5,18 @@
 
 		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="/presentations/reveal/css/reveal.css">
-		<link rel="stylesheet" href="/presentations/reveal/css/theme/blood.css">
+		<link rel="stylesheet" href="/red-team-training/reveal/css/reveal.css">
+		<link rel="stylesheet" href="/red-team-training/reveal/css/theme/blood.css">
 
 		<!-- theme for code highlighting -->
-		<link rel="stylesheet" href="/presentations/reveal/lib/css/zenburn.css">
+		<link rel="stylesheet" href="/red-team-training/reveal/lib/css/zenburn.css">
 
 		<!-- printing from pdf -->
 		<script>
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match(/print-pdf/gi) ? '/presentations/reveal/css/print/pdf.css' : '/presentations/reveal/css/print/paper.css';
+			link.href = window.location.search.match(/print-pdf/gi) ? '/red-team-training/reveal/css/print/pdf.css' : '/red-team-training/reveal/css/print/paper.css';
 			document.getElementsByTagName('head')[0].appendChild(link);
 		</script>
 
@@ -33,7 +33,7 @@
 		</script>
 
 		<!--[if lt IE 9]>
-			<script src="/presentations/lib/js/html5shiv.js"></script>
+			<script src="/red-team-training/lib/js/html5shiv.js"></script>
 		<![endif]-->
 
 		<!-- make h1 font size a little smaller -->
@@ -52,39 +52,39 @@
 		</div>
 
 		<!-- source and configure reveal.js -->
-		<script src="/presentations/reveal/lib/js/head.min.js"></script>
-		<script src="/presentations/reveal/js/reveal.js"></script>
+		<script src="/red-team-training/reveal/lib/js/head.min.js"></script>
+		<script src="/red-team-training/reveal/js/reveal.js"></script>
 		<script>
 			var init = function() {
 				// base dependencies
 				var dependencies = [
 					// classList shim
-					{ src: '/presentations/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/red-team-training/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 
 					// markdown
-					{ src: '/presentations/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-					{ src: '/presentations/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+					{ src: '/red-team-training/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+					{ src: '/red-team-training/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
 
 					// syntax highlight for <code> elements
-					{ src: '/presentations/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); } },
+					{ src: '/red-team-training/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); } },
 
 					// zoom in and out with alt+click
-					{ src: '/presentations/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '/red-team-training/reveal/plugin/zoom-js/zoom.js', async: true },
 
 					// speaker notes
-					{ src: '/presentations/reveal/plugin/notes/notes.js', async: true },
+					{ src: '/red-team-training/reveal/plugin/notes/notes.js', async: true },
 
 					// MathJax
-					{ src: '/presentations/reveal/plugin/math/math.js', async: true },
+					{ src: '/red-team-training/reveal/plugin/math/math.js', async: true },
 				]
 
 				if (multiplex['enabled']) {
 					// multiplex
-					dependencies.push({ src: '/presentations/reveal/lib/js/socket.io.js', async: true });
+					dependencies.push({ src: '/red-team-training/reveal/lib/js/socket.io.js', async: true });
 					if (multiplex['secret'] === null)
-						dependencies.push({ src: '/presentations/reveal/plugin/multiplex/client.js', async: true });
+						dependencies.push({ src: '/red-team-training/reveal/plugin/multiplex/client.js', async: true });
 					else
-						dependencies.push({ src: '/presentations/reveal/plugin/multiplex/master.js', async: true });
+						dependencies.push({ src: '/red-team-training/reveal/plugin/multiplex/master.js', async: true });
 				}
 
 				// create reveal options

@@ -1,0 +1,25 @@
+# roles/bind/vars/Debian.yml
+---
+
+bind_packages:
+  - python-netaddr
+  - bind9
+  - bind9utils
+
+bind_service: bind9
+
+# Main config file
+bind_config: /etc/bind/named.conf
+
+# Localhost zone
+bind_default_zone_files:
+  - /etc/bind/named.conf.default-zones
+
+# Directory with run-time stuff
+bind_dir: /var/cache/bind
+bind_conf_dir: "/etc/bind/"
+auth_file: "auth_transfer.conf"
+bind_auth_file: "{{ bind_conf_dir }}/{{ auth_file }}"
+
+bind_owner: root
+bind_group: bind

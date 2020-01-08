@@ -51,15 +51,6 @@ What is an example of a malicious process? A malicious service?
 
 
 
-### Explore - Services
-
-1. Find out how to view services
-2. Start "Smart Card" service
-3. Stop "Smart Card" service
-4. Open "Properties" of any service
-5. Write down "Path to Executable" and "Startup Type"
-
-
 ### Processes
 
 * Running application on a computer
@@ -76,6 +67,16 @@ What is an example of a malicious process? A malicious service?
 ### How to Stop a Process
 
 ![stop-process](stop-process.png)
+
+
+
+### Explore - Services
+
+1. Find out how to view services
+2. Start "Smart Card" service
+3. Stop "Smart Card" service
+4. Open "Properties" of any service
+5. Write down "Path to Executable" and "Startup Type"
 
 
 

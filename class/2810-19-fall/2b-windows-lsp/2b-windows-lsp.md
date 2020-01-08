@@ -72,6 +72,11 @@ Don't give an answer for this
 * Much more
 
 
+### Command Line
+
+Export LSP: `secedit /export /cfg c:\secpol.cfg`
+
+
 ### Homework
 
 Find 5 LSP options that could be used to make a computer more secure. Give a few sentences explaining what it is and how it could relate to computer security.

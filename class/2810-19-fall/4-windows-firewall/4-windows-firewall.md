@@ -98,3 +98,9 @@ If there is time leftover, get them to do the same lab, but using PS. Remember t
 
 
 ## Questions?
+
+
+
+### Homework
+* Write a paragraph describing between networked-based firewalls and host-based firewalls
+* Think about why it would be important to use both

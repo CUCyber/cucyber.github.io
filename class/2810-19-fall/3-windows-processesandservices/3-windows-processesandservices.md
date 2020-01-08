@@ -34,7 +34,7 @@ Why is it good to know what services are on your computer?
 
 
 
-## Introdduction Questions
+## Introduction Questions
 
 What is an example of a malicious process? A malicious service?
 

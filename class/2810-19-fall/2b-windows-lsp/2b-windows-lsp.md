@@ -58,11 +58,23 @@ Don't give an answer for this
 * secpol.msc
 
 
-
 ### Auditing
 
 * Enables logs for specific events in EventViewer
 
+
+### Options in LSP
+
+* Account logon auditing
+* Object access
+* Application whitelisting
+* Password strength
+* Much more
+
+
+### Homework
+
+Find 5 LSP options that could be used to make a computer more secure. Give a few sentences explaining what it is and how it could relate to computer security.
 
 
 ### Questions?

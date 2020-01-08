@@ -167,3 +167,10 @@ Note:
 
 
 ## Questions?
+
+
+
+### Homework
+* Write a paragraph explaining what SVCHost is/does
+* Write a paragraph explaining why processes have parents and children
+

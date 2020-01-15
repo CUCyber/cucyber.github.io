@@ -33,9 +33,13 @@ Note:
 Can anyone summarize NAT?
 
 
-
 ## Activity
 
+Note:
+* Create a network diagram that has 4 machines and a firewall
+* The E-Commerce machine and the DNS machine are within 172.20.240.0/24
+* The AD machine and the email machine are within 172.20.241.0/24
+* Also decide what should be contained within the local network and what should be in the DMZ
 
 
 ## How do we talk to another computer?
@@ -44,6 +48,9 @@ Can anyone summarize NAT?
   - Example: 192.168.1.5
   - Example: 130.127.151.120
   - Example: ipv6 address
+
+
+## IP Header
 
 ![](ipheader.png)
 

@@ -72,7 +72,7 @@ Open lusrmgr.msc
 
 
 ### powershell
-* Get user - ``PS C:\> Get-LocalUser -Name user`
+* Get user - `PS C:\> Get-LocalUser -Name user`
 * Add user (no password) - `PS C:\> New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword`
 * Add user (w/ password) - `PS C:\> $Password = Read-Host -AsSecureString`
 `PS C:\> New-LocalUser "User03" -Password $Password -FullName "Third User" -Description "Description of this account."`

@@ -79,7 +79,7 @@ Note:
 
 ## Network Segmentation
 
-!()[seccdcq.png]
+![](seccdcq.png)
 
 
 ## Network Segmentation
@@ -101,6 +101,7 @@ TODO - Benefits from doc
   - 10.0.0.0 - 10.255.255.255
 * 172.16.0.0/12
   - 172.16.0.0 – 172.31.255.255
+
 
 ## Port Forwarding
 

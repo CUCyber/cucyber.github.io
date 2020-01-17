@@ -37,8 +37,8 @@ Can anyone summarize NAT?
 
 Note:
 * Create a network diagram that has 4 machines and a firewall
-* The E-Commerce machine and the DNS machine are within 172.20.240.0/24
-* The AD machine and the email machine are within 172.20.241.0/24
+* The E-Commerce machine (.11) and the DNS (.23) machine are within 172.20.240.0/24
+* The AD machine (.11) and the email machine (.23) are within 172.20.241.0/24
 * Also decide what should be contained within the local network and what should be in the DMZ
 
 
@@ -52,7 +52,7 @@ Note:
 
 ## IP Header
 
-![](ipheader.png)
+![](ipheader.jpg)
 
 
 ## How do we get an IP address?
@@ -106,6 +106,7 @@ TODO - Benefits from doc
 ## Port Forwarding
 
 ![](port-forwarding.png)
+
 
 ## Competition NAT
 

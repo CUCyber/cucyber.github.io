@@ -9,14 +9,17 @@ CPSC 4810
 What is a port?
 
 
+
 ### Introduction Questions
 
 What's on port 80?
 
 
+
 ### Introduction Questions
 
 What's the difference between a router and a switch?
+
 
 
 ### Introduction Questions
@@ -28,9 +31,11 @@ Note:
 * How did you do this?
 
 
+
 ### Introduction Questions
 
 Can anyone summarize NAT?
+
 
 
 ## Activity
@@ -42,6 +47,7 @@ Note:
 * Also decide what should be contained within the local network and what should be in the DMZ
 
 
+
 ## How do we talk to another computer?
 
 * IP Addresses - A suite of protocols for identification and addressing of connected computers
@@ -50,9 +56,11 @@ Note:
   - Example: ipv6 address
 
 
+
 ## IP Header
 
 ![](ipheader.jpg)
+
 
 
 ## How do we get an IP address?
@@ -70,6 +78,7 @@ Note:
 * There is an interface associated and the packet is sent out that interface
 
 
+
 ## How do we build the routing table?
 
 * Dynamic routing
@@ -82,15 +91,18 @@ Note:
 ![](seccdcq.png)
 
 
+
 ## Network Segmentation
 
 TODO - Benefits from doc
+
 
 
 ## Home NAT
 
 * Your home ISP gives you one public IP.
 * How do you have multiple devices on your home network?
+
 
 
 ## Private IP Ranges
@@ -103,9 +115,11 @@ TODO - Benefits from doc
   - 172.16.0.0 – 172.31.255.255
 
 
+
 ## Port Forwarding
 
 ![](port-forwarding.png)
+
 
 
 ## Competition NAT

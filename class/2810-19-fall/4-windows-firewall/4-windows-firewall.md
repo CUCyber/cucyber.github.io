@@ -82,9 +82,6 @@ Why is a firewall useful?
 * `netsh advfirewall reset`
 
 
-### PowerShell
-
-
 
 ### PowerShell
 

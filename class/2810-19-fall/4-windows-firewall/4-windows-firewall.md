@@ -55,7 +55,7 @@ Why is a firewall useful?
 
 ### Inbound vs Outbound
 
-![directions](directions.png)
+![directions](4-windows-firewall-res/directions.png)
 
 
 

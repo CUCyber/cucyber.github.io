@@ -55,55 +55,55 @@ This is where beginner Windows cyberdefense competitors differ from advanced Win
 
 ### How to Add User to AD
 
-![add user 0](add_user_0.png)
+![add user 0](5-windows-adusersandgroups.res/add_user_0.png)
 
 
 
 ### How to Add User to AD
 
-![add user 1](add_user_1.png)
+![add user 1](5-windows-adusersandgroups.res/add_user_1.png)
 
 
 
 ### How to Remove User From AD
 
-![remove user](remove_user.png)
+![remove user](5-windows-adusersandgroups.res/remove_user.png)
 
 
 
 ### How to Reset Password
 
-![reset](reset_user_0.png)
+![reset](5-windows-adusersandgroups.res/reset_user_0.png)
 
 
 
 ### How to Reset Password
 
-![reset](reset_user_1.png)
+![reset](5-windows-adusersandgroups.res/reset_user_1.png)
 
 
 
 ### How to Create Group
 
-![create](create_group.png)
+![create](5-windows-adusersandgroups.res/create_group.png)
 
 
 
 ### How to Add User to Group
 
-![add](user_to_group_0.png)
+![add](5-windows-adusersandgroups.res/user_to_group_0.png)
 
 
 
 ### How to Add User to Group
 
-![add](user_to_group_1.png)
+![add](5-windows-adusersandgroups.res/user_to_group_1.png)
 
 
 
 ### Organization of Items in AD
 
-![ous](ous.png)
+![ous](5-windows-adusersandgroups.res/ous.png)
 
 
 

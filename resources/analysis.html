@@ -1,142 +1,51 @@
 ---
-title: Presentations - Analysis and Reverse Engineering
-layout: default
+layout: resources
+
+title: Analysis and Reverse Engineering
+
+breadcrumbs:
+  heading: Presentations
+  list:
+    - Home: '/'
+    - Presentations: '/resources.html'
+
+resources:
+  heading: Analysis and Reverse Engineering
+  button: View Presentation
+  list:
+    - heading: Introduction to Malware
+      page: '/presentations/pentesting/malware/'
+      img: '/images/presentations/malware.png'
+      description: |
+        A brief introduction to the different types and goals of malware.
+
+    - heading: Exploitable 3 (Crossover with ACM)
+      page: '/presentations/analysis/exploitable/'
+      img: '/images/presentations/malware.png'
+      description: |
+        A guide to using different kinds of analysis and tracing to reverse engineer software.
+
+    - heading: 'Binaries: Static Analysis'
+      page: '/presentations/analysis/static/'
+      img: '/images/presentations/analysis.png'
+      description: |
+        How to use Radare2 and various features of x86 assembly to create rough C code for a disassembled binary.
+
+    - heading: Reverse Engineering with Radare2
+      page: '/presentations/analysis/radare/'
+      img: '/images/presentations/analysis.png'
+      description: |
+        Using Radare2 to find flags in a binary program by reverse engineering or altering behavior.
+
+    - heading: Reverse Engineering Network Protocols
+      page: '/presentations/analysis/network/'
+      img: '/images/presentations/mitm.png'
+      description: |
+        A comprehensive guide to figuring out how a network protocol works and writing your own implementation.
+
+    - heading: Binary Exploitation
+      page: '/presentations/analysis/binex/'
+      img: '/images/presentations/analysis.png'
+      description: |
+        An introduction into binary exploitation.
 ---
-<section class="global-page-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block">
-                    <h2>Presentations</h2>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="/index.html">
-                                <i class="ion-ios-home"></i>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/resources.html">Presentations</a>
-                        </li>
-                        <li class="active">Analysis and Reverse Engineering</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<center>
-    <h3 class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">Analysis and Reverse Engineering</h3>
-</center>
-
-<section id="gallery" class="gallery container">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="/images/presentations/malware.png" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="/presentations/pentesting/malware/">View Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <h2><a href="/presentations/pentesting/malware/">Introduction to Malware</a></h2>
-            <p>A brief introduction to the different types and goals of malware.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="/images/presentations/malware.png" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="/presentations/analysis/exploitable/">View Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <h2><a href="/presentations/analysis/exploitable/">Exploitable 3 (Crossover with ACM)</a></h2>
-            <p>A guide to using different kinds of analysis and tracing to reverse engineer software.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="/images/presentations/analysis.png" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="/presentations/analysis/static/">View Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <h2><a href="/presentations/analysis/static/">Binaries: Static Analysis</a></h2>
-            <p>How to use Radare2 and various features of x86 assembly to create rough C code for a disassembled binary.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="/images/presentations/analysis.png" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="/presentations/analysis/radare/">View Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <h2><a href="/presentations/analysis/radare/">Reverse Engineering with Radare2</a></h2>
-            <p>Using Radare2 to find flags in a binary program by reverse engineering or altering behavior.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="/images/presentations/mitm.png" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="/presentations/analysis/network/">View Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <h2><a href="/presentations/analysis/network/">Reverse Engineering Network Protocols</a></h2>
-            <p>A comprehensive guide to figuring out how a network protocol works and writing your own implementation.</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
-                    <div class="img-wrapper">
-                        <img src="/images/presentations/analysis.png" class="img-responsive" alt="">
-                        <div class="overlay">
-                            <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="/presentations/analysis/binex/">View Presentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <h2><a href="/presentations/analysis/binex/">Binary Exploitation</a></h2>
-            <p>An introduction into binary exploitation.</p>
-        </div>
-    </div>
-</section>

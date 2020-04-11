@@ -46,7 +46,6 @@
         <!-- owl carouserl js -->
         <script src="/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
-
         <script src="/js/bootstrap.min.js"></script>
         <!-- wow js -->
         <script src="/js/wow.min.js"></script>
@@ -67,7 +66,7 @@
             }
 
             @media (min-width: 768px) {
-                *[id]:before {
+                h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
                     display: block;
                     content: " ";
                     margin-top: -141px;
@@ -200,7 +199,7 @@
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="install-remote-viewer">Install Remote Viewer</h2>
+                        <h2 id="install-remote-viewer">Install Remote Viewer</h2>
 <h3 id="linux-instructions">Linux Instructions</h3>
 <p><strong>Fedora</strong></p>
 <pre><code>sudo dnf install virt-viewer</code></pre>

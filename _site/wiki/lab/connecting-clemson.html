@@ -46,7 +46,6 @@
         <!-- owl carouserl js -->
         <script src="/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
-
         <script src="/js/bootstrap.min.js"></script>
         <!-- wow js -->
         <script src="/js/wow.min.js"></script>
@@ -67,7 +66,7 @@
             }
 
             @media (min-width: 768px) {
-                *[id]:before {
+                h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
                     display: block;
                     content: " ";
                     margin-top: -141px;
@@ -205,7 +204,7 @@
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="before-you-begin">Before You Begin</h2>
+                        <h2 id="before-you-begin">Before You Begin</h2>
 <p>See the table of contents on the right for links to connecting from your platform.</p>
 <h2 id="linux-instructions">Linux Instructions</h2>
 <h3 id="installing-the-openconnect-client">Installing the OpenConnect Client</h3>

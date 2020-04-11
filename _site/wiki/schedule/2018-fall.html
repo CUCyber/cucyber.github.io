@@ -46,7 +46,6 @@
         <!-- owl carouserl js -->
         <script src="/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
-
         <script src="/js/bootstrap.min.js"></script>
         <!-- wow js -->
         <script src="/js/wow.min.js"></script>
@@ -67,7 +66,7 @@
             }
 
             @media (min-width: 768px) {
-                *[id]:before {
+                h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
                     display: block;
                     content: " ";
                     margin-top: -141px;
@@ -184,7 +183,7 @@
                             </div>
                                                                                 </header>
                         
-                                                <ul>
+                        <ul>
 <li>08/30 - Intro to CU Cyber</li>
 <li>09/06 - Intro to Burp Suite and the CU Cyber Lab</li>
 <li>09/13 - Sitting Duck CTF</li>

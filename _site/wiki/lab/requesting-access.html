@@ -46,7 +46,6 @@
         <!-- owl carouserl js -->
         <script src="/js/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
-
         <script src="/js/bootstrap.min.js"></script>
         <!-- wow js -->
         <script src="/js/wow.min.js"></script>
@@ -67,7 +66,7 @@
             }
 
             @media (min-width: 768px) {
-                *[id]:before {
+                h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
                     display: block;
                     content: " ";
                     margin-top: -141px;
@@ -195,7 +194,7 @@
                                 </ul>
                             </nav>
                         </div>
-                                                <h2 id="agree-to-terms">Agree to Terms</h2>
+                        <h2 id="agree-to-terms">Agree to Terms</h2>
 <p>Email us at <a href="mailto:cyber@clemson.edu">cyber@clemson.edu</a> from your own <span class="citation" data-cites="g.clemson.edu">@g.clemson.edu</span> or <span class="citation" data-cites="clemson.edu">@clemson.edu</span> email address. This will be used to identify you and we will use this information to confirm that you are a currently-enrolled student. Emails from other domains will simply be ignored.</p>
 <p>After we receive and review your request for access we will send you a link to a Google Form that will contain a terms of service agreement regarding the lab. If this is properly filled out, agreed to, and submitted we will create a user account and a VPN config for your user which you will receive via email.</p>
 <h2 id="get-ldap-information-and-openvpn-config">Get LDAP Information and OpenVPN Config</h2>

@@ -1,3 +1,6 @@
+timezone: America/New_York
+
 keep_files: ['class', 'documents', 'presentations', 'wiki']
 
+host: localhost
 port: 8080

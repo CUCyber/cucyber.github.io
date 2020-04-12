@@ -68,6 +68,13 @@ a:hover {
   font-weight: 300;
 }
 
+.center {
+  display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .pages {
   padding: 80px 0 40px;
 }

@@ -1,6 +1,2 @@
-/_site/*
-!/_site/class
-!/_site/documents
-!/_site/presentations
-!/_site/wiki
+/_site
 .jekyll-cache

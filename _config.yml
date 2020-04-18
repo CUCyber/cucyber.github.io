@@ -6,6 +6,7 @@ description: |
 
 timezone: America/New_York
 
+exclude: ['CNAME']
 keep_files: ['class', 'documents', 'presentations', 'wiki']
 
 host: localhost

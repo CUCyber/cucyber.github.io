@@ -1,0 +1,89 @@
+---
+layout: default
+
+title: Requesting Access
+
+head: |
+  <!-- Pandoc Styling
+  ================================================== -->
+  <style type="text/css">
+      code {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+  
+      @media (min-width: 768px) {
+          h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
+              display: block;
+              content: " ";
+              margin-top: -141px;
+              height: 141px;
+              visibility: hidden;
+          }
+      }
+  </style>
+          <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+    
+  <!-- TOC Button JavaScript -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.table-of-contents .btn').click(function() {
+              if ($(this).text() === 'Show')
+                  $(this).text('Hide');
+              else
+                  $(this).text('Show');
+          });
+      });
+  </script>
+
+breadcrumbs:
+  list:
+    - Home: '/'
+    - Wiki: '/wiki/'
+---
+
+{% raw %}
+<section class="single-post wiki">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                                                <header id="top" class="wiki-header">
+                    <div class="wiki-heading">
+                        <h1>Requesting Access</h1>
+                        <div>
+                            <a href="https://github.com/CUCyber/wiki/edit/master/lab/requesting-access.md">Edit This Page</a>
+                            <a href="https://github.com/CUCyber/wiki/new/master/lab">New Page</a>
+                        </div>
+                    </div>
+                                                        </header>
+                
+                                <div class="table-of-contents">
+                    <h2 id="toc">Table of Contents <button data-toggle="collapse" data-target="#tocnav" class="btn">Hide</button></h2>
+
+                    <nav id="tocnav" class="collapse in">
+                        <ul>
+                        <li><a href="#agree-to-terms">Agree to Terms</a></li>
+                        <li><a href="#get-ldap-information-and-openvpn-config">Get LDAP Information and OpenVPN Config</a></li>
+                        <li><a href="#connect-to-lab">Connect to lab</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h2 id="agree-to-terms">Agree to Terms</h2>
+<p>Email us at <a href="mailto:cyber@clemson.edu">cyber@clemson.edu</a> from your own <span class="citation" data-cites="g.clemson.edu">@g.clemson.edu</span> or <span class="citation" data-cites="clemson.edu">@clemson.edu</span> email address. This will be used to identify you and we will use this information to confirm that you are a currently-enrolled student. Emails from other domains will simply be ignored.</p>
+<p>After we receive and review your request for access we will send you a link to a Google Form that will contain a terms of service agreement regarding the lab. If this is properly filled out, agreed to, and submitted we will create a user account and a VPN config for your user which you will receive via email.</p>
+<h2 id="get-ldap-information-and-openvpn-config">Get LDAP Information and OpenVPN Config</h2>
+<p>As stated in the previous section, after you agree to the terms of service of the lab you will receive an email with the following information:</p>
+<ul>
+<li>An OpenVPN configuration that will allow you to connect to the lab network</li>
+<li>Your username and initial password for domain authentication within our lab</li>
+</ul>
+<p>It is important that you do not share this information with anybody else inside or outside of Clemson University. As per the terms of service agreement that you received, this will result in immediate temporary suspension of account and VPN rights while the incident is investigated.</p>
+<h2 id="connect-to-lab">Connect to lab</h2>
+<p>Information on connecting to the lab can be found <a href="/wiki/lab/connecting.html">here</a>.</p>
+                            </div>
+        </div>
+    </div>
+</section>
+{% endraw %}

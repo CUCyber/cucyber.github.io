@@ -1,0 +1,100 @@
+---
+layout: default
+
+title: Boundaries within the Lab
+
+head: |
+  <!-- Pandoc Styling
+  ================================================== -->
+  <style type="text/css">
+      code {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+  
+      @media (min-width: 768px) {
+          h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
+              display: block;
+              content: " ";
+              margin-top: -141px;
+              height: 141px;
+              visibility: hidden;
+          }
+      }
+  </style>
+          <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+    
+  <!-- TOC Button JavaScript -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.table-of-contents .btn').click(function() {
+              if ($(this).text() === 'Show')
+                  $(this).text('Hide');
+              else
+                  $(this).text('Show');
+          });
+      });
+  </script>
+
+breadcrumbs:
+  list:
+    - Home: '/'
+    - Wiki: '/wiki/'
+---
+
+{% raw %}
+<section class="single-post wiki">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                                                <header id="top" class="wiki-header">
+                    <div class="wiki-heading">
+                        <h1>Boundaries within the Lab</h1>
+                        <div>
+                            <a href="https://github.com/CUCyber/wiki/edit/master/lab/boundaries.md">Edit This Page</a>
+                            <a href="https://github.com/CUCyber/wiki/new/master/lab">New Page</a>
+                        </div>
+                    </div>
+                                                        </header>
+                
+                                <div class="table-of-contents">
+                    <h2 id="toc">Table of Contents <button data-toggle="collapse" data-target="#tocnav" class="btn">Hide</button></h2>
+
+                    <nav id="tocnav" class="collapse in">
+                        <ul>
+                        <li><a href="#networks-always-off-limits">Networks always off-limits</a></li>
+                        <li><a href="#networks-you-are-permitted-to-access-but-not-permitted-to-attack">Networks you are permitted to access but not permitted to attack</a></li>
+                        <li><a href="#networks-you-are-permitted-to-attack">Networks you are permitted to attack</a></li>
+                        <li><a href="#logical-network-diagram">Logical Network Diagram</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h2 id="networks-always-off-limits">Networks always off-limits</h2>
+<p>These are networks that you are never permitted to communicate with under any circumstances.</p>
+<ul>
+<li>Clemson’s Network</li>
+<li>The Management VLAN within the lab network</li>
+<li>Someone else’s VLAN within the lab network<sup>[1]</sup></li>
+</ul>
+<p><sup>[1]</sup> Unless you are given written permission to do so by both the VLAN assignee and the lab admins</p>
+<h2 id="networks-you-are-permitted-to-access-but-not-permitted-to-attack">Networks you are permitted to access but not permitted to attack</h2>
+<ul>
+<li>The publicly routable internet</li>
+<li>The VPN VLAN you are automatically added to when log in via the VPN</li>
+<li>The oVirt web interface for managing VMs</li>
+<li>The FreeIPA web interface for changing your password</li>
+</ul>
+<h2 id="networks-you-are-permitted-to-attack">Networks you are permitted to attack</h2>
+<ul>
+<li>VLANS within the lab of which you are the owner or given permission to perform attacks on</li>
+</ul>
+<h2 id="logical-network-diagram">Logical Network Diagram</h2>
+<p>Here is a rough logical network diagram of the lab. Hopefully this may help clarify things.</p>
+<p><img src="/wiki/lab/boundaries.png" style="width:100.0%" /></p>
+                            </div>
+        </div>
+    </div>
+</section>
+{% endraw %}

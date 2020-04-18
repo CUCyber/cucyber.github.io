@@ -1,0 +1,99 @@
+---
+layout: default
+
+title: Cyber Warfare Space Agreement
+
+head: |
+  <!-- Pandoc Styling
+  ================================================== -->
+  <style type="text/css">
+      code {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+  
+      @media (min-width: 768px) {
+          h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
+              display: block;
+              content: " ";
+              margin-top: -141px;
+              height: 141px;
+              visibility: hidden;
+          }
+      }
+  </style>
+          <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+    
+  <!-- TOC Button JavaScript -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.table-of-contents .btn').click(function() {
+              if ($(this).text() === 'Show')
+                  $(this).text('Hide');
+              else
+                  $(this).text('Show');
+          });
+      });
+  </script>
+
+breadcrumbs:
+  list:
+    - Home: '/'
+    - Wiki: '/wiki/'
+---
+
+{% raw %}
+<section class="single-post wiki">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                                                <header id="top" class="wiki-header">
+                    <div class="wiki-heading">
+                        <h1>Cyber Warfare Space Agreement</h1>
+                        <div>
+                            <a href="https://github.com/CUCyber/wiki/edit/master/lab/agreement.md">Edit This Page</a>
+                            <a href="https://github.com/CUCyber/wiki/new/master/lab">New Page</a>
+                        </div>
+                    </div>
+                                                        </header>
+                
+                                <div class="table-of-contents">
+                    <h2 id="toc">Table of Contents <button data-toggle="collapse" data-target="#tocnav" class="btn">Hide</button></h2>
+
+                    <nav id="tocnav" class="collapse in">
+                        <ul>
+                        <li><a href="#introduction-and-ethics">Introduction and Ethics</a></li>
+                        <li><a href="#activities">Activities</a></li>
+                        <li><a href="#boundaries">Boundaries</a></li>
+                        <li><a href="#incidents">Incidents</a></li>
+                        <li><a href="#credentials">Credentials</a></li>
+                        <li><a href="#amendments">Amendments</a></li>
+                        <li><a href="#approval">Approval</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h2 id="introduction-and-ethics">Introduction and Ethics</h2>
+<p>The Cyber Warfare Space is a virtual lab and penetration testing environment hosted by CU Cyber and the Watt Family Innovation Center. Many of the scans and attacks you may perform inside of the lab are <strong>illegal</strong> to perform on networks you are not <strong>explicitly</strong> authorized to perform them on. Examples of networks where these scans and attacks would be <strong>illegal</strong> are public networks such as coffee houses, Clemson’s network, and the open internet. If you do not have explicit written consent to perform these tasks, or you wander outside the scope of your agreement, then you may find yourself subject to legislation such as the Computer Fraud and Abuse Act of 1986 and others.</p>
+<p>The following article exists as an agreement between a user of the Cyber Warfare Space and CU Cyber on appropriate and legal use of the Cyber Warfare Space.</p>
+<h2 id="activities">Activities</h2>
+<p>Activities between VLANs are regulated based on the boundaries outlined below. Within confines of the law, there is no activity within a <strong>single personal VLAN</strong> that is not allowed.</p>
+<h2 id="boundaries">Boundaries</h2>
+<p>No communication is allowed between the lab environment and any of Clemson’s networks. Only traffic internal to the lab and between the public internet is allowed.</p>
+<p>Networks and services in the lab that cannot be attacked are any computer on any management network, <code>10.0.0.0-10.0.63.255</code> and <code>10.255.0.0-10.255.255.255</code>, or any VPN network, <code>10.0.64.0-10.0.127.255</code>. This includes but is not limited to the virtual machine management interface, the user identity management interface, and the VPN server.</p>
+<p>You are not allowed to access any VLAN except for those of the management networks <code>10.0.0.0-10.0.63.255</code>, VLANs you are assigned, and VLANs for which you have explicit written approval to access.</p>
+<p>The lab is a fully contained environment and no malicious activity, including but not limited to scans, denial of service attacks, exfiltration, exploitation, and distribution of malware, is allowed across the border of the lab environment. Non-malicious traffic, such as software downloads, is allowed to cross the border of the lab environment. The border of the lab environment is defined as the point at which traffic is NATed from the local <code>10.0.0.0/8</code> network to Clemson’s <code>130.127.0.0/16</code> network.</p>
+<h2 id="incidents">Incidents</h2>
+<p>Any attempt to circumvent the barriers put in place to protect both you and networks you are not permitted to access will result in immediate suspension of access to the lab and lab network while the incident is being investigated. In addition, details of the incident will be elevated to the <a href="https://ccit.clemson.edu/cybersecurity/operations-center/">Security Operations Center at Clemson University</a> where it will be handled per university policy and if necessary, elevated to the appropriate authorities.</p>
+<h2 id="credentials">Credentials</h2>
+<p>Your lab credentials and OpenVPN configuration file must not be shared with anyone inside or outside of Clemson University.</p>
+<h2 id="amendments">Amendments</h2>
+<p>Amendments to this agreement can be made at any time by the officers of CU Cyber. A notification will be sent out if and when this happens.</p>
+<h2 id="approval">Approval</h2>
+<p>Approval to use the lab will be handled on a case-by-case basis by the officers of CU Cyber and those officers reserve the right to deny and revoke access for any reason.</p>
+                            </div>
+        </div>
+    </div>
+</section>
+{% endraw %}

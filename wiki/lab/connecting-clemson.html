@@ -1,0 +1,155 @@
+---
+layout: default
+
+title: Connecting to Clemson
+
+head: |
+  <!-- Pandoc Styling
+  ================================================== -->
+  <style type="text/css">
+      code {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+  
+      @media (min-width: 768px) {
+          h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
+              display: block;
+              content: " ";
+              margin-top: -141px;
+              height: 141px;
+              visibility: hidden;
+          }
+      }
+  </style>
+          <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+    
+  <!-- TOC Button JavaScript -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.table-of-contents .btn').click(function() {
+              if ($(this).text() === 'Show')
+                  $(this).text('Hide');
+              else
+                  $(this).text('Show');
+          });
+      });
+  </script>
+
+breadcrumbs:
+  list:
+    - Home: '/'
+    - Wiki: '/wiki/'
+---
+
+{% raw %}
+<section class="single-post wiki">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                                                <header id="top" class="wiki-header">
+                    <div class="wiki-heading">
+                        <h1>Connecting to Clemson</h1>
+                        <div>
+                            <a href="https://github.com/CUCyber/wiki/edit/master/lab/connecting-clemson.md">Edit This Page</a>
+                            <a href="https://github.com/CUCyber/wiki/new/master/lab">New Page</a>
+                        </div>
+                    </div>
+                                                        </header>
+                
+                                <div class="table-of-contents">
+                    <h2 id="toc">Table of Contents <button data-toggle="collapse" data-target="#tocnav" class="btn">Hide</button></h2>
+
+                    <nav id="tocnav" class="collapse in">
+                        <ul>
+                        <li><a href="#before-you-begin">Before You Begin</a></li>
+                        <li><a href="#linux-instructions">Linux Instructions</a><ul>
+                        <li><a href="#installing-the-openconnect-client">Installing the OpenConnect Client</a></li>
+                        <li><a href="#connecting-to-cuvpn">Connecting to CUVPN</a></li>
+                        </ul></li>
+                        <li><a href="#windows-instructions">Windows Instructions</a><ul>
+                        <li><a href="#installing-the-openconnect-client-1">Installing the OpenConnect Client</a></li>
+                        <li><a href="#connecting-to-cuvpn-1">Connecting to CUVPN</a></li>
+                        </ul></li>
+                        <li><a href="#macos-instructions">macOS Instructions</a><ul>
+                        <li><a href="#installing-the-openconnect-client-2">Installing the OpenConnect Client</a></li>
+                        <li><a href="#connecting-to-cuvpn-2">Connecting to CUVPN</a></li>
+                        </ul></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h2 id="before-you-begin">Before You Begin</h2>
+<p>See the table of contents on the right for links to connecting from your platform.</p>
+<h2 id="linux-instructions">Linux Instructions</h2>
+<h3 id="installing-the-openconnect-client">Installing the OpenConnect Client</h3>
+<p><strong>Fedora</strong></p>
+<pre><code>sudo dnf install openconnect</code></pre>
+<p><strong>Ubuntu</strong></p>
+<pre><code>sudo apt install openconnect</code></pre>
+<p><strong>Arch</strong></p>
+<pre><code>sudo pacman -S openconnect</code></pre>
+<h3 id="connecting-to-cuvpn">Connecting to CUVPN</h3>
+<p>In a terminal, run the following command. Enter your username, password, and your second password is “push”.</p>
+<pre><code>sudo openconnect https://cuvpn.clemson.edu/</code></pre>
+<h2 id="windows-instructions">Windows Instructions</h2>
+<h3 id="installing-the-openconnect-client-1">Installing the OpenConnect Client</h3>
+<ul>
+<li>Download and install the <a href="https://github.com/openconnect/openconnect-gui/releases">OpenConnect GUI</a>.</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-win32-download.png" width="512" /></p>
+<h3 id="connecting-to-cuvpn-1">Connecting to CUVPN</h3>
+<p>Use the OpenConnect GUI with ‘https://cuvpn.clemson.edu/’ as the gateway. Enter your username, password, and your second password is “push”.</p>
+<h2 id="macos-instructions">macOS Instructions</h2>
+<h3 id="installing-the-openconnect-client-2">Installing the OpenConnect Client</h3>
+<ul>
+<li>Download and install <a href="https://brew.sh/">Homebrew</a> then run the following commands.</li>
+</ul>
+<pre><code>brew tap horar/openconnect-gui
+brew install openconnect-gui
+# after an upgrade do the following two commands again
+rm -f /Applications/OpenConnect-GUI.app
+ln -s /usr/local/Cellar/openconnect-gui/*/OpenConnect-GUI.app /Applications/OpenConnect-GUI.app</code></pre>
+<h3 id="connecting-to-cuvpn-2">Connecting to CUVPN</h3>
+<p>Use the OpenConnect GUI with ‘https://cuvpn.clemson.edu/’ as the gateway. Enter your username, password, and your second password is “push”.</p>
+<ul>
+<li>Click the cog dropdown</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-add.png" width="256" /></p>
+<ul>
+<li>Click “New Profile”</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-new.png" width="256" /></p>
+<ul>
+<li>Enter “https://cuvpn.clemson.edu/” as the gateway</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-cuvpn.png" width="256" /></p>
+<ul>
+<li>Click “Save &amp; Connect”</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-save.png" width="256" /></p>
+<ul>
+<li>Click “Accurate Information”</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-accurate.png" width="256" /></p>
+<ul>
+<li>Enter Clemson username</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-username.png" width="256" /></p>
+<ul>
+<li>Enter Clemson password</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-password.png" width="256" /></p>
+<ul>
+<li>Enter “push”</li>
+</ul>
+<p><img src="/wiki/lab/openconnect-push.png" width="256" /></p>
+<ul>
+<li>Accept the Duo push on your mobile phone</li>
+</ul>
+                            </div>
+        </div>
+    </div>
+</section>
+{% endraw %}

@@ -1,0 +1,83 @@
+---
+layout: default
+
+title: Home
+
+head: |
+  <!-- Pandoc Styling
+  ================================================== -->
+  <style type="text/css">
+      code {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+  
+      @media (min-width: 768px) {
+          h1[id]::before, h2[id]::before, h3[id]::before, h4[id]::before, h5[id]::before, h6[id]::before {
+              display: block;
+              content: " ";
+              margin-top: -141px;
+              height: 141px;
+              visibility: hidden;
+          }
+      }
+  </style>
+          <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+    
+  <!-- TOC Button JavaScript -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('.table-of-contents .btn').click(function() {
+              if ($(this).text() === 'Show')
+                  $(this).text('Hide');
+              else
+                  $(this).text('Show');
+          });
+      });
+  </script>
+
+breadcrumbs:
+  list:
+    - Home: '/'
+    - Wiki: '/wiki/'
+---
+
+{% raw %}
+<section class="single-post wiki">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                                                <header id="top" class="wiki-header">
+                    <div class="wiki-heading">
+                        <h1>Home</h1>
+                        <div>
+                            <a href="https://github.com/CUCyber/wiki/edit/master/index.md">Edit This Page</a>
+                            <a href="https://github.com/CUCyber/wiki/new/master/.">New Page</a>
+                        </div>
+                    </div>
+                                                        </header>
+                
+                <h2 id="welcome">Welcome</h2>
+<p>Welcome to the CU Cyber wiki! Use the links below to get started.</p>
+<h2 id="lab">Lab</h2>
+<ul>
+<li><a href="/wiki/lab/agreement.html">Agreement</a></li>
+<li><a href="/wiki/lab/requesting-access.html">Requesting Access</a></li>
+<li><a href="/wiki/lab/connecting-clemson.html">Connecting to Clemson (Off-Campus Only)</a></li>
+<li><a href="/wiki/lab/connecting.html">Connecting</a></li>
+<li><a href="/wiki/lab/console.html">Accessing VM Console</a></li>
+<li><a href="/wiki/lab/changing-password.html">Changing Your Password</a></li>
+<li><a href="/wiki/lab/boundaries.html">Boundaries</a></li>
+</ul>
+<h2 id="linux">Linux</h2>
+<ul>
+<li><a href="/wiki/linux/linux-intro.html">Linux Intro</a></li>
+<li><a href="/wiki/linux/distro-comparisons.html">Distro Comparisons</a></li>
+</ul>
+                            </div>
+        </div>
+    </div>
+</section>
+{% endraw %}

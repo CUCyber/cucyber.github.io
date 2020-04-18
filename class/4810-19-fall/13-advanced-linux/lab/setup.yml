@@ -1,0 +1,26 @@
+---
+- name: Advanced Linux Lab Setup
+  hosts: students
+
+  tasks:
+  
+  - name: Allow Root SSH
+    shell: sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+  
+  - name: Restart SSH
+    systemd:
+      name: ssh.service
+      state: restarted
+      enabled: true
+
+  - name: Chattr /etc/shadow
+    shell: chattr +i /etc/shadow
+  
+  - name: Disable auto grub boot
+    shell: sed -i 's/GRUB_TIMEOUT=0/GRUB_TIMEOUT=-1/' /etc/default/grub
+  
+  - name: Update grub
+    shell: update-grub
+
+  - name: Disable auto grub boot
+    shell: sed -i 's/set timeout=0/set timeout=-1/' /boot/grub/grub.cfg

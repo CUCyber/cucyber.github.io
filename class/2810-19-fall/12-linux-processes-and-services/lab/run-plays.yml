@@ -1,0 +1,8 @@
+---
+- name: Connection Test
+  hosts: students
+
+  tasks:
+
+  - name: Start badware
+    command: id

@@ -1,0 +1,49 @@
+---
+- name: Monday Lab Setup
+  hosts: students
+
+  tasks:
+
+  - name: Install Packages
+    apt:
+      pkg:
+      - nginx
+      - gcc
+      - vsftpd
+      - mariadb-server
+      - cups
+
+  - name: Make sure that vsftpd is dead and dead
+    systemd:
+      name: vsftpd.service
+      state: stopped
+      enabled: false
+  
+  - name: Make sure that nginx is going
+    systemd:
+      name: nginx.service
+      state: started
+      enabled: true
+  
+  - name: Make sure that cups is going
+    systemd:
+      name: cups.service
+      state: started
+      enabled: true
+
+  - name: Make sure that mysql is going
+    systemd:
+      name: mariadb.service
+      state: started
+      enabled: true
+
+  - name: "Copy badware"
+    copy:
+      src: badware
+      dest: /usr/bin/badware
+      owner: root
+      group: root
+      mode: '0777'
+  
+  - name: Start badware
+    shell: nohup /usr/bin/badware  </dev/null >/dev/null 2>&1 &

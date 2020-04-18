@@ -1,0 +1,11 @@
+---
+- hosts: dns
+  tasks:
+    - name: create records
+      bind_zone_domains:
+        - name: local
+          hosts:
+            - name: lab
+              ip: 192.0.2.1
+              aliases:
+                - ns

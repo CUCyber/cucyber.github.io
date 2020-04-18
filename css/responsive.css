@@ -222,3 +222,8 @@ px      68    160    252    */
 ------------------------------------------------------------
 cols    1     2      3      4      5
 px      68    160    252    344    436    */
+@media only screen and (max-width: 480px) {
+  .fc-today-button {
+    display: none;
+  }
+}

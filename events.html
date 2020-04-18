@@ -9,7 +9,25 @@ breadcrumbs:
     - Home: '/'
 ---
 <section id="blog-full-width">
-    <div class="text-center">
-        <iframe src="https://calendar.google.com/calendar/b/1/embed?height=650&amp;wkst=2&amp;bgcolor=%23F09300&amp;ctz=America%2FNew_York&amp;src=cHRqdDg5NWo2dG5jY2EydTVnZGdlNjNwdmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F09300&amp;mode=MONTH" style="border-width:0" width="1200" height="500" frameborder="0" scrolling="no"></iframe>
-    </div>
+    <div class="text-center"><a href="https://calendar.google.com/calendar?cid=cHRqdDg5NWo2dG5jY2EydTVnZGdlNjNwdmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">Add club events to your Google Calendar!</a></div>
+
+    <div id="calendar"></div>
+    <script>
+        var calendar;
+        window.addEventListener('load', function(ev) {
+            calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+                plugins: ['bootstrap', 'dayGrid', 'list', 'googleCalendar'],
+                themeSystem: 'bootstrap',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,listMonth'
+                },
+                googleCalendarApiKey: 'AIzaSyA7zJnQujsXxaDhPRVulvBy-X6XRuxxvf8',
+                events: 'ptjt895j6tncca2u5gdge63pvg@group.calendar.google.com'
+            });
+
+            calendar.render();
+        }, false);
+    </script>
 </section>

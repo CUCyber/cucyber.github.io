@@ -1399,6 +1399,12 @@ article {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+#calendar {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
 .iframe-presentation {
   display: block;
   width: 100%;

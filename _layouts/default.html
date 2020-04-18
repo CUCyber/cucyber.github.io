@@ -5,15 +5,23 @@
         ================================================== -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="/images/shield-small.png">
-        <title>CU Cyber{% if page.title %} - {{ page.title }}{% endif %}</title>
+        <title>{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}</title>
         <link rel="shortcut icon" href="/images/shield-small.png">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="">
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
         <!-- Mobile Specific Metas
         ================================================== -->
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Social Media Info
+        ================================================== -->
+        <meta property="og:title" content="{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}">
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}/images/shield.png{% endif %}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+        <meta property="og:site_name" content="{{ site.name }}">
+        <meta name="twitter:site" content="{{ site.twitter }}">
+        <meta name="twitter:card" content="summary_large_image">
+
 
         <!-- Template CSS Files
         ================================================== -->

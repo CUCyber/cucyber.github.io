@@ -1,0 +1,34 @@
+/* humanstxt.org */
+
+
+/* TEAM */
+	Advisor: Foster McLane
+	Contact: fmclane@clemson.edu
+
+	President: Matthew Rinaldi
+	Contact: mjrinal@g.clemson.edu
+
+	Vice President: Matt Ehrnschwender
+	Contact: mehrnsc@g.clemson.edu
+
+	Treasurer: Madeleine Wolfe
+	Contact: mgwolfe@g.clemson.edu
+
+	Secretary: Kaitlyn Pierce
+	Contact: kjpierc@g.clemson.edu
+
+	Training Organizer: Matthew Burnett
+	Contact: mburne3@g.clemson.edu
+
+	Competition and Events Organizer: David Houston
+	Contact: dghoust@g.clemson.edu
+
+
+/* THANKS */
+	/* security thanks will be added here when we receive disclosures */
+
+
+/* SITE */
+	Core: Jekyll + GitHub Pages
+	Components: Bootstrap, jQuery, Owl Carousel, jQuery Fancybox, FullCalendar, Animate.css, wow.js, Modernizr, Font Awesome
+	Hosting: GitHub Pages

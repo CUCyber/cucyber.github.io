@@ -144,7 +144,7 @@
                             <ol class="breadcrumb">
                                 {% for breadcrumb in page.breadcrumbs.list %}
                                 {% assign breadcrumb_info = breadcrumb | first %}
-                                <li><a href="{{ breadcrumb_info[1] }}">{% assign breadcrumb_downtitle = breadcrumb_info[0] | downcase %}{% if breadcrumb_downtitle == 'home' %}<i class="ion-ios-home"></i> {% endif %}{{ breadcrumb_info[0] }}</a></li>
+                                <li>{% if breadcrumb_info[1] %}<a href="{{ breadcrumb_info[1] }}">{% endif %}{% assign breadcrumb_downtitle = breadcrumb_info[0] | downcase %}{% if breadcrumb_downtitle == 'home' %}<i class="ion-ios-home"></i> {% endif %}{{ breadcrumb_info[0] }}{% if breadcrumb_info[1] %}</a>{% endif %}</li>
                                 {% endfor %}
                                 <li class="active">{{ page.title }}</li>
                             </ol>

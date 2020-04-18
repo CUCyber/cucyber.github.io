@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="text-center"><h3 class="subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">{{ page.resources.heading }}</h3></div>
+
+<section id="gallery" class="gallery container">
+    {% for resource in page.resources.list %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <figure class="wow fadeInLeft animated portfolio-item animated" data-wow-duration="500ms" data-wow-delay="0ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 0ms; -webkit-animation-delay: 0ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                    <div class="img-wrapper">
+                        <img src="{{ resource.image }}" class="img-responsive" alt="">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a rel="gallery" class="fancybox" href="{{ resource.page }}">{{ page.resources.button }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+            <h2><a href="{{ resource.page }}">{{ resource.heading }}</a></h2>
+            <p>{{ resource.description }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{{ content }}

@@ -1,0 +1,44 @@
+---
+- hosts: lab07
+  remote_user: root
+  tasks:
+    - name: set facts
+      set_fact:
+        username: student
+        password: CUCyberDefaultPassword123
+
+    - name: add universe repository for bionic
+      apt_repository: 
+        repo: deb http://archive.ubuntu.com/ubuntu bionic universe
+        state: present
+      when: ansible_distribution_release == 'bionic'
+
+    - name: add user
+      user:
+        name: "{{ username }}"
+        shell: /bin/bash
+        password: "{{ password | password_hash('sha512') }}"
+
+    - name: add vsftpd
+      include_role:
+        name: weareinteractive.vsftpd
+      vars:
+        vsftpd_config:
+          anonymous_enable: YES
+          local_enable: YES
+          write_enable: YES
+          chroot_local_user: YES
+          xferlog_enable: YES
+          log_ftp_protocol: YES
+          allow_writeable_chroot: YES
+
+    - name: update sshd config
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication.*no'
+        line: 'PasswordAuthentication=yes'
+
+    - name: restart_sshd
+      service:
+        name: sshd
+        state: restarted

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="/images/shield-small.png">
+        <title>{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+        <link rel="shortcut icon" href="/images/shield-small.png">
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Social Media Info
+        ================================================== -->
+        <meta property="og:title" content="{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}">
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+        <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}/images/shield.png{% endif %}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+        <meta property="og:site_name" content="{{ site.name }}">
+        <meta name="twitter:site" content="{{ site.twitter }}">
+        <meta name="twitter:card" content="summary_large_image">
+
+
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="/css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="/css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="/css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="/css/owl.carousel.css">
+        <link rel="stylesheet" href="/css/owl.theme.css">
+        <link rel="stylesheet" href="/css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="/css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="/css/responsive.css">
+        <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/core@4.4.0/main.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/bootstrap@4.4.0/main.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid@4.4.0/main.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/list@4.4.0/main.min.css">
+
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- html5shiv js -->
+        <script src="/js/vendor/html5shiv-printshiv.min.js"></script>
+        <!-- modernizr js -->
+        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="/js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
+        <script src="/js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="/js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="/js/slider.js"></script>
+        <script src="/js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="/js/main.js"></script>
+        <!-- icons js -->
+        <script src="https://kit.fontawesome.com/8f683739d8.js"></script>
+        <!-- fullcalendar js -->
+        <script src="https://unpkg.com/@fullcalendar/core@4.4.0/main.min.js"></script>
+        <script src="https://unpkg.com/@fullcalendar/bootstrap@4.4.0/main.min.js"></script>
+        <script src="https://unpkg.com/@fullcalendar/google-calendar@4.4.0/main.min.js"></script>
+        <script src="https://unpkg.com/@fullcalendar/daygrid@4.4.0/main.min.js"></script>
+        <script src="https://unpkg.com/@fullcalendar/list@4.4.0/main.min.js"></script>
+    </head>
+    <body>
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+
+                    <!-- logo -->
+                    <div class="navbar-brand">
+                        <a href="/" class="stop-theme">
+                            <img src="/images/shield-small.png" alt="">
+                            CU Cyber
+                        </a>
+                    </div>
+                    <!-- /logo -->
+
+                </div>
+                <!-- main menu -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="main-menu">
+                        <ul class="flat nav navbar-nav navbar-right">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/events.html">Events</a></li>
+                            <li><a href="/contact.html">Contact us</a></li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Useful Resources <span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                    <ul class="flat">
+                                        <li><a href="/resources.html">Presentations</a></li>
+                                        <li><a href="/wiki/">Wiki</a></li>
+                                        <li><a href="/documents/hackpack.html">Hackpack</a></li>
+                                        <li><a href="https://github.com/CUCyber">GitHub</a></li>
+                                        <li><a href="https://clemson.collegiatelink.net/organization/cucyber">TigerQuest</a></li>
+                                        <li><a href="https://forms.gle/7nKX1ZZco6veSpLJA">Membership</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a href="https://cuctf.io">CUCTF</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
+            </div>
+        </header>
+
+        {% if page.breadcrumbs %}
+        <section class="global-page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <h2>{{ page.breadcrumbs.heading }}</h2>
+                            <ol class="breadcrumb">
+                                {% for breadcrumb in page.breadcrumbs.list %}
+                                {% assign breadcrumb_info = breadcrumb | first %}
+                                <li><a href="{{ breadcrumb_info[1] }}">{% assign breadcrumb_downtitle = breadcrumb_info[0] | downcase %}{% if breadcrumb_downtitle == 'home' %}<i class="ion-ios-home"></i> {% endif %}{{ breadcrumb_info[0] }}</a></li>
+                                {% endfor %}
+                                <li class="active">{{ page.title }}</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}<!--/#page-header-->
+
+        <!--
+        ==================================================
+            Global Page Section Start
+        ================================================== -->
+        {{ content }}
+
+        <!--
+        ==================================================
+        Footer Section Start
+        ================================================== -->
+        <footer id="footer">
+            <div class="container">
+                <ul class="list-inline text-center">
+                    <li><a href="https://discord.gg/f7ZcC7z"><i class="fab fa-discord fa-2x"></i></a></li>
+                    <li><a href="https://www.linkedin.com/groups/12049268/"><i class="fab fa-linkedin-in fa-2x"></i></a></li>
+                    <li><a href="https://twitter.com/CU_Cyber"><i class="fab fa-twitter fa-2x"></i></a></li>
+                </ul>
+                <p class="copyright">Copyright: <span>2020</span> CU Cyber &lt;cyber@clemson.edu&gt;. Design and Developed by <a href="https://themefisher.com">Themefisher</a></p>
+            </div>
+        </footer> <!-- /#footer -->
+    </body>
+</html>

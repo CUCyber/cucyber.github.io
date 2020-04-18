@@ -73,6 +73,8 @@
         <script src="https://unpkg.com/@fullcalendar/google-calendar@4.4.0/main.min.js"></script>
         <script src="https://unpkg.com/@fullcalendar/daygrid@4.4.0/main.min.js"></script>
         <script src="https://unpkg.com/@fullcalendar/list@4.4.0/main.min.js"></script>
+
+{{ page.head }}
     </head>
     <body>
         <!--
@@ -138,7 +140,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>{{ page.breadcrumbs.heading }}</h2>
+                            <h2>{% if page.breadcrumbs.heading %}{{ page.breadcrumbs.heading }}{% else %}{{ page.title }}{% endif %}</h2>
                             <ol class="breadcrumb">
                                 {% for breadcrumb in page.breadcrumbs.list %}
                                 {% assign breadcrumb_info = breadcrumb | first %}
@@ -153,11 +155,11 @@
         </section>
         {% endif %}<!--/#page-header-->
 
-        <!--
-        ==================================================
-            Global Page Section Start
-        ================================================== -->
-        {{ content }}
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+{{ content }}
 
         <!--
         ==================================================

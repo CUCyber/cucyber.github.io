@@ -26,21 +26,20 @@
         <!-- Template CSS Files
         ================================================== -->
         <!-- Twitter Bootstrs CSS -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <!-- Ionicons Fonts Css -->
-        <link rel="stylesheet" href="/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.4.1/dist/css/bootstrap.min.css">
         <!-- animate css -->
-        <link rel="stylesheet" href="/css/animate.css">
+        <link rel="stylesheet" href="https://unpkg.com/animate.css@3.7.2/animate.min.css">
         <!-- Hero area slider css-->
         <link rel="stylesheet" href="/css/slider.css">
         <!-- owl craousel css -->
-        <link rel="stylesheet" href="/css/owl.carousel.css">
-        <link rel="stylesheet" href="/css/owl.theme.css">
-        <link rel="stylesheet" href="/css/jquery.fancybox.css">
+        <link rel="stylesheet" href="https://unpkg.com/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/owl.carousel@2.3.4/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.css">
         <!-- template main css file -->
         <link rel="stylesheet" href="/css/main.css">
         <!-- responsive css -->
         <link rel="stylesheet" href="/css/responsive.css">
+        <!-- fullcalendar css -->
         <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/core@4.4.0/main.min.css">
         <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/bootstrap@4.4.0/main.min.css">
         <link rel="stylesheet" href="https://unpkg.com/@fullcalendar/daygrid@4.4.0/main.min.css">
@@ -48,21 +47,19 @@
 
         <!-- Template Javascript Files
         ================================================== -->
-        <!-- html5shiv js -->
-        <script src="/js/vendor/html5shiv-printshiv.min.js"></script>
         <!-- modernizr js -->
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- jquery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://unpkg.com/jquery@1.12.4/dist/jquery.min.js"></script>
         <!-- owl carouserl js -->
-        <script src="/js/owl.carousel.min.js"></script>
+        <script src="https://unpkg.com/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
         <!-- bootstrap js -->
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
         <!-- wow js -->
-        <script src="/js/wow.min.js"></script>
+        <script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
         <!-- slider js -->
         <script src="/js/slider.js"></script>
-        <script src="/js/jquery.fancybox.js"></script>
+        <script src="https://unpkg.com/jquery.fancybox@2.1.5/source/jquery.fancybox.js"></script>
         <!-- template main js -->
         <script src="/js/main.js"></script>
         <!-- icons js -->
@@ -144,7 +141,7 @@
                             <ol class="breadcrumb">
                                 {% for breadcrumb in page.breadcrumbs.list %}
                                 {% assign breadcrumb_info = breadcrumb | first %}
-                                <li>{% if breadcrumb_info[1] %}<a href="{{ breadcrumb_info[1] }}">{% endif %}{% assign breadcrumb_downtitle = breadcrumb_info[0] | downcase %}{% if breadcrumb_downtitle == 'home' %}<i class="ion-ios-home"></i> {% endif %}{{ breadcrumb_info[0] }}{% if breadcrumb_info[1] %}</a>{% endif %}</li>
+                                <li>{% if breadcrumb_info[1] %}<a href="{{ breadcrumb_info[1] }}">{% endif %}{% assign breadcrumb_downtitle = breadcrumb_info[0] | downcase %}{% if breadcrumb_downtitle == 'home' %}<i class="fas fa-home"></i> {% endif %}{{ breadcrumb_info[0] }}{% if breadcrumb_info[1] %}</a>{% endif %}</li>
                                 {% endfor %}
                                 <li class="active">{{ page.title }}</li>
                             </ol>

@@ -187,7 +187,10 @@ a:hover {
 }
 
 #hero-area {
-  background: url('/images/shield.png') no-repeat center 95px;
+  background: url('/images/shield.svg');
+  background-repeat: no-repeat;
+  background-position: top 95px center;
+  background-size: 1125px;
   background-attachment: fixed;
   padding: 270px 0;
   color: #fff;

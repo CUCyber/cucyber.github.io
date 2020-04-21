@@ -95,6 +95,7 @@ px      68    160    252    */
   }
 
   #hero-area {
+    background-position: top center;
     background-size: 800px 800px;
     padding-top: 50px;
     padding-bottom: 280px;

@@ -95,7 +95,7 @@ px      68    160    252    */
   }
 
   #hero-area {
-    background-size: 800px 800px;
+    background-position: top 40px center;
     padding-top: 50px;
     padding-bottom: 280px;
   }
@@ -225,5 +225,12 @@ px      68    160    252    344    436    */
 @media only screen and (max-width: 480px) {
   .fc-today-button {
     display: none;
+  }
+
+  #hero-area {
+    background-position: top -50px center;
+    background-size: 800px 800px;
+    padding-top: 50px;
+    padding-bottom: 280px;
   }
 }

@@ -23,14 +23,14 @@
 	Competition and Events Organizer: David Houston
 	Contact: dghoust@g.clemson.edu
 
-    Webmaster: Sean Craffey
-    Contact: scraffe@g.clemson.edu
+	Webmaster: Sean Craffey
+	Contact: scraffe@g.clemson.edu
 
-    Social Media Manager: Melissa Haueter
-    Contact: mhauete@g.clemson.edu
+	Social Media Manager: Melissa Haueter
+	Contact: mhauete@g.clemson.edu
 
-    CUCTF Task Force Leader: Jacob Mellichamp
-    Contact: jmellic@g.clemson.edu
+	CUCTF Task Force Leader: Jacob Mellichamp
+	Contact: jmellic@g.clemson.edu
 
 
 /* THANKS */

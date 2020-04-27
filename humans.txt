@@ -42,7 +42,7 @@
 	Noah Wright
 
 
-/* Disclosures */
+/* DISCLOSURES */
 	/* security thanks will be added here when we receive disclosures */
 
 

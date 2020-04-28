@@ -120,14 +120,6 @@ px      68    160    252    */
     margin: 0px 0px 35px;
   }
 
-  #footer .copyright {
-    text-align: center;
-  }
-
-  #footer .social {
-    text-align: center;
-  }
-
   .dropdown-menu > ul > li > a {
     display: block;
     font-size: 14px;

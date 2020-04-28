@@ -595,10 +595,10 @@ figure figcaption p {
   padding-top: 70px;
 }
 
-#map-canvas {
+.map iframe {
   width: 100%;
-  height: 350px;
-  background-color: #CCC;
+  height: 550px;
+  border: 0;
 }
 
 #footer {

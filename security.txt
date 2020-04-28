@@ -3,23 +3,23 @@ Hash: SHA256
 
 Contact: mailto:cyber@clemson.edu
 Encryption: https://cucyber.net/cyber.asc
-Acknowledgments: https://cucyber.net/security.html
+Acknowledgments: https://cucyber.net/security
 Preferred-Languages: en
 Canonical: https://cucyber.net/security.txt
 -----BEGIN PGP SIGNATURE-----
 
-iQJGBAEBCAAwFiEEV+yayl8v0SZrHggtXXOJnb4EVfcFAl6bQ+kSHGN5YmVyQGNs
-ZW1zb24uZWR1AAoJEF1ziZ2+BFX34ogQALMwbOtrufESiy/RdWZgdlRNgvhsgq8W
-wjlnLfkjl4X5Femvp9dfN351txla5rYqb8sBhmWsp68lZkJneWiPdKmoiqeHtjxe
-u5LejJ+w7mgiSqphIUA0LN14p3JJbm+LAibmh/nQwdL0kCrLp2I2IEO7hCDG3uDy
-A1EtgO1cOm1doEtYMRx62+MelvvPUMLDmwq8deLJWTLxUDv26W/Uf1pgMMSSoS4I
-2SDhASxWMez+AFA5fKenJSykjYBlCPcNhsYA3N06PUDW8EDXQw/7pSxPV9yH+NIf
-UtKSMvt/GdUHo37Nb8oFQv0qquujqXKq6vfgDDdv4JnCkFRDMmSH6I6PDOMiuRlx
-SARwOp06s67JbENxAuLZBXg3+pTbKmD8DvKLgnzcS+0vuUM9EkillOT2PSbFdeeW
-Ws+B30m9NhC101f5useCXh7ijRpSuvb3QcHYdoAGhpKEHm3e0xqmjIq6YVU5/ZWA
-R+i4iOcrB2BO72iYC+t6P/Bc0A+6npixrlOVo01RwNhS3doNXx+vFJt8iPrwgfoB
-/BvzECtOhG0fwc0l5YYpRFcIf3v3bLhNN7/aMpXLCLH/cllVJsUoSZwYKi5CV+kb
-vss1Kc9c9BKzzX5GwFxB4V8QUYwrJizldmO2HggHDT8+Bk4/QPd1ZsaR6fay09jN
-/cM+mqJQisYM
-=Mb5l
+iQJGBAEBCAAwFiEEV+yayl8v0SZrHggtXXOJnb4EVfcFAl6od0cSHGN5YmVyQGNs
+ZW1zb24uZWR1AAoJEF1ziZ2+BFX3igUQAJsppm/KuFBTIpy0eOezCRriOdLecV+i
++b/Je26oTqh0EoIBu9ZY7X5uF/L4rIHcdm2kARW+CA6jTP3RRt58y/9KdIoasK1X
+m1+BldoNAZ/mX+hSB2Yko1FfoLVAJqOp6iv5qoSeBJoEgJdbMfNYjtpUclCHNIzU
+ml2YkFuBTcbjw/2lpQZBzfFsk+bb7queXbgXKb/0nr/qZm+1Cz2RvhPpE6S0bkcU
+s8T61GTpuhA8+4rj8WDUEgxen+6dR5ufolGHnvHb7Yj1SX2DH1lz2GT09Z53DyUp
+7+2VSAX9eDwsZ5NapNm45Cr8TtKG1P0rj+wIAxPPLhhcjVScFDuBWNj+qCbe8nPs
+YIcws5vyHIWW0Q1i81Wb/KF2oiSL7RTA9xVktZ9QBcmlWbc0MvhHLQE+NUI75HVn
+mFT9IFDdTiLvqZwBlSuYE/NMqsdF5AHcjfB2BRH9ByXYj8D8PgTMlbmqXSzaLuPr
+ZmRgnZT8600m1kLoGDnyvC6sE3SlNEDsxWI0aDQx6xNxyljFCxY35BaLoWG3Wb7R
+EbY4/TIxYUBBtp9TJceXCSmKuJHjOlas/MiziGUZPP014wpt89iD9vh+bQjrFdkU
+l/cN8sFzlfGr3/PfXaHNkhDNgy0hZPZsQtx0c+A0pwzIeZKl6o37Xppt/dxGyUQy
+nokrC9ds9Jm8
+=Dsop
 -----END PGP SIGNATURE-----

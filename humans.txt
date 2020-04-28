@@ -1,0 +1,60 @@
+/* humanstxt.org */
+
+
+/* TEAM */
+	Advisor: Foster McLane
+	Contact: fmclane@clemson.edu
+
+	President: Matthew Rinaldi
+	Contact: mjrinal@g.clemson.edu
+
+	Vice President: Matt Ehrnschwender
+	Contact: mehrnsc@g.clemson.edu
+
+	Treasurer: Madeleine Wolfe
+	Contact: mgwolfe@g.clemson.edu
+
+	Secretary: Kaitlyn Pierce
+	Contact: kjpierc@g.clemson.edu
+
+	Training Organizer: Matthew Burnett
+	Contact: mburne3@g.clemson.edu
+
+	Competition and Events Organizer: David Houston
+	Contact: dghoust@g.clemson.edu
+
+	Webmaster: Sean Craffey
+	Contact: scraffe@g.clemson.edu
+
+	Social Media Manager: Melissa Haueter
+	Contact: mhauete@g.clemson.edu
+
+	CUCTF Task Force Leader: Jacob Mellichamp
+	Contact: jmellic@g.clemson.edu
+
+
+/* THANKS */
+	Weston Belk
+	Mackenzie Binns
+	Nick Bulischeck
+	Max Harley
+	Morgan McEntire
+	Cameron Ogle
+	Thomas Rea
+	Derek Rodriguez
+	Andrew Samuels
+	Kenneth Simpson
+	Robert Underwood
+	Adam Van Scyoc
+	Kyle Wolfe
+	Noah Wright
+
+
+/* DISCLOSURES */
+	/* security thanks will be added here when we receive disclosures */
+
+
+/* SITE */
+	Core: Jekyll + GitHub Pages
+	Components: Bootstrap, jQuery, Owl Carousel, jQuery Fancybox, FullCalendar, Animate.css, wow.js, Modernizr, Font Awesome
+	Hosting: GitHub Pages

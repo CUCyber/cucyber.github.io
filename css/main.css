@@ -619,7 +619,8 @@ figure figcaption p {
 }
 
 #footer .social {
-  text-align: right;
+  text-align: center;
+  padding-bottom: 5px;
   margin-bottom: 0;
 }
 
@@ -629,7 +630,7 @@ figure figcaption p {
 }
 
 #footer .social li a {
-  font-size: 22px;
+  font-size: 18px;
   color: #522D80;
 }
 

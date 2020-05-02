@@ -99,23 +99,23 @@ a:hover {
 }
 
 .navbar-collapse {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
 }
 
 .navbar-fixed-top .navbar-collapse {
-  max-height: 480px;
+  max-height: 25em;
 }
 
 #hero-area {
   background: url('/images/shield.svg');
   background-repeat: no-repeat;
-  background-position: top 95px center;
-  background-size: 1125px;
+  background-position: top 7em center;
+  background-size: 75em;
   background-attachment: fixed;
-  padding: 270px 0;
+  padding: 16em 0;
   color: #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.3);
   position: relative;
 }
 

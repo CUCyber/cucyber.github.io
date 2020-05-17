@@ -43,12 +43,6 @@ $(document).ready(function() {
             $('#top-bar').addClass('animated-header');
     });
 
-    $('#clients-logo').owlCarousel({
-        itemsCustom : false,
-        pagination : false,
-        items : 5,
-        autoplay: true,
-    });
 });
 
 $('.fancybox').fancybox({

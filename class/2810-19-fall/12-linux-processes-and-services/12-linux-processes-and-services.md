@@ -17,8 +17,11 @@ What's a service?
 
 ## Activity
 
-1. Navigate to http://10.0.144.20/ and log in.
-2. Open the processes virtual machine
+1. Run `sleep 10000`
+2. Press Ctrl-Z
+3. List all the processes
+4. Find your `sleep` command
+5. Kill the process
 
 
 

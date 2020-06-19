@@ -36,6 +36,10 @@ Who knows how to create and enforce a password policy on Linux?
 2. List all of the groups that the user "ryan" is a part of.
 3. Add a user named "frederick and set his password to "freder1ck-r0cks"
 
+Note:
+* The lab is broken, so I created a droplet on Digital Ocean
+* IP: 159.203.118.53 cucyber:password root:Thisisapublicmachine123!!!
+
 
 ## Activity Solutions
 

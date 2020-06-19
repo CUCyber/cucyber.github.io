@@ -1,6 +1,6 @@
-## Cybersecurity Competition Training
+## OpenSSH and vsFTPd
 
-CPSC 4810
+CPSC 2810
 
 
 
@@ -20,15 +20,15 @@ CPSC 4810
 
 ### Explore
 
-1. Get into groups of 2
-2. Get credentials from instructor
-2. FTP
+* IP: 10.0.129.172 Username: hacker Password: Password123
+
+1. FTP
   * Get a file
   * Upload a file
-3. SSH
+2. SSH
   * Get process listing of remote machine
-4. Add your public SSH key to the machine
-5. Identify misconfigurations with the service
+3. Add your public SSH key to the machine
+4. Identify misconfigurations with the service
 
 
 

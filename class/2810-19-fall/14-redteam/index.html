@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Cybersecurity Competition Training</title>
+		<title>Red Teaming</title>
 
 		<meta charset="utf-8">
 
@@ -47,7 +47,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- source markdown file -->
-				<section data-markdown="07-service-vsftp-openssh.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+				<section data-markdown="14-redteam.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
 			</div>
 		</div>
 
@@ -126,7 +126,7 @@
 			};
 
 			var get_id = function() {
-				request(multiplex['server'] + '/id?presentation=4810-19-fall%2F07-service-vsftp-openssh', function(response) {
+				request(multiplex['server'] + '/id?presentation=2810-19-fall%2F14-redteam', function(response) {
 					multiplex['id'] = response;
 
 					if (!response)
@@ -139,7 +139,7 @@
 			var get_secret = function() {
 				multiplex['secret'] = null;
 
-				request(multiplex['server'] + '/token?presentation=4810-19-fall%2F07-service-vsftp-openssh', function(response) {
+				request(multiplex['server'] + '/token?presentation=2810-19-fall%2F14-redteam', function(response) {
 					multiplex['secret'] = response;
 
 					if (!response)

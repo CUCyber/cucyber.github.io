@@ -132,12 +132,4 @@ Note:
 
 
 
-### Assessment
-
-Note:
-* 
-* 
-
-
-
 ### Questions?

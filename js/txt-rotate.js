@@ -19,7 +19,8 @@
  *  DEALINGS IN THE SOFTWARE.
  */
 
-var TxtRotate = function(el, toRotate, period) {
+var TxtRotate = function(el, toRotate, period, colors) {
+  this.colors = colors
   this.toRotate = toRotate;
   this.el = el;
   this.loopNum = 0;
@@ -39,6 +40,7 @@ TxtRotate.prototype.tick = function() {
     this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
 
+  this.el.style.color = this.colors[i];
   this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
   var that = this;
@@ -65,8 +67,9 @@ window.onload = function() {
   for (var i=0; i<elements.length; i++) {
     var toRotate = elements[i].getAttribute('data-rotate');
     var period = elements[i].getAttribute('data-period');
+    var colors = elements[i].getAttribute('data-color');
     if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      new TxtRotate(elements[i], JSON.parse(toRotate), period, JSON.parse(colors));
     }
   }
 };

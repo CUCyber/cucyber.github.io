@@ -218,6 +218,7 @@ a:hover {
   font-size: 40px;
   line-height: 50px;
   color: #333;
+  font-family: 'Roboto', monospace;
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -1413,6 +1414,6 @@ article {
 .blink {
   animation-name: blink;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+  animation-timing-function: steps(100, end);
   animation-duration: 1s;
 }

@@ -1398,3 +1398,21 @@ article {
   width: 100%;
   height: auto;
 }
+
+/* blinking text animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+}
+
+.blink {
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+  animation-duration: 1s;
+}

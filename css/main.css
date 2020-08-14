@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);
 @import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+@import url(//fonts.googleapis.com/css?family=Roboto+Mono:400,300,700);
 @import url(//fonts.googleapis.com/css?family=Glegoo);
 
 body {
@@ -218,6 +219,7 @@ a:hover {
   font-size: 40px;
   line-height: 50px;
   color: #333;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -629,10 +631,6 @@ figure figcaption p {
 
 #footer .social li a {
   font-size: 18px;
-  color: #522D80;
-}
-
-.cd-headline.slide .cd-words-wrapper {
   color: #522D80;
 }
 
@@ -1397,4 +1395,22 @@ article {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* blinking text animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+}
+
+.blink {
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(100, end);
+  animation-duration: 1s;
 }

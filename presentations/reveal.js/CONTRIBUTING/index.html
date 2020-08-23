@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contributing</title>
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="/presentations/reveal/reset.css">
+		<link rel="stylesheet" href="/presentations/reveal/reveal.css">
+		<link rel="stylesheet" href="/presentations/reveal/theme/blood.css">
+
+		<!-- theme for code highlighting -->
+		<link rel="stylesheet" href="/presentations/reveal/plugin/highlight/zenburn.css">
+
+		<!-- multiplexing -->
+		<script>
+			var multiplex = {
+				server: 'https://reveal.cucyber.net',
+				secret: window.location.search.match(/master/gi) ? 'request' : null,
+				id: window.location.search.match(/receiver/gi) ? 'request' : null,
+			};
+
+			multiplex['enabled'] = multiplex['id'] !== multiplex['secret'];
+			var showNotes = !(multiplex['id'] || multiplex['secret'] || window.location.search.match(/present/gi));
+		</script>
+
+		<!-- make h1 font size a little smaller -->
+		<style>
+			.reveal h1 {
+				font-size: 3.10em;
+			}
+
+			.reveal .speaker-notes p {
+					text-shadow: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- source markdown file -->
+				<section data-markdown="CONTRIBUTING.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"></section>
+			</div>
+		</div>
+
+		<!-- source and configure reveal.js -->
+		<script src="/presentations/reveal/reveal.js"></script>
+		<script src="/presentations/reveal/plugin/markdown/markdown.js"></script>
+		<script src="/presentations/reveal/plugin/highlight/highlight.js"></script>
+		<script src="/presentations/reveal/plugin/zoom/zoom.js"></script>
+		<script src="/presentations/reveal/plugin/notes/notes.js"></script>
+		<script src="/presentations/reveal/plugin/math/math.js"></script>
+		<script>
+			var init = function() {
+				// base plugins
+				var plugins = [
+						RevealMarkdown,
+						RevealHighlight,
+						RevealNotes,
+						RevealZoom,
+						RevealMath
+				];
+
+				// potential dependencies
+				var dependencies = [];
+				if (multiplex['enabled']) {
+					// multiplex
+					dependencies.push({ src: '/presentations/reveal/lib/socket/socket.io.js', async: true });
+					if (multiplex['secret'] === null)
+						dependencies.push({ src: '/presentations/reveal/ext/multiplex/client.js', async: true });
+					else
+						dependencies.push({ src: '/presentations/reveal/ext/multiplex/master.js', async: true });
+				}
+
+				// create reveal options
+				var reveal = {
+					history: true,
+					plugins: plugins,
+					dependencies: dependencies
+				};
+
+				if (multiplex['enabled']) {
+					// add multiplex information
+					reveal['multiplex'] = {
+						secret: multiplex['secret'],
+						id: multiplex['id'],
+						url: multiplex['server']
+					}
+				}
+
+				reveal['showNotes'] = showNotes;
+
+				Reveal.initialize(reveal);
+			};
+
+			var request = function(uri, callback) {
+				var xhr = new XMLHttpRequest();
+
+				xhr.withCredentials = true;
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						if (xhr.status === 200 || xhr.status === 304)
+							callback(xhr.responseText);
+						else
+							callback(null);
+					}
+				};
+
+				xhr.open('GET', uri, true);
+
+				xhr.send();
+			};
+
+			var get_id = function() {
+				request(multiplex['server'] + '/id?presentation=reveal.js%2FCONTRIBUTING', function(response) {
+					multiplex['id'] = response;
+
+					if (!response)
+						multiplex['enabled'] = false;
+
+					init();
+				});
+			};
+
+			var get_secret = function() {
+				multiplex['secret'] = null;
+
+				request(multiplex['server'] + '/token?presentation=reveal.js%2FCONTRIBUTING', function(response) {
+					multiplex['secret'] = response;
+
+					if (!response)
+						multiplex['enabled'] = false;
+
+					get_id();
+				});
+			};
+
+			// determine multiplex information
+			if (multiplex['enabled'] && multiplex['secret'] === 'request')
+				get_secret();
+			else if (multiplex['enabled'] && multiplex['id'] === 'request')
+				get_id();
+			else
+				init();
+		</script>
+	</body>
+</html>

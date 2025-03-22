@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Trickanomicon</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #191724;
+        color: #908caa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #908caa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #e0def4; background-color: #191724; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #eb6f92; font-weight: bold; } /* Alert */
+    code span.an { color: #9ccfd8; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #f6c177; } /* Attribute */
+    code span.bn { color: #c4a7e7; } /* BaseN */
+    code span.bu { color: #eb6f92; } /* BuiltIn */
+    code span.cf { color: #31748f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #f6c177; } /* Char */
+    code span.cn { color: #f6c177; } /* Constant */
+    code span.co { color: #6e6a86; font-style: italic; } /* Comment */
+    code span.cv { color: #6e6a86; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #908caa; font-style: italic; } /* Documentation */
+    code span.dt { color: #31748f; } /* DataType */
+    code span.dv { color: #ebbcba; } /* DecVal */
+    code span.er { color: #eb6f92; font-weight: bold; } /* Error */
+    code span.ex { color: #9ccfd8; } /* Extension */
+    code span.fl { color: #ebbcba; } /* Float */
+    code span.fu { color: #31748f; } /* Function */
+    code span.im { color: #9ccfd8; font-weight: bold; font-style: italic; } /* Import */
+    code span.in { color: #9ccfd8; } /* Information */
+    code span.kw { color: #c4a7e7; font-weight: bold; } /* Keyword */
+    code span.op { color: #908caa; } /* Operator */
+    code span.ot { color: #e0def4; } /* Other */
+    code span.pp { color: #f6c177; } /* Preprocessor */
+    code span.re { color: #908caa; font-style: italic; } /* RegionMarker */
+    code span.sc { color: #ebbcba; } /* SpecialChar */
+    code span.ss { color: #f6c177; } /* SpecialString */
+    code span.st { color: #f6c177; } /* String */
+    code span.va { color: #e0def4; } /* Variable */
+    code span.vs { color: #f6c177; } /* VerbatimString */
+    code span.wa { color: #f6c177; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style type="text/css">:root {
+--base: #191724;
+--surface: #1f1d2e;
+--overlay: #26233a;
+--muted: #6e6a86;
+--subtle: #908caa;
+--text: #e0def4;
+--love: #eb6f92;
+--gold: #f6c177;
+--rose: #ebbcba;
+--pine: #31748f;
+--foam: #9ccfd8;
+--iris: #c4a7e7;
+--highlight-low: #21202e;
+--highlight-med: #403d52;
+--highlight-high: #524f67;
+}
+body {
+background: var(--base);
+color: var(--text);
+max-width: 800px;
+margin: auto;
+scrollbar-color: var(--highlight-high) var(--overlay);
+font-size: 18px;
+}
+a:link {
+color: var(--pine);
+}
+a:visited {
+color: var(--pine);
+}
+a:hover {
+color: #5194af;
+}
+a,
+hi {
+text-decoration: none;
+}
+li {
+margin-bottom: 0.5em;
+}
+li li {
+margin-bottom: 0em;
+}
+header {
+text-align: center;
+}
+header h1 {
+color: var(--iris);
+margin-bottom: 0em;
+}
+header p {
+color: var(--muted);
+}
+h1 {
+text-align: center;
+color: var(--foam);
+}
+h2 {
+color: var(--rose);
+}
+h3 {
+color: var(--rose);
+}
+ol li::marker {
+color: var(--iris);
+}
+p {
+margin: 0em;
+}
+li code {
+color: var(--iris);
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style data-external="1">
+  	/* fonts */
+  	@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+
+  	body {
+  		font-family: "Atkinson Hyperlegible Next", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  	}
+
+  	pre,
+  	code {
+  		font-family: "Atkinson Hyperlegible Mono", "Courier New", Courier, monospace;
+  		font-weight: 450;
+  		font-size: 0.95em;
+  	}
+
+  	/* toc styles based on Michael Cysouw's toc-css filter */
+  	body {
+  		padding-left: 15em;
+  		padding-right: 1em;
+  	}
+
+  	nav#TOC {
+  		width: 16em;
+  		margin-left: -17em;
+  		padding-right: 1em;
+  		font-size: smaller;
+  		float: left;
+  		position: fixed;
+  		top: 0;
+  		bottom: 0;
+  		white-space: nowrap;
+  		overflow-y: scroll;
+  	}
+
+  	nav#TOC li {
+  		white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+  	}
+
+  	nav#TOC ul {
+  		padding-left: 1.5em;
+  	}
+
+  	nav#TOC.collapsed ul li ul {
+  		display: none;
+  	}
+
+  	nav#TOC ul.open {
+  		display: block !important;
+  	}
+
+  	nav#TOC button {
+  		background: #0000;
+  		color: var(--text);
+  		border: none;
+  		font-weight: 800;
+  		cursor: pointer;
+  		padding-right: 1em;
+  	}
+
+  	.padding {
+  		padding-left: 1.7em;
+  	}
+
+  	/* clipboard copy block */
+
+  	div.sourceCode,
+  	pre:not(.sourceCode) {
+  		padding: 1em;
+  		border: 1px solid var(--muted);
+  		border-radius: 0.5em;
+  		position: relative;
+  	}
+
+  	div.sourceCode:hover>.clipboard,
+  	pre:not(.sourceCode):hover>.clipboard {
+  		opacity: 1;
+  	}
+
+  	pre>code {
+  		white-space: pre-wrap !important;
+  	}
+
+  	.clipboard {
+  		position: absolute;
+  		right: 0.5em;
+  		top: 0.5em;
+  		padding: 0.25em;
+  		background-color: #fff2;
+  		cursor: pointer;
+  		font-size: 1em;
+  		border: none;
+  		border-radius: 0.5em;
+  		opacity: 0;
+  		transition: 0.1s;
+  	}
+  </style>
+
+  <script>
+  	document.addEventListener("DOMContentLoaded", (event) => {
+  		document.querySelector("nav#TOC").classList.add("collapsed");
+
+  		document.querySelectorAll("nav#TOC li:has(> a:not(:only-child))").forEach((e) => {
+  			const button = document.createElement("button");
+  			button.innerText = "→";
+  			button.addEventListener("click", () => {
+  				let open = e.querySelector("ul").classList.contains("open");
+  				button.innerText = open ? "→" : "↓";
+  				e.querySelector("ul").classList.toggle("open");
+  			});
+
+  			e.insertAdjacentElement("afterbegin", button);
+  		});
+
+  		document.querySelectorAll("nav#TOC li:has(> a:only-child)").forEach((e) => e.classList.add("padding"));
+
+  		document.querySelectorAll("div.sourceCode, pre:not(.sourceCode)").forEach((e) => {
+  			const button = document.createElement("button");
+  			button.innerText = "📋";
+  			button.className = "clipboard";
+  			button.addEventListener("click", () => {
+  				navigator.clipboard.writeText(e.children[0].innerText);
+  				button.style.backgroundColor = "var(--gold)";
+  				setTimeout(() => {button.style = ""}, 250);
+  			});
+
+  			e.appendChild(button);
+  		});
+  	});
+  </script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Trickanomicon</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#freebsd">FreeBSD</a>
+<ul>
+<li><a href="#package-manager">Package Manager</a></li>
+<li><a href="#monitoring-services">Monitoring Services</a></li>
+<li><a href="#checking-network-connections">Checking Network Connections</a></li>
+<li><a href="#changing-file-flags">Changing File Flags</a></li>
+<li><a href="#system-configuration-files">System Configuration Files</a></li>
+<li><a href="#the-kernel-securelevel">The Kernel Securelevel</a></li>
+</ul></li>
+<li><a href="#linux-persistent-iptables-service">Linux Persistent Iptables Service</a>
+<ul>
+<li><a href="#creating-the-backup-script">1. Creating the Backup Script</a></li>
+<li><a href="#creating-the-service">2. Creating the Service</a></li>
+</ul></li>
+<li><a href="#linux-splunk-changes">Linux Splunk Changes</a>
+<ul>
+<li><a href="#pre-execution-script-changes">Pre-Execution Script Changes</a></li>
+<li><a href="#post-script-execution">Post script execution</a></li>
+</ul></li>
+<li><a href="#linux-ccdc-basic-checklist">Linux CCDC Basic Checklist</a>
+<ul>
+<li><a href="#network-scanning-enumeration">1. Network Scanning &amp; Enumeration</a>
+<ul>
+<li><a href="#nmap-scanning">Nmap Scanning</a></li>
+</ul></li>
+<li><a href="#user-password-management">2. User &amp; Password Management</a>
+<ul>
+<li><a href="#reset-passwords">Reset Passwords</a></li>
+<li><a href="#create-a-new-user">Create a New User</a></li>
+<li><a href="#disable-accounts">Disable Accounts</a></li>
+<li><a href="#enable-accounts">Enable Accounts</a></li>
+</ul></li>
+<li><a href="#ssh-security-key-management">3. SSH Security &amp; Key Management</a>
+<ul>
+<li><a href="#rotate-ssh-keys">Rotate SSH Keys</a></li>
+<li><a href="#secure-etcsshsshd_config">Secure <code>/etc/ssh/sshd_config</code></a></li>
+</ul></li>
+<li><a href="#system-service-management">4. System &amp; Service Management</a>
+<ul>
+<li><a href="#system-logs">System Logs</a></li>
+<li><a href="#systemctl-commands">Systemctl Commands</a></li>
+</ul></li>
+<li><a href="#process-cron-job-monitoring">5. Process &amp; Cron Job Monitoring</a>
+<ul>
+<li><a href="#active-processes-connections">Active Processes &amp; Connections</a></li>
+<li><a href="#crontab-scheduled-tasks">Crontab &amp; Scheduled Tasks</a></li>
+</ul></li>
+<li><a href="#security-hardening-permissions">6. Security Hardening &amp; Permissions</a>
+<ul>
+<li><a href="#remove-suid-binaries">Remove SUID Binaries</a></li>
+<li><a href="#secure-etcsudoers">Secure <code>/etc/sudoers</code></a></li>
+</ul></li>
+<li><a href="#incident-response-documentation">7. Incident Response &amp; Documentation</a>
+<ul>
+<li><a href="#kill-active-sessions">Kill Active Sessions</a></li>
+<li><a href="#backups">Backups</a></li>
+<li><a href="#documentation">Documentation</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#cisco-firepower-firewall">Cisco Firepower Firewall</a>
+<ul>
+<li><a href="#reset-passwords-on-the-web-interface">Reset Passwords on the Web Interface</a></li>
+<li><a href="#reset-passwords-on-the-command-line-interface">Reset Passwords on the Command Line Interface</a></li>
+</ul></li>
+<li><a href="#keycloak">Keycloak</a>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#accounts-setup">Accounts Setup</a></li>
+<li><a href="#authentication-usage-of-keycloak">Authentication &amp; Usage of Keycloak</a></li>
+</ul></li>
+<li><a href="#mariadb-and-mysql">MariaDB and MySQL</a>
+<ul>
+<li><a href="#mysql-config-file">MySQL Config File</a></li>
+<li><a href="#mariadb-config-file">MariaDB Config File</a></li>
+<li><a href="#securing-the-services-and-databases">Securing the Services and Databases</a>
+<ul>
+<li><a href="#the-config-file">The config file:</a></li>
+<li><a href="#the-service-files">The service files:</a></li>
+<li><a href="#passwords">Passwords:</a></li>
+<li><a href="#auditing-users">Auditing Users:</a></li>
+<li><a href="#removing-unwanted-users">Removing unwanted users:</a></li>
+<li><a href="#backing-up-the-databases">Backing up the databases:</a></li>
+<li><a href="#restoring-the-databases">Restoring the databases:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#mariadb-and-mysql-hardening">MariaDB and MySQL Hardening</a></li>
+<li><a href="#postgresql-hardening">PostgreSQL Hardening</a></li>
+<li><a href="#postgresql">PostgreSQL</a>
+<ul>
+<li><a href="#config-files">Config Files</a>
+<ul>
+<li><a href="#the-service-files-1">The service files:</a></li>
+<li><a href="#passwords-1">Passwords:</a></li>
+<li><a href="#auditing-users-1">Auditing Users:</a></li>
+<li><a href="#removing-unwanted-users-1">Removing unwanted users:</a></li>
+<li><a href="#backing-up-the-databases-1">Backing up the databases:</a></li>
+<li><a href="#restoring-the-databases-1">Restoring the databases:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#salt">Salt</a>
+<ul>
+<li><a href="#commands-execution-modules">Commands (Execution Modules)</a>
+<ul>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#copying-files">Copying Files</a></li>
+<li><a href="#user-administration">User Administration</a></li>
+<li><a href="#system-info">System Info</a></li>
+<li><a href="#services-more">Services &amp; More</a></li>
+</ul></li>
+<li><a href="#sample-.sls-file">Sample <code>.sls</code> File</a></li>
+<li><a href="#firewall-rules">Firewall Rules</a>
+<ul>
+<li><a href="#minion-rules">Minion Rules</a></li>
+<li><a href="#master-rules">Master Rules</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#wordpress">Wordpress</a>
+<ul>
+<li><a href="#checklist">Checklist</a></li>
+</ul></li>
+<li><a href="#windows-notes">Windows Notes</a>
+<ul>
+<li><a href="#set-tls-settings-for-downloading-any-download-splunk">Set TLS Settings for Downloading (any download + splunk)</a></li>
+<li><a href="#require-kerberos-preauth-on-all-accounts">Require Kerberos Preauth on all Accounts</a></li>
+<li><a href="#download-sysinternals">Download Sysinternals</a></li>
+<li><a href="#remove-wmi-event-subscribers">Remove WMI Event Subscribers</a></li>
+<li><a href="#bins-to-remove">Bins to Remove</a></li>
+</ul></li>
+<li><a href="#windows-splunk-changes">Windows Splunk Changes</a>
+<ul>
+<li><a href="#splunk.ps1">splunk.ps1</a></li>
+<li><a href="#once-installed">Once Installed</a></li>
+<li><a href="#inputs.conf">inputs.conf</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="freebsd">FreeBSD</h1>
+<h2 id="package-manager">Package Manager</h2>
+<ul>
+<li>FreeBSD uses the package manager pkg, similar to the package manager apt</li>
+<li>Example usage commands
+<ul>
+<li><strong>sudo pkg update</strong></li>
+<li><strong>sudo pkg install (package name)</strong></li>
+<li><strong>sudo pkg delete (package name)</strong></li>
+</ul></li>
+</ul>
+<h2 id="monitoring-services">Monitoring Services</h2>
+<ul>
+<li>Services and other scripts run at system startup are located in the directories
+<ul>
+<li>/etc/rc.d/</li>
+<li>/usr/local/etc/rc.d/</li>
+<li>Scripts are ran at the kernel level (higher privileges than the root user)</li>
+<li>Each script is a POSIX-compliant /bin/sh script with no file extension</li>
+</ul></li>
+</ul>
+<pre><code>#!/bin/sh
+
+my_example_service code
+</code></pre>
+<ul>
+<li>Use the service command to view services and their status
+<ul>
+<li>List all enable services
+<ul>
+<li><strong>service -e</strong></li>
+</ul></li>
+<li>List all loaded services (enabled or not enabled)
+<ul>
+<li><strong>service -l</strong></li>
+<li>Check for any malicious/unneeded services and remove the file from /etc/rc.d or /usr/local/etc/rc.d as needed</li>
+</ul></li>
+<li>Start, stop, and restart services
+<ul>
+<li><strong>service (service name) start</strong></li>
+<li><strong>service (serivce name) stop</strong></li>
+<li><strong>service (service name) restart</strong></li>
+</ul></li>
+<li>Enable and disable services
+<ul>
+<li><strong>service (service name) enable</strong></li>
+<li><strong>service (service name) disable</strong></li>
+</ul></li>
+<li>Reload a service (this applies configuration file changes to services without a full restart)
+<ul>
+<li><strong>service (service name) reload</strong></li>
+<li>Note that all services may not support this feature. If a service does not support reload, restart it instead to apply configuration file changes.</li>
+</ul></li>
+<li>View the status of a service
+<ul>
+<li><strong>service -v (service name) status</strong>
+<ul>
+<li>When running, the process ID is shown</li>
+<li>The directory the service file is located in is shown</li>
+<li>This command’s output is not very descriptive. We recommend using the ps command to view more information about the service. Additionally, navigate to the service’s directory and view its shell script.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="checking-network-connections">Checking Network Connections</h2>
+<ul>
+<li>The sockstat command displays network and system opened sockets in FreeBSD</li>
+<li>List all opened ports
+<ul>
+<li><strong>sockstat</strong></li>
+</ul></li>
+<li>List all listening ports
+<ul>
+<li><strong>sockstat -l</strong></li>
+</ul></li>
+<li>List all TCP or UDP sockets
+<ul>
+<li><strong>sockstat -P udp</strong></li>
+<li><strong>sockstat -P tcp</strong></li>
+<li><strong>sockstat -P tcp,udp</strong></li>
+<li><strong>sockstat -P tcp -p 80, 443</strong>
+<ul>
+<li><strong>-p</strong> allows for filtering by port numbers</li>
+</ul></li>
+</ul></li>
+<li>List all Unix sockets and named pipes
+<ul>
+<li><strong>sockstat -u</strong></li>
+</ul></li>
+</ul>
+<h2 id="changing-file-flags">Changing File Flags</h2>
+<ul>
+<li>Alongside the <strong>chattr</strong> command, FreeBSD includes the <strong>chflags</strong> command to set file flags</li>
+<li>Examples
+<ul>
+<li>Set the system immutable flag
+<ul>
+<li><strong>sudo chflags schg (filepath)</strong></li>
+<li>Remove the flag: <strong>sudo chflags noschg (filepath)</strong></li>
+</ul></li>
+<li>Set the system append-only flag
+<ul>
+<li><strong>sudo chflags sappnd (filepath)</strong></li>
+<li>Remove the flag: <strong>sudo chflags noappnd (filepath)</strong></li>
+</ul></li>
+<li>Set the system undeletable flag
+<ul>
+<li><strong>sudo chflags sunlnk (filepath)</strong></li>
+<li>Remove the flag: <strong>sudo chflags nounlnk (filepath)</strong></li>
+</ul></li>
+</ul></li>
+<li>To view which flags are set on a file, run <strong>ls -lo (filepath)</strong></li>
+</ul>
+<h2 id="system-configuration-files">System Configuration Files</h2>
+<ul>
+<li>FreeBSD’s main system configuration file is /etc/rc.conf
+<ul>
+<li>System variables can be changed by either editing this file or using the <strong>sysrc</strong> command</li>
+<li>To check the value of a variable in rc.conf, run <strong>sudo sysrc (variable name)</strong></li>
+<li>To set a variable’s value, run <strong>sudo sysrc (variable name)=(new value)</strong></li>
+<li>To append a value to a variable run **sudo sysrc (variable name)+=(value to append)</li>
+<li>To remove a value from a variable run <strong>sudo sysrc (variable name)-=(value to remove)</strong></li>
+</ul></li>
+<li>Note that rc.conf should not be made immutable, as sysrc commands won’t be able to update variable names</li>
+<li>Limit rc.conf visibility and read/write permissions to only the root user:
+<ul>
+<li><strong>sudo chown root:(sudoers group) /etc/rc.conf</strong></li>
+<li><strong>sudo chmod 640 /etc/rc.conf</strong></li>
+</ul></li>
+</ul>
+<h2 id="the-kernel-securelevel">The Kernel Securelevel</h2>
+<ul>
+<li>The FreeBSD kernel has five different levels of security</li>
+<li>If the rc.conf variable <strong>kern_securelevel_enable</strong> is set to “YES”, then the kernel level is enforced
+<ul>
+<li>Otherwise, if <strong>kern_securelevel_enable</strong> is set to “NO”, then the kernel level is disabled and always set to Level -1</li>
+</ul></li>
+<li>The current level is stored in the rc.conf variable <strong>kern.securelevel</strong>
+<ul>
+<li>Level -1: permanently insecure mode
+<ul>
+<li>Always run the system in level 0 mode</li>
+<li>Default initial value upon installation</li>
+</ul></li>
+<li>Level 0: insecure mode
+<ul>
+<li>Immutable and append-only flags may be turned off</li>
+</ul></li>
+<li>Level 1: secure mode
+<ul>
+<li>The system immutable and system append-only flags may not be turned off</li>
+<li>Note that not even the root user can remove the system immutable and system append-only flags</li>
+</ul></li>
+<li>Level 2 is basically identical to level 1</li>
+<li>Level 3: nearly identical to level 1, except IP packet filter rules cannot be changed</li>
+</ul></li>
+<li>Any super-user process can raise the security level, but no process can lower the level
+<ul>
+<li>To lower or raise <strong>kern.securelevel</strong>, use the command <strong>sudo sysrc kern.securelevel=(new level)</strong></li>
+<li>If /etc/rc.conf is made immutable, this command along with other sysrc commands to alter variables will not work</li>
+</ul></li>
+</ul>
+<h1 id="linux-persistent-iptables-service">Linux Persistent Iptables Service</h1>
+<p><strong>NOTE:</strong> Using systemd</p>
+<h2 id="creating-the-backup-script">1. Creating the Backup Script</h2>
+<ul>
+<li><p>Make a directory to store the restore script</p>
+<pre><code>sudo mkdir /etc/iptables-persistent/</code></pre></li>
+<li><p>Put your iptables rules file in the created directory</p>
+<pre><code>sudo cp /path/to/rules /etc/iptables-persistent/iptables-rules</code></pre></li>
+<li><p>Use one of the following to create the restore script (based on existence of iptables-restore):</p>
+<pre><code>sudo vi /etc/iptables-persistent/restore.sh</code></pre>
+<p>1. Paste the following if <strong><em>iptables-restore</em></strong> exists:</p>
+<pre><code>#!/bin/bash
+
+bin=`which iptables-restore`
+$bin &lt; /etc/iptables-persistent/iptables-rules</code></pre>
+<p>2. Paste the following if <strong><em>iptables-restore</em></strong> does <strong>NOT</strong> exist</p>
+<p><strong>NOTE:</strong> the iptables-rules file must be lines that finish the command <strong><em>sudo iptables</em></strong> and without any whitelines or comments):</p>
+<pre><code>#!/bin/bash
+
+while read rule;
+do
+    iptables $rule
+done &lt; etc/iptables-persistent/iptables-rules</code></pre></li>
+<li><p>Make the script executable</p>
+<pre><code>sudo chmod +x /etc/iptables-persistent/restore.sh</code></pre></li>
+</ul>
+<h2 id="creating-the-service">2. Creating the Service</h2>
+<ul>
+<li><p>Create the service file</p>
+<pre><code>sudo vi /etc/systemd/system/iptables-persistent.service</code></pre></li>
+<li><p>Paste the following into the file</p>
+<pre><code>[Unit]
+Description=iptables persistent service
+ConditionFileIsExecutable=/etc/iptables-persistent/restore.sh
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/iptables-persistent/restore.sh
+start TimeoutSec=0
+RemainAfterExit=yes
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target</code></pre></li>
+<li><p>Enable the service</p>
+<pre><code>sudo systemctl enable --now iptables-persistent.service</code></pre></li>
+</ul>
+<h1 id="linux-splunk-changes">Linux Splunk Changes</h1>
+<h2 id="pre-execution-script-changes">Pre-Execution Script Changes</h2>
+<p>All changes pertain to the <strong><code>splunk.sh</code></strong> script (competition-resources/Splunk/splunk.sh)</p>
+<ol type="1">
+<li>Change INDEXER to the ip address of the splunk instance (receiver)</li>
+<li>Changed PASS to a different password</li>
+<li>Remove the else branch from the “if ! restart_splunk” (lines 126-128)</li>
+</ol>
+<h2 id="post-script-execution">Post script execution</h2>
+<p>Manually add source(s) to monitor:</p>
+<ol type="1">
+<li>Select a file (or entire directory) to monitor</li>
+<li>Talk to a captain to obtain the index to use (most likely either “linux” or “windows”)</li>
+<li>Change directory into the <strong>$SPLUNK_HOME/bin</strong> directory (most likely <strong><code>/opt/splunkforwarder</code></strong>)</li>
+<li>Run a command like <code>sudo ./splunk add monitor /path/to/thing/to/monitor -index &lt;name of index&gt;</code></li>
+</ol>
+<p>In the case where the chosen source is already being monitored (and you need to change something about how it is being monitored… e.g., changing the index):</p>
+<ol type="1">
+<li>Change directory into the $SPLUNK_HOME/bin directory</li>
+<li>Run the command <code>sudo ./splunk remove monitor /path/to/thing/to/monitor</code></li>
+<li>Follow the previous set of steps to re-add the source as a monitor</li>
+</ol>
+<p>These commands edit the file at the path <code>$SPLUNK_HOME/etc/apps/search/local/inputs.conf</code>. Do what you will with this information. It should be noted that making manual changes usually requires a restart of the splunk daemon to take effect. To do this: <code>sudo $SPLUNK_HOME/bin/splunk restart</code></p>
+<h1 id="linux-ccdc-basic-checklist">Linux CCDC Basic Checklist</h1>
+<h2 id="network-scanning-enumeration">1. Network Scanning &amp; Enumeration</h2>
+<h3 id="nmap-scanning">Nmap Scanning</h3>
+<ul>
+<li><p>Scan all ports:</p>
+<pre><code>nmap -p- &lt;IP ADDRESS&gt;</code></pre></li>
+<li><p>Ping sweep for active hosts:</p>
+<pre><code>nmap 10.10.10.0-10
+nmap 10.10.10.0/24</code></pre></li>
+<li><p>Scan specific ports for service versions and OS detection, saving output to a file:</p>
+<pre><code>nmap -sS -sV -O &lt;IP ADDRESS&gt; &gt; nmap.txt</code></pre></li>
+</ul>
+<h2 id="user-password-management">2. User &amp; Password Management</h2>
+<h3 id="reset-passwords">Reset Passwords</h3>
+<p>(expects /etc/passwd copy with only accounts you want to reset the password for to be in the file)</p>
+<h4 id="without-saving-passwords">Without saving passwords:</h4>
+<pre><code>for user in $(cat ./users | awk -F: &#39;{print $1}&#39;); do echo &quot;$user:m0Nk3y!m0Nk3y!&quot; | sudo chpasswd; done</code></pre>
+<h4 id="with-saving-passwords-to-a-file">With saving passwords to a file:</h4>
+<pre><code>for user in $(cat ./users | awk -F: &#39;{print $1}&#39;); do echo &quot;$user:m0Nk3y!m0Nk3y!&quot; | tee -a ./new_passwords | sudo chpasswd; done</code></pre>
+<h3 id="create-a-new-user">Create a New User</h3>
+<pre><code>useradd user -m -s /bin/bash -g sudo</code></pre>
+<ul>
+<li><p>Alternatively, add group separately:</p>
+<p>usermod -aG sudo|wheel user</p></li>
+<li><p>Add public key to <code>.ssh/authorized_keys</code></p></li>
+</ul>
+<h3 id="disable-accounts">Disable Accounts</h3>
+<pre><code>usermod -L &lt;user&gt;</code></pre>
+<h3 id="enable-accounts">Enable Accounts</h3>
+<pre><code>usermod -U &lt;user&gt;</code></pre>
+<h2 id="ssh-security-key-management">3. SSH Security &amp; Key Management</h2>
+<h3 id="rotate-ssh-keys">Rotate SSH Keys</h3>
+<ul>
+<li><p>Find <code>authorized_keys</code> files:</p>
+<pre><code>find / -name &quot;authorized_keys&quot; 2&gt;/dev/null</code></pre></li>
+<li><p>Replace contents with the new public key</p></li>
+<li><p>Securely copy the new key:</p>
+<pre><code>scp whatever.pub name@10.10.10.10:/home/name/.ssh/</code></pre></li>
+</ul>
+<h3 id="secure-etcsshsshd_config">Secure <code>/etc/ssh/sshd_config</code></h3>
+<ul>
+<li>Verify default SSH port</li>
+<li>Disable root login</li>
+<li>Disallow empty passwords</li>
+<li>(Optional) Disable password authentication entirely</li>
+</ul>
+<h2 id="system-service-management">4. System &amp; Service Management</h2>
+<h3 id="system-logs">System Logs</h3>
+<ul>
+<li><p>Check authentication logs:</p>
+<pre><code>cat /var/log/auth.log</code></pre></li>
+<li><p>Installed package logs:</p>
+<pre><code>cat /var/log/dpkg.log</code></pre></li>
+<li><p>Terminal command logs:</p>
+<pre><code>cat /var/log/term.log</code></pre></li>
+<li><p>Review logs in reverse order:</p>
+<pre><code>journalctl -r</code></pre></li>
+</ul>
+<h3 id="systemctl-commands">Systemctl Commands</h3>
+<ul>
+<li><p>Check service status:</p>
+<pre><code>systemctl status &lt;service&gt;</code></pre></li>
+<li><p>View service configuration:</p>
+<pre><code>systemctl cat &lt;service&gt;</code></pre></li>
+<li><p>Restart a service:</p>
+<pre><code>systemctl restart &lt;service&gt;</code></pre></li>
+<li><p>Enable and start a service:</p>
+<pre><code>systemctl enable --now &lt;service&gt;</code></pre></li>
+<li><p>Disable a service:</p>
+<pre><code>systemctl disable &lt;service&gt;</code></pre></li>
+<li><p>Stop a service:</p>
+<pre><code>systemctl stop &lt;service&gt;</code></pre></li>
+</ul>
+<h2 id="process-cron-job-monitoring">5. Process &amp; Cron Job Monitoring</h2>
+<h3 id="active-processes-connections">Active Processes &amp; Connections</h3>
+<ul>
+<li><p>View active processes:</p>
+<pre><code>top</code></pre></li>
+<li><p>List active network connections:</p>
+<pre><code>ss -tupa</code></pre></li>
+<li><p>List running processes:</p>
+<pre><code>ps aux</code></pre></li>
+</ul>
+<h3 id="crontab-scheduled-tasks">Crontab &amp; Scheduled Tasks</h3>
+<ul>
+<li><p>View user crontabs:</p>
+<pre><code>crontab -l</code></pre></li>
+<li><p>Edit crontab:</p>
+<pre><code>crontab -e</code></pre></li>
+<li><p>Check system cron jobs:</p>
+<pre><code>ls -la /etc/cron.*</code></pre></li>
+<li><p>Find crontabs of all users</p>
+<pre><code>for user in $(cut -f1 -d: /etc/passwd); do echo &quot;user: $user&quot;; crontab -u &quot;$user&quot; -l 2&gt;/dev/null &amp;&amp; echo &quot;&quot;; done</code></pre></li>
+</ul>
+<h2 id="security-hardening-permissions">6. Security Hardening &amp; Permissions</h2>
+<h3 id="remove-suid-binaries">Remove SUID Binaries</h3>
+<ul>
+<li><p>Find all SUID binaries:</p>
+<pre><code>find / -perm -u=s</code></pre></li>
+<li><p>Find files with read-only permissions:</p>
+<pre><code>find / -type f -perm -0400 -ls 2&gt;/dev/null</code></pre></li>
+<li><p>Remove SUID permissions:</p>
+<pre><code>chmod a-s &lt;file path&gt;</code></pre></li>
+<li><p>Add SUID permissions:</p>
+<pre><code>chmod u+s &lt;file path&gt;</code></pre></li>
+</ul>
+<h3 id="secure-etcsudoers">Secure <code>/etc/sudoers</code></h3>
+<ul>
+<li><p>Ensure it is only writable by root:</p>
+<pre><code>chmod 0440 /etc/sudoers</code></pre></li>
+</ul>
+<h2 id="incident-response-documentation">7. Incident Response &amp; Documentation</h2>
+<h3 id="kill-active-sessions">Kill Active Sessions</h3>
+<ul>
+<li><p>Kill by TTY:</p>
+<pre><code>pkill -9 -t &lt;TTY&gt;</code></pre></li>
+<li><p>Find your own TTY:</p>
+<pre><code>tty</code></pre></li>
+<li><p>Kill by username:</p>
+<pre><code>pkill -9 -u &lt;username&gt;</code></pre></li>
+<li><p>Kill by PID:</p>
+<pre><code>kill -9 &lt;PID&gt;</code></pre></li>
+<li><p>Kill by process name:</p>
+<pre><code>pkill &lt;process name&gt;</code></pre></li>
+</ul>
+<h3 id="backups">Backups</h3>
+<ul>
+<li><p>Take a backup of <code>/etc/</code> directory or any other mission critial services:</p>
+<pre><code>tar -czvf etc-backup.tar.gz /etc/</code></pre></li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Record findings for incident response</li>
+<li>Save nmap scans &amp; security incidents</li>
+<li>Maintain logs for injects &amp; investigations</li>
+</ul>
+<h1 id="cisco-firepower-firewall">Cisco Firepower Firewall</h1>
+<p><strong>Note: The web interface and command line interface may be split on two different machines.</strong> <strong>Make sure that passwords are reset on both the web and command line interface.</strong></p>
+<h2 id="reset-passwords-on-the-web-interface">Reset Passwords on the Web Interface</h2>
+<ol type="1">
+<li>Log in to the web interface as a user with administrator access.</li>
+<li>Navigate to System &gt; Users, and click the edit icon (a pencil) for each user.</li>
+<li>Enter the new password in the <strong>Password</strong> and <strong>Confirm Password</strong> fields.</li>
+<li>Click Save. If prompted to restart the device, then restart.</li>
+<li>Verify that the passwords were changed for all users.</li>
+</ol>
+<h2 id="reset-passwords-on-the-command-line-interface">Reset Passwords on the Command Line Interface</h2>
+<ol type="1">
+<li>Log in to the administrator account over SSH or with the console.</li>
+<li>If you do not immediately boot into a Linux shell, enter the command <strong>expert</strong> to access the Linux shell.</li>
+<li>At the shell prompt enter the command <strong>sudo passwd (the name of the user)</strong> to change passwords for all users.</li>
+<li>Enter the command <strong>exit</strong> to exit the shell/interface.</li>
+<li>Verify that the passwords were changed for all users.</li>
+</ol>
+<h1 id="keycloak">Keycloak</h1>
+<h2 id="installation">Installation</h2>
+<ul>
+<li><a href="https://www.keycloak.org/guides#getting-started" class="uri">https://www.keycloak.org/guides#getting-started</a></li>
+<li>install Docker (<code>docker.io</code>) or Podman
+<ul>
+<li><code>x86-64-v2</code> is not supported on older CPUs</li>
+<li><code>sudo usermod -aG docker $USER &amp;&amp; newgrp docker</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1"></a><span class="ex">docker</span> run -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.1.3 start-dev</span></code></pre></div>
+<ul>
+<li><a href="https://www.keycloak.org/getting-started/getting-started-zip">direct installation</a></li>
+</ul>
+<h2 id="accounts-setup">Accounts Setup</h2>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># start production server (need to provide TLS certs)</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="ex">bin/kc.sh</span> start --bootstrap-admin-username admin --bootstrap-admin-password admin</span>
+<span id="cb50-3"><a href="#cb50-3"></a></span>
+<span id="cb50-4"><a href="#cb50-4"></a><span class="co"># start development server</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a><span class="ex">bin/kc.sh</span> start-dev --bootstrap-admin-client-id tmpadm --bootstrap-admin-client-secret secret</span>
+<span id="cb50-6"><a href="#cb50-6"></a></span>
+<span id="cb50-7"><a href="#cb50-7"></a><span class="co"># create temporary admin user (done without server running)</span></span>
+<span id="cb50-8"><a href="#cb50-8"></a><span class="ex">bin/kc.sh</span> bootstrap-admin user <span class="co"># --username tmpadm --password:env PASS_VAR (optional)</span></span>
+<span id="cb50-9"><a href="#cb50-9"></a></span>
+<span id="cb50-10"><a href="#cb50-10"></a><span class="co"># create temporary service user</span></span>
+<span id="cb50-11"><a href="#cb50-11"></a><span class="ex">bin/kc.sh</span> bootstrap-admin service <span class="co"># --client-id tmpclient --client-secret:env=SECRET_VAR (optional)</span></span></code></pre></div>
+<h2 id="authentication-usage-of-keycloak">Authentication &amp; Usage of Keycloak</h2>
+<ul>
+<li><p>general configuration: <a href="https://www.keycloak.org/server/all-config" class="uri">https://www.keycloak.org/server/all-config</a></p></li>
+<li><p>provider configuration: <a href="https://www.keycloak.org/server/all-provider-config" class="uri">https://www.keycloak.org/server/all-provider-config</a></p></li>
+<li><p><a href="https://www.keycloak.org/guides#server" class="uri">https://www.keycloak.org/guides#server</a></p></li>
+<li><p>can be an <a href="https://www.keycloak.org/securing-apps/oidc-layers">OpenID Connect Provider</a></p></li>
+<li><p>can secure JS applications <a href="https://www.keycloak.org/securing-apps/javascript-adapter">on client-side with <code>keycloak-js</code></a> and <a href="https://www.keycloak.org/securing-apps/nodejs-adapter">on server-side with <code>keycloak-connect</code></a></p></li>
+<li><p>new clients can integrate with Keycloak through client registration <a href="https://www.keycloak.org/securing-apps/client-registration-cli">on CLI</a> or <a href="https://www.keycloak.org/securing-apps/client-registration">through the service endpoint</a></p></li>
+</ul>
+<h1 id="mariadb-and-mysql">MariaDB and MySQL</h1>
+<h2 id="mysql-config-file">MySQL Config File</h2>
+<p>When installed, the mysql service will automatically start and run upon system startup on port 3306. The config file is stored in /etc/mysql/mysql.conf.d/mysqld.cnf.</p>
+<h2 id="mariadb-config-file">MariaDB Config File</h2>
+<p>When installed, the mysql service will automatically start and run upon system startup on port 3306. The config files are stored in /etc/mysql/my.cnf and /etc/mysql/mariadb.conf.d/50-server.cnf (this file contains Maria-DB server specific settings).</p>
+<h2 id="securing-the-services-and-databases">Securing the Services and Databases</h2>
+<h3 id="the-config-file">The config file:</h3>
+<ul>
+<li>Ensure that these fields are set properly
+<ul>
+<li>User (should be mysql)</li>
+<li>Ensure that the user mysql does not have sudo privileges, i.e., not in any sudoers group</li>
+<li>Do not set the user to root!</li>
+</ul></li>
+<li>Port (3306 by default if no value is present)</li>
+<li>Bind-address (typically localhost or 127.0.0.1 if the database is hosted on the same machine with the config file)</li>
+<li>Disable local-infile
+<ul>
+<li>Include the line local-infile = 0 anywhere underneath [mysqld] in the config file</li>
+<li>Local-infile introduces a security risk as enabling it allows users to import data from files on disk into a database table</li>
+</ul></li>
+<li>After making changes to the config file, restart mysql with <strong>sudo systemctl restart mysql</strong></li>
+</ul>
+<h3 id="the-service-files">The service files:</h3>
+<ul>
+<li>MariaDB and MySQL’s service files are stored in /lib/systemd/system/ and/or /etc/systemd/system/</li>
+<li>Things to look out for:
+<ul>
+<li>User and Group should be set to mysql, as shown below</li>
+<li>If they are set to anything else (such as root), red team can leverage exploits for privilege escalation</li>
+<li>To check which user mysql is running as, use the command ps aux | grep mysql</li>
+</ul></li>
+<li>Good idea to backup the service files as well in case of deletion/alteration</li>
+</ul>
+<h3 id="passwords">Passwords:</h3>
+<ul>
+<li>By default, the root user in MySQL has no password. To change root’s password, open a mysql session with <strong>sudo mysql -u root</strong></li>
+<li>Run <strong>Use mysql;</strong></li>
+<li>If you’re on MySQL, run <strong>ALTER USER ‘root’@‘localhost’ IDENTIFIED WITH mysql_native_password BY ‘(new_password)’;</strong></li>
+<li>If you’re on MariaDB, run <strong>ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘(new_password)’</strong>;</li>
+<li>Run <strong>FLUSH PRIVILEGES;</strong></li>
+</ul>
+<h3 id="auditing-users">Auditing Users:</h3>
+<ul>
+<li>In an open MYSQL session, run <strong>SELECT User, Host FROM mysql.user;</strong> to view all users and their host values</li>
+<li>Host values are either localhost or an IP address. They restrict a user’s connection to that host only, i.e., a host value of localhost restricts connections to the local machine.</li>
+<li>A host value of % allows the user to connect from any host. Ensure that the root user and other system users have a host value of localhost. Ideally, no user should have a host value of %.</li>
+<li>To change a user’s host value, run the command <strong>RENAME USER ‘(username)’@‘(old_host)’ TO ‘(username)’@‘(new_host)’;</strong> Then run <strong>FLUSH PRIVILEGES;</strong> to apply the changes.</li>
+</ul>
+<h3 id="removing-unwanted-users">Removing unwanted users:</h3>
+<ul>
+<li>run <strong>DROP USER (username);</strong></li>
+</ul>
+<h3 id="backing-up-the-databases">Backing up the databases:</h3>
+<ul>
+<li>While the MySQL service is running, run <strong>sudo mysqldump –all-databases –routines -u root -p &gt; (path to a backup .sql file)</strong></li>
+<li>Create a copy of the config file: <strong>sudo cp (path to config file) (path to backup config file)</strong></li>
+<li>Also a good idea to backup the files for the mysql service for systemctl should those files be altered or deleted</li>
+</ul>
+<h3 id="restoring-the-databases">Restoring the databases:</h3>
+<ul>
+<li>sudo cp (path to backup config file) (path to config file)</li>
+<li>sudo systemctl stop mysql<br />
+</li>
+<li>sudo rm -rf /var/lib/mysql/*</li>
+<li>sudo mysqld –initialize</li>
+<li>sudo chown -R mysql: /var/lib/mysql</li>
+<li>sudo systemctl start mysql</li>
+<li>cat (path to backup .sql file) | sudo mysql -u root -p</li>
+</ul>
+<h1 id="mariadb-and-mysql-hardening">MariaDB and MySQL Hardening</h1>
+<ol type="1">
+<li>Log in to the mysql/mariadb console with sudo mysql -u root -p</li>
+<li>Root’s password may be blank if it is not provided during the competition</li>
+<li>If you can not log in, ensure the mysql service has properly started without logging errors (broken config file, networking error, etc.)</li>
+<li>In MySQL, run <strong>USE mysql;</strong></li>
+<li>Change root user’s password
+<ul>
+<li>If you’re on MySQL, run <strong>ALTER USER ‘root’@‘localhost’ IDENTIFIED WITH mysql_native_password BY ‘<new_password>’;</strong></li>
+<li>If you’re on MariaDB, run <strong>ALTER USER ‘root’@‘localhost’ IDENTIFIED BY ‘<new_password>’;</strong></li>
+</ul></li>
+<li>Run <strong>FLUSH PRIVILEGES;</strong></li>
+<li>Verify/edit the appropriate config file
+<ul>
+<li>MySQL: /etc/mysql/mysql.conf.d/mysqld.cnf</li>
+<li>MariaDB: /etc/mysql/my.cnf and /etc/mysql/mariadb.conf.d/50-server.cnf</li>
+<li>Verify that user is set to mysql</li>
+<li>Verify that the port is set correctly (3306 by default)</li>
+<li>Verify that the bind-address is set correctly</li>
+<li>Add the line local-infile = 0 somewhere underneath the [mysqld] section</li>
+<li>Save changes and restart mysql with sudo systemctl restart mysql</li>
+</ul></li>
+<li>Audit users
+<ul>
+<li>Log in to the mysql/mariadb console</li>
+<li>run <strong>SELECT User, Host FROM mysql.user;</strong> to view all users and their host values</li>
+<li>Make sure host values are either a valid IP address or localhost. No user should have a host value of %.</li>
+<li>To change a user’s host value, run the command <strong>RENAME USER ‘(username)’@‘(current_host)’ TO ‘(username)’@‘(new_host)’;</strong> Then run <strong>FLUSH PRIVILEGES;</strong> to apply the changes.</li>
+<li>Remove unneeded users with <strong>DROP USER (username)</strong>;</li>
+</ul></li>
+<li>Create backups
+<ul>
+<li>While the MySQL service is running, run <strong>sudo mysqldump –all-databases –routines -u root -p &gt; (path to backup .sql file)</strong></li>
+<li>Create a copy of the config file: <strong>sudo cp (path to config file) (path to backup config file)</strong></li>
+<li>Create backups of the mysql service files used by systemctl
+<ul>
+<li>/lib/systemd/system/ and/or /etc/systemd/system/</li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="postgresql-hardening">PostgreSQL Hardening</h1>
+<ol type="1">
+<li>Log in to the PostgreSQL console with <strong>sudo psql</strong></li>
+<li>Root’s password may be blank if it is not provided during the competition</li>
+<li>If you can not log in, ensure the PostgreSQL service has properly started without logging errors (broken config file, networking error, etc.)</li>
+<li>Change root user’s password
+<ul>
+<li>In PostgreSQL, run <strong>ALTER USER root WITH PASSWORD ‘(new password)’;</strong></li>
+<li>Alternatively, use ***</li>
+</ul></li>
+<li>Verify/edit the config files in /etc/postgresql/(version number)/main
+<ul>
+<li>pg_hba.conf
+<ul>
+<li>Client Authentication Config File</li>
+<li>Controls which hosts can connect to the PostgreSQL server, how clients are authenticated, which users they can log in as, and which databases they can access</li>
+<li>Remove all suspicious entries from the file</li>
+<li>Check for out-of-place users and hosts</li>
+</ul></li>
+<li>postgresql.conf
+<ul>
+<li>Main Config File for PostgreSQL</li>
+<li>Important fields
+<ul>
+<li>listen_addresses: which IPs to listen on</li>
+<li>port: should always be set to 5432</li>
+<li>password_encryption</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Audit users
+<ul>
+<li>Log in to the PostgreSQL console</li>
+<li>Run <strong>\duS+</strong> to view all users and their permissions</li>
+<li>Remove unneeded users with <strong>DROP USER (username)</strong>;</li>
+</ul></li>
+<li>Create backups
+<ul>
+<li>While the PostgreSQL service is running, run <strong>sudo pg_dumpall &gt; postgresql_dump</strong></li>
+<li>Create a copy of the config files: <strong>sudo cp -r /etc/postgresql/(version number)/main /path/to/backup/directory</strong></li>
+<li>Also a good idea to backup the files for the postgreSQL service for systemctl should those files be altered or deleted
+<ul>
+<li>Located in /lib/systemd/system/ and/or /etc/systemd/system/</li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="postgresql">PostgreSQL</h1>
+<h2 id="config-files">Config Files</h2>
+<ul>
+<li><p>When installed, the postgresql service will automatically start and run upon system startup on port 5432. The config files are stored in /etc/postgresql/(version number)/main.</p></li>
+<li><p>Important config files are</p>
+<ul>
+<li>pg_hba.conf
+<ul>
+<li>Client Authentication Config File</li>
+<li>Controls which hosts can connect to the PostgreSQL server, how clients are authenticated, which users they can log in as, and which databases they can access</li>
+<li>Remove all suspicious entries from the file</li>
+<li>Check for out-of-place users and hosts</li>
+</ul></li>
+<li>postgresql.conf
+<ul>
+<li>Main Config File for PostgreSQL</li>
+<li>Important fields
+<ul>
+<li>listen_addresses: which IPs to listen on</li>
+<li>port: should always be set to 5432</li>
+<li>password_encryption</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Check if any malicious files are in /etc/postgresql/(version number)/main/conf.d</p></li>
+<li><p>After updating config files, restart the service using <strong>sudo systemctl restart postgresql</strong></p></li>
+</ul>
+<h3 id="the-service-files-1">The service files:</h3>
+<ul>
+<li>PostgreSQL’s service files are stored in /lib/systemd/system/ and/or /etc/systemd/system/</li>
+<li>Good idea to backup the service files as well in case of deletion/alteration</li>
+</ul>
+<h3 id="passwords-1">Passwords:</h3>
+<ul>
+<li>By default, the root user in PostgreSQL has no password. To change root’s password, run <strong>ALTER USER root WITH PASSWORD ‘(new password)’;</strong></li>
+</ul>
+<h3 id="auditing-users-1">Auditing Users:</h3>
+<ul>
+<li>In an open PostgreSQL session, run <strong>\duS+</strong> to view all users and their permissions</li>
+<li>Add new users with the command <strong>CREATE USER (username);</strong></li>
+</ul>
+<h3 id="removing-unwanted-users-1">Removing unwanted users:</h3>
+<ul>
+<li>run <strong>DROP USER (username);</strong></li>
+</ul>
+<h3 id="backing-up-the-databases-1">Backing up the databases:</h3>
+<ul>
+<li>While the PostgreSQL service is running, run <strong>sudo pg_dumpall &gt; postgresql_dump</strong></li>
+<li>Create a copy of the config files: <strong>sudo cp -r /etc/postgresql/(version number)/main /path/to/backup/directory</strong></li>
+<li>Also a good idea to backup the files for the postgreSQL service for systemctl should those files be altered or deleted</li>
+</ul>
+<h3 id="restoring-the-databases-1">Restoring the databases:</h3>
+<ul>
+<li><strong>psql -X -f postgresql_dump postgres</strong></li>
+<li>Restore config files</li>
+<li>Restore systemctl service files</li>
+</ul>
+<h1 id="salt">Salt</h1>
+<p><a href="https://docs.saltproject.io/en/latest/topics/tutorials/walkthrough.html" class="uri">https://docs.saltproject.io/en/latest/topics/tutorials/walkthrough.html</a></p>
+<h2 id="commands-execution-modules">Commands (Execution Modules)</h2>
+<h3 id="basics">Basics</h3>
+<div class="sourceCode" id="cb51"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># ping minions</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> test.ping</span>
+<span id="cb51-3"><a href="#cb51-3"></a></span>
+<span id="cb51-4"><a href="#cb51-4"></a><span class="co"># list version</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a><span class="fu">sudo</span> salt -v <span class="st">&#39;*&#39;</span> test.version</span>
+<span id="cb51-6"><a href="#cb51-6"></a></span>
+<span id="cb51-7"><a href="#cb51-7"></a><span class="co"># install command</span></span>
+<span id="cb51-8"><a href="#cb51-8"></a><span class="fu">sudo</span> salt -v <span class="st">&#39;*linux*&#39;</span> pkg.install vim</span>
+<span id="cb51-9"><a href="#cb51-9"></a></span>
+<span id="cb51-10"><a href="#cb51-10"></a><span class="co"># apply /srv/salt/test.sls</span></span>
+<span id="cb51-11"><a href="#cb51-11"></a><span class="fu">sudo</span> salt -v <span class="st">&#39;*linux*&#39;</span> state.apply test</span>
+<span id="cb51-12"><a href="#cb51-12"></a></span>
+<span id="cb51-13"><a href="#cb51-13"></a><span class="co"># run commands (can use pipes, command substitution, etc.)</span></span>
+<span id="cb51-14"><a href="#cb51-14"></a><span class="fu">sudo</span> salt <span class="st">&#39;*linux*&#39;</span> cmd.run <span class="st">&#39;uptime&#39;</span></span>
+<span id="cb51-15"><a href="#cb51-15"></a></span>
+<span id="cb51-16"><a href="#cb51-16"></a><span class="co"># execute other code</span></span>
+<span id="cb51-17"><a href="#cb51-17"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> cmd.exec_code perl <span class="st">&#39;print(&quot;hello&quot;)&#39;</span></span>
+<span id="cb51-18"><a href="#cb51-18"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> cmd.exec_code ruby <span class="st">&#39;puts &quot;cheese&quot;&#39;</span> args=<span class="st">&#39;[&quot;arg1&quot;, &quot;arg2&quot;]&#39;</span> env=<span class="st">&#39;{&quot;FOO&quot;: &quot;bar&quot;}&#39;</span></span></code></pre></div>
+<h3 id="copying-files">Copying Files</h3>
+<div class="sourceCode" id="cb52"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># put files into /srv/salt to use salt://</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="fu">sudo</span> salt <span class="st">&#39;*linux*&#39;</span> cp.get_file salt://files/reset_passwords.pl /tmp/reset_passwords.pl</span>
+<span id="cb52-3"><a href="#cb52-3"></a></span>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="fu">sudo</span> salt <span class="st">&#39;*linux*&#39;</span> cp.get_dir salt://files /tmp/files</span>
+<span id="cb52-5"><a href="#cb52-5"></a><span class="fu">sudo</span> salt <span class="st">&#39;*win*&#39;</span> cp.get_dir salt://files C:/ <span class="co"># no \</span></span>
+<span id="cb52-6"><a href="#cb52-6"></a></span>
+<span id="cb52-7"><a href="#cb52-7"></a><span class="fu">sudo</span> salt-cp <span class="st">&#39;*linux*&#39;</span> src dest <span class="co"># slower</span></span>
+<span id="cb52-8"><a href="#cb52-8"></a></span>
+<span id="cb52-9"><a href="#cb52-9"></a><span class="co"># push files from minion; /var/cache/salt/master/minions/minion-id/files</span></span>
+<span id="cb52-10"><a href="#cb52-10"></a><span class="fu">sudo</span> salt <span class="st">&#39;*linux*&#39;</span> cp.push_dir /var/www/html/index.html</span>
+<span id="cb52-11"><a href="#cb52-11"></a><span class="fu">sudo</span> salt <span class="st">&#39;*linux*&#39;</span> cp.push_dir /var/www/html</span></code></pre></div>
+<h3 id="user-administration">User Administration</h3>
+<div class="sourceCode" id="cb53"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># user management</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">sudo</span> salt <span class="st">&#39;t*&#39;</span> user.add jp2</span>
+<span id="cb53-3"><a href="#cb53-3"></a></span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="co"># get users</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> ps.get_users</span>
+<span id="cb53-6"><a href="#cb53-6"></a></span>
+<span id="cb53-7"><a href="#cb53-7"></a><span class="co"># add/remove user to group</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> group.adduser group user </span>
+<span id="cb53-9"><a href="#cb53-9"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> group.deluser group user</span>
+<span id="cb53-10"><a href="#cb53-10"></a></span>
+<span id="cb53-11"><a href="#cb53-11"></a><span class="co"># delete group</span></span>
+<span id="cb53-12"><a href="#cb53-12"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> group.delete group</span>
+<span id="cb53-13"><a href="#cb53-13"></a></span>
+<span id="cb53-14"><a href="#cb53-14"></a><span class="co"># get all group info</span></span>
+<span id="cb53-15"><a href="#cb53-15"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> group.getent</span>
+<span id="cb53-16"><a href="#cb53-16"></a></span>
+<span id="cb53-17"><a href="#cb53-17"></a><span class="co"># set group members (replaces users)</span></span>
+<span id="cb53-18"><a href="#cb53-18"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> group.members group <span class="st">&#39;user1,user2,user3&#39;</span></span>
+<span id="cb53-19"><a href="#cb53-19"></a></span>
+<span id="cb53-20"><a href="#cb53-20"></a><span class="co"># set password</span></span>
+<span id="cb53-21"><a href="#cb53-21"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> shadow.gen_password <span class="st">&#39;password&#39;</span></span>
+<span id="cb53-22"><a href="#cb53-22"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> shadow.set_password someuser <span class="st">&#39;hash&#39;</span></span></code></pre></div>
+<h3 id="system-info">System Info</h3>
+<div class="sourceCode" id="cb54"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># get disk partitons</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> ps.disk_partitions</span>
+<span id="cb54-3"><a href="#cb54-3"></a></span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="co"># get running processes</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> ps.status running</span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> ps.top</span>
+<span id="cb54-7"><a href="#cb54-7"></a><span class="fu">sudo</span> salt <span class="st">&#39;linux*&#39;</span> ps.aux <span class="st">&#39;.*&#39;</span></span>
+<span id="cb54-8"><a href="#cb54-8"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> ps.get_pid_list</span></code></pre></div>
+<h3 id="services-more">Services &amp; More</h3>
+<div class="sourceCode" id="cb55"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># crontabs!!! (list/add/remove)</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> cron.ls user</span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> cron.set_job root <span class="st">&#39;*&#39;</span> <span class="st">&#39;*&#39;</span> <span class="st">&#39;*&#39;</span> <span class="st">&#39;*&#39;</span> <span class="st">&#39;*&#39;</span> cmd</span>
+<span id="cb55-4"><a href="#cb55-4"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> cron.set_special root @hourly <span class="st">&#39;echo foobar&#39;</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="co"># install wordpress</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> wordpress.install /var/www/html apache dwallace password123 dwallace@example.com <span class="st">&quot;Daniel&#39;s Awesome Blog&quot;</span> https://blog.dwallace.com</span>
+<span id="cb55-8"><a href="#cb55-8"></a></span>
+<span id="cb55-9"><a href="#cb55-9"></a><span class="co"># mysql</span></span>
+<span id="cb55-10"><a href="#cb55-10"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> mysql.db_create <span class="st">&#39;dbname&#39;</span></span>
+<span id="cb55-11"><a href="#cb55-11"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> mysql.db_remove <span class="st">&#39;dbname&#39;</span></span>
+<span id="cb55-12"><a href="#cb55-12"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> mysql.query <span class="st">&#39;dbname&#39;</span> <span class="st">&#39;DELETE from users where id = 4 limit 1&#39;</span></span>
+<span id="cb55-13"><a href="#cb55-13"></a></span>
+<span id="cb55-14"><a href="#cb55-14"></a><span class="co"># services</span></span>
+<span id="cb55-15"><a href="#cb55-15"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> service.get_all</span>
+<span id="cb55-16"><a href="#cb55-16"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> service.restart service</span>
+<span id="cb55-17"><a href="#cb55-17"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> service.start service</span>
+<span id="cb55-18"><a href="#cb55-18"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> service.stop service</span></code></pre></div>
+<h2 id="sample-.sls-file">Sample <code>.sls</code> File</h2>
+<div class="sourceCode" id="cb56"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">network_utilities</span><span class="kw">:</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="at">  </span><span class="fu">pkg.installed</span><span class="kw">:</span></span>
+<span id="cb56-3"><a href="#cb56-3"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">pkgs</span><span class="kw">:</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a><span class="at">      </span><span class="kw">-</span><span class="at"> rsync</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a><span class="at">      </span><span class="kw">-</span><span class="at"> curl</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a></span>
+<span id="cb56-7"><a href="#cb56-7"></a><span class="fu">nginx_pkg</span><span class="kw">:</span></span>
+<span id="cb56-8"><a href="#cb56-8"></a><span class="at">  </span><span class="fu">pkg.installed</span><span class="kw">:</span></span>
+<span id="cb56-9"><a href="#cb56-9"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> nginx</span></span>
+<span id="cb56-10"><a href="#cb56-10"></a></span>
+<span id="cb56-11"><a href="#cb56-11"></a><span class="fu">nginx_service</span><span class="kw">:</span></span>
+<span id="cb56-12"><a href="#cb56-12"></a><span class="at">  </span><span class="fu">service.running</span><span class="kw">:</span></span>
+<span id="cb56-13"><a href="#cb56-13"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> nginx</span></span>
+<span id="cb56-14"><a href="#cb56-14"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">enable</span><span class="kw">:</span><span class="at"> </span><span class="ch">True</span></span>
+<span id="cb56-15"><a href="#cb56-15"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">require</span><span class="kw">:</span></span>
+<span id="cb56-16"><a href="#cb56-16"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">pkg</span><span class="kw">:</span><span class="at"> nginx_pkg</span></span></code></pre></div>
+<h2 id="firewall-rules">Firewall Rules</h2>
+<h3 id="minion-rules">Minion Rules</h3>
+<div class="sourceCode" id="cb57"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">sudo</span> salt <span class="st">&#39;*&#39;</span> iptables.build_rule match=conntrack connstate=RELATED,ESTABLISHED jump=ACCEPT</span>
+<span id="cb57-2"><a href="#cb57-2"></a></span>
+<span id="cb57-3"><a href="#cb57-3"></a><span class="fu">sudo</span> salt <span class="st">&#39;t*&#39;</span> cmd.run <span class="st">&#39;iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT&#39;</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a><span class="fu">sudo</span> salt <span class="st">&#39;t*&#39;</span> cmd.run <span class="st">&#39;iptables -A OUTPUT -d 10.3.12.150 -p tcp --dport 4505 -j ACCEPT&#39;</span></span>
+<span id="cb57-5"><a href="#cb57-5"></a><span class="fu">sudo</span> salt <span class="st">&#39;t*&#39;</span> cmd.run <span class="st">&#39;iptables -A OUTPUT -d 10.3.12.150 -p tcp --dport 4506 -j ACCEPT&#39;</span></span></code></pre></div>
+<h3 id="master-rules">Master Rules</h3>
+<div class="sourceCode" id="cb58"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">sudo</span> iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT</span>
+<span id="cb58-2"><a href="#cb58-2"></a></span>
+<span id="cb58-3"><a href="#cb58-3"></a><span class="fu">sudo</span> iptables -A INPUT -i lo -p tcp -m multiport --dports 4505:4506 -j ACCEPT <span class="co"># allow salt localhost comm</span></span>
+<span id="cb58-4"><a href="#cb58-4"></a><span class="fu">sudo</span> iptables -A INPUT -p tcp -m multiport --dports 4505:4506 -j ACCEPT <span class="co"># minion comm</span></span>
+<span id="cb58-5"><a href="#cb58-5"></a></span>
+<span id="cb58-6"><a href="#cb58-6"></a><span class="fu">sudo</span> iptables -A OUTPUT -p tcp -m iprange --dst-range 10.3.12.1-10.3.12.4 -j ACCEPT</span>
+<span id="cb58-7"><a href="#cb58-7"></a></span>
+<span id="cb58-8"><a href="#cb58-8"></a><span class="fu">sudo</span> iptables -A INPUT -i lo -p tcp -m multiport --dports 4505:4506 -j ACCEPT</span>
+<span id="cb58-9"><a href="#cb58-9"></a><span class="fu">sudo</span> iptables -A INPUT -p tcp -m multiport --dports 4505:4506 -j ACCEPT</span>
+<span id="cb58-10"><a href="#cb58-10"></a></span>
+<span id="cb58-11"><a href="#cb58-11"></a><span class="fu">sudo</span> iptables -A INPUT -p tcp --dport 22 -j ACCEPT <span class="co"># inbound</span></span>
+<span id="cb58-12"><a href="#cb58-12"></a><span class="fu">sudo</span> iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT <span class="co"># outbound</span></span></code></pre></div>
+<h1 id="wordpress">Wordpress</h1>
+<p>Source: https://www.wpbeginner.com/wordpress-security/</p>
+<h2 id="checklist">Checklist</h2>
+<ol type="1">
+<li>Reset Password
+<ul>
+<li>Click on profile (top right)</li>
+<li>Scroll down to “Set New Password”</li>
+<li>Default user is admin</li>
+</ul></li>
+<li>Check when wp-config.php was last edited
+<ul>
+<li>ls -lt /var/www/html/wp-config.php</li>
+</ul></li>
+<li>Check for any file types of .php, .js, .exe
+<ul>
+<li>ls -la /var/www/html/wp-content/uploads</li>
+</ul></li>
+<li>Verify Wordpress Database Information
+<ul>
+<li>First, begin a mysql session and select the wordpress database:
+<ul>
+<li>show databases;</li>
+<li>use wordpress;</li>
+<li>show tables;</li>
+</ul></li>
+<li>Verify Default Wordpress Tables:
+<ul>
+<li>wp_commentmeta</li>
+<li>wp_comments</li>
+<li>wp_links</li>
+<li>wp_options</li>
+<li>wp_postmeta</li>
+<li>wp_posts</li>
+<li>wp_term_relationships</li>
+<li>wp_term_taxonomy</li>
+<li>wp_termmeta</li>
+<li>wp_terms</li>
+<li>wp_usermeta</li>
+<li>wp_users</li>
+</ul></li>
+<li>Things to look for:
+<ul>
+<li>select * from wp_options where option_name=‘active_plugins’;</li>
+<li>select * from wp_options where option_name=‘cron’;</li>
+</ul></li>
+</ul></li>
+<li>Plugins
+<ul>
+<li>Default plugins:
+<ul>
+<li>Akismet Anti-Spam</li>
+<li>Hello Dolly</li>
+</ul></li>
+</ul></li>
+<li>Updates
+<ul>
+<li>make sure you are on latest version of wordpress (can find this under the “Updates” section)</li>
+<li>make sure plugins are up to date</li>
+</ul></li>
+<li>Backups
+<ul>
+<li>take a backup of the entire /var/www/html directory
+<ul>
+<li>tar -czvf www-backup.tar.gz /var/www/html</li>
+</ul></li>
+</ul></li>
+<li>Disable File editing
+<ul>
+<li>in wp-config.php add the following line
+<ul>
+<li>define( ‘DISALLOW_FILE_EDIT’, true );</li>
+</ul></li>
+</ul></li>
+<li>Security Plugins
+<ul>
+<li>“Limit Login Attempts Reloaded”
+<ul>
+<li>Default settings:
+<ul>
+<li>4 allowed retries</li>
+<li>20 minutes lockout</li>
+<li>4 lockouts increase lockout time to 24hrs</li>
+</ul></li>
+<li>Can configure settings under “Settings” Tab by the plugins name</li>
+</ul></li>
+</ul></li>
+</ol>
+<h1 id="windows-notes">Windows Notes</h1>
+<p>By: Aaron Sprouse and Dylan Harvey</p>
+<h2 id="set-tls-settings-for-downloading-any-download-splunk">Set TLS Settings for Downloading (any download + splunk)</h2>
+<div class="sourceCode" id="cb59"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb59-1"><a href="#cb59-1"></a>[Net.<span class="fu">ServicePointManager</span>]::SecurityProtocol = <span class="st">&quot;tls12, tls11, tls&quot;</span></span></code></pre></div>
+<h2 id="require-kerberos-preauth-on-all-accounts">Require Kerberos Preauth on all Accounts</h2>
+<div class="sourceCode" id="cb60"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">Get-ADUSer</span> -Filter &#39;DoesNotRequirePreAuth -eq <span class="va">$true</span> &#39; | <span class="fu">Set-ADAccountControl</span> -doesnotrequirepreauth <span class="va">$false</span></span></code></pre></div>
+<h2 id="download-sysinternals">Download Sysinternals</h2>
+<div class="sourceCode" id="cb61"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">Invoke-WebRequest</span> -Uri <span class="st">&quot;https://download.sysinternals.com/files/SysinternalsSuite.zip&quot;</span> -OutFile <span class="st">&quot;C:\sysinternals.zip&quot;</span>;</span>
+<span id="cb61-2"><a href="#cb61-2"></a>Expand-Archive -Path <span class="st">&quot;C:\sysinternals.zip&quot;</span> -DestinationPath <span class="st">&quot;C:\sysinternals\&quot;</span></span></code></pre></div>
+<h2 id="remove-wmi-event-subscribers">Remove WMI Event Subscribers</h2>
+<div class="sourceCode" id="cb62"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">Get-WmiObject</span> -Namespace root/subscription -Class CommandLineEventConsumer</span>
+<span id="cb62-2"><a href="#cb62-2"></a></span>
+<span id="cb62-3"><a href="#cb62-3"></a><span class="fu">Get-WmiObject</span> -Namespace root/subscription -Class __EventFilter</span>
+<span id="cb62-4"><a href="#cb62-4"></a></span>
+<span id="cb62-5"><a href="#cb62-5"></a><span class="fu">Get-WmiObject</span> -Namespace root/subscription -Class __FilterToConsumerBinding</span>
+<span id="cb62-6"><a href="#cb62-6"></a></span>
+<span id="cb62-7"><a href="#cb62-7"></a><span class="fu">Get-WmiObject</span> -Class __IntervalTimerInstruction</span>
+<span id="cb62-8"><a href="#cb62-8"></a></span>
+<span id="cb62-9"><a href="#cb62-9"></a>&lt;command&gt; | <span class="fu">Remove-WmiObject</span></span></code></pre></div>
+<h2 id="bins-to-remove">Bins to Remove</h2>
+<ul>
+<li><code>C:\Windows\System32\sethc.exe</code></li>
+<li><code>C:\Windows\System32\Utilman.exe</code></li>
+<li><code>C:\Windows\System32\osk.exe</code> - May require TrustedInstaller</li>
+<li><code>C:\Windows\System32\Narrator.exe</code></li>
+<li><code>C:\Windows\System32\Magnify.exe</code></li>
+<li><code>C:\Windows\System32\DisplaySwitch.exe</code></li>
+</ul>
+<h1 id="windows-splunk-changes">Windows Splunk Changes</h1>
+<div class="sourceCode" id="cb63"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb63-1"><a href="#cb63-1"></a>[Net.<span class="fu">ServicePointManager</span>]::SecurityProtocol = <span class="st">&quot;tls12, tls11, tls&quot;</span></span></code></pre></div>
+<h2 id="splunk.ps1">splunk.ps1</h2>
+<ul>
+<li>Set Indexer IP</li>
+<li>Set username and password (username in script, env $password or replace in script)</li>
+<li>Set <code>index = windows</code> for all log sources</li>
+</ul>
+<h2 id="once-installed">Once Installed</h2>
+<p>Check Config</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb64-1"><a href="#cb64-1"></a>C:\Program Files\SplunkUniversalForwarder\etc\system\local\ inputs.<span class="fu">conf</span> outputs.<span class="fu">conf</span></span></code></pre></div>
+<p>Check Log</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb65-1"><a href="#cb65-1"></a>C:\Program Files\SplunkUniversalForwarder\<span class="kw">var</span>\log\splunk\ splunkd.<span class="fu">log</span></span></code></pre></div>
+<p>Restart the Service (logs may not send otherwise)</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb66-1"><a href="#cb66-1"></a><span class="fu">Restart-Service</span> SplunkForwarder</span></code></pre></div>
+<h2 id="inputs.conf">inputs.conf</h2>
+<pre><code>[default]
+host = ${HOSTNAME}
+
+[WinEventLog] 
+index = windows
+checkpointInterval = 5
+
+[WinEventLog://Security]
+disabled = 0
+index = windows
+
+[WinEventLog://Application]
+disabled = 0
+index = windows
+
+[WinEventLog://System]
+disabled = 0
+index = windows
+
+[WinEventLog://DNS Server]
+disabled = 0
+index = windows
+
+[WinEventLog://Directory Service]
+disabled = 0
+index = windows
+
+[WinEventLog://Windows Powershell]
+disabled = 0
+index = windows
+
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+current_only = 0
+disabled = 0
+start_from = oldest
+index = windows
+renderXml = false
+
+[WinEventLog://Microsoft-Windows-Sysmon/Operational]
+current_only = 0
+disabled = 0
+start_from = oldest
+index = windows
+renderXml = false </code></pre>
+</body>
+</html>

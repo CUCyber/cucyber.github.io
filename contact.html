@@ -7,6 +7,28 @@ breadcrumbs:
   heading: Contact Us
   list:
     - Home: '/'
+
+officers:
+  - name: Adrian Colaianni
+    designation: President
+    email: acolaia@clemson.edu
+    picture: /images/team/adrian_c.jpg
+  - name: Nick DiGennaro
+    designation: Vice President
+    email: ndigenn@clemson.edu
+    picture: /images/team/nick_d.jpg
+  - name: Blake Boulanger
+    designation: Secretary
+    email: bboulan@clemson.edu
+    picture: /images/team/bboulan.jpg
+  - name: Siddharth Thumsi
+    designation: Treasurer
+    email: sthumsi@clemson.edu
+    picture: /images/team/sid_t.png
+  - name: Dylan Harvey
+    designation: Social Media Manager
+    email: dharve3@clemson.edu
+    picture: /images/team/dharve3.jpg
 ---
 <!--
 ==================================================
@@ -23,78 +45,31 @@ breadcrumbs:
                     </p><br>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="/images/team/adrian_c.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Adrian Colaianni</h3>
-                            <p class="team_designation">President</p>
-                            <p class="team_text"><a href="mailto:acolaia@g.clemson.edu">acolaia@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="/images/team/nick_d.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Nick DiGennaro</h3>
-                            <p class="team_designation">Vice President</p>
-                            <p class="team_text"><a href="mailto:ndigenn@g.clemson.edu">ndigenn@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="/images/team/bboulan.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Blake Boulanger</h3>
-                            <p class="team_designation">Secretary</p>
-                            <p class="team_text"><a href="mailto:bboulan@clemson.edu">bboulan@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="/images/team/sid_t.png" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Siddarth Thumsi</h3>
-                            <p class="team_designation">Treasurer</p>
-                            <p class="team_text"><a href="mailto:sthumsi@g.clemson.edu">sthumsi@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                            <div class="team-img">
-                                <img src="/images/team/dharve3.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name">Dylan Harvey</h3>
-                            <p class="team_designation">Social Media Manager</p>
-                            <p class="team_text"><a href="mailto:dharve3@clemson.edu">dharve3@g.clemson.edu</a></p>
-                        </div>
-                    </div>
-		    <!-- <div class="col-lg-4 col-sm-6">
-                        <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
-                            <div class="team-img">
-                                <img src="/images/team/.jpg" class="team-pic" alt="">
-                            </div>
-                            <h3 class="team_name"></h3>
-                            <p class="team_designation">CUCTF Task Force Leader</p>
-                            <p class="team_text"><a href="mailto:@g.clemson.edu">@g.clemson.edu</a></p>
-                        </div>
-		    </div> -->
+                    {% for officer in page.officers %}
+                      <div class="col-lg-4 col-sm-6">
+                         <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
+                              <div class="team-img">
+                                  <img src="{{ officer.picture }}" class="team-pic" alt="picture of {{ officer.name }}">
+                              </div>
+                              <h3 class="team_name">{{ officer.name }}</h3>
+							<p class="team_designation">{{ officer.designation }}</p>
+                              <p class="team_text"><a href="mailto: {{ officer.email }}">{{ officer.email }}</a></p>
+                          </div>
+                      </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="map-area">
                     <div class="text-center">
-                        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Find us in the Watt Center</h2>
+                        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Find us in the Watt Family Innovation Center</h2>
 						<p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-							We meet weekly in the Watt center, <a href="/events">see our calendar for times</a>.
+							We meet weekly in the Watt Family Innovation Center, <a href="/events">see our calendar for times</a>.
 						</p><br>
                     </div>
                     <div class="map text-center">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1640.5817852664861!2d-82.83738650733035!3d34.6758209805779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x88585e6c9bf4ef91%3A0x6ac5cda68e85ebf8!2sWatt+Family+Innovation+Center%2C+Clemson%2C+SC!3m2!1d34.6759451!2d-82.8367853!5e0!3m2!1sen!2sus!4v1453409418371" allowfullscreen></iframe>
+						<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-82.83791720867158%2C34.6753740300064%2C-82.83595919609071%2C34.67655192856724&amp;layer=mapnik&amp;marker=34.675962981380906%2C-82.83693820238113"></iframe>
+						<small><a href="https://www.openstreetmap.org/?mlat=34.67596&amp;mlon=-82.83694#map=19/34.67596/-82.83694">View Larger Map</a></small>
                     </div>
                 </div>
             </div>

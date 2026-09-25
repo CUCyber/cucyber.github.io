@@ -9,26 +9,30 @@ breadcrumbs:
     - Home: '/'
 
 officers:
-  - name: Adrian Colaianni
+  - name: Adam Colaianni
     designation: President
-    email: acolaia@clemson.edu
-    picture: /images/team/adrian_c.jpg
-  - name: Nick DiGennaro
+    <!-- email: example@clemson.edu -->
+    <!-- picture: /images/team/adrian_c.jpg -->
+  - name: Seth Reid
     designation: Vice President
-    email: ndigenn@clemson.edu
-    picture: /images/team/nick_d.jpg
+    <!-- email: example@clemson.edu -->
+    <!-- picture: /images/team/nick_d.jpg -->
+  - name: Aaron Sprouse
+    designation: Team Captain
+    <!-- email: example@clemson.edu -->
+    <!-- picture: /images/team/sid_t.png -->
   - name: Blake Boulanger
     designation: Secretary
-    email: bboulan@clemson.edu
-    picture: /images/team/bboulan.jpg
-  - name: Siddharth Thumsi
+    <!-- email: example@clemson.edu -->
+    <!-- picture: /images/team/bboulan.jpg -->
+  - name: Nico Roman
     designation: Treasurer
-    email: sthumsi@clemson.edu
-    picture: /images/team/sid_t.png
-  - name: Dylan Harvey
+    <!-- email: example@clemson.edu -->
+    <!-- picture: /images/team/sid_t.png -->
+  - name: Lilah Smith
     designation: Social Media Manager
-    email: dharve3@clemson.edu
-    picture: /images/team/dharve3.jpg
+    <!-- email: example@clemson.edu -->
+    <!-- picture: /images/team/dharve3.jpg -->
 ---
 <!--
 ==================================================
@@ -46,14 +50,15 @@ officers:
                 </div>
                 <div class="row">
                     {% for officer in page.officers %}
-                      <div class="col-lg-4 col-sm-6">
+                      <!-- <div class="col-lg-4 col-sm-6"> -->
+                      <div class="col-xs-12">
                          <div class="team-member wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
-                              <div class="team-img">
-                                  <img src="{{ officer.picture }}" class="team-pic" alt="picture of {{ officer.name }}">
-                              </div>
+                              <!-- <div class="team-img"> -->
+                              <!--     <img src="{{ officer.picture }}" class="team-pic" alt="picture of {{ officer.name }}"> -->
+                              <!-- </div> -->
                               <h3 class="team_name">{{ officer.name }}</h3>
 							<p class="team_designation">{{ officer.designation }}</p>
-                              <p class="team_text"><a href="mailto: {{ officer.email }}">{{ officer.email }}</a></p>
+                              <!-- <p class="team_text"><a href="mailto: {{ officer.email }}">{{ officer.email }}</a></p> -->
                           </div>
                       </div>
                     {% endfor %}
@@ -62,14 +67,14 @@ officers:
             <div class="col-lg-6">
                 <div class="map-area">
                     <div class="text-center">
-                        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Find us in the Watt Family Innovation Center</h2>
+                        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Find us in the McAdams Hall</h2>
 						<p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
-							We meet weekly in the Watt Family Innovation Center, <a href="/events">see our calendar for times</a>.
+							We meet weekly in McAdams Hall, <a href="/events">see our calendar for times</a>.
 						</p><br>
                     </div>
                     <div class="map text-center">
-						<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-82.83791720867158%2C34.6753740300064%2C-82.83595919609071%2C34.67655192856724&amp;layer=mapnik&amp;marker=34.675962981380906%2C-82.83693820238113"></iframe>
-						<small><a href="https://www.openstreetmap.org/?mlat=34.67596&amp;mlon=-82.83694#map=19/34.67596/-82.83694">View Larger Map</a></small>
+                        <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed?bbox=-82.83596456050874%2C34.674646106790256%2C-82.83371955156328%2C34.67633134958726&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+                        <small><a href="https://www.openstreetmap.org/#map=19/34.675489/-82.834842">View Larger Map</a></small>
                     </div>
                 </div>
             </div>
